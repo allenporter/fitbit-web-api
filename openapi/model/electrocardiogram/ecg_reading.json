@@ -1,0 +1,60 @@
+{
+  "type": "object",
+  "properties": {
+    "startTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date and time when the reading was started on the device."
+    },
+    "averageHeartRate": {
+      "type": "integer",
+      "description": "The average heart rate of the user during the reading."
+    },
+    "resultClassification": {
+      "type": "string",
+      "enum": [
+        "Atrial Fibrillation",
+        "Normal Sinus Rhythm",
+        "Inconclusive",
+        "Inconclusive: High heart rate",
+        "Inconclusive: Low heart rate"
+      ],
+      "description": "The classification of the ECG result."
+    },
+    "waveformSamples": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "An array of integers representing the ECG waveform."
+    },
+    "samplingFrequencyHz": {
+      "type": "integer",
+      "description": "The frequency in hertz at which the Fitbit ECG app sampled the voltage."
+    },
+    "scalingFactor": {
+      "type": "integer",
+      "description": "The scaling factor used to convert waveform samples to ECG voltages in mV (mV = waveformSamples / scalingFactor)."
+    },
+    "numberOfWaveformSamples": {
+      "type": "integer",
+      "description": "The total number of samples in the reading."
+    },
+    "leadNumber": {
+      "type": "integer",
+      "description": "The ECG lead being used to take the reading."
+    },
+    "featureVersion": {
+      "type": "string",
+      "description": "The version of the ECG app running on the device."
+    },
+    "deviceName": {
+      "type": "string",
+      "description": "Hardware name of the compatible wrist-worn device used to take the reading."
+    },
+    "firmwareVersion": {
+      "type": "string",
+      "description": "Firmware running on the compatible wrist-worn device used to take the reading."
+    }
+  }
+}

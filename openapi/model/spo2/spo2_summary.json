@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "dateTime": {
+      "type": "string",
+      "format": "date",
+      "description": "The sleep log date specified in the format YYYY-MM-DD."
+    },
+    "value": {
+      "type": "object",
+      "properties": {
+        "avg": {
+          "type": "number",
+          "description": "The mean of the 1 minute SpO2 levels calculated as a percentage value."
+        },
+        "min": {
+          "type": "number",
+          "description": "The minimum daily SpO2 level calculated as a percentage value."
+        },
+        "max": {
+          "type": "number",
+          "description": "The maximum daily SpO2 level calculated as a percentage value."
+        }
+      },
+      "description": "The SpO2 value."
+    }
+  }
+}

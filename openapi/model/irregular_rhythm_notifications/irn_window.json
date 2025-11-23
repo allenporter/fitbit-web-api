@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "startTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The start time for the analyzable window (representing 5 consecutive minutes of data following the start time)."
+    },
+    "bpmData": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/IrnBpmData"
+      },
+      "description": "List of heart beat data."
+    }
+  }
+}

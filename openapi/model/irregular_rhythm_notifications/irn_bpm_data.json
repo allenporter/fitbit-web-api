@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "dataTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The timestamp of the individual heart beat."
+    },
+    "value": {
+      "type": "integer",
+      "description": "The extrapolated bpm value from the individual heart beat."
+    }
+  }
+}

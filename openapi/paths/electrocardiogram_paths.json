@@ -1,0 +1,7 @@
+{
+  "/1/user/-/ecg/list.json": {
+    "get": {
+      "200": "GetEcgLogListResponse"
+    }
+  }
+}

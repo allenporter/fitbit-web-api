@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "spo2": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SpO2Summary"
+      },
+      "description": "List of SpO2 summaries."
+    }
+  }
+}

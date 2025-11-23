@@ -4024,7 +4024,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetEcgLogListResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -4757,7 +4763,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetIrnAlertsListResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -4784,7 +4796,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetIrnProfileResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -6521,8 +6539,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSpO2SummaryResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -6570,8 +6594,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSpO2SummaryResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -8322,6 +8352,153 @@
           }
         }
       },
+      "Spo2Summary": {
+        "type": "object",
+        "properties": {
+          "dateTime": {
+            "type": "string",
+            "format": "date",
+            "description": "The sleep log date specified in the format YYYY-MM-DD."
+          },
+          "value": {
+            "type": "object",
+            "properties": {
+              "avg": {
+                "type": "number",
+                "description": "The mean of the 1 minute SpO2 levels calculated as a percentage value."
+              },
+              "min": {
+                "type": "number",
+                "description": "The minimum daily SpO2 level calculated as a percentage value."
+              },
+              "max": {
+                "type": "number",
+                "description": "The maximum daily SpO2 level calculated as a percentage value."
+              }
+            },
+            "description": "The SpO2 value."
+          }
+        }
+      },
+      "GetSpo2SummaryResponse": {
+        "type": "object",
+        "properties": {
+          "spo2": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpO2Summary"
+            },
+            "description": "List of SpO2 summaries."
+          }
+        }
+      },
+      "GetEcgLogListResponse": {
+        "type": "object",
+        "properties": {
+          "ecgReadings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EcgReading"
+            },
+            "description": "List of ECG readings."
+          },
+          "pagination": {
+            "type": "object",
+            "properties": {
+              "afterDate": {
+                "type": "string",
+                "format": "date",
+                "description": "The afterDate parameter of the request."
+              },
+              "beforeDate": {
+                "type": "string",
+                "format": "date",
+                "description": "The beforeDate parameter of the request."
+              },
+              "limit": {
+                "type": "integer",
+                "description": "The limit parameter of the request."
+              },
+              "next": {
+                "type": "string",
+                "description": "The URL of the request that will fetch the next page of results."
+              },
+              "offset": {
+                "type": "integer",
+                "description": "The offset parameter of the request."
+              },
+              "previous": {
+                "type": "string",
+                "description": "The URL of the request that will fetch the previous page of results."
+              },
+              "sort": {
+                "type": "string",
+                "description": "The sort parameter of the request."
+              }
+            }
+          }
+        }
+      },
+      "EcgReading": {
+        "type": "object",
+        "properties": {
+          "startTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date and time when the reading was started on the device."
+          },
+          "averageHeartRate": {
+            "type": "integer",
+            "description": "The average heart rate of the user during the reading."
+          },
+          "resultClassification": {
+            "type": "string",
+            "enum": [
+              "Atrial Fibrillation",
+              "Normal Sinus Rhythm",
+              "Inconclusive",
+              "Inconclusive: High heart rate",
+              "Inconclusive: Low heart rate"
+            ],
+            "description": "The classification of the ECG result."
+          },
+          "waveformSamples": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "An array of integers representing the ECG waveform."
+          },
+          "samplingFrequencyHz": {
+            "type": "integer",
+            "description": "The frequency in hertz at which the Fitbit ECG app sampled the voltage."
+          },
+          "scalingFactor": {
+            "type": "integer",
+            "description": "The scaling factor used to convert waveform samples to ECG voltages in mV (mV = waveformSamples / scalingFactor)."
+          },
+          "numberOfWaveformSamples": {
+            "type": "integer",
+            "description": "The total number of samples in the reading."
+          },
+          "leadNumber": {
+            "type": "integer",
+            "description": "The ECG lead being used to take the reading."
+          },
+          "featureVersion": {
+            "type": "string",
+            "description": "The version of the ECG app running on the device."
+          },
+          "deviceName": {
+            "type": "string",
+            "description": "Hardware name of the compatible wrist-worn device used to take the reading."
+          },
+          "firmwareVersion": {
+            "type": "string",
+            "description": "Firmware running on the compatible wrist-worn device used to take the reading."
+          }
+        }
+      },
       "GetHeartRateTimeSeriesResponse": {
         "type": "object",
         "properties": {
@@ -8389,6 +8566,136 @@
           "restingHeartRate": {
             "type": "integer",
             "description": "The user’s calculated resting heart rate."
+          }
+        }
+      },
+      "IrnAlert": {
+        "type": "object",
+        "properties": {
+          "alertTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The start time for the irregular rhythm detection."
+          },
+          "detectedTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The end time for the irregular rhythm detection."
+          },
+          "serviceVersion": {
+            "type": "string",
+            "description": "The version of the service running when the alert was produced."
+          },
+          "algoVersion": {
+            "type": "string",
+            "description": "The version of the algorithm running when the alert was produced."
+          },
+          "deviceType": {
+            "type": "string",
+            "description": "The name of the device who generated the alert."
+          },
+          "windows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IrnWindow"
+            },
+            "description": "List of analyzable windows."
+          }
+        }
+      },
+      "IrnWindow": {
+        "type": "object",
+        "properties": {
+          "startTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The start time for the analyzable window (representing 5 consecutive minutes of data following the start time)."
+          },
+          "bpmData": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IrnBpmData"
+            },
+            "description": "List of heart beat data."
+          }
+        }
+      },
+      "GetIrnProfileResponse": {
+        "type": "object",
+        "properties": {
+          "onboarded": {
+            "type": "boolean",
+            "description": "Whether or not the user has onboarded onto the IRN feature."
+          },
+          "enrolled": {
+            "type": "boolean",
+            "description": "Whether or not the user is currently enrolled in having their data processed for IRN alerts."
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The timestamp of the last piece of analyzable data synced by the user (displayed as local time)."
+          }
+        }
+      },
+      "GetIrnAlertsListResponse": {
+        "type": "object",
+        "properties": {
+          "alerts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IrnAlert"
+            },
+            "description": "List of IRN alerts."
+          },
+          "pagination": {
+            "type": "object",
+            "properties": {
+              "afterDate": {
+                "type": "string",
+                "format": "date",
+                "description": "The afterDate parameter of the request."
+              },
+              "beforeDate": {
+                "type": "string",
+                "format": "date",
+                "description": "The beforeDate parameter of the request."
+              },
+              "limit": {
+                "type": "integer",
+                "description": "The limit parameter of the request."
+              },
+              "next": {
+                "type": "string",
+                "description": "The URL of the request that will fetch the next page of results."
+              },
+              "offset": {
+                "type": "integer",
+                "description": "The offset parameter of the request."
+              },
+              "previous": {
+                "type": "string",
+                "description": "The URL of the request that will fetch the previous page of results."
+              },
+              "sort": {
+                "type": "string",
+                "description": "The sort parameter of the request."
+              }
+            }
+          }
+        }
+      },
+      "IrnBpmData": {
+        "type": "object",
+        "properties": {
+          "dataTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The timestamp of the individual heart beat."
+          },
+          "value": {
+            "type": "integer",
+            "description": "The extrapolated bpm value from the individual heart beat."
           }
         }
       },
