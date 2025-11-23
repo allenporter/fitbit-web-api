@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.7.0 (2025-11-23)
+
+### Features
+
+- Add subscription response schemas and update paths in readme ([`c763ead`](https://github.com/allenporter/fitbit-web-api/commit/c763eadd58a6c527704c56de1267a0154e82a857))
+
+
 ## v2.6.0 (2025-11-23)
 
 ### Features
