@@ -46,7 +46,6 @@ coverage.xml
 .hypothesis/
 venv/
 .venv/
-.python-version
 .pytest_cache
 
 # Translations

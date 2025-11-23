@@ -1,11 +1,11 @@
-[tool.poetry]
+[project]
 name = "fitbit-web-api"
 version = "2.0.1"
 description = "Fitbit Web API"
-authors = ["Simone Chemelli <simone.chemelli@gmail.com>"]
-license = "Apache Software License 2.0"
+authors = [{ name = "Simone Chemelli", email = "simone.chemelli@gmail.com" }]
+requires-python = ">=3.13,<4"
 readme = "README.md"
-repository = "https://github.com/chemelli74/fitbit-web-api"
+license = "Apache-2.0"
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
@@ -13,41 +13,50 @@ classifiers = [
     "Operating System :: OS Independent",
     "Topic :: Software Development :: Libraries",
 ]
-packages = [
-    { include = "fitbit_web_api" },
+dependencies = [
+    "six>=1.16.0,<2",
+    "python-dateutil>=2.8.2,<3",
+    "setuptools>=69.0.2,<81.0.0",
+    "urllib3>=2.1.0,<3",
+    "aiohttp>=3.9, <3.10",
+    "pydantic>=2",
+    "typing-extensions>=4.7.1",
+    "aiohttp-retry>=2.9.1,<3",
 ]
 
-[tool.poetry.urls]
+[project.urls]
+Repository = "https://github.com/chemelli74/fitbit-web-api"
 "Bug Tracker" = "https://github.com/chemelli74/fitbit-web-api/issues"
-"Changelog" = "https://github.com/chemelli74/fitbit-web-api/blob/main/CHANGELOG.md"
+Changelog = "https://github.com/chemelli74/fitbit-web-api/blob/main/CHANGELOG.md"
 
-[tool.poetry.dependencies]
-python = "^3.11"
-six = "^1.16.0"
-python-dateutil = "^2.8.2"
-setuptools = ">=69.0.2,<81.0.0"
-urllib3 = "^2.1.0"
-aiohttp = ">=3.9, <3.10"
-pydantic = ">=2"
-typing-extensions = ">=4.7.1"
-aiohttp-retry = "^2.9.1"
+[dependency-groups]
+dev = [
+    "pytest>= 7.2.1",
+    "pytest-cov>= 2.8.1",
+    "types-python-dateutil>= 2.8.19.14",
+    "black>=25.1.0,<26",
+    "ruff>=0.12.7,<0.15.0",
+]
 
-[tool.poetry.group.dev.dependencies]
-pytest = ">= 7.2.1"
-pytest-cov = ">= 2.8.1"
-types-python-dateutil = ">= 2.8.19.14"
-black = "^25.1.0"
-ruff = ">=0.12.7,<0.15.0"
+[tool.hatch.build.targets.sdist]
+include = ["fitbit_web_api"]
+
+[tool.hatch.build.targets.wheel]
+include = ["fitbit_web_api"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.pylint.'MESSAGES CONTROL']
 extension-pkg-whitelist = "pydantic"
 
 [tool.semantic_release]
-version_toml = ["pyproject.toml:tool.poetry.version"]
+version_toml = ["pyproject.toml:project.version"]
 version_variables = [
     "fitbit_web_api/__init__.py:__version__",
 ]
-build_command = "pip install poetry && poetry build"
+build_command = "pip install uv && uv sync"
 
 [tool.semantic_release.changelog]
 exclude_commit_patterns = [
@@ -139,7 +148,3 @@ exclude = [
 [[tool.mypy.overrides]]
 module = "tests.*"
 allow_untyped_defs = true
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
