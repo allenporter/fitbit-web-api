@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "dateTime": {
+      "type": "string",
+      "format": "date",
+      "description": "The datetime which the resource was recorded."
+    },
+    "value": {
+      "type": "string",
+      "description": "The value of the resource."
+    }
+  }
+}
