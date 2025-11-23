@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "breathingRate": {
+      "type": "number",
+      "description": "The average number of breaths taken per minute."
+    }
+  }
+}

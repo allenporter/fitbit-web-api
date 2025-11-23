@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "cardioscore": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CardioScoreSummary"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "/1/user/-/cardioscore/date/{date}.json": {
+    "get": {
+      "200": "GetVo2MaxSummaryResponse"
+    }
+  },
+  "/1/user/-/cardioscore/date/{startDate}/{endDate}.json": {
+    "get": {
+      "200": "GetVo2MaxSummaryResponse"
+    }
+  }
+}
