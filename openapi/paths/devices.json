@@ -1,0 +1,20 @@
+{
+  "/1/user/-/devices.json": {
+    "get": {
+      "200": "GetDevicesResponse"
+    }
+  },
+  "/1/user/-/devices/tracker/{tracker-id}/alarms.json": {
+    "get": {
+      "200": "GetAlarmsResponse"
+    },
+    "post": {
+      "201": "AlarmResponse"
+    }
+  },
+  "/1/user/-/devices/tracker/{tracker-id}/alarms/{alarm-id}.json": {
+    "post": {
+      "201": "AlarmResponse"
+    }
+  }
+}

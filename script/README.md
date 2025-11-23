@@ -41,7 +41,96 @@ missing information. To add a new response schema, one would typically:
 ## Schema Coverage
 
 This section tracks the progress of enhancing the OpenAPI schema with response
-objects.
+objects. The Fitbit Web API schema includes all of the request objects, but it is
+missing the response objects. Therefore we have a process of reviewing the FitBit
+developer documentation examples and building a schema out of this. Once the schema
+is created, we use the above tooling to re-generate the code.
+
+### Adding new response schemas:
+
+Follow these steps to add a new schema:
+
+1. Review the [Developer Guide](https://dev.fitbit.com/build/reference/web-api/) to get an idea for all the things that exist in the API. Each sub-page has more details on the specific request/response object types. For example,
+   the page https://dev.fitbit.com/build/reference/web-api/sleep/get-sleep-goals/ is for the `Get Sleep Goal` command
+   which has a response description:
+
+```
+Element Name	Description
+goal : bedtime	The user's targeted bedtime.
+goal : minDuration	Length of the sleep goal period in minutes.
+goal : updatedOn	The timestamp that the goal was created/updated.
+goal : wakeupTime	The user's targeted wake time.
+```
+
+With example output:
+
+```json
+{
+  "goal": {
+    "bedtime": "22:00",
+    "minDuration": 600,
+    "updatedOn": "2025-05-01T20:00:00.000Z",
+    "wakeupTime": "07:00"
+  }
+}
+```
+
+2. Review the existing schemas in `openapi/model/` and the list below of completed API categories to understand what already exists. These are the examples of the output format we want.
+
+Example `openapi/model/sleep_goal.json` content:
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "updatedOn": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The timestamp that the goal was created/updated."
+    },
+    "minDuration": {
+      "type": "integer",
+      "description": "Length of the sleep goal period in minutes."
+    },
+    "bedtime": {
+      "type": "string",
+      "description": "The user's targeted bedtime."
+    },
+    "wakeupTime": {
+      "type": "string",
+      "description": "The user's targeted wake time."
+    }
+  }
+}
+```
+
+3. Specific paths to their response object types are mapped in `paths/` such as these examples:
+
+Example from `openapi/model/sleep/get_sleep_goal_response.json`:
+
+```
+{
+  "type": "object",
+  "properties": {
+    "goal": {
+      "$ref": "#/components/schemas/SleepGoal"
+    }
+  }
+}
+```
+
+Example from `openapi/paths/sleep_paths.json`:
+
+```json
+{
+  "/1.2/user/-/sleep/goal.json": {
+    "get": {
+      "200": "GetSleepGoalResponse"
+    },
+    ...
+  }
+}
+```
 
 ### Completed API Categories
 

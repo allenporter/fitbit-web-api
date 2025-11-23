@@ -3473,7 +3473,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetDevicesResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -3521,7 +3527,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAlarmsResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -3606,8 +3618,14 @@
             "content": {}
           },
           "201": {
-            "description": "The request has been fulfilled and resulted in a new resouce being created.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlarmResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -3721,8 +3739,14 @@
             "content": {}
           },
           "201": {
-            "description": "The request has been fulfilled and resulted in a new resouce being created.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlarmResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -7533,6 +7557,139 @@
         "properties": {
           "user": {
             "$ref": "#/components/schemas/User"
+          }
+        }
+      },
+      "GetAlarmsResponse": {
+        "type": "object",
+        "properties": {
+          "trackerAlarms": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Alarm"
+            },
+            "description": "List of alarms."
+          }
+        }
+      },
+      "Alarm": {
+        "type": "object",
+        "properties": {
+          "alarmId": {
+            "type": "integer",
+            "description": "Numerical value representing the alarm ID."
+          },
+          "deleted": {
+            "type": "boolean",
+            "description": "Indicates if an alarm has been deleted."
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Indicates if an alarm is enabled."
+          },
+          "recurring": {
+            "type": "boolean",
+            "description": "Indicates if an alarm is recurring."
+          },
+          "snoozeCount": {
+            "type": "integer",
+            "description": "Indicates the number of times the alarm will snooze."
+          },
+          "snoozeLength": {
+            "type": "integer",
+            "description": "Indicates the time in minutes between snooze periods."
+          },
+          "syncedToDevice": {
+            "type": "boolean",
+            "description": "Indicates if the alarm is synced to the device."
+          },
+          "time": {
+            "type": "string",
+            "description": "The time and UTC offset for the specified alarm."
+          },
+          "vibe": {
+            "type": "string",
+            "description": "Returns the type of vibration configured.",
+            "enum": ["DEFAULT"]
+          },
+          "weekDays": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "MONDAY",
+                "TUESDAY",
+                "WEDNESDAY",
+                "THURSDAY",
+                "FRIDAY",
+                "SATURDAY",
+                "SUNDAY"
+              ]
+            },
+            "description": "Returns the recurring days of the week which the alarm is set."
+          },
+          "label": {
+            "type": "string",
+            "description": "Label or name for the alarm."
+          }
+        }
+      },
+      "AlarmResponse": {
+        "type": "object",
+        "properties": {
+          "trackerAlarm": {
+            "$ref": "#/components/schemas/Alarm",
+            "description": "The alarm object."
+          }
+        }
+      },
+      "GetDevicesResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Device"
+        },
+        "description": "List of devices."
+      },
+      "Device": {
+        "type": "object",
+        "properties": {
+          "battery": {
+            "type": "string",
+            "description": "Returns the battery level of the device.",
+            "enum": ["High", "Medium", "Low", "Empty"]
+          },
+          "batteryLevel": {
+            "type": "integer",
+            "description": "Returns the battery level percentage of the device."
+          },
+          "deviceVersion": {
+            "type": "string",
+            "description": "The product name of the device."
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Lists any unique features supported by the device."
+          },
+          "id": {
+            "type": "string",
+            "description": "The device ID."
+          },
+          "lastSyncTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp representing the last time the device was sync'd with the Fitbit mobile application."
+          },
+          "mac": {
+            "type": "string",
+            "description": "Mac ID number"
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of device.",
+            "enum": ["TRACKER", "SCALE"]
           }
         }
       }

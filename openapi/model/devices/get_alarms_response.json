@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "trackerAlarms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Alarm"
+      },
+      "description": "List of alarms."
+    }
+  }
+}
