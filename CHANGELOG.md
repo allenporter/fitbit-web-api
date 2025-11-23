@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.4.0 (2025-11-23)
+
+### Features
+
+- Add breathing rate and cardio fitness score response schemas ([`658472f`](https://github.com/allenporter/fitbit-web-api/commit/658472f92c0a8f9289ace17b1d8a8884636869e9))
+
+
 ## v2.3.0 (2025-11-23)
 
 ### Features
