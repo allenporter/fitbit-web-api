@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "time": {
+      "type": "string",
+      "description": "The time the intraday heart rate value was recorded"
+    },
+    "value": {
+      "type": "number",
+      "description": "The intraday heart rate value"
+    }
+  }
+}

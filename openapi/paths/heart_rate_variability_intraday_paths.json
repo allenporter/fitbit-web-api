@@ -1,0 +1,12 @@
+{
+  "/1/user/-/hrv/date/{date}/all.json": {
+    "get": {
+      "200": "GetHrvIntradayResponse"
+    }
+  },
+  "/1/user/-/hrv/date/{startDate}/{endDate}/all.json": {
+    "get": {
+      "200": "GetHrvIntradayResponse"
+    }
+  }
+}

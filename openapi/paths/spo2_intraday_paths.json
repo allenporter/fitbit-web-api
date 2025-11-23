@@ -1,0 +1,12 @@
+{
+  "/1/user/-/spo2/date/{date}/all.json": {
+    "get": {
+      "200": "GetSpO2IntradayResponse"
+    }
+  },
+  "/1/user/-/spo2/date/{startDate}/{endDate}/all.json": {
+    "get": {
+      "200": "GetSpO2IntradayResponse"
+    }
+  }
+}

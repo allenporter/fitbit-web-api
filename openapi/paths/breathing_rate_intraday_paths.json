@@ -1,0 +1,12 @@
+{
+  "/1/user/-/br/date/{date}/all.json": {
+    "get": {
+      "200": "GetBreathingRateIntradayResponse"
+    }
+  },
+  "/1/user/-/br/date/{startDate}/{endDate}/all.json": {
+    "get": {
+      "200": "GetBreathingRateIntradayResponse"
+    }
+  }
+}

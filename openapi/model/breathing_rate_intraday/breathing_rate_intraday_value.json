@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "lightSleepSummary": {
+      "$ref": "#/components/schemas/BreathingRateIntradaySummary"
+    },
+    "deepSleepSummary": {
+      "$ref": "#/components/schemas/BreathingRateIntradaySummary"
+    },
+    "remSleepSummary": {
+      "$ref": "#/components/schemas/BreathingRateIntradaySummary"
+    },
+    "fullSleepSummary": {
+      "$ref": "#/components/schemas/BreathingRateIntradaySummary"
+    }
+  }
+}

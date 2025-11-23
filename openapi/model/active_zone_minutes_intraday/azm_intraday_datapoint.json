@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "time": {
+      "type": "string",
+      "description": "The time of the recorded resource."
+    },
+    "value": {
+      "$ref": "#/components/schemas/AzmValue"
+    }
+  }
+}

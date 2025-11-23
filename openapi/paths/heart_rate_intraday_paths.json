@@ -1,0 +1,22 @@
+{
+  "/1/user/-/activities/heart/date/{date}/1d/{detail-level}.json": {
+    "get": {
+      "200": "GetHeartRateIntradayResponse"
+    }
+  },
+  "/1/user/-/activities/heart/date/{date}/1d/{detail-level}/time/{start-time}/{end-time}.json": {
+    "get": {
+      "200": "GetHeartRateIntradayResponse"
+    }
+  },
+  "/1/user/-/activities/heart/date/{date}/{end-date}/{detail-level}.json": {
+    "get": {
+      "200": "GetHeartRateIntradayResponse"
+    }
+  },
+  "/1/user/-/activities/heart/date/{date}/{end-date}/{detail-level}/time/{start-time}/{end-time}.json": {
+    "get": {
+      "200": "GetHeartRateIntradayResponse"
+    }
+  }
+}

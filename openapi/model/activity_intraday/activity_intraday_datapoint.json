@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "time": {
+      "type": "string",
+      "description": "The time of the recorded resource."
+    },
+    "value": {
+      "type": "number",
+      "description": "The specified resource's value at the time it is recorded."
+    },
+    "level": {
+      "type": "integer",
+      "description": "Numerical value representing the user's activity-level at the moment when the resource was recorded. 0 = sedentary 1 = lightly active 2 = fairly/moderately active 3 = very active Returned only when resource = calories."
+    },
+    "mets": {
+      "type": "integer",
+      "description": "METs value at the moment when the resource was recorded. Returned only when resource = calories."
+    }
+  }
+}

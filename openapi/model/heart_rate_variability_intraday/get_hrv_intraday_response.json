@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "hrv": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dateTime": {
+            "type": "string",
+            "format": "date"
+          },
+          "minutes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HrvIntradayMinute"
+            }
+          }
+        }
+      }
+    }
+  }
+}
