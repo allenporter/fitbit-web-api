@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "dateTime": {
+      "type": "string",
+      "format": "date",
+      "description": "The sleep log date specified in the format YYYY-MM-DD."
+    },
+    "value": {
+      "$ref": "#/components/schemas/BreathingRateValue"
+    }
+  }
+}

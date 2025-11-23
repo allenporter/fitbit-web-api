@@ -3334,8 +3334,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetBreathingRateSummaryResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -3383,8 +3389,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetBreathingRateSummaryResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -3510,8 +3522,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetVo2MaxSummaryResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -3559,8 +3577,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetVo2MaxSummaryResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -7122,6 +7146,39 @@
           }
         }
       },
+      "BreathingRateValue": {
+        "type": "object",
+        "properties": {
+          "breathingRate": {
+            "type": "number",
+            "description": "The average number of breaths taken per minute."
+          }
+        }
+      },
+      "GetBreathingRateSummaryResponse": {
+        "type": "object",
+        "properties": {
+          "br": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BreathingRateSummary"
+            }
+          }
+        }
+      },
+      "BreathingRateSummary": {
+        "type": "object",
+        "properties": {
+          "dateTime": {
+            "type": "string",
+            "format": "date",
+            "description": "The sleep log date specified in the format YYYY-MM-DD."
+          },
+          "value": {
+            "$ref": "#/components/schemas/BreathingRateValue"
+          }
+        }
+      },
       "GetSleepLogByDateResponse": {
         "type": "object",
         "properties": {
@@ -8483,6 +8540,39 @@
           "value": {
             "type": "string",
             "description": "The specified resource's daily total."
+          }
+        }
+      },
+      "CardioScoreSummary": {
+        "type": "object",
+        "properties": {
+          "dateTime": {
+            "type": "string",
+            "format": "date",
+            "description": "The date specified in the format YYYY-MM-DD."
+          },
+          "value": {
+            "$ref": "#/components/schemas/Vo2MaxValue"
+          }
+        }
+      },
+      "GetVo2MaxSummaryResponse": {
+        "type": "object",
+        "properties": {
+          "cardioscore": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CardioScoreSummary"
+            }
+          }
+        }
+      },
+      "Vo2MaxValue": {
+        "type": "object",
+        "properties": {
+          "vo2Max": {
+            "type": "string",
+            "description": "The displayable value of VO2 Max in mL/kg/min."
           }
         }
       },

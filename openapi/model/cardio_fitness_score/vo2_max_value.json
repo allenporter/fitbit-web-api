@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "vo2Max": {
+      "type": "string",
+      "description": "The displayable value of VO2 Max in mL/kg/min."
+    }
+  }
+}
