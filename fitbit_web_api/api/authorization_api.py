@@ -16,6 +16,8 @@ from typing_extensions import Annotated
 
 from fitbit_web_api.api_client import ApiClient, RequestSerialized
 from fitbit_web_api.api_response import ApiResponse
+from fitbit_web_api.models.oauth2_introspect import Oauth2Introspect
+from fitbit_web_api.models.oauth2_token import Oauth2Token
 from fitbit_web_api.rest import RESTResponseType
 
 
@@ -49,7 +51,7 @@ class AuthorizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> Oauth2Introspect:
         """
         Retrieve the active state of an OAuth 2.0 token
 
@@ -87,7 +89,7 @@ class AuthorizationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "Oauth2Introspect",
             "400": None,
             "401": None,
             "409": None,
@@ -118,7 +120,7 @@ class AuthorizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[Oauth2Introspect]:
         """
         Retrieve the active state of an OAuth 2.0 token
 
@@ -156,7 +158,7 @@ class AuthorizationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "Oauth2Introspect",
             "400": None,
             "401": None,
             "409": None,
@@ -225,7 +227,7 @@ class AuthorizationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "Oauth2Introspect",
             "400": None,
             "401": None,
             "409": None,
@@ -263,6 +265,12 @@ class AuthorizationApi:
         if token is not None:
             _form_params.append(("token", token))
         # process the body parameter
+
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -354,7 +362,7 @@ class AuthorizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> Oauth2Token:
         """
         Get OAuth 2 access token
 
@@ -413,7 +421,7 @@ class AuthorizationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "Oauth2Token",
             "400": None,
             "401": None,
             "409": None,
@@ -489,7 +497,7 @@ class AuthorizationApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[Oauth2Token]:
         """
         Get OAuth 2 access token
 
@@ -548,7 +556,7 @@ class AuthorizationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "Oauth2Token",
             "400": None,
             "401": None,
             "409": None,
@@ -683,7 +691,7 @@ class AuthorizationApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "Oauth2Token",
             "400": None,
             "401": None,
             "409": None,
@@ -749,6 +757,12 @@ class AuthorizationApi:
             _header_params["Authorization"] = authorization
         # process the form parameters
         # process the body parameter
+
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
 
         # authentication setting
         _auth_settings: List[str] = []

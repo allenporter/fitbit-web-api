@@ -9,7 +9,7 @@ All URIs are relative to *https://api.fitbit.com*
 
 # **get_heart_by_date_period**
 
-> get_heart_by_date_period(var_date, period)
+> GetHeartRateTimeSeriesResponse get_heart_by_date_period(var_date, period)
 
 Get Heart Rate Time Series
 
@@ -21,6 +21,7 @@ Returns the time series data in the specified range for a given resource in the 
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_heart_rate_time_series_response import GetHeartRateTimeSeriesResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -46,7 +47,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Heart Rate Time Series
-        await api_instance.get_heart_by_date_period(var_date, period)
+        api_response = await api_instance.get_heart_by_date_period(var_date, period)
+        print("The response of HeartRateTimeSeriesApi->get_heart_by_date_period:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling HeartRateTimeSeriesApi->get_heart_by_date_period: %s\n" % e)
 ```
@@ -60,7 +63,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetHeartRateTimeSeriesResponse**](GetHeartRateTimeSeriesResponse.md)
 
 ### Authorization
 
@@ -69,13 +72,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                       | Response headers |
 | ----------- | ----------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                               | -                |
+| **200**     | A successful request.                                             | -                |
 | **401**     | The request requires user authentication.                         | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it. | -                |
 
@@ -83,7 +86,7 @@ void (empty response body)
 
 # **get_heart_by_date_range**
 
-> get_heart_by_date_range(base_date, end_date)
+> GetHeartRateTimeSeriesResponse get_heart_by_date_range(base_date, end_date)
 
 Get Heart Rate Time Series
 
@@ -95,6 +98,7 @@ Returns the time series data in the specified range for a given resource in the 
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_heart_rate_time_series_response import GetHeartRateTimeSeriesResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -120,7 +124,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Heart Rate Time Series
-        await api_instance.get_heart_by_date_range(base_date, end_date)
+        api_response = await api_instance.get_heart_by_date_range(base_date, end_date)
+        print("The response of HeartRateTimeSeriesApi->get_heart_by_date_range:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling HeartRateTimeSeriesApi->get_heart_by_date_range: %s\n" % e)
 ```
@@ -134,7 +140,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetHeartRateTimeSeriesResponse**](GetHeartRateTimeSeriesResponse.md)
 
 ### Authorization
 
@@ -143,13 +149,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                       | Response headers |
 | ----------- | ----------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                               | -                |
+| **200**     | A successful request.                                             | -                |
 | **401**     | The request requires user authentication.                         | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it. | -                |
 

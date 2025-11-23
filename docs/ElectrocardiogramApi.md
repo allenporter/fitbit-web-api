@@ -8,7 +8,7 @@ All URIs are relative to *https://api.fitbit.com*
 
 # **get_ecg_log_list**
 
-> get_ecg_log_list(sort, offset, limit, before_date=before_date, after_date=after_date)
+> GetEcgLogListResponse get_ecg_log_list(sort, offset, limit, before_date=before_date, after_date=after_date)
 
 Get ECG Log List
 
@@ -20,6 +20,7 @@ This endpoint is used for querying the user's on-device ECG readings.
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_ecg_log_list_response import GetEcgLogListResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -48,7 +49,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get ECG Log List
-        await api_instance.get_ecg_log_list(sort, offset, limit, before_date=before_date, after_date=after_date)
+        api_response = await api_instance.get_ecg_log_list(sort, offset, limit, before_date=before_date, after_date=after_date)
+        print("The response of ElectrocardiogramApi->get_ecg_log_list:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ElectrocardiogramApi->get_ecg_log_list: %s\n" % e)
 ```
@@ -65,7 +68,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetEcgLogListResponse**](GetEcgLogListResponse.md)
 
 ### Authorization
 
@@ -74,7 +77,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 

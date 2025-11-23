@@ -17,7 +17,20 @@ from typing_extensions import Annotated
 
 from fitbit_web_api.api_client import ApiClient, RequestSerialized
 from fitbit_web_api.api_response import ApiResponse
+from fitbit_web_api.models.food import Food
+from fitbit_web_api.models.food_locale import FoodLocale
+from fitbit_web_api.models.food_unit import FoodUnit
+from fitbit_web_api.models.get_food_goals_response import GetFoodGoalsResponse
+from fitbit_web_api.models.get_food_log_response import GetFoodLogResponse
+from fitbit_web_api.models.get_food_response import GetFoodResponse
+from fitbit_web_api.models.get_frequent_foods_response import GetFrequentFoodsResponse
+from fitbit_web_api.models.get_meal_response import GetMealResponse
+from fitbit_web_api.models.get_meals_response import GetMealsResponse
+from fitbit_web_api.models.get_recent_foods_response import GetRecentFoodsResponse
+from fitbit_web_api.models.get_water_goal_response import GetWaterGoalResponse
+from fitbit_web_api.models.get_water_log_response import GetWaterLogResponse
 from fitbit_web_api.models.meal import Meal
+from fitbit_web_api.models.search_foods_response import SearchFoodsResponse
 from fitbit_web_api.rest import RESTResponseType
 
 
@@ -1157,6 +1170,260 @@ class NutritionApi:
         return self.api_client.param_serialize(
             method="POST",
             resource_path="/1/user/-/foods/log.json",
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth,
+        )
+
+    @validate_call
+    async def add_meal(
+        self,
+        meal: Annotated[Meal, Field(description="Meal to create")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> None:
+        """
+        Create Meal
+
+        Creates a meal with the given food contained in the post body.
+
+        :param meal: Meal to create (required)
+        :type meal: Meal
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """
+        _param = self._add_meal_serialize(
+            meal=meal,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index,
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            "200": None,
+            "400": None,
+            "401": None,
+            "403": None,
+        }
+        response_data = await self.api_client.call_api(
+            *_param, _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+    @validate_call
+    async def add_meal_with_http_info(
+        self,
+        meal: Annotated[Meal, Field(description="Meal to create")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[None]:
+        """
+        Create Meal
+
+        Creates a meal with the given food contained in the post body.
+
+        :param meal: Meal to create (required)
+        :type meal: Meal
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """
+        _param = self._add_meal_serialize(
+            meal=meal,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index,
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            "200": None,
+            "400": None,
+            "401": None,
+            "403": None,
+        }
+        response_data = await self.api_client.call_api(
+            *_param, _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+    @validate_call
+    async def add_meal_without_preload_content(
+        self,
+        meal: Annotated[Meal, Field(description="Meal to create")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """
+        Create Meal
+
+        Creates a meal with the given food contained in the post body.
+
+        :param meal: Meal to create (required)
+        :type meal: Meal
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """
+        _param = self._add_meal_serialize(
+            meal=meal,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index,
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            "200": None,
+            "400": None,
+            "401": None,
+            "403": None,
+        }
+        response_data = await self.api_client.call_api(
+            *_param, _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+    def _add_meal_serialize(
+        self,
+        meal,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+        _host = None
+
+        _collection_formats: Dict[str, str] = {}
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if meal is not None:
+            _body_params = meal
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params["Content-Type"] = _content_type
+        else:
+            _default_content_type = self.api_client.select_header_content_type(
+                ["application/json"]
+            )
+            if _default_content_type is not None:
+                _header_params["Content-Type"] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = ["oauth2"]
+
+        return self.api_client.param_serialize(
+            method="POST",
+            resource_path="/1/user/-/meals.json",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -3695,7 +3962,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> List[Food]:
         """
         Get Favorite Foods
 
@@ -3730,7 +3997,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "List[Food]",
             "400": None,
             "401": None,
             "403": None,
@@ -3758,7 +4025,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[List[Food]]:
         """
         Get Favorite Foods
 
@@ -3793,7 +4060,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "List[Food]",
             "400": None,
             "401": None,
             "403": None,
@@ -3856,7 +4123,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "List[Food]",
             "400": None,
             "401": None,
             "403": None,
@@ -3891,6 +4158,12 @@ class NutritionApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
 
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
@@ -3930,7 +4203,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> GetFoodLogResponse:
         """
         Get Food Logs
 
@@ -3968,7 +4241,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetFoodLogResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -4002,7 +4275,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[GetFoodLogResponse]:
         """
         Get Food Logs
 
@@ -4040,7 +4313,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetFoodLogResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -4112,7 +4385,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetFoodLogResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -4151,6 +4424,12 @@ class NutritionApi:
         # process the form parameters
         # process the body parameter
 
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
+
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
 
@@ -4183,7 +4462,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> GetFoodGoalsResponse:
         """
         Get Food Goals
 
@@ -4218,7 +4497,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetFoodGoalsResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -4246,7 +4525,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[GetFoodGoalsResponse]:
         """
         Get Food Goals
 
@@ -4281,7 +4560,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetFoodGoalsResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -4344,7 +4623,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetFoodGoalsResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -4380,6 +4659,12 @@ class NutritionApi:
         # process the form parameters
         # process the body parameter
 
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
+
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
 
@@ -4413,7 +4698,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> GetFoodResponse:
         """
         Get Food
 
@@ -4451,7 +4736,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetFoodResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -4480,7 +4765,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[GetFoodResponse]:
         """
         Get Food
 
@@ -4518,7 +4803,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetFoodResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -4585,7 +4870,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetFoodResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -4624,6 +4909,12 @@ class NutritionApi:
         # process the form parameters
         # process the body parameter
 
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
+
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
 
@@ -4657,7 +4948,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> SearchFoodsResponse:
         """
         Search Foods
 
@@ -4695,7 +4986,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "SearchFoodsResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -4724,7 +5015,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[SearchFoodsResponse]:
         """
         Search Foods
 
@@ -4762,7 +5053,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "SearchFoodsResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -4829,7 +5120,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "SearchFoodsResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -4869,6 +5160,12 @@ class NutritionApi:
         # process the form parameters
         # process the body parameter
 
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
+
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
 
@@ -4901,7 +5198,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> List[FoodLocale]:
         """
         Get Food Locales
 
@@ -4936,7 +5233,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "List[FoodLocale]",
             "400": None,
             "401": None,
             "403": None,
@@ -4964,7 +5261,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[List[FoodLocale]]:
         """
         Get Food Locales
 
@@ -4999,7 +5296,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "List[FoodLocale]",
             "400": None,
             "401": None,
             "403": None,
@@ -5062,7 +5359,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "List[FoodLocale]",
             "400": None,
             "401": None,
             "403": None,
@@ -5098,6 +5395,12 @@ class NutritionApi:
         # process the form parameters
         # process the body parameter
 
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
+
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
 
@@ -5130,7 +5433,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> List[FoodUnit]:
         """
         Get Food Units
 
@@ -5165,7 +5468,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "List[FoodUnit]",
             "400": None,
             "401": None,
             "403": None,
@@ -5193,7 +5496,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[List[FoodUnit]]:
         """
         Get Food Units
 
@@ -5228,7 +5531,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "List[FoodUnit]",
             "400": None,
             "401": None,
             "403": None,
@@ -5291,7 +5594,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "List[FoodUnit]",
             "400": None,
             "401": None,
             "403": None,
@@ -5327,6 +5630,12 @@ class NutritionApi:
         # process the form parameters
         # process the body parameter
 
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
+
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
 
@@ -5359,7 +5668,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> GetFrequentFoodsResponse:
         """
         Get Frequent Foods
 
@@ -5394,7 +5703,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetFrequentFoodsResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -5422,7 +5731,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[GetFrequentFoodsResponse]:
         """
         Get Frequent Foods
 
@@ -5457,7 +5766,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetFrequentFoodsResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -5520,7 +5829,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetFrequentFoodsResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -5556,12 +5865,524 @@ class NutritionApi:
         # process the form parameters
         # process the body parameter
 
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
+
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
 
         return self.api_client.param_serialize(
             method="GET",
             resource_path="/1/user/-/foods/log/frequent.json",
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth,
+        )
+
+    @validate_call
+    async def get_meal(
+        self,
+        user_id: Annotated[
+            StrictStr,
+            Field(
+                description="The encoded ID of the user. Use '-' (dash) for current logged-in user."
+            ),
+        ],
+        meal_id: Annotated[StrictStr, Field(description="The ID of the meal.")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> GetMealResponse:
+        """
+        Get Meal
+
+        Retrieves a single meal created by the user from their food log given the meal id.
+
+        :param user_id: The encoded ID of the user. Use '-' (dash) for current logged-in user. (required)
+        :type user_id: str
+        :param meal_id: The ID of the meal. (required)
+        :type meal_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """  # noqa: E501
+        _param = self._get_meal_serialize(
+            user_id=user_id,
+            meal_id=meal_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index,
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            "200": "GetMealResponse",
+        }
+        response_data = await self.api_client.call_api(
+            *_param, _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+    @validate_call
+    async def get_meal_with_http_info(
+        self,
+        user_id: Annotated[
+            StrictStr,
+            Field(
+                description="The encoded ID of the user. Use '-' (dash) for current logged-in user."
+            ),
+        ],
+        meal_id: Annotated[StrictStr, Field(description="The ID of the meal.")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetMealResponse]:
+        """
+        Get Meal
+
+        Retrieves a single meal created by the user from their food log given the meal id.
+
+        :param user_id: The encoded ID of the user. Use '-' (dash) for current logged-in user. (required)
+        :type user_id: str
+        :param meal_id: The ID of the meal. (required)
+        :type meal_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """  # noqa: E501
+        _param = self._get_meal_serialize(
+            user_id=user_id,
+            meal_id=meal_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index,
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            "200": "GetMealResponse",
+        }
+        response_data = await self.api_client.call_api(
+            *_param, _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+    @validate_call
+    async def get_meal_without_preload_content(
+        self,
+        user_id: Annotated[
+            StrictStr,
+            Field(
+                description="The encoded ID of the user. Use '-' (dash) for current logged-in user."
+            ),
+        ],
+        meal_id: Annotated[StrictStr, Field(description="The ID of the meal.")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """
+        Get Meal
+
+        Retrieves a single meal created by the user from their food log given the meal id.
+
+        :param user_id: The encoded ID of the user. Use '-' (dash) for current logged-in user. (required)
+        :type user_id: str
+        :param meal_id: The ID of the meal. (required)
+        :type meal_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """  # noqa: E501
+        _param = self._get_meal_serialize(
+            user_id=user_id,
+            meal_id=meal_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index,
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            "200": "GetMealResponse",
+        }
+        response_data = await self.api_client.call_api(
+            *_param, _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+    def _get_meal_serialize(
+        self,
+        user_id,
+        meal_id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+        _host = None
+
+        _collection_formats: Dict[str, str] = {}
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if user_id is not None:
+            _path_params["user-id"] = user_id
+        if meal_id is not None:
+            _path_params["meal-id"] = meal_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
+
+        # authentication setting
+        _auth_settings: List[str] = []
+
+        return self.api_client.param_serialize(
+            method="GET",
+            resource_path="/1/user/-/meals/{meal-id}.json",
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth,
+        )
+
+    @validate_call
+    async def get_meals(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> GetMealsResponse:
+        """
+        Get Meals
+
+        Returns a list of meals created by user in the user's food log in the format requested. User creates and manages meals on the Food Log tab on the website.
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """  # noqa: E501
+        _param = self._get_meals_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index,
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            "200": "GetMealsResponse",
+            "400": None,
+            "401": None,
+            "403": None,
+        }
+        response_data = await self.api_client.call_api(
+            *_param, _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+    @validate_call
+    async def get_meals_with_http_info(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[GetMealsResponse]:
+        """
+        Get Meals
+
+        Returns a list of meals created by user in the user's food log in the format requested. User creates and manages meals on the Food Log tab on the website.
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """  # noqa: E501
+        _param = self._get_meals_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index,
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            "200": "GetMealsResponse",
+            "400": None,
+            "401": None,
+            "403": None,
+        }
+        response_data = await self.api_client.call_api(
+            *_param, _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+    @validate_call
+    async def get_meals_without_preload_content(
+        self,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """
+        Get Meals
+
+        Returns a list of meals created by user in the user's food log in the format requested. User creates and manages meals on the Food Log tab on the website.
+
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """  # noqa: E501
+        _param = self._get_meals_serialize(
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index,
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            "200": "GetMealsResponse",
+            "400": None,
+            "401": None,
+            "403": None,
+        }
+        response_data = await self.api_client.call_api(
+            *_param, _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+    def _get_meals_serialize(
+        self,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+        _host = None
+
+        _collection_formats: Dict[str, str] = {}
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
+
+        # authentication setting
+        _auth_settings: List[str] = ["oauth2"]
+
+        return self.api_client.param_serialize(
+            method="GET",
+            resource_path="/1/user/-/meals.json",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -5588,7 +6409,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> GetRecentFoodsResponse:
         """
         Get Recent Foods
 
@@ -5623,7 +6444,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetRecentFoodsResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -5651,7 +6472,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[GetRecentFoodsResponse]:
         """
         Get Recent Foods
 
@@ -5686,7 +6507,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetRecentFoodsResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -5749,7 +6570,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetRecentFoodsResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -5784,6 +6605,12 @@ class NutritionApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
 
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
@@ -5823,7 +6650,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> GetWaterLogResponse:
         """
         Get Water Logs
 
@@ -5861,7 +6688,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetWaterLogResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -5895,7 +6722,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[GetWaterLogResponse]:
         """
         Get Water Logs
 
@@ -5933,7 +6760,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetWaterLogResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -6005,7 +6832,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetWaterLogResponse",
             "400": None,
             "401": None,
             "403": None,
@@ -6044,6 +6871,12 @@ class NutritionApi:
         # process the form parameters
         # process the body parameter
 
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
+
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
 
@@ -6076,7 +6909,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> GetWaterGoalResponse:
         """
         Get Water Goal
 
@@ -6111,7 +6944,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetWaterGoalResponse",
         }
         response_data = await self.api_client.call_api(
             *_param, _request_timeout=_request_timeout
@@ -6136,7 +6969,7 @@ class NutritionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[GetWaterGoalResponse]:
         """
         Get Water Goal
 
@@ -6171,7 +7004,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetWaterGoalResponse",
         }
         response_data = await self.api_client.call_api(
             *_param, _request_timeout=_request_timeout
@@ -6231,7 +7064,7 @@ class NutritionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetWaterGoalResponse",
         }
         response_data = await self.api_client.call_api(
             *_param, _request_timeout=_request_timeout
@@ -6263,6 +7096,12 @@ class NutritionApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
 
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]

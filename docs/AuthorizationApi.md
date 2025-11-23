@@ -10,7 +10,7 @@ All URIs are relative to *https://api.fitbit.com*
 
 # **introspect**
 
-> introspect(token)
+> Oauth2Introspect introspect(token)
 
 Retrieve the active state of an OAuth 2.0 token
 
@@ -22,6 +22,7 @@ Retrieves the active state of an OAuth 2.0 token. It follows https://tools.ietf.
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.oauth2_introspect import Oauth2Introspect
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -46,7 +47,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve the active state of an OAuth 2.0 token
-        await api_instance.introspect(token)
+        api_response = await api_instance.introspect(token)
+        print("The response of AuthorizationApi->introspect:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling AuthorizationApi->introspect: %s\n" % e)
 ```
@@ -59,7 +62,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**Oauth2Introspect**](Oauth2Introspect.md)
 
 ### Authorization
 
@@ -68,7 +71,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -83,7 +86,7 @@ void (empty response body)
 
 # **oauth_token**
 
-> oauth_token(client_id, grant_type, authorization=authorization, code=code, expires_in=expires_in, redirect_uri=redirect_uri, refresh_token=refresh_token, state=state)
+> Oauth2Token oauth_token(client_id, grant_type, authorization=authorization, code=code, expires_in=expires_in, redirect_uri=redirect_uri, refresh_token=refresh_token, state=state)
 
 Get OAuth 2 access token
 
@@ -93,6 +96,7 @@ Retrieves an OAuth 2 access token.
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.oauth2_token import Oauth2Token
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -118,7 +122,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get OAuth 2 access token
-        await api_instance.oauth_token(client_id, grant_type, authorization=authorization, code=code, expires_in=expires_in, redirect_uri=redirect_uri, refresh_token=refresh_token, state=state)
+        api_response = await api_instance.oauth_token(client_id, grant_type, authorization=authorization, code=code, expires_in=expires_in, redirect_uri=redirect_uri, refresh_token=refresh_token, state=state)
+        print("The response of AuthorizationApi->oauth_token:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling AuthorizationApi->oauth_token: %s\n" % e)
 ```
@@ -138,7 +144,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**Oauth2Token**](Oauth2Token.md)
 
 ### Authorization
 
@@ -147,7 +153,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 

@@ -9,7 +9,7 @@ All URIs are relative to *https://api.fitbit.com*
 
 # **get_sp_o2_summary_by_date**
 
-> get_sp_o2_summary_by_date(var_date)
+> GetSpO2SummaryResponse get_sp_o2_summary_by_date(var_date)
 
 Get SpO2 Summary by Date
 
@@ -21,6 +21,7 @@ This endpoint returns the SpO2 summary data for a single date. SpO2 applies spec
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_sp_o2_summary_response import GetSpO2SummaryResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -45,7 +46,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get SpO2 Summary by Date
-        await api_instance.get_sp_o2_summary_by_date(var_date)
+        api_response = await api_instance.get_sp_o2_summary_by_date(var_date)
+        print("The response of SpO2Api->get_sp_o2_summary_by_date:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling SpO2Api->get_sp_o2_summary_by_date: %s\n" % e)
 ```
@@ -58,7 +61,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetSpO2SummaryResponse**](GetSpO2SummaryResponse.md)
 
 ### Authorization
 
@@ -67,13 +70,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                       | Response headers |
 | ----------- | ----------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                               | -                |
+| **200**     | A successful request.                                             | -                |
 | **401**     | The request requires user authentication.                         | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it. | -                |
 
@@ -81,7 +84,7 @@ void (empty response body)
 
 # **get_sp_o2_summary_by_interval**
 
-> get_sp_o2_summary_by_interval(start_date, end_date)
+> GetSpO2SummaryResponse get_sp_o2_summary_by_interval(start_date, end_date)
 
 Get SpO2 Summary by Interval
 
@@ -93,6 +96,7 @@ This endpoint returns the SpO2 summary data for a date range. SpO2 applies speci
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_sp_o2_summary_response import GetSpO2SummaryResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -118,7 +122,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get SpO2 Summary by Interval
-        await api_instance.get_sp_o2_summary_by_interval(start_date, end_date)
+        api_response = await api_instance.get_sp_o2_summary_by_interval(start_date, end_date)
+        print("The response of SpO2Api->get_sp_o2_summary_by_interval:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling SpO2Api->get_sp_o2_summary_by_interval: %s\n" % e)
 ```
@@ -132,7 +138,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetSpO2SummaryResponse**](GetSpO2SummaryResponse.md)
 
 ### Authorization
 
@@ -141,13 +147,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                       | Response headers |
 | ----------- | ----------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                               | -                |
+| **200**     | A successful request.                                             | -                |
 | **401**     | The request requires user authentication.                         | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it. | -                |
 

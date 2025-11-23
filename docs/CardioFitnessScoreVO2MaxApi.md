@@ -9,7 +9,7 @@ All URIs are relative to *https://api.fitbit.com*
 
 # **get_vo2_max_summary_by_date**
 
-> get_vo2_max_summary_by_date(var_date)
+> GetVo2MaxSummaryResponse get_vo2_max_summary_by_date(var_date)
 
 Get VO2 Max Summary by Date
 
@@ -21,6 +21,7 @@ This endpoint returns the Cardio Fitness Score (VO2 Max) data for a single date.
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_vo2_max_summary_response import GetVo2MaxSummaryResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -45,7 +46,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get VO2 Max Summary by Date
-        await api_instance.get_vo2_max_summary_by_date(var_date)
+        api_response = await api_instance.get_vo2_max_summary_by_date(var_date)
+        print("The response of CardioFitnessScoreVO2MaxApi->get_vo2_max_summary_by_date:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling CardioFitnessScoreVO2MaxApi->get_vo2_max_summary_by_date: %s\n" % e)
 ```
@@ -58,7 +61,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetVo2MaxSummaryResponse**](GetVo2MaxSummaryResponse.md)
 
 ### Authorization
 
@@ -67,13 +70,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                       | Response headers |
 | ----------- | ----------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                               | -                |
+| **200**     | A successful request.                                             | -                |
 | **401**     | The request requires user authentication.                         | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it. | -                |
 
@@ -81,7 +84,7 @@ void (empty response body)
 
 # **get_vo2_max_summary_by_interval**
 
-> get_vo2_max_summary_by_interval(start_date, end_date)
+> GetVo2MaxSummaryResponse get_vo2_max_summary_by_interval(start_date, end_date)
 
 Get VO2 Max Summary by Interval
 
@@ -93,6 +96,7 @@ This endpoint returns the Cardio Fitness Score (VO2 Max) data for a date range. 
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_vo2_max_summary_response import GetVo2MaxSummaryResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -118,7 +122,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get VO2 Max Summary by Interval
-        await api_instance.get_vo2_max_summary_by_interval(start_date, end_date)
+        api_response = await api_instance.get_vo2_max_summary_by_interval(start_date, end_date)
+        print("The response of CardioFitnessScoreVO2MaxApi->get_vo2_max_summary_by_interval:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling CardioFitnessScoreVO2MaxApi->get_vo2_max_summary_by_interval: %s\n" % e)
 ```
@@ -132,7 +138,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetVo2MaxSummaryResponse**](GetVo2MaxSummaryResponse.md)
 
 ### Authorization
 
@@ -141,13 +147,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                       | Response headers |
 | ----------- | ----------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                               | -                |
+| **200**     | A successful request.                                             | -                |
 | **401**     | The request requires user authentication.                         | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it. | -                |
 

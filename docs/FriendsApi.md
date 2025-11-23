@@ -9,7 +9,7 @@ All URIs are relative to *https://api.fitbit.com*
 
 # **get_friends**
 
-> get_friends()
+> GetFriendsResponse get_friends()
 
 Get Friends
 
@@ -21,6 +21,7 @@ Returns data of a user's friends in the format requested using units in the unit
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_friends_response import GetFriendsResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -44,7 +45,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Friends
-        await api_instance.get_friends()
+        api_response = await api_instance.get_friends()
+        print("The response of FriendsApi->get_friends:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling FriendsApi->get_friends: %s\n" % e)
 ```
@@ -55,7 +58,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**GetFriendsResponse**](GetFriendsResponse.md)
 
 ### Authorization
 
@@ -64,13 +67,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                            | Response headers |
 | ----------- | ---------------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                                    | -                |
+| **200**     | A successful request.                                                  | -                |
 | **401**     | The request requires user authentication.                              | -                |
 | **403**     | The user&#39;s privacy settings prevent you from seeing their friends. | -                |
 
@@ -78,7 +81,7 @@ void (empty response body)
 
 # **get_friends_leaderboard**
 
-> get_friends_leaderboard()
+> GetFriendsLeaderboardResponse get_friends_leaderboard()
 
 Get Friends Leaderboard
 
@@ -90,6 +93,7 @@ Returns data of a user's friends in the format requested using units in the unit
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_friends_leaderboard_response import GetFriendsLeaderboardResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -113,7 +117,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Friends Leaderboard
-        await api_instance.get_friends_leaderboard()
+        api_response = await api_instance.get_friends_leaderboard()
+        print("The response of FriendsApi->get_friends_leaderboard:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling FriendsApi->get_friends_leaderboard: %s\n" % e)
 ```
@@ -124,7 +130,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**GetFriendsLeaderboardResponse**](GetFriendsLeaderboardResponse.md)
 
 ### Authorization
 
@@ -133,13 +139,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                               | Response headers |
 | ----------- | ----------------------------------------- | ---------------- |
-| **200**     | Successful request.                       | -                |
+| **200**     | A successful request.                     | -                |
 | **401**     | The request requires user authentication. | -                |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

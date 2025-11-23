@@ -8399,7 +8399,7 @@
           }
         }
       },
-      "GetSpo2IntradayResponse": {
+      "GetSpO2IntradayResponse": {
         "type": "object",
         "properties": {
           "spo2": {
@@ -8423,7 +8423,7 @@
           }
         }
       },
-      "Spo2IntradayMinute": {
+      "SpO2IntradayMinute": {
         "type": "object",
         "properties": {
           "minute": {
@@ -8869,7 +8869,7 @@
           }
         }
       },
-      "Spo2Summary": {
+      "SpO2Summary": {
         "type": "object",
         "properties": {
           "dateTime": {
@@ -8897,7 +8897,7 @@
           }
         }
       },
-      "GetSpo2SummaryResponse": {
+      "GetSpO2SummaryResponse": {
         "type": "object",
         "properties": {
           "spo2": {

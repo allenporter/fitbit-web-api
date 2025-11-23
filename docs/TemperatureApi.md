@@ -11,7 +11,7 @@ All URIs are relative to *https://api.fitbit.com*
 
 # **get_temp_core_summary_by_date**
 
-> get_temp_core_summary_by_date(var_date)
+> GetTemperatureCoreSummaryResponse get_temp_core_summary_by_date(var_date)
 
 Get Temperature (Core) Summary by Date
 
@@ -23,6 +23,7 @@ Returns the Temperature (Core) data for a single date. Temperature (Core) data a
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_temperature_core_summary_response import GetTemperatureCoreSummaryResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -47,7 +48,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Temperature (Core) Summary by Date
-        await api_instance.get_temp_core_summary_by_date(var_date)
+        api_response = await api_instance.get_temp_core_summary_by_date(var_date)
+        print("The response of TemperatureApi->get_temp_core_summary_by_date:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling TemperatureApi->get_temp_core_summary_by_date: %s\n" % e)
 ```
@@ -60,7 +63,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetTemperatureCoreSummaryResponse**](GetTemperatureCoreSummaryResponse.md)
 
 ### Authorization
 
@@ -69,13 +72,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                       | Response headers |
 | ----------- | ----------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                               | -                |
+| **200**     | A successful request.                                             | -                |
 | **401**     | The request requires user authentication.                         | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it. | -                |
 
@@ -83,7 +86,7 @@ void (empty response body)
 
 # **get_temp_core_summary_by_interval**
 
-> get_temp_core_summary_by_interval(start_date, end_date)
+> GetTemperatureCoreSummaryResponse get_temp_core_summary_by_interval(start_date, end_date)
 
 Get Temperature (Core) Summary by Interval
 
@@ -95,6 +98,7 @@ Returns Temperature (Core) data for a date range. Temperature (Core) data applie
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_temperature_core_summary_response import GetTemperatureCoreSummaryResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -120,7 +124,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Temperature (Core) Summary by Interval
-        await api_instance.get_temp_core_summary_by_interval(start_date, end_date)
+        api_response = await api_instance.get_temp_core_summary_by_interval(start_date, end_date)
+        print("The response of TemperatureApi->get_temp_core_summary_by_interval:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling TemperatureApi->get_temp_core_summary_by_interval: %s\n" % e)
 ```
@@ -134,7 +140,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetTemperatureCoreSummaryResponse**](GetTemperatureCoreSummaryResponse.md)
 
 ### Authorization
 
@@ -143,13 +149,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                       | Response headers |
 | ----------- | ----------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                               | -                |
+| **200**     | A successful request.                                             | -                |
 | **401**     | The request requires user authentication.                         | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it. | -                |
 
@@ -157,7 +163,7 @@ void (empty response body)
 
 # **get_temp_skin_summary_by_interval**
 
-> get_temp_skin_summary_by_interval(start_date, end_date)
+> GetTemperatureSkinSummaryResponse get_temp_skin_summary_by_interval(start_date, end_date)
 
 Get Temperature (Skin) Summary by Interval
 
@@ -169,6 +175,7 @@ Returns Temperature (Skin) data for a date range. It only returns a value for da
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_temperature_skin_summary_response import GetTemperatureSkinSummaryResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -194,7 +201,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Temperature (Skin) Summary by Interval
-        await api_instance.get_temp_skin_summary_by_interval(start_date, end_date)
+        api_response = await api_instance.get_temp_skin_summary_by_interval(start_date, end_date)
+        print("The response of TemperatureApi->get_temp_skin_summary_by_interval:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling TemperatureApi->get_temp_skin_summary_by_interval: %s\n" % e)
 ```
@@ -208,7 +217,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetTemperatureSkinSummaryResponse**](GetTemperatureSkinSummaryResponse.md)
 
 ### Authorization
 
@@ -217,13 +226,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                       | Response headers |
 | ----------- | ----------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                               | -                |
+| **200**     | A successful request.                                             | -                |
 | **401**     | The request requires user authentication.                         | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it. | -                |
 
@@ -231,7 +240,7 @@ void (empty response body)
 
 # **get_temp_skin_summary_date**
 
-> get_temp_skin_summary_date(var_date)
+> GetTemperatureSkinSummaryResponse get_temp_skin_summary_date(var_date)
 
 Get Temperature (Skin) Summary by Date
 
@@ -243,6 +252,7 @@ Returns the Temperature (Skin) data for a single date. Temperature (Skin) data a
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_temperature_skin_summary_response import GetTemperatureSkinSummaryResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -267,7 +277,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Temperature (Skin) Summary by Date
-        await api_instance.get_temp_skin_summary_date(var_date)
+        api_response = await api_instance.get_temp_skin_summary_date(var_date)
+        print("The response of TemperatureApi->get_temp_skin_summary_date:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling TemperatureApi->get_temp_skin_summary_date: %s\n" % e)
 ```
@@ -280,7 +292,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetTemperatureSkinSummaryResponse**](GetTemperatureSkinSummaryResponse.md)
 
 ### Authorization
 
@@ -289,13 +301,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                       | Response headers |
 | ----------- | ----------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                               | -                |
+| **200**     | A successful request.                                             | -                |
 | **401**     | The request requires user authentication.                         | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it. | -                |
 
