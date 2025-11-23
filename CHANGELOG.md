@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.9.0 (2025-11-23)
+
+### Features
+
+- Add intraday response models ([`7c0adf8`](https://github.com/allenporter/fitbit-web-api/commit/7c0adf82a8d984d7ce3f7c01e83ed97ba7bbac52))
+
+
 ## v2.8.0 (2025-11-23)
 
 ### Features
