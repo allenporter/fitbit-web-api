@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.2.0 (2025-11-23)
+
+### Features
+
+- Add body responses ([`99cbae3`](https://github.com/allenporter/fitbit-web-api/commit/99cbae36e39f2b1f4edb28e3225f9de37a008bd0))
+
+
 ## v2.1.0 (2025-11-23)
 
 ### Features
