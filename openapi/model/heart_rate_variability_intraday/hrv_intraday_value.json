@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "rmssd": {
+      "type": "number",
+      "description": "The Root Mean Square of Successive Differences (RMSSD) between heart beats."
+    },
+    "coverage": {
+      "type": "number",
+      "description": "Data completeness in terms of the number of interbeat intervals."
+    },
+    "hf": {
+      "type": "number",
+      "description": "The power in interbeat interval fluctuations within the high frequency band (0.15 Hz - 0.4 Hz)."
+    },
+    "lf": {
+      "type": "number",
+      "description": "The power in interbeat interval fluctuations within the low frequency band (0.04 Hz - 0.15 Hz)."
+    },
+    "dailyRmssd": {
+      "type": "number",
+      "description": "The Root Mean Square of Successive Differences (RMSSD) between heart beats. (Interval response)"
+    }
+  }
+}

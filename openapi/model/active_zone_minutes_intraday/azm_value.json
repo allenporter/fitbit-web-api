@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "activeZoneMinutes": {
+      "type": "integer",
+      "description": "Total count of active zone minutes earned."
+    },
+    "fatBurnActiveZoneMinutes": {
+      "type": "integer",
+      "description": "The number of active zone minutes in the fat burn heart rate zone."
+    },
+    "cardioActiveZoneMinutes": {
+      "type": "integer",
+      "description": "The number of active zone minutes in the cardio heart rate zone."
+    },
+    "peakActiveZoneMinutes": {
+      "type": "integer",
+      "description": "The number of active zone minutes in the peak heart rate zone."
+    }
+  }
+}

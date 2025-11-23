@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "minute": {
+      "type": "string",
+      "description": "A measurement taken at a given time."
+    },
+    "value": {
+      "$ref": "#/components/schemas/HrvIntradayValue"
+    }
+  }
+}

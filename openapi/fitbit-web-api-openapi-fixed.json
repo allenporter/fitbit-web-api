@@ -463,7 +463,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAzmIntradayResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -534,7 +540,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAzmIntradayResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -597,7 +609,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAzmIntradayResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -678,7 +696,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAzmIntradayResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -1295,7 +1319,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetActivityIntradayResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -1369,7 +1399,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetActivityIntradayResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -1471,7 +1507,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetActivityIntradayResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -1563,7 +1605,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetActivityIntradayResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -3446,8 +3494,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetBreathingRateIntradayResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -3495,8 +3549,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetBreathingRateIntradayResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -4290,8 +4350,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetHeartRateIntradayResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -4377,8 +4443,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetHeartRateIntradayResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -4436,8 +4508,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetHeartRateIntradayResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -4513,8 +4591,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetHeartRateIntradayResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -4662,8 +4746,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetHrvIntradayResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -4711,8 +4801,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetHrvIntradayResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -6858,8 +6954,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSpO2IntradayResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -6907,8 +7009,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSpO2IntradayResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -7472,6 +7580,66 @@
           },
           "value": {
             "$ref": "#/components/schemas/BreathingRateValue"
+          }
+        }
+      },
+      "HrvIntradayMinute": {
+        "type": "object",
+        "properties": {
+          "minute": {
+            "type": "string",
+            "description": "A measurement taken at a given time."
+          },
+          "value": {
+            "$ref": "#/components/schemas/HrvIntradayValue"
+          }
+        }
+      },
+      "GetHrvIntradayResponse": {
+        "type": "object",
+        "properties": {
+          "hrv": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "dateTime": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "minutes": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HrvIntradayMinute"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "HrvIntradayValue": {
+        "type": "object",
+        "properties": {
+          "rmssd": {
+            "type": "number",
+            "description": "The Root Mean Square of Successive Differences (RMSSD) between heart beats."
+          },
+          "coverage": {
+            "type": "number",
+            "description": "Data completeness in terms of the number of interbeat intervals."
+          },
+          "hf": {
+            "type": "number",
+            "description": "The power in interbeat interval fluctuations within the high frequency band (0.15 Hz - 0.4 Hz)."
+          },
+          "lf": {
+            "type": "number",
+            "description": "The power in interbeat interval fluctuations within the low frequency band (0.04 Hz - 0.15 Hz)."
+          },
+          "dailyRmssd": {
+            "type": "number",
+            "description": "The Root Mean Square of Successive Differences (RMSSD) between heart beats. (Interval response)"
           }
         }
       },
@@ -8231,6 +8399,89 @@
           }
         }
       },
+      "GetSpo2IntradayResponse": {
+        "type": "object",
+        "properties": {
+          "spo2": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "dateTime": {
+                  "type": "string",
+                  "format": "date",
+                  "description": "The sleep log date specified in the format YYYY-MM-DD."
+                },
+                "minutes": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SpO2IntradayMinute"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Spo2IntradayMinute": {
+        "type": "object",
+        "properties": {
+          "minute": {
+            "type": "string",
+            "description": "The date and time at which the SpO2 measurement was taken."
+          },
+          "value": {
+            "type": "number",
+            "description": "The percentage value of SpO2 calculated at a specific date and time in a single day."
+          }
+        }
+      },
+      "GetBreathingRateIntradayResponse": {
+        "type": "object",
+        "properties": {
+          "br": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "dateTime": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "value": {
+                  "$ref": "#/components/schemas/BreathingRateIntradayValue"
+                }
+              }
+            }
+          }
+        }
+      },
+      "BreathingRateIntradayValue": {
+        "type": "object",
+        "properties": {
+          "lightSleepSummary": {
+            "$ref": "#/components/schemas/BreathingRateIntradaySummary"
+          },
+          "deepSleepSummary": {
+            "$ref": "#/components/schemas/BreathingRateIntradaySummary"
+          },
+          "remSleepSummary": {
+            "$ref": "#/components/schemas/BreathingRateIntradaySummary"
+          },
+          "fullSleepSummary": {
+            "$ref": "#/components/schemas/BreathingRateIntradaySummary"
+          }
+        }
+      },
+      "BreathingRateIntradaySummary": {
+        "type": "object",
+        "properties": {
+          "breathingRate": {
+            "type": "number",
+            "description": "Average number of breaths taken per minute."
+          }
+        }
+      },
       "GetBodyFatLogResponse": {
         "type": "object",
         "properties": {
@@ -8658,6 +8909,81 @@
           }
         }
       },
+      "AzmIntradayDataset": {
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AzmIntradayDatapoint"
+            }
+          },
+          "datasetInterval": {
+            "type": "integer",
+            "description": "The requested detail-level numerical interval"
+          },
+          "datasetType": {
+            "type": "string",
+            "description": "The requested detail-level unit of measure"
+          }
+        }
+      },
+      "GetAzmIntradayResponse": {
+        "type": "object",
+        "properties": {
+          "activities-active-zone-minutes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "dateTime": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "value": {
+                  "$ref": "#/components/schemas/AzmValue"
+                }
+              }
+            }
+          },
+          "activities-active-zone-minutes-intraday": {
+            "$ref": "#/components/schemas/AzmIntradayDataset"
+          }
+        }
+      },
+      "AzmValue": {
+        "type": "object",
+        "properties": {
+          "activeZoneMinutes": {
+            "type": "integer",
+            "description": "Total count of active zone minutes earned."
+          },
+          "fatBurnActiveZoneMinutes": {
+            "type": "integer",
+            "description": "The number of active zone minutes in the fat burn heart rate zone."
+          },
+          "cardioActiveZoneMinutes": {
+            "type": "integer",
+            "description": "The number of active zone minutes in the cardio heart rate zone."
+          },
+          "peakActiveZoneMinutes": {
+            "type": "integer",
+            "description": "The number of active zone minutes in the peak heart rate zone."
+          }
+        }
+      },
+      "AzmIntradayDatapoint": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string",
+            "description": "The time of the recorded resource."
+          },
+          "value": {
+            "$ref": "#/components/schemas/AzmValue"
+          }
+        }
+      },
       "Subscription": {
         "type": "object",
         "properties": {
@@ -9029,6 +9355,52 @@
                 }
               }
             }
+          }
+        }
+      },
+      "HeartRateIntradayDatapoint": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string",
+            "description": "The time the intraday heart rate value was recorded"
+          },
+          "value": {
+            "type": "number",
+            "description": "The intraday heart rate value"
+          }
+        }
+      },
+      "GetHeartRateIntradayResponse": {
+        "type": "object",
+        "properties": {
+          "activities-heart": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HeartRateTimeSeriesDatapoint"
+            }
+          },
+          "activities-heart-intraday": {
+            "$ref": "#/components/schemas/HeartRateIntradayDataset"
+          }
+        }
+      },
+      "HeartRateIntradayDataset": {
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HeartRateIntradayDatapoint"
+            }
+          },
+          "datasetInterval": {
+            "type": "integer",
+            "description": "The requested detail-level numerical interval"
+          },
+          "datasetType": {
+            "type": "string",
+            "description": "The requested detail-level unit of measure"
           }
         }
       },
@@ -10124,6 +10496,105 @@
             "type": "string",
             "description": "The type of device.",
             "enum": ["TRACKER", "SCALE"]
+          }
+        }
+      },
+      "ActivityIntradayDatapoint": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string",
+            "description": "The time of the recorded resource."
+          },
+          "value": {
+            "type": "number",
+            "description": "The specified resource's value at the time it is recorded."
+          },
+          "level": {
+            "type": "integer",
+            "description": "Numerical value representing the user's activity-level at the moment when the resource was recorded. 0 = sedentary 1 = lightly active 2 = fairly/moderately active 3 = very active Returned only when resource = calories."
+          },
+          "mets": {
+            "type": "integer",
+            "description": "METs value at the moment when the resource was recorded. Returned only when resource = calories."
+          }
+        }
+      },
+      "ActivityIntradayDataset": {
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityIntradayDatapoint"
+            }
+          },
+          "datasetInterval": {
+            "type": "integer",
+            "description": "The requested detail-level numerical interval"
+          },
+          "datasetType": {
+            "type": "string",
+            "description": "The requested detail-level unit of measure"
+          }
+        }
+      },
+      "GetActivityIntradayResponse": {
+        "type": "object",
+        "properties": {
+          "activities-calories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-calories-intraday": {
+            "$ref": "#/components/schemas/ActivityIntradayDataset"
+          },
+          "activities-distance": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-distance-intraday": {
+            "$ref": "#/components/schemas/ActivityIntradayDataset"
+          },
+          "activities-elevation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-elevation-intraday": {
+            "$ref": "#/components/schemas/ActivityIntradayDataset"
+          },
+          "activities-floors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-floors-intraday": {
+            "$ref": "#/components/schemas/ActivityIntradayDataset"
+          },
+          "activities-steps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-steps-intraday": {
+            "$ref": "#/components/schemas/ActivityIntradayDataset"
+          },
+          "activities-swimming-strokes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-swimming-strokes-intraday": {
+            "$ref": "#/components/schemas/ActivityIntradayDataset"
           }
         }
       }

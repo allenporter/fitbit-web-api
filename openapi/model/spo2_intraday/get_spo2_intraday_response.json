@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "spo2": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dateTime": {
+            "type": "string",
+            "format": "date",
+            "description": "The sleep log date specified in the format YYYY-MM-DD."
+          },
+          "minutes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpO2IntradayMinute"
+            }
+          }
+        }
+      }
+    }
+  }
+}

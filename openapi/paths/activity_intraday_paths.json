@@ -1,0 +1,22 @@
+{
+  "/1/user/-/activities/{resource-path}/date/{date}/1d/{detail-level}.json": {
+    "get": {
+      "200": "GetActivityIntradayResponse"
+    }
+  },
+  "/1/user/-/activities/{resource-path}/date/{date}/1d/{detail-level}/time/{start-time}/{end-time}.json": {
+    "get": {
+      "200": "GetActivityIntradayResponse"
+    }
+  },
+  "/1/user/-/activities/{resource-path}/date/{base-date}/{end-date}/{detail-level}.json": {
+    "get": {
+      "200": "GetActivityIntradayResponse"
+    }
+  },
+  "/1/user/-/activities/{resource-path}/date/{date}/{end-date}/{detail-level}/time/{start-time}/{end-time}.json": {
+    "get": {
+      "200": "GetActivityIntradayResponse"
+    }
+  }
+}

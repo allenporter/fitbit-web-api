@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "activities-active-zone-minutes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dateTime": {
+            "type": "string",
+            "format": "date"
+          },
+          "value": {
+            "$ref": "#/components/schemas/AzmValue"
+          }
+        }
+      }
+    },
+    "activities-active-zone-minutes-intraday": {
+      "$ref": "#/components/schemas/AzmIntradayDataset"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "minute": {
+      "type": "string",
+      "description": "The date and time at which the SpO2 measurement was taken."
+    },
+    "value": {
+      "type": "number",
+      "description": "The percentage value of SpO2 calculated at a specific date and time in a single day."
+    }
+  }
+}

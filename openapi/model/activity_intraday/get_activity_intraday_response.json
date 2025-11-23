@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "properties": {
+    "activities-calories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-calories-intraday": {
+      "$ref": "#/components/schemas/ActivityIntradayDataset"
+    },
+    "activities-distance": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-distance-intraday": {
+      "$ref": "#/components/schemas/ActivityIntradayDataset"
+    },
+    "activities-elevation": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-elevation-intraday": {
+      "$ref": "#/components/schemas/ActivityIntradayDataset"
+    },
+    "activities-floors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-floors-intraday": {
+      "$ref": "#/components/schemas/ActivityIntradayDataset"
+    },
+    "activities-steps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-steps-intraday": {
+      "$ref": "#/components/schemas/ActivityIntradayDataset"
+    },
+    "activities-swimming-strokes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-swimming-strokes-intraday": {
+      "$ref": "#/components/schemas/ActivityIntradayDataset"
+    }
+  }
+}

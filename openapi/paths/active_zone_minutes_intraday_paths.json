@@ -1,0 +1,22 @@
+{
+  "/1/user/-/activities/active-zone-minutes/date/{date}/1d/{detail-level}.json": {
+    "get": {
+      "200": "GetAzmIntradayResponse"
+    }
+  },
+  "/1/user/-/activities/active-zone-minutes/date/{date}/1d/{detail-level}/time/{start-time}/{end-time}.json": {
+    "get": {
+      "200": "GetAzmIntradayResponse"
+    }
+  },
+  "/1/user/-/activities/active-zone-minutes/date/{start-date}/{end-date}/{detail-level}.json": {
+    "get": {
+      "200": "GetAzmIntradayResponse"
+    }
+  },
+  "/1/user/-/activities/active-zone-minutes/date/{start-date}/{end-date}/time/{start-time}/{end-time}.json": {
+    "get": {
+      "200": "GetAzmIntradayResponse"
+    }
+  }
+}

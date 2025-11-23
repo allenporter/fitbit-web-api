@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "dataset": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityIntradayDatapoint"
+      }
+    },
+    "datasetInterval": {
+      "type": "integer",
+      "description": "The requested detail-level numerical interval"
+    },
+    "datasetType": {
+      "type": "string",
+      "description": "The requested detail-level unit of measure"
+    }
+  }
+}
