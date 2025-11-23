@@ -134,8 +134,11 @@ Example from `openapi/paths/sleep_paths.json`:
 
 ### Completed API Categories
 
+- Active Zone Minutes Time Series
 - Activity
 - Activity Time Series
+- Body
+- Body Time Series
 - Devices
 - Sleep
 - User
@@ -145,11 +148,8 @@ Example from `openapi/paths/sleep_paths.json`:
 The following API categories still need to be updated with response schemas:
 
 - Active Zone Minutes Intraday Time Series
-- Active Zone Minutes Time Series
 - Activity Intraday Time Series
 - Authorization
-- Body
-- Body Time Series
 - Breathing Rate
 - Breathing Rate Intraday
 - Cardio Fitness Score (VO2 Max)

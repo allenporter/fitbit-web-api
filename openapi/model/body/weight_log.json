@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "bmi": {
+      "type": "number",
+      "description": "Calculated BMI."
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Log entry date."
+    },
+    "logId": {
+      "type": "integer",
+      "description": "Weight Log IDs are unique to the user, but not globally unique."
+    },
+    "source": {
+      "type": "string",
+      "description": "The source of the weight log."
+    },
+    "time": {
+      "type": "string",
+      "description": "Time of the measurement."
+    },
+    "weight": {
+      "type": "number",
+      "description": "Weight in the unit system that corresponds to the Accept-Language header provided."
+    }
+  }
+}

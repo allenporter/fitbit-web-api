@@ -2414,7 +2414,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetBodyFatLogResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -2472,7 +2478,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetBodyFatLogResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -2531,7 +2543,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetBodyFatLogResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -2698,7 +2716,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetBodyGoalsResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -2858,7 +2882,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetWeightLogResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -2916,7 +2946,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetWeightLogResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -2975,7 +3011,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetWeightLogResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -3162,7 +3204,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetBodyTimeSeriesResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -3232,7 +3280,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetBodyTimeSeriesResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -7763,6 +7817,122 @@
           }
         }
       },
+      "GetBodyFatLogResponse": {
+        "type": "object",
+        "properties": {
+          "fat": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BodyFatLog"
+            }
+          }
+        }
+      },
+      "GetBodyGoalsResponse": {
+        "type": "object",
+        "properties": {
+          "goal": {
+            "$ref": "#/components/schemas/BodyGoal"
+          }
+        }
+      },
+      "BodyFatLog": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "The date the body fat log was recorded."
+          },
+          "fat": {
+            "type": "number",
+            "description": "The body fat percentage."
+          },
+          "logId": {
+            "type": "integer",
+            "description": "The body fat log Id."
+          },
+          "source": {
+            "type": "string",
+            "description": "The location where the body fat data originated."
+          },
+          "time": {
+            "type": "string",
+            "description": "The timestamp when the body fat log was recorded."
+          }
+        }
+      },
+      "GetWeightLogResponse": {
+        "type": "object",
+        "properties": {
+          "weight": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WeightLog"
+            }
+          }
+        }
+      },
+      "WeightLog": {
+        "type": "object",
+        "properties": {
+          "bmi": {
+            "type": "number",
+            "description": "Calculated BMI."
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "Log entry date."
+          },
+          "logId": {
+            "type": "integer",
+            "description": "Weight Log IDs are unique to the user, but not globally unique."
+          },
+          "source": {
+            "type": "string",
+            "description": "The source of the weight log."
+          },
+          "time": {
+            "type": "string",
+            "description": "Time of the measurement."
+          },
+          "weight": {
+            "type": "number",
+            "description": "Weight in the unit system that corresponds to the Accept-Language header provided."
+          }
+        }
+      },
+      "BodyGoal": {
+        "type": "object",
+        "properties": {
+          "goalType": {
+            "type": "string",
+            "description": "The goal type. Supported: LOSE | GAIN | MAINTAIN"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The goal start date."
+          },
+          "startWeight": {
+            "type": "number",
+            "description": "User's weight when goal was established."
+          },
+          "weight": {
+            "type": "number",
+            "description": "The weight goal to achieve."
+          },
+          "weightThreshold": {
+            "type": "number",
+            "description": "The recommended amount of weight to lose each week to achieve and maintain goal."
+          },
+          "fat": {
+            "type": "number",
+            "description": "The body fat goal to achieve."
+          }
+        }
+      },
       "GetBadgesResponse": {
         "type": "object",
         "properties": {
@@ -8182,6 +8352,43 @@
           "value": {
             "type": "string",
             "description": "The specified resource's daily total."
+          }
+        }
+      },
+      "GetBodyTimeSeriesResponse": {
+        "type": "object",
+        "properties": {
+          "body-bmi": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BodyTimeSeriesDatapoint"
+            }
+          },
+          "body-fat": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BodyTimeSeriesDatapoint"
+            }
+          },
+          "body-weight": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BodyTimeSeriesDatapoint"
+            }
+          }
+        }
+      },
+      "BodyTimeSeriesDatapoint": {
+        "type": "object",
+        "properties": {
+          "dateTime": {
+            "type": "string",
+            "format": "date",
+            "description": "The datetime which the resource was recorded."
+          },
+          "value": {
+            "type": "string",
+            "description": "The value of the resource."
           }
         }
       },

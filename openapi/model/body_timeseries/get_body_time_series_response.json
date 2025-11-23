@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "body-bmi": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BodyTimeSeriesDatapoint"
+      }
+    },
+    "body-fat": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BodyTimeSeriesDatapoint"
+      }
+    },
+    "body-weight": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BodyTimeSeriesDatapoint"
+      }
+    }
+  }
+}

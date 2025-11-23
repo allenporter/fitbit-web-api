@@ -1,0 +1,32 @@
+{
+  "/1/user/-/body/log/fat/date/{date}/{period}.json": {
+    "get": {
+      "200": "GetBodyFatLogResponse"
+    }
+  },
+  "/1/user/-/body/log/fat/date/{base-date}/{end-date}.json": {
+    "get": {
+      "200": "GetBodyFatLogResponse"
+    }
+  },
+  "/1/user/-/body/log/weight/date/{date}/{period}.json": {
+    "get": {
+      "200": "GetWeightLogResponse"
+    }
+  },
+  "/1/user/-/body/log/weight/date/{base-date}/{end-date}.json": {
+    "get": {
+      "200": "GetWeightLogResponse"
+    }
+  },
+  "/1/user/-/body/{resource-path}/date/{date}/{period}.json": {
+    "get": {
+      "200": "GetBodyTimeSeriesResponse"
+    }
+  },
+  "/1/user/-/body/{resource-path}/date/{base-date}/{end-date}.json": {
+    "get": {
+      "200": "GetBodyTimeSeriesResponse"
+    }
+  }
+}

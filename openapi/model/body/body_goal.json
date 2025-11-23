@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "goalType": {
+      "type": "string",
+      "description": "The goal type. Supported: LOSE | GAIN | MAINTAIN"
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "The goal start date."
+    },
+    "startWeight": {
+      "type": "number",
+      "description": "User's weight when goal was established."
+    },
+    "weight": {
+      "type": "number",
+      "description": "The weight goal to achieve."
+    },
+    "weightThreshold": {
+      "type": "number",
+      "description": "The recommended amount of weight to lose each week to achieve and maintain goal."
+    },
+    "fat": {
+      "type": "number",
+      "description": "The body fat goal to achieve."
+    }
+  }
+}

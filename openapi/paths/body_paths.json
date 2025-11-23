@@ -1,0 +1,17 @@
+{
+  "/1/user/-/body/log/{goal-type}/goal.json": {
+    "get": {
+      "200": "GetBodyGoalsResponse"
+    }
+  },
+  "/1/user/-/body/log/fat/date/{date}.json": {
+    "get": {
+      "200": "GetBodyFatLogResponse"
+    }
+  },
+  "/1/user/-/body/log/weight/date/{date}.json": {
+    "get": {
+      "200": "GetWeightLogResponse"
+    }
+  }
+}

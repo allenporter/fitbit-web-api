@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "The date the body fat log was recorded."
+    },
+    "fat": {
+      "type": "number",
+      "description": "The body fat percentage."
+    },
+    "logId": {
+      "type": "integer",
+      "description": "The body fat log Id."
+    },
+    "source": {
+      "type": "string",
+      "description": "The location where the body fat data originated."
+    },
+    "time": {
+      "type": "string",
+      "description": "The timestamp when the body fat log was recorded."
+    }
+  }
+}

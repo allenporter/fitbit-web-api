@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "weight": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WeightLog"
+      }
+    }
+  }
+}
