@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "integer",
+      "description": "Amount of water consumed for each period of the day."
+    },
+    "logId": {
+      "type": "integer",
+      "description": "The water log ID."
+    }
+  }
+}

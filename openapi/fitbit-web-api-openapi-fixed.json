@@ -4824,8 +4824,14 @@
         "operationId": "getFoodsLocales",
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetFoodLocalesResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -4856,7 +4862,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetFoodGoalsResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -4955,7 +4967,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetFoodLogResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -4998,7 +5016,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetWaterLogResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -5029,7 +5053,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetWaterGoalResponse"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -5593,8 +5623,14 @@
         "operationId": "getFavoriteFoods",
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetFavoriteFoodsResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -5624,8 +5660,14 @@
         "operationId": "getFrequentFoods",
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetFrequentFoodsResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -5725,6 +5767,84 @@
         ]
       }
     },
+    "/1/user/-/meals.json": {
+      "get": {
+        "tags": ["Nutrition"],
+        "summary": "Get Meals",
+        "description": "Returns a list of meals created by user in the user's food log in the format requested. User creates and manages meals on the Food Log tab on the website.",
+        "operationId": "getMeals",
+        "responses": {
+          "200": {
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetMealsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request had bad syntax or was inherently impossible to be satified.",
+            "content": {}
+          },
+          "401": {
+            "description": "The request requires user authentication.",
+            "content": {}
+          },
+          "403": {
+            "description": "The server understood the request, but is refusing to fulfill it.",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "oauth2": ["nutrition"]
+          }
+        ]
+      },
+      "post": {
+        "tags": ["Nutrition"],
+        "summary": "Create Meal",
+        "description": "Creates a meal with the given food contained in the post body.",
+        "operationId": "addMeal",
+        "requestBody": {
+          "description": "Meal to create",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Meal"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful request.",
+            "content": {}
+          },
+          "400": {
+            "description": "The request had bad syntax or was inherently impossible to be satified.",
+            "content": {}
+          },
+          "401": {
+            "description": "The request requires user authentication.",
+            "content": {}
+          },
+          "403": {
+            "description": "The server understood the request, but is refusing to fulfill it.",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "oauth2": ["nutrition"]
+          }
+        ],
+        "x-codegen-request-body-name": "meal"
+      }
+    },
     "/1/user/-/meals/{meal-id}.json": {
       "post": {
         "tags": ["Nutrition"],
@@ -5813,6 +5933,45 @@
             "oauth2": ["nutrition"]
           }
         ]
+      },
+      "get": {
+        "summary": "Get Meal",
+        "description": "Retrieves a single meal created by the user from their food log given the meal id.",
+        "operationId": "getMeal",
+        "tags": ["Nutrition"],
+        "parameters": [
+          {
+            "name": "user-id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "-"
+            },
+            "description": "The encoded ID of the user. Use '-' (dash) for current logged-in user."
+          },
+          {
+            "name": "meal-id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the meal.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetMealResponse"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/1/user/-/foods/log/recent.json": {
@@ -5823,8 +5982,14 @@
         "operationId": "getRecentFoods",
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetRecentFoodsResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -5988,8 +6153,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetFoodResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -6019,8 +6190,14 @@
         "operationId": "getFoodsUnits",
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetFoodUnitsResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -6062,7 +6239,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchFoodsResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -7143,19 +7326,24 @@
       "Meal": {
         "type": "object",
         "properties": {
-          "name": {
-            "type": "string",
-            "example": "Breakfast"
-          },
           "description": {
             "type": "string",
-            "example": "I eat every morning"
+            "description": "The description of the meal."
+          },
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "The ID of the meal."
           },
           "mealFoods": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/FoodItem"
+              "$ref": "#/components/schemas/MealFood"
             }
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the meal."
           }
         }
       },
@@ -8880,6 +9068,452 @@
           "vo2Max": {
             "type": "string",
             "description": "The displayable value of VO2 Max in mL/kg/min."
+          }
+        }
+      },
+      "FoodLocale": {
+        "type": "object",
+        "properties": {
+          "barcode": {
+            "type": "boolean",
+            "description": "Whether barcode is supported."
+          },
+          "imageUpload": {
+            "type": "boolean",
+            "description": "Whether image upload is supported."
+          },
+          "label": {
+            "type": "string",
+            "description": "Name of the locale."
+          },
+          "value": {
+            "type": "string",
+            "description": "The locale value."
+          }
+        }
+      },
+      "WaterLog": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "description": "Amount of water consumed for each period of the day."
+          },
+          "logId": {
+            "type": "integer",
+            "description": "The water log ID."
+          }
+        }
+      },
+      "GetFoodUnitsResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/FoodUnit"
+        }
+      },
+      "FoodServing": {
+        "type": "object",
+        "properties": {
+          "multiplier": {
+            "type": "number",
+            "description": "The multiplier for the serving size."
+          },
+          "servingSize": {
+            "type": "number",
+            "description": "The serving size."
+          },
+          "unit": {
+            "$ref": "#/components/schemas/FoodUnit"
+          },
+          "unitId": {
+            "type": "integer",
+            "description": "The ID of the unit."
+          }
+        }
+      },
+      "GetWaterGoalResponse": {
+        "type": "object",
+        "properties": {
+          "goal": {
+            "$ref": "#/components/schemas/WaterGoal"
+          }
+        }
+      },
+      "GetFoodLogResponse": {
+        "type": "object",
+        "properties": {
+          "foods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FoodLogEntry"
+            },
+            "description": "List of food log entries."
+          },
+          "goals": {
+            "$ref": "#/components/schemas/FoodGoals"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/NutritionalValues"
+          }
+        }
+      },
+      "GetMealsResponse": {
+        "type": "object",
+        "properties": {
+          "meals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Meal"
+            }
+          }
+        }
+      },
+      "GetFoodGoalsResponse": {
+        "type": "object",
+        "properties": {
+          "goals": {
+            "$ref": "#/components/schemas/FoodGoals"
+          }
+        }
+      },
+      "GetFrequentFoodsResponse": {
+        "type": "object",
+        "properties": {
+          "foods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Food"
+            }
+          }
+        }
+      },
+      "WaterGoal": {
+        "type": "object",
+        "properties": {
+          "goal": {
+            "type": "integer",
+            "description": "Amount of water to consume daily."
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Water goal's start date."
+          }
+        }
+      },
+      "MealFood": {
+        "type": "object",
+        "properties": {
+          "accessLevel": {
+            "type": "string",
+            "description": "The access level of the food (PUBLIC or PRIVATE)."
+          },
+          "amount": {
+            "type": "number",
+            "format": "float",
+            "description": "The amount of the food."
+          },
+          "brand": {
+            "type": "string",
+            "description": "The brand of the food."
+          },
+          "calories": {
+            "type": "integer",
+            "description": "The number of calories in the food."
+          },
+          "foodId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "The ID of the food."
+          },
+          "locale": {
+            "type": "string",
+            "description": "The locale of the food."
+          },
+          "mealTypeId": {
+            "type": "integer",
+            "description": "The meal type ID."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the food."
+          },
+          "unit": {
+            "$ref": "#/components/schemas/FoodUnit"
+          },
+          "units": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "List of unit IDs available for this food."
+          }
+        }
+      },
+      "Food": {
+        "type": "object",
+        "properties": {
+          "accessLevel": {
+            "type": "string",
+            "enum": ["PUBLIC", "PRIVATE"],
+            "description": "The access level of the food."
+          },
+          "brand": {
+            "type": "string",
+            "description": "The brand of the food."
+          },
+          "calories": {
+            "type": "integer",
+            "description": "The calories in the food."
+          },
+          "defaultServingSize": {
+            "type": "number",
+            "description": "The default serving size."
+          },
+          "defaultUnit": {
+            "$ref": "#/components/schemas/FoodUnit"
+          },
+          "foodId": {
+            "type": "integer",
+            "description": "The ID of the food."
+          },
+          "isGeneric": {
+            "type": "boolean",
+            "description": "Whether the food is generic."
+          },
+          "locale": {
+            "type": "string",
+            "description": "The locale of the food."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the food."
+          },
+          "servings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FoodServing"
+            },
+            "description": "List of servings."
+          },
+          "units": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "List of unit IDs."
+          }
+        }
+      },
+      "NutritionalValues": {
+        "type": "object",
+        "properties": {
+          "calories": {
+            "type": "integer",
+            "description": "Calories."
+          },
+          "carbs": {
+            "type": "number",
+            "description": "Carbohydrates."
+          },
+          "fat": {
+            "type": "number",
+            "description": "Fat."
+          },
+          "fiber": {
+            "type": "number",
+            "description": "Fiber."
+          },
+          "protein": {
+            "type": "number",
+            "description": "Protein."
+          },
+          "sodium": {
+            "type": "number",
+            "description": "Sodium."
+          }
+        }
+      },
+      "GetMealResponse": {
+        "type": "object",
+        "properties": {
+          "meal": {
+            "$ref": "#/components/schemas/Meal"
+          }
+        }
+      },
+      "GetRecentFoodsResponse": {
+        "type": "object",
+        "properties": {
+          "foods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Food"
+            }
+          }
+        }
+      },
+      "FoodLogEntry": {
+        "type": "object",
+        "properties": {
+          "isFavorite": {
+            "type": "boolean",
+            "description": "Whether the food is a favorite."
+          },
+          "logDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date of the log entry."
+          },
+          "logId": {
+            "type": "integer",
+            "description": "The ID of the log entry."
+          },
+          "loggedFood": {
+            "$ref": "#/components/schemas/LoggedFood"
+          },
+          "nutritionalValues": {
+            "$ref": "#/components/schemas/NutritionalValues"
+          }
+        }
+      },
+      "GetFoodLocalesResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/FoodLocale"
+        }
+      },
+      "LoggedFood": {
+        "type": "object",
+        "properties": {
+          "accessLevel": {
+            "type": "string",
+            "enum": ["PUBLIC", "PRIVATE"],
+            "description": "The access level of the food."
+          },
+          "amount": {
+            "type": "number",
+            "description": "The amount of food consumed."
+          },
+          "brand": {
+            "type": "string",
+            "description": "The brand of the food."
+          },
+          "calories": {
+            "type": "integer",
+            "description": "The calories in the food."
+          },
+          "foodId": {
+            "type": "integer",
+            "description": "The ID of the food."
+          },
+          "locale": {
+            "type": "string",
+            "description": "The locale of the food."
+          },
+          "mealTypeId": {
+            "type": "integer",
+            "description": "The meal type ID."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the food."
+          },
+          "unit": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "description": "The ID of the unit."
+              },
+              "name": {
+                "type": "string",
+                "description": "The name of the unit."
+              },
+              "plural": {
+                "type": "string",
+                "description": "The plural name of the unit."
+              }
+            }
+          },
+          "units": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "List of unit IDs."
+          }
+        }
+      },
+      "SearchFoodsResponse": {
+        "type": "object",
+        "properties": {
+          "foods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Food"
+            }
+          }
+        }
+      },
+      "GetWaterLogResponse": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "object",
+            "properties": {
+              "water": {
+                "type": "integer",
+                "description": "Total amount of water consumed for the day."
+              }
+            }
+          },
+          "water": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WaterLog"
+            },
+            "description": "List of water log entries."
+          }
+        }
+      },
+      "FoodGoals": {
+        "type": "object",
+        "properties": {
+          "calories": {
+            "type": "integer",
+            "description": "The daily calorie consumption goal."
+          }
+        }
+      },
+      "FoodUnit": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The ID of the unit."
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the unit."
+          },
+          "plural": {
+            "type": "string",
+            "description": "The plural name of the unit."
+          }
+        }
+      },
+      "GetFavoriteFoodsResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Food"
+        }
+      },
+      "GetFoodResponse": {
+        "type": "object",
+        "properties": {
+          "food": {
+            "$ref": "#/components/schemas/Food"
           }
         }
       },

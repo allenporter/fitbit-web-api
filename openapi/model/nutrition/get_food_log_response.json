@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "foods": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/FoodLogEntry"
+      },
+      "description": "List of food log entries."
+    },
+    "goals": {
+      "$ref": "#/components/schemas/FoodGoals"
+    },
+    "summary": {
+      "$ref": "#/components/schemas/NutritionalValues"
+    }
+  }
+}
