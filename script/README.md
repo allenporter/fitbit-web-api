@@ -151,6 +151,7 @@ Example from `openapi/paths/sleep_paths.json`:
 - Nutrition Time Series
 - Sleep
 - SpO2
+- Subscriptions
 - Temperature
 - User
 
@@ -164,7 +165,6 @@ The following API categories still need to be updated with response schemas:
 - Heart Rate Intraday Time Series
 - Heart Rate Variability Intraday
 - SpO2 Intraday
-- Subscriptions
 
 ## API Generation
 

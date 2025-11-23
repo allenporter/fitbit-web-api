@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "collectionType": {
+      "type": "string",
+      "description": "The collection type of the subscription."
+    },
+    "ownerId": {
+      "type": "string",
+      "description": "The owner ID of the subscription."
+    },
+    "ownerType": {
+      "type": "string",
+      "description": "The owner type of the subscription."
+    },
+    "subscriberId": {
+      "type": "string",
+      "description": "The subscriber ID of the subscription."
+    },
+    "subscriptionId": {
+      "type": "string",
+      "description": "The subscription ID."
+    }
+  }
+}
