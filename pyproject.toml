@@ -22,7 +22,7 @@ packages = [
 "Changelog" = "https://github.com/chemelli74/fitbit-web-api/blob/main/CHANGELOG.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.13"
 six = "^1.16.0"
 python-dateutil = "^2.8.2"
 setuptools = ">=69.0.2,<81.0.0"
