@@ -111,27 +111,23 @@ class SleepLogLevels(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "data": (
-                    [SleepLogLevelsDataInner.from_dict(_item) for _item in obj["data"]]
-                    if obj.get("data") is not None
-                    else None
-                ),
-                "shortData": (
-                    [
-                        SleepLogLevelsDataInner.from_dict(_item)
-                        for _item in obj["shortData"]
-                    ]
-                    if obj.get("shortData") is not None
-                    else None
-                ),
-                "summary": (
-                    dict(
-                        (_k, SleepLogLevelsSummaryValue.from_dict(_v))
-                        for _k, _v in obj["summary"].items()
-                    )
-                    if obj.get("summary") is not None
-                    else None
-                ),
+                "data": [
+                    SleepLogLevelsDataInner.from_dict(_item) for _item in obj["data"]
+                ]
+                if obj.get("data") is not None
+                else None,
+                "shortData": [
+                    SleepLogLevelsDataInner.from_dict(_item)
+                    for _item in obj["shortData"]
+                ]
+                if obj.get("shortData") is not None
+                else None,
+                "summary": dict(
+                    (_k, SleepLogLevelsSummaryValue.from_dict(_v))
+                    for _k, _v in obj["summary"].items()
+                )
+                if obj.get("summary") is not None
+                else None,
             }
         )
         return _obj

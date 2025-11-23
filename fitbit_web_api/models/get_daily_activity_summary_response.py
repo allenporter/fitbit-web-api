@@ -100,21 +100,17 @@ class GetDailyActivitySummaryResponse(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "activities": (
-                    [ActivityLog.from_dict(_item) for _item in obj["activities"]]
-                    if obj.get("activities") is not None
-                    else None
-                ),
-                "goals": (
-                    ActivityGoals.from_dict(obj["goals"])
-                    if obj.get("goals") is not None
-                    else None
-                ),
-                "summary": (
-                    ActivitySummary.from_dict(obj["summary"])
-                    if obj.get("summary") is not None
-                    else None
-                ),
+                "activities": [
+                    ActivityLog.from_dict(_item) for _item in obj["activities"]
+                ]
+                if obj.get("activities") is not None
+                else None,
+                "goals": ActivityGoals.from_dict(obj["goals"])
+                if obj.get("goals") is not None
+                else None,
+                "summary": ActivitySummary.from_dict(obj["summary"])
+                if obj.get("summary") is not None
+                else None,
             }
         )
         return _obj

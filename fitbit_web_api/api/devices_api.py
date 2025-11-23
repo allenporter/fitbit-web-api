@@ -360,7 +360,6 @@ class DevicesApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -379,19 +378,15 @@ class DevicesApi:
             _path_params["tracker-id"] = tracker_id
         # process the query parameters
         if time is not None:
-
             _query_params.append(("time", time))
 
         if enabled is not None:
-
             _query_params.append(("enabled", enabled))
 
         if recurring is not None:
-
             _query_params.append(("recurring", recurring))
 
         if week_days is not None:
-
             _query_params.append(("weekDays", week_days))
 
         # process the header parameters
@@ -667,7 +662,6 @@ class DevicesApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -926,7 +920,6 @@ class DevicesApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1161,7 +1154,6 @@ class DevicesApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1591,7 +1583,6 @@ class DevicesApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1612,27 +1603,21 @@ class DevicesApi:
             _path_params["alarm-id"] = alarm_id
         # process the query parameters
         if time is not None:
-
             _query_params.append(("time", time))
 
         if enabled is not None:
-
             _query_params.append(("enabled", enabled))
 
         if recurring is not None:
-
             _query_params.append(("recurring", recurring))
 
         if week_days is not None:
-
             _query_params.append(("weekDays", week_days))
 
         if snooze_length is not None:
-
             _query_params.append(("snoozeLength", snooze_length))
 
         if snooze_count is not None:
-
             _query_params.append(("snoozeCount", snooze_count))
 
         # process the header parameters

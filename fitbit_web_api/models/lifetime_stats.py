@@ -89,16 +89,12 @@ class LifetimeStats(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "best": (
-                    LifetimeStatsBest.from_dict(obj["best"])
-                    if obj.get("best") is not None
-                    else None
-                ),
-                "lifetime": (
-                    LifetimeStatsLifetime.from_dict(obj["lifetime"])
-                    if obj.get("lifetime") is not None
-                    else None
-                ),
+                "best": LifetimeStatsBest.from_dict(obj["best"])
+                if obj.get("best") is not None
+                else None,
+                "lifetime": LifetimeStatsLifetime.from_dict(obj["lifetime"])
+                if obj.get("lifetime") is not None
+                else None,
             }
         )
         return _obj

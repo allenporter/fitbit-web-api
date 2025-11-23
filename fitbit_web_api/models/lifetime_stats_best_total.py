@@ -100,21 +100,15 @@ class LifetimeStatsBestTotal(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "distance": (
-                    LifetimeStatsBestTotalDistance.from_dict(obj["distance"])
-                    if obj.get("distance") is not None
-                    else None
-                ),
-                "floors": (
-                    LifetimeStatsBestTotalFloors.from_dict(obj["floors"])
-                    if obj.get("floors") is not None
-                    else None
-                ),
-                "steps": (
-                    LifetimeStatsBestTotalSteps.from_dict(obj["steps"])
-                    if obj.get("steps") is not None
-                    else None
-                ),
+                "distance": LifetimeStatsBestTotalDistance.from_dict(obj["distance"])
+                if obj.get("distance") is not None
+                else None,
+                "floors": LifetimeStatsBestTotalFloors.from_dict(obj["floors"])
+                if obj.get("floors") is not None
+                else None,
+                "steps": LifetimeStatsBestTotalSteps.from_dict(obj["steps"])
+                if obj.get("steps") is not None
+                else None,
             }
         )
         return _obj

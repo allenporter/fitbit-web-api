@@ -300,7 +300,6 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -317,7 +316,6 @@ class BodyApi:
         # process the path parameters
         # process the query parameters
         if fat is not None:
-
             _query_params.append(("fat", fat))
 
         if var_date is not None:
@@ -332,7 +330,6 @@ class BodyApi:
                 _query_params.append(("date", var_date))
 
         if time is not None:
-
             _query_params.append(("time", time))
 
         # process the header parameters
@@ -615,7 +612,6 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -632,7 +628,6 @@ class BodyApi:
         # process the path parameters
         # process the query parameters
         if weight is not None:
-
             _query_params.append(("weight", weight))
 
         if var_date is not None:
@@ -647,7 +642,6 @@ class BodyApi:
                 _query_params.append(("date", var_date))
 
         if time is not None:
-
             _query_params.append(("time", time))
 
         # process the header parameters
@@ -880,7 +874,6 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1128,7 +1121,6 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1376,7 +1368,6 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1652,7 +1643,6 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1924,7 +1914,6 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2168,7 +2157,6 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2416,7 +2404,6 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2692,7 +2679,6 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2964,7 +2950,6 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -3220,7 +3205,6 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -3237,7 +3221,6 @@ class BodyApi:
         # process the path parameters
         # process the query parameters
         if fat is not None:
-
             _query_params.append(("fat", fat))
 
         # process the header parameters
@@ -3532,7 +3515,6 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -3549,15 +3531,12 @@ class BodyApi:
         # process the path parameters
         # process the query parameters
         if start_date is not None:
-
             _query_params.append(("startDate", start_date))
 
         if start_weight is not None:
-
             _query_params.append(("startWeight", start_weight))
 
         if weight is not None:
-
             _query_params.append(("weight", weight))
 
         # process the header parameters

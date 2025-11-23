@@ -88,11 +88,9 @@ class GetBadgesResponse(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "badges": (
-                    [Badge.from_dict(_item) for _item in obj["badges"]]
-                    if obj.get("badges") is not None
-                    else None
-                )
+                "badges": [Badge.from_dict(_item) for _item in obj["badges"]]
+                if obj.get("badges") is not None
+                else None
             }
         )
         return _obj

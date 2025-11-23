@@ -293,7 +293,6 @@ class SleepApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -310,11 +309,9 @@ class SleepApi:
         # process the path parameters
         # process the query parameters
         if start_time is not None:
-
             _query_params.append(("startTime", start_time))
 
         if duration is not None:
-
             _query_params.append(("duration", duration))
 
         if var_date is not None:
@@ -564,7 +561,6 @@ class SleepApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -821,7 +817,6 @@ class SleepApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1112,7 +1107,6 @@ class SleepApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1349,7 +1343,6 @@ class SleepApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1701,7 +1694,6 @@ class SleepApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1740,15 +1732,12 @@ class SleepApi:
                 _query_params.append(("afterDate", after_date))
 
         if sort is not None:
-
             _query_params.append(("sort", sort))
 
         if offset is not None:
-
             _query_params.append(("offset", offset))
 
         if limit is not None:
-
             _query_params.append(("limit", limit))
 
         # process the header parameters
@@ -1990,7 +1979,6 @@ class SleepApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2007,7 +1995,6 @@ class SleepApi:
         # process the path parameters
         # process the query parameters
         if min_duration is not None:
-
             _query_params.append(("minDuration", min_duration))
 
         # process the header parameters

@@ -90,11 +90,9 @@ class CreateSleepLogResponse(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "sleep": (
-                    [SleepLog.from_dict(_item) for _item in obj["sleep"]]
-                    if obj.get("sleep") is not None
-                    else None
-                )
+                "sleep": [SleepLog.from_dict(_item) for _item in obj["sleep"]]
+                if obj.get("sleep") is not None
+                else None
             }
         )
         return _obj

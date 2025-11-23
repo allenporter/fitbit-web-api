@@ -100,21 +100,15 @@ class GetSleepLogByDateResponse(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "sleep": (
-                    [SleepLog.from_dict(_item) for _item in obj["sleep"]]
-                    if obj.get("sleep") is not None
-                    else None
-                ),
-                "summary": (
-                    SleepSummary.from_dict(obj["summary"])
-                    if obj.get("summary") is not None
-                    else None
-                ),
-                "meta": (
-                    SleepMeta.from_dict(obj["meta"])
-                    if obj.get("meta") is not None
-                    else None
-                ),
+                "sleep": [SleepLog.from_dict(_item) for _item in obj["sleep"]]
+                if obj.get("sleep") is not None
+                else None,
+                "summary": SleepSummary.from_dict(obj["summary"])
+                if obj.get("summary") is not None
+                else None,
+                "meta": SleepMeta.from_dict(obj["meta"])
+                if obj.get("meta") is not None
+                else None,
             }
         )
         return _obj

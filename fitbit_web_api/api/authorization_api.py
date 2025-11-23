@@ -243,7 +243,6 @@ class AuthorizationApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -709,7 +708,6 @@ class AuthorizationApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -726,31 +724,24 @@ class AuthorizationApi:
         # process the path parameters
         # process the query parameters
         if code is not None:
-
             _query_params.append(("code", code))
 
         if client_id is not None:
-
             _query_params.append(("client_id", client_id))
 
         if expires_in is not None:
-
             _query_params.append(("expires_in", expires_in))
 
         if grant_type is not None:
-
             _query_params.append(("grant_type", grant_type))
 
         if redirect_uri is not None:
-
             _query_params.append(("redirect_uri", redirect_uri))
 
         if refresh_token is not None:
-
             _query_params.append(("refresh_token", refresh_token))
 
         if state is not None:
-
             _query_params.append(("state", state))
 
         # process the header parameters
@@ -985,7 +976,6 @@ class AuthorizationApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}

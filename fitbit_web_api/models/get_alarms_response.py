@@ -90,11 +90,11 @@ class GetAlarmsResponse(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "trackerAlarms": (
-                    [Alarm.from_dict(_item) for _item in obj["trackerAlarms"]]
-                    if obj.get("trackerAlarms") is not None
-                    else None
-                )
+                "trackerAlarms": [
+                    Alarm.from_dict(_item) for _item in obj["trackerAlarms"]
+                ]
+                if obj.get("trackerAlarms") is not None
+                else None
             }
         )
         return _obj

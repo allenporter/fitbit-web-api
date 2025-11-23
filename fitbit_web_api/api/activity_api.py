@@ -439,7 +439,6 @@ class ActivityApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -456,23 +455,18 @@ class ActivityApi:
         # process the path parameters
         # process the query parameters
         if activity_id is not None:
-
             _query_params.append(("activityId", activity_id))
 
         if activity_name is not None:
-
             _query_params.append(("activityName", activity_name))
 
         if manual_calories is not None:
-
             _query_params.append(("manualCalories", manual_calories))
 
         if start_time is not None:
-
             _query_params.append(("startTime", start_time))
 
         if duration_millis is not None:
-
             _query_params.append(("durationMillis", duration_millis))
 
         if var_date is not None:
@@ -487,11 +481,9 @@ class ActivityApi:
                 _query_params.append(("date", var_date))
 
         if distance is not None:
-
             _query_params.append(("distance", distance))
 
         if distance_unit is not None:
-
             _query_params.append(("distanceUnit", distance_unit))
 
         # process the header parameters
@@ -730,7 +722,6 @@ class ActivityApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1001,7 +992,6 @@ class ActivityApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1020,11 +1010,9 @@ class ActivityApi:
             _path_params["period"] = period
         # process the query parameters
         if type is not None:
-
             _query_params.append(("type", type))
 
         if value is not None:
-
             _query_params.append(("value", value))
 
         # process the header parameters
@@ -1257,7 +1245,6 @@ class ActivityApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1505,7 +1492,6 @@ class ActivityApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1756,7 +1742,6 @@ class ActivityApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2007,7 +1992,6 @@ class ActivityApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2245,7 +2229,6 @@ class ActivityApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2600,7 +2583,6 @@ class ActivityApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2639,15 +2621,12 @@ class ActivityApi:
                 _query_params.append(("afterDate", after_date))
 
         if sort is not None:
-
             _query_params.append(("sort", sort))
 
         if offset is not None:
-
             _query_params.append(("offset", offset))
 
         if limit is not None:
-
             _query_params.append(("limit", limit))
 
         # process the header parameters
@@ -2914,7 +2893,6 @@ class ActivityApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2933,7 +2911,6 @@ class ActivityApi:
             _path_params["log-id"] = log_id
         # process the query parameters
         if include_partial_tcx is not None:
-
             _query_params.append(("includePartialTCX", include_partial_tcx))
 
         # process the header parameters
@@ -3163,7 +3140,6 @@ class ActivityApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -3395,7 +3371,6 @@ class ActivityApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -3625,7 +3600,6 @@ class ActivityApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -3855,7 +3829,6 @@ class ActivityApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -4085,7 +4058,6 @@ class ActivityApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
