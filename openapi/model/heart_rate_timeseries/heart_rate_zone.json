@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "caloriesOut": {
+      "type": "number",
+      "description": "Number calories burned with the specified heart rate zone."
+    },
+    "max": {
+      "type": "integer",
+      "description": "Maximum range for the heart rate zone."
+    },
+    "min": {
+      "type": "integer",
+      "description": "Minimum range for the heart rate zone."
+    },
+    "minutes": {
+      "type": "integer",
+      "description": "Number minutes withing the specified heart rate zone."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the heart rate zone."
+    }
+  }
+}

@@ -4097,8 +4097,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetHeartRateTimeSeriesResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -4155,8 +4161,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetHeartRateTimeSeriesResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -4496,8 +4508,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetHrvSummaryResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -4545,8 +4563,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetHrvSummaryResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -7817,6 +7841,43 @@
           }
         }
       },
+      "GetHrvSummaryResponse": {
+        "type": "object",
+        "properties": {
+          "hrv": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HrvSummary"
+            }
+          }
+        }
+      },
+      "HrvSummary": {
+        "type": "object",
+        "properties": {
+          "dateTime": {
+            "type": "string",
+            "format": "date",
+            "description": "The sleep log date specified in the format YYYY-MM-DD."
+          },
+          "value": {
+            "$ref": "#/components/schemas/HrvValue"
+          }
+        }
+      },
+      "HrvValue": {
+        "type": "object",
+        "properties": {
+          "dailyRmssd": {
+            "type": "number",
+            "description": "The Root Mean Square of Successive Differences (RMSSD) between heart beats. It measures short-term variability in the user’s daily heart rate in milliseconds (ms)."
+          },
+          "deepRmssd": {
+            "type": "number",
+            "description": "The Root Mean Square of Successive Differences (RMSSD) between heart beats. It measures short-term variability in the user’s heart rate while in deep sleep, in milliseconds (ms)."
+          }
+        }
+      },
       "GetBodyFatLogResponse": {
         "type": "object",
         "properties": {
@@ -8201,6 +8262,76 @@
         "properties": {
           "user": {
             "$ref": "#/components/schemas/User"
+          }
+        }
+      },
+      "GetHeartRateTimeSeriesResponse": {
+        "type": "object",
+        "properties": {
+          "activities-heart": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HeartRateTimeSeriesDatapoint"
+            }
+          }
+        }
+      },
+      "HeartRateZone": {
+        "type": "object",
+        "properties": {
+          "caloriesOut": {
+            "type": "number",
+            "description": "Number calories burned with the specified heart rate zone."
+          },
+          "max": {
+            "type": "integer",
+            "description": "Maximum range for the heart rate zone."
+          },
+          "min": {
+            "type": "integer",
+            "description": "Minimum range for the heart rate zone."
+          },
+          "minutes": {
+            "type": "integer",
+            "description": "Number minutes withing the specified heart rate zone."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the heart rate zone."
+          }
+        }
+      },
+      "HeartRateTimeSeriesDatapoint": {
+        "type": "object",
+        "properties": {
+          "dateTime": {
+            "type": "string",
+            "format": "date",
+            "description": "Date of the heart rate log."
+          },
+          "value": {
+            "$ref": "#/components/schemas/HeartRateTimeSeriesValue"
+          }
+        }
+      },
+      "HeartRateTimeSeriesValue": {
+        "type": "object",
+        "properties": {
+          "customHeartRateZones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HeartRateZone"
+            }
+          },
+          "heartRateZones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HeartRateZone"
+            }
+          },
+          "restingHeartRate": {
+            "type": "integer",
+            "description": "The user’s calculated resting heart rate."
           }
         }
       },

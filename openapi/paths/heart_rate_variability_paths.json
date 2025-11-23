@@ -1,0 +1,12 @@
+{
+  "/1/user/-/hrv/date/{date}.json": {
+    "get": {
+      "200": "GetHrvSummaryResponse"
+    }
+  },
+  "/1/user/-/hrv/date/{startDate}/{endDate}.json": {
+    "get": {
+      "200": "GetHrvSummaryResponse"
+    }
+  }
+}

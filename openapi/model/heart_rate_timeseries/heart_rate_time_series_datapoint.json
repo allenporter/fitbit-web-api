@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "dateTime": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the heart rate log."
+    },
+    "value": {
+      "$ref": "#/components/schemas/HeartRateTimeSeriesValue"
+    }
+  }
+}

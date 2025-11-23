@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "hrv": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/HrvSummary"
+      }
+    }
+  }
+}
