@@ -26,7 +26,7 @@ docker run --rm -v "${PWD}:/data" openapitools/openapi-generator-cli:v${OPENAPI_
 echo "---"
 echo "Reverting changes to python project setup"
 rm setup.cfg
-git checkout -- pyproject.toml test-requirements.txt .gignore
+git checkout -- pyproject.toml test-requirements.txt .gitignore
 
 echo "---"
 echo "Running ruff to fix code style..."

@@ -11,7 +11,7 @@ All URIs are relative to *https://api.fitbit.com*
 
 # **get_activities_resource_by_date_period**
 
-> get_activities_resource_by_date_period(var_resource_path, var_date, period)
+> GetActivityTimeSeriesResponse get_activities_resource_by_date_period(var_resource_path, var_date, period)
 
 Get Activity Time Series
 
@@ -23,6 +23,7 @@ Returns time series data in the specified range for a given resource in the form
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_activity_time_series_response import GetActivityTimeSeriesResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -49,7 +50,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Activity Time Series
-        await api_instance.get_activities_resource_by_date_period(var_resource_path, var_date, period)
+        api_response = await api_instance.get_activities_resource_by_date_period(var_resource_path, var_date, period)
+        print("The response of ActivityTimeSeriesApi->get_activities_resource_by_date_period:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActivityTimeSeriesApi->get_activities_resource_by_date_period: %s\n" % e)
 ```
@@ -64,7 +67,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetActivityTimeSeriesResponse**](GetActivityTimeSeriesResponse.md)
 
 ### Authorization
 
@@ -73,7 +76,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -88,7 +91,7 @@ void (empty response body)
 
 # **get_activities_resource_by_date_range**
 
-> get_activities_resource_by_date_range(var_resource_path, base_date, end_date)
+> GetActivityTimeSeriesResponse get_activities_resource_by_date_range(var_resource_path, base_date, end_date)
 
 Get Activity Resource by Date Range
 
@@ -100,6 +103,7 @@ Returns activities time series data in the specified range for a given resource.
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_activity_time_series_response import GetActivityTimeSeriesResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -126,7 +130,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Activity Resource by Date Range
-        await api_instance.get_activities_resource_by_date_range(var_resource_path, base_date, end_date)
+        api_response = await api_instance.get_activities_resource_by_date_range(var_resource_path, base_date, end_date)
+        print("The response of ActivityTimeSeriesApi->get_activities_resource_by_date_range:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActivityTimeSeriesApi->get_activities_resource_by_date_range: %s\n" % e)
 ```
@@ -141,7 +147,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetActivityTimeSeriesResponse**](GetActivityTimeSeriesResponse.md)
 
 ### Authorization
 
@@ -150,7 +156,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -165,7 +171,7 @@ void (empty response body)
 
 # **get_activities_tracker_resource_by_date_period**
 
-> get_activities_tracker_resource_by_date_period(var_resource_path, var_date, period)
+> GetActivityTimeSeriesResponse get_activities_tracker_resource_by_date_period(var_resource_path, var_date, period)
 
 Get Activity Time Series
 
@@ -177,6 +183,7 @@ Returns time series data in the specified range for a given resource in the form
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_activity_time_series_response import GetActivityTimeSeriesResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -203,7 +210,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Activity Time Series
-        await api_instance.get_activities_tracker_resource_by_date_period(var_resource_path, var_date, period)
+        api_response = await api_instance.get_activities_tracker_resource_by_date_period(var_resource_path, var_date, period)
+        print("The response of ActivityTimeSeriesApi->get_activities_tracker_resource_by_date_period:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActivityTimeSeriesApi->get_activities_tracker_resource_by_date_period: %s\n" % e)
 ```
@@ -218,7 +227,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetActivityTimeSeriesResponse**](GetActivityTimeSeriesResponse.md)
 
 ### Authorization
 
@@ -227,7 +236,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -242,7 +251,7 @@ void (empty response body)
 
 # **get_activities_tracker_resource_by_date_range**
 
-> get_activities_tracker_resource_by_date_range(var_resource_path, base_date, end_date)
+> GetActivityTimeSeriesResponse get_activities_tracker_resource_by_date_range(var_resource_path, base_date, end_date)
 
 Get Activity Tracker Resource by Date Range Time Series
 
@@ -254,6 +263,7 @@ Returns time series data in the specified range for a given resource.
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_activity_time_series_response import GetActivityTimeSeriesResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -280,7 +290,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Activity Tracker Resource by Date Range Time Series
-        await api_instance.get_activities_tracker_resource_by_date_range(var_resource_path, base_date, end_date)
+        api_response = await api_instance.get_activities_tracker_resource_by_date_range(var_resource_path, base_date, end_date)
+        print("The response of ActivityTimeSeriesApi->get_activities_tracker_resource_by_date_range:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActivityTimeSeriesApi->get_activities_tracker_resource_by_date_range: %s\n" % e)
 ```
@@ -295,7 +307,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetActivityTimeSeriesResponse**](GetActivityTimeSeriesResponse.md)
 
 ### Authorization
 
@@ -304,7 +316,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 

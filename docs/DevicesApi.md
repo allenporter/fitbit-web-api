@@ -78,16 +78,16 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description                                                                 | Response headers |
-| ----------- | --------------------------------------------------------------------------- | ---------------- |
-| **200**     | A successful request.                                                       | -                |
-| **201**     | The request has been fulfilled and resulted in a new resouce being created. | -                |
-| **400**     | The request had bad syntax or was inherently impossible to be satified.     | -                |
-| **401**     | The request requires user authentication.                                   | -                |
+| Status code | Description                                                             | Response headers |
+| ----------- | ----------------------------------------------------------------------- | ---------------- |
+| **200**     | A successful request.                                                   | -                |
+| **201**     | A successful request.                                                   | -                |
+| **400**     | The request had bad syntax or was inherently impossible to be satified. | -                |
+| **401**     | The request requires user authentication.                               | -                |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -167,7 +167,7 @@ void (empty response body)
 
 # **get_alarms**
 
-> get_alarms(tracker_id)
+> GetAlarmsResponse get_alarms(tracker_id)
 
 Get Alarms
 
@@ -179,6 +179,7 @@ Returns alarms for a device
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_alarms_response import GetAlarmsResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -203,7 +204,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Alarms
-        await api_instance.get_alarms(tracker_id)
+        api_response = await api_instance.get_alarms(tracker_id)
+        print("The response of DevicesApi->get_alarms:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling DevicesApi->get_alarms: %s\n" % e)
 ```
@@ -216,7 +219,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetAlarmsResponse**](GetAlarmsResponse.md)
 
 ### Authorization
 
@@ -225,7 +228,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -239,7 +242,7 @@ void (empty response body)
 
 # **get_devices**
 
-> get_devices()
+> List[Device] get_devices()
 
 Get Devices
 
@@ -251,6 +254,7 @@ Returns a list of the Fitbit devices connected to a user's account.
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.device import Device
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -274,7 +278,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Devices
-        await api_instance.get_devices()
+        api_response = await api_instance.get_devices()
+        print("The response of DevicesApi->get_devices:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling DevicesApi->get_devices: %s\n" % e)
 ```
@@ -285,7 +291,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**List[Device]**](Device.md)
 
 ### Authorization
 
@@ -294,7 +300,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -380,15 +386,15 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
-| Status code | Description                                                                 | Response headers |
-| ----------- | --------------------------------------------------------------------------- | ---------------- |
-| **200**     | A successful request.                                                       | -                |
-| **201**     | The request has been fulfilled and resulted in a new resouce being created. | -                |
-| **400**     | The request had bad syntax or was inherently impossible to be satified.     | -                |
-| **401**     | The request requires user authentication.                                   | -                |
+| Status code | Description                                                             | Response headers |
+| ----------- | ----------------------------------------------------------------------- | ---------------- |
+| **200**     | A successful request.                                                   | -                |
+| **201**     | A successful request.                                                   | -                |
+| **400**     | The request had bad syntax or was inherently impossible to be satified. | -                |
+| **401**     | The request requires user authentication.                               | -                |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
