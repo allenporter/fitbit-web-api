@@ -2,7 +2,10 @@
 name = "fitbit-web-api"
 version = "2.0.1"
 description = "Fitbit Web API"
-authors = [{ name = "Simone Chemelli", email = "simone.chemelli@gmail.com" }]
+authors = [
+    { name = "Simone Chemelli", email = "simone.chemelli@gmail.com" },
+    { name = "Allen Porter", email = "allen.porter@gmail.com" }
+]
 requires-python = ">=3.13,<4"
 readme = "README.md"
 license = "Apache-2.0"
