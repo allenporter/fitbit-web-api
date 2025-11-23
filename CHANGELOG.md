@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.3.0 (2025-11-23)
+
+### Features
+
+- Add heart rate related response schemas ([`1976fd0`](https://github.com/allenporter/fitbit-web-api/commit/1976fd0a2676d8b0d8f8a658af8d0cfa6c42e0ce))
+
+
 ## v2.2.0 (2025-11-23)
 
 ### Features
