@@ -13,6 +13,8 @@ docs/ActivityTimeSeriesDatapoint.md
 docs/Alarm.md
 docs/AlarmResponse.md
 docs/AuthorizationApi.md
+docs/AzmTimeSeriesDatapoint.md
+docs/AzmTimeSeriesDatapointValue.md
 docs/Badge.md
 docs/BodyApi.md
 docs/BodyTimeSeriesApi.md
@@ -32,6 +34,7 @@ docs/GetActivityLogListResponse.md
 docs/GetActivityLogListResponsePagination.md
 docs/GetActivityTimeSeriesResponse.md
 docs/GetAlarmsResponse.md
+docs/GetAzmTimeSeriesResponse.md
 docs/GetBadgesResponse.md
 docs/GetDailyActivitySummaryResponse.md
 docs/GetProfileResponse.md
@@ -115,6 +118,8 @@ fitbit_web_api/models/activity_summary_distances_inner.py
 fitbit_web_api/models/activity_time_series_datapoint.py
 fitbit_web_api/models/alarm.py
 fitbit_web_api/models/alarm_response.py
+fitbit_web_api/models/azm_time_series_datapoint.py
+fitbit_web_api/models/azm_time_series_datapoint_value.py
 fitbit_web_api/models/badge.py
 fitbit_web_api/models/create_sleep_goal_response.py
 fitbit_web_api/models/create_sleep_log_response.py
@@ -125,6 +130,7 @@ fitbit_web_api/models/get_activity_log_list_response.py
 fitbit_web_api/models/get_activity_log_list_response_pagination.py
 fitbit_web_api/models/get_activity_time_series_response.py
 fitbit_web_api/models/get_alarms_response.py
+fitbit_web_api/models/get_azm_time_series_response.py
 fitbit_web_api/models/get_badges_response.py
 fitbit_web_api/models/get_daily_activity_summary_response.py
 fitbit_web_api/models/get_profile_response.py

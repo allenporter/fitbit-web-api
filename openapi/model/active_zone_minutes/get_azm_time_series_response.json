@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "activities-active-zone-minutes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AzmTimeSeriesDatapoint"
+      }
+    }
+  }
+}

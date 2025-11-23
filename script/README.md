@@ -36,7 +36,7 @@ missing information. To add a new response schema, one would typically:
 
 1.  Create a new JSON schema file in `openapi/model/` for the response object.
 2.  Create another JSON schema file in `openapi/model/` for the data model if needed.
-3.  Update the `PATH_CONFIG` in `upgrade-schema.py` to link the API path to the new response schema.
+3.  Update the `paths/` with a config file that links the API to the new response schema.
 
 ## Schema Coverage
 
@@ -134,6 +134,9 @@ Example from `openapi/paths/sleep_paths.json`:
 
 ### Completed API Categories
 
+- Activity
+- Activity Time Series
+- Devices
 - Sleep
 - User
 
@@ -143,16 +146,13 @@ The following API categories still need to be updated with response schemas:
 
 - Active Zone Minutes Intraday Time Series
 - Active Zone Minutes Time Series
-- Activity
 - Activity Intraday Time Series
-- Activity Time Series
 - Authorization
 - Body
 - Body Time Series
 - Breathing Rate
 - Breathing Rate Intraday
 - Cardio Fitness Score (VO2 Max)
-- Devices
 - Electrocardiogram
 - Friends
 - Heart Rate Intraday Time Series
