@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.6.0 (2025-11-23)
+
+### Features
+
+- Add friends api response schemas and update paths in readme ([`b7750aa`](https://github.com/allenporter/fitbit-web-api/commit/b7750aa6a5edb5107a3ee04635517a65ac6c175a))
+
+
+### Unknown
+
 ## v2.5.0 (2025-11-23)
 
 ### Features
