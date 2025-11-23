@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.8.0 (2025-11-23)
+
+### Features
+
+- Add oauth2 token and introspect schemas, update authorization paths ([`d43ba4e`](https://github.com/allenporter/fitbit-web-api/commit/d43ba4e3518e26ae92c59a033b1a2a4e35b901d7))
+
+
 ## v2.7.0 (2025-11-23)
 
 ### Features
