@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.10.0 (2025-11-23)
+
+### Features
+
+- Generate client for all updated schema ([`004a35a`](https://github.com/allenporter/fitbit-web-api/commit/004a35a608ba613fc65378a895000246f2c7d6c9))
+
+
 ## v2.9.0 (2025-11-23)
 
 ### Features
