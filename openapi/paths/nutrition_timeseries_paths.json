@@ -1,0 +1,12 @@
+{
+  "/1/user/-/foods/log/{resource-path}/date/{base-date}/{end-date}.json": {
+    "get": {
+      "200": "GetNutritionTimeSeriesResponse"
+    }
+  },
+  "/1/user/-/foods/log/{resource-path}/date/{date}/{period}.json": {
+    "get": {
+      "200": "GetNutritionTimeSeriesResponse"
+    }
+  }
+}

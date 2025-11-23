@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "foods-log-caloriesIn": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/NutritionTimeSeriesDatapoint"
+      }
+    },
+    "foods-log-water": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/NutritionTimeSeriesDatapoint"
+      }
+    }
+  }
+}

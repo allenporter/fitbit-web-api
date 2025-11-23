@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "dateTime": {
+      "type": "string",
+      "format": "date",
+      "description": "The date of the recorded resource."
+    },
+    "value": {
+      "type": "string",
+      "description": "The specified resource's daily total."
+    }
+  }
+}

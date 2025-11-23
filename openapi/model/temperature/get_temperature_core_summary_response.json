@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "tempCore": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TemperatureCoreLog"
+      }
+    }
+  }
+}
