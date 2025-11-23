@@ -32,7 +32,7 @@ def test_sleep_log_model_from_dict(load_test_data: Callable[[str], Any]) -> None
     data: Dict[str, Any] = load_test_data("sleep_log_list.json")
     sleep_data = data["sleep"][0]
     sleep_log = SleepLog.from_dict(sleep_data)
-    
+
     assert sleep_log is not None
     assert sleep_log.date_of_sleep == date(2023, 1, 1)
     assert sleep_log.efficiency == 95

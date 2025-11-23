@@ -36,7 +36,7 @@ async def test_get_sleep_list(
         offset=0,
         limit=1,
     )
-    
+
     assert response.sleep is not None
     assert len(response.sleep) == 1
     sleep_log = response.sleep[0]

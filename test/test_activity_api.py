@@ -36,7 +36,7 @@ async def test_get_activities_log_list(
         offset=0,
         limit=1,
     )
-    
+
     assert response.activities is not None
     assert len(response.activities) == 1
     activity = response.activities[0]

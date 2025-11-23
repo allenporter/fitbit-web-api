@@ -30,7 +30,7 @@ def test_activity_log_model_from_dict(load_test_data: Callable[[str], Any]) -> N
     data: Dict[str, Any] = load_test_data("activity_log_list.json")
     activity_data = data["activities"][0]
     activity_log = ActivityLog.from_dict(activity_data)
-    
+
     assert activity_log is not None
     assert activity_log.activity_id == 51007
     assert activity_log.name == "Walking"
