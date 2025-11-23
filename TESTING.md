@@ -56,7 +56,7 @@ API tests are located in `test/test_<api_name>_api.py`. They use `pytest-asyncio
 
 - **`api_client` fixture**: Provides a configured `ApiClient`.
 - **`responses` fixture**: Used to mock API responses.
-- **`load_test_data` fixture**: Helper to load JSON data from `test/data/`.
+- **`load_test_data` fixture**: Helper to load JSON data from `test/testdata/`.
 
 **Pattern:**
 
@@ -82,7 +82,7 @@ async def test_get_devices(devices_api, responses, load_test_data):
 
 ## Test Data
 
-Test data is stored in `test/data/` as JSON files.
+Test data is stored in `test/testdata/` as JSON files.
 
 - Use `load_test_data("filename.json")` to load this data in your tests.
 - Keep data realistic by using examples from the official documentation.
@@ -98,7 +98,7 @@ To write accurate tests, we need real-world example responses. We use the [Fitbi
 3.  Click on the specific endpoint (e.g., "Get Devices").
 4.  Scroll down to the **Example Response** section.
 5.  Copy the JSON content.
-6.  Create a new file in `test/data/` (e.g., `devices.json`) and paste the content there.
+6.  Create a new file in `test/testdata/` (e.g., `devices.json`) and paste the content there.
 7.  Use this data in your tests to mock the API response.
 
 **Example Workflow:**
@@ -106,5 +106,5 @@ To write accurate tests, we need real-world example responses. We use the [Fitbi
 1.  **Task**: Add tests for "Get Activity Log List".
 2.  **Find Docs**: Navigate to **Activity** -> **Get Activity Log List**.
 3.  **Get Data**: Copy the JSON from "Example Response".
-4.  **Save Data**: Save to `test/data/activity_log_list.json`.
+4.  **Save Data**: Save to `test/testdata/activity_log_list.json`.
 5.  **Write Test**: Create `test/test_activity_api.py`, load the data, mock the endpoint, and assert the parsed objects.

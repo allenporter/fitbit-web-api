@@ -1,0 +1,34 @@
+{
+  "sleep": [
+    {
+      "dateOfSleep": "2023-01-01",
+      "duration": 28800000,
+      "efficiency": 95,
+      "endTime": "2023-01-01T07:00:00.000",
+      "infoCode": 0,
+      "isMainSleep": true,
+      "logId": 9876543210,
+      "minutesAfterWakeup": 0,
+      "minutesAsleep": 480,
+      "minutesAwake": 20,
+      "minutesToFallAsleep": 10,
+      "logType": "auto_detected",
+      "startTime": "2022-12-31T23:00:00.000",
+      "timeInBed": 500,
+      "type": "stages"
+    }
+  ],
+  "pagination": {
+    "afterDate": "2023-01-01",
+    "limit": 1,
+    "next": "https://api.fitbit.com/1.2/user/-/sleep/list.json?offset=1&limit=1&sort=desc&afterDate=2023-01-01",
+    "offset": 0,
+    "previous": "",
+    "sort": "desc"
+  },
+  "summary": {
+    "totalMinutesAsleep": 480,
+    "totalSleepRecords": 1,
+    "totalTimeInBed": 500
+  }
+}
