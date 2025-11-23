@@ -16,10 +16,10 @@ import pprint
 import re  # noqa: F401
 from typing import Any, ClassVar, Dict, List, Optional, Set
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing_extensions import Self
 
-from fitbit_web_api.models.food_item import FoodItem
+from fitbit_web_api.models.meal_food import MealFood
 
 
 class Meal(BaseModel):
@@ -27,10 +27,13 @@ class Meal(BaseModel):
     Meal
     """
 
-    name: Optional[StrictStr] = None
-    description: Optional[StrictStr] = None
-    meal_foods: Optional[List[FoodItem]] = Field(default=None, alias="mealFoods")
-    __properties: ClassVar[List[str]] = ["name", "description", "mealFoods"]
+    description: Optional[StrictStr] = Field(
+        default=None, description="The description of the meal."
+    )
+    id: Optional[StrictInt] = Field(default=None, description="The ID of the meal.")
+    meal_foods: Optional[List[MealFood]] = Field(default=None, alias="mealFoods")
+    name: Optional[StrictStr] = Field(default=None, description="The name of the meal.")
+    __properties: ClassVar[List[str]] = ["description", "id", "mealFoods", "name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,11 +93,12 @@ class Meal(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "name": obj.get("name"),
                 "description": obj.get("description"),
-                "mealFoods": [FoodItem.from_dict(_item) for _item in obj["mealFoods"]]
+                "id": obj.get("id"),
+                "mealFoods": [MealFood.from_dict(_item) for _item in obj["mealFoods"]]
                 if obj.get("mealFoods") is not None
                 else None,
+                "name": obj.get("name"),
             }
         )
         return _obj

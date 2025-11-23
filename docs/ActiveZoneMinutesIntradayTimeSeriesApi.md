@@ -11,7 +11,7 @@ All URIs are relative to *https://api.fitbit.com*
 
 # **get_azmby_date_intraday**
 
-> get_azmby_date_intraday(var_date, detail_level)
+> GetAzmIntradayResponse get_azmby_date_intraday(var_date, detail_level)
 
 Get AZM Intraday by Date
 
@@ -23,6 +23,7 @@ Returns the active zone minutes intraday data for a 24 hour period by specifying
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_azm_intraday_response import GetAzmIntradayResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -48,7 +49,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get AZM Intraday by Date
-        await api_instance.get_azmby_date_intraday(var_date, detail_level)
+        api_response = await api_instance.get_azmby_date_intraday(var_date, detail_level)
+        print("The response of ActiveZoneMinutesIntradayTimeSeriesApi->get_azmby_date_intraday:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActiveZoneMinutesIntradayTimeSeriesApi->get_azmby_date_intraday: %s\n" % e)
 ```
@@ -62,7 +65,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetAzmIntradayResponse**](GetAzmIntradayResponse.md)
 
 ### Authorization
 
@@ -71,7 +74,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -86,7 +89,7 @@ void (empty response body)
 
 # **get_azmby_date_time_series_intraday**
 
-> get_azmby_date_time_series_intraday(var_date, detail_level, start_time, end_time)
+> GetAzmIntradayResponse get_azmby_date_time_series_intraday(var_date, detail_level, start_time, end_time)
 
 Get AZM Intraday by Date
 
@@ -98,6 +101,7 @@ Returns the active zone minutes intraday data for a 24 hour period by specifying
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_azm_intraday_response import GetAzmIntradayResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -125,7 +129,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get AZM Intraday by Date
-        await api_instance.get_azmby_date_time_series_intraday(var_date, detail_level, start_time, end_time)
+        api_response = await api_instance.get_azmby_date_time_series_intraday(var_date, detail_level, start_time, end_time)
+        print("The response of ActiveZoneMinutesIntradayTimeSeriesApi->get_azmby_date_time_series_intraday:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActiveZoneMinutesIntradayTimeSeriesApi->get_azmby_date_time_series_intraday: %s\n" % e)
 ```
@@ -141,7 +147,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetAzmIntradayResponse**](GetAzmIntradayResponse.md)
 
 ### Authorization
 
@@ -150,7 +156,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -165,7 +171,7 @@ void (empty response body)
 
 # **get_azmby_interval_intraday**
 
-> get_azmby_interval_intraday(start_date, end_date, detail_level)
+> GetAzmIntradayResponse get_azmby_interval_intraday(start_date, end_date, detail_level)
 
 Get AZM Intraday by Interval
 
@@ -177,6 +183,7 @@ Returns the active zone minutes intraday data for a 24 hour period by specifying
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_azm_intraday_response import GetAzmIntradayResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -203,7 +210,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get AZM Intraday by Interval
-        await api_instance.get_azmby_interval_intraday(start_date, end_date, detail_level)
+        api_response = await api_instance.get_azmby_interval_intraday(start_date, end_date, detail_level)
+        print("The response of ActiveZoneMinutesIntradayTimeSeriesApi->get_azmby_interval_intraday:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActiveZoneMinutesIntradayTimeSeriesApi->get_azmby_interval_intraday: %s\n" % e)
 ```
@@ -218,7 +227,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetAzmIntradayResponse**](GetAzmIntradayResponse.md)
 
 ### Authorization
 
@@ -227,7 +236,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -242,7 +251,7 @@ void (empty response body)
 
 # **get_azmby_interval_time_series_intraday**
 
-> get_azmby_interval_time_series_intraday(start_date, end_date, detail_level, start_time, end_time)
+> GetAzmIntradayResponse get_azmby_interval_time_series_intraday(start_date, end_date, detail_level, start_time, end_time)
 
 Get AZM Intraday by Interval
 
@@ -254,6 +263,7 @@ Returns the active zone minutes intraday data for a 24 hour period by specifying
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_azm_intraday_response import GetAzmIntradayResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -282,7 +292,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get AZM Intraday by Interval
-        await api_instance.get_azmby_interval_time_series_intraday(start_date, end_date, detail_level, start_time, end_time)
+        api_response = await api_instance.get_azmby_interval_time_series_intraday(start_date, end_date, detail_level, start_time, end_time)
+        print("The response of ActiveZoneMinutesIntradayTimeSeriesApi->get_azmby_interval_time_series_intraday:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActiveZoneMinutesIntradayTimeSeriesApi->get_azmby_interval_time_series_intraday: %s\n" % e)
 ```
@@ -299,7 +311,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetAzmIntradayResponse**](GetAzmIntradayResponse.md)
 
 ### Authorization
 
@@ -308,7 +320,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 

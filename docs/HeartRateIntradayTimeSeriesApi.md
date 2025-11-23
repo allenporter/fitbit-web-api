@@ -11,7 +11,7 @@ All URIs are relative to *https://api.fitbit.com*
 
 # **get_heart_by_date_intraday**
 
-> get_heart_by_date_intraday(var_date, detail_level)
+> GetHeartRateIntradayResponse get_heart_by_date_intraday(var_date, detail_level)
 
 Get Heart Rate Intraday Time Series
 
@@ -23,6 +23,7 @@ Returns the intraday time series for a given resource in the format requested. I
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_heart_rate_intraday_response import GetHeartRateIntradayResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -48,7 +49,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Heart Rate Intraday Time Series
-        await api_instance.get_heart_by_date_intraday(var_date, detail_level)
+        api_response = await api_instance.get_heart_by_date_intraday(var_date, detail_level)
+        print("The response of HeartRateIntradayTimeSeriesApi->get_heart_by_date_intraday:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling HeartRateIntradayTimeSeriesApi->get_heart_by_date_intraday: %s\n" % e)
 ```
@@ -62,7 +65,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetHeartRateIntradayResponse**](GetHeartRateIntradayResponse.md)
 
 ### Authorization
 
@@ -71,13 +74,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                       | Response headers |
 | ----------- | ----------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                               | -                |
+| **200**     | A successful request.                                             | -                |
 | **401**     | The request requires user authentication.                         | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it. | -                |
 
@@ -85,7 +88,7 @@ void (empty response body)
 
 # **get_heart_by_date_range_intraday**
 
-> get_heart_by_date_range_intraday(var_date, end_date, detail_level)
+> GetHeartRateIntradayResponse get_heart_by_date_range_intraday(var_date, end_date, detail_level)
 
 Get Heart Rate Intraday Time Series
 
@@ -97,6 +100,7 @@ Returns the intraday time series for a given resource in the format requested. I
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_heart_rate_intraday_response import GetHeartRateIntradayResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -123,7 +127,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Heart Rate Intraday Time Series
-        await api_instance.get_heart_by_date_range_intraday(var_date, end_date, detail_level)
+        api_response = await api_instance.get_heart_by_date_range_intraday(var_date, end_date, detail_level)
+        print("The response of HeartRateIntradayTimeSeriesApi->get_heart_by_date_range_intraday:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling HeartRateIntradayTimeSeriesApi->get_heart_by_date_range_intraday: %s\n" % e)
 ```
@@ -138,7 +144,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetHeartRateIntradayResponse**](GetHeartRateIntradayResponse.md)
 
 ### Authorization
 
@@ -147,13 +153,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                       | Response headers |
 | ----------- | ----------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                               | -                |
+| **200**     | A successful request.                                             | -                |
 | **401**     | The request requires user authentication.                         | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it. | -                |
 
@@ -161,7 +167,7 @@ void (empty response body)
 
 # **get_heart_by_date_range_timestamp_intraday**
 
-> get_heart_by_date_range_timestamp_intraday(var_date, end_date, detail_level, start_time, end_time)
+> GetHeartRateIntradayResponse get_heart_by_date_range_timestamp_intraday(var_date, end_date, detail_level, start_time, end_time)
 
 Get Heart Rate Intraday Time Series
 
@@ -173,6 +179,7 @@ Returns the intraday time series for a given resource in the format requested. I
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_heart_rate_intraday_response import GetHeartRateIntradayResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -201,7 +208,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Heart Rate Intraday Time Series
-        await api_instance.get_heart_by_date_range_timestamp_intraday(var_date, end_date, detail_level, start_time, end_time)
+        api_response = await api_instance.get_heart_by_date_range_timestamp_intraday(var_date, end_date, detail_level, start_time, end_time)
+        print("The response of HeartRateIntradayTimeSeriesApi->get_heart_by_date_range_timestamp_intraday:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling HeartRateIntradayTimeSeriesApi->get_heart_by_date_range_timestamp_intraday: %s\n" % e)
 ```
@@ -218,7 +227,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetHeartRateIntradayResponse**](GetHeartRateIntradayResponse.md)
 
 ### Authorization
 
@@ -227,13 +236,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                       | Response headers |
 | ----------- | ----------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                               | -                |
+| **200**     | A successful request.                                             | -                |
 | **401**     | The request requires user authentication.                         | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it. | -                |
 
@@ -241,7 +250,7 @@ void (empty response body)
 
 # **get_heart_by_date_timestamp_intraday**
 
-> get_heart_by_date_timestamp_intraday(var_date, detail_level, start_time, end_time)
+> GetHeartRateIntradayResponse get_heart_by_date_timestamp_intraday(var_date, detail_level, start_time, end_time)
 
 Get Heart Rate Intraday Time Series
 
@@ -253,6 +262,7 @@ Returns the intraday time series for a given resource in the format requested. I
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_heart_rate_intraday_response import GetHeartRateIntradayResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -280,7 +290,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Heart Rate Intraday Time Series
-        await api_instance.get_heart_by_date_timestamp_intraday(var_date, detail_level, start_time, end_time)
+        api_response = await api_instance.get_heart_by_date_timestamp_intraday(var_date, detail_level, start_time, end_time)
+        print("The response of HeartRateIntradayTimeSeriesApi->get_heart_by_date_timestamp_intraday:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling HeartRateIntradayTimeSeriesApi->get_heart_by_date_timestamp_intraday: %s\n" % e)
 ```
@@ -296,7 +308,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetHeartRateIntradayResponse**](GetHeartRateIntradayResponse.md)
 
 ### Authorization
 
@@ -305,13 +317,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                       | Response headers |
 | ----------- | ----------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                               | -                |
+| **200**     | A successful request.                                             | -                |
 | **401**     | The request requires user authentication.                         | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it. | -                |
 

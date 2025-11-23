@@ -318,7 +318,7 @@ void (empty response body)
 
 # **get_body_fat_by_date**
 
-> get_body_fat_by_date(var_date)
+> GetBodyFatLogResponse get_body_fat_by_date(var_date)
 
 Get Body Fat Logs
 
@@ -330,6 +330,7 @@ Retreives a list of all user's body fat log entries for a given day in the forma
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_body_fat_log_response import GetBodyFatLogResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -354,7 +355,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Body Fat Logs
-        await api_instance.get_body_fat_by_date(var_date)
+        api_response = await api_instance.get_body_fat_by_date(var_date)
+        print("The response of BodyApi->get_body_fat_by_date:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling BodyApi->get_body_fat_by_date: %s\n" % e)
 ```
@@ -367,7 +370,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetBodyFatLogResponse**](GetBodyFatLogResponse.md)
 
 ### Authorization
 
@@ -376,7 +379,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -390,7 +393,7 @@ void (empty response body)
 
 # **get_body_fat_by_date_period**
 
-> get_body_fat_by_date_period(var_date, period)
+> GetBodyFatLogResponse get_body_fat_by_date_period(var_date, period)
 
 Get Body Fat Logs
 
@@ -402,6 +405,7 @@ Retreives a list of all user's body fat log entries for a given day in the forma
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_body_fat_log_response import GetBodyFatLogResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -427,7 +431,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Body Fat Logs
-        await api_instance.get_body_fat_by_date_period(var_date, period)
+        api_response = await api_instance.get_body_fat_by_date_period(var_date, period)
+        print("The response of BodyApi->get_body_fat_by_date_period:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling BodyApi->get_body_fat_by_date_period: %s\n" % e)
 ```
@@ -441,7 +447,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetBodyFatLogResponse**](GetBodyFatLogResponse.md)
 
 ### Authorization
 
@@ -450,7 +456,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -464,7 +470,7 @@ void (empty response body)
 
 # **get_body_fat_by_date_range**
 
-> get_body_fat_by_date_range(base_date, end_date)
+> GetBodyFatLogResponse get_body_fat_by_date_range(base_date, end_date)
 
 Get Body Fat Logs
 
@@ -476,6 +482,7 @@ Retreives a list of all user's body fat log entries for a given day in the forma
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_body_fat_log_response import GetBodyFatLogResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -501,7 +508,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Body Fat Logs
-        await api_instance.get_body_fat_by_date_range(base_date, end_date)
+        api_response = await api_instance.get_body_fat_by_date_range(base_date, end_date)
+        print("The response of BodyApi->get_body_fat_by_date_range:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling BodyApi->get_body_fat_by_date_range: %s\n" % e)
 ```
@@ -515,7 +524,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetBodyFatLogResponse**](GetBodyFatLogResponse.md)
 
 ### Authorization
 
@@ -524,7 +533,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -538,7 +547,7 @@ void (empty response body)
 
 # **get_body_goals**
 
-> get_body_goals(goal_type)
+> GetBodyGoalsResponse get_body_goals(goal_type)
 
 Get Body Goals
 
@@ -550,6 +559,7 @@ Retreives a user's current body fat percentage or weight goal using units in the
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_body_goals_response import GetBodyGoalsResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -574,7 +584,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Body Goals
-        await api_instance.get_body_goals(goal_type)
+        api_response = await api_instance.get_body_goals(goal_type)
+        print("The response of BodyApi->get_body_goals:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling BodyApi->get_body_goals: %s\n" % e)
 ```
@@ -587,7 +599,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetBodyGoalsResponse**](GetBodyGoalsResponse.md)
 
 ### Authorization
 
@@ -596,7 +608,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -610,7 +622,7 @@ void (empty response body)
 
 # **get_weight_by_date**
 
-> get_weight_by_date(var_date)
+> GetWeightLogResponse get_weight_by_date(var_date)
 
 Get Weight Logs
 
@@ -622,6 +634,7 @@ Retreives a list of all user's body weight log entries for a given day using uni
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_weight_log_response import GetWeightLogResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -646,7 +659,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Weight Logs
-        await api_instance.get_weight_by_date(var_date)
+        api_response = await api_instance.get_weight_by_date(var_date)
+        print("The response of BodyApi->get_weight_by_date:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling BodyApi->get_weight_by_date: %s\n" % e)
 ```
@@ -659,7 +674,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetWeightLogResponse**](GetWeightLogResponse.md)
 
 ### Authorization
 
@@ -668,7 +683,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -682,7 +697,7 @@ void (empty response body)
 
 # **get_weight_by_date_period**
 
-> get_weight_by_date_period(var_date, period)
+> GetWeightLogResponse get_weight_by_date_period(var_date, period)
 
 Get Body Fat Logs
 
@@ -694,6 +709,7 @@ Retreives a list of all user's body weight log entries for a given day in the fo
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_weight_log_response import GetWeightLogResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -719,7 +735,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Body Fat Logs
-        await api_instance.get_weight_by_date_period(var_date, period)
+        api_response = await api_instance.get_weight_by_date_period(var_date, period)
+        print("The response of BodyApi->get_weight_by_date_period:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling BodyApi->get_weight_by_date_period: %s\n" % e)
 ```
@@ -733,7 +751,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetWeightLogResponse**](GetWeightLogResponse.md)
 
 ### Authorization
 
@@ -742,7 +760,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -756,7 +774,7 @@ void (empty response body)
 
 # **get_weight_by_date_range**
 
-> get_weight_by_date_range(base_date, end_date)
+> GetWeightLogResponse get_weight_by_date_range(base_date, end_date)
 
 Get Body Fat Logs
 
@@ -768,6 +786,7 @@ Retreives a list of all user's body fat log entries for a given day in the forma
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_weight_log_response import GetWeightLogResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -793,7 +812,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Body Fat Logs
-        await api_instance.get_weight_by_date_range(base_date, end_date)
+        api_response = await api_instance.get_weight_by_date_range(base_date, end_date)
+        print("The response of BodyApi->get_weight_by_date_range:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling BodyApi->get_weight_by_date_range: %s\n" % e)
 ```
@@ -807,7 +828,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetWeightLogResponse**](GetWeightLogResponse.md)
 
 ### Authorization
 
@@ -816,7 +837,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 

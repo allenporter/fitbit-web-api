@@ -16,6 +16,10 @@ from typing_extensions import Annotated
 
 from fitbit_web_api.api_client import ApiClient, RequestSerialized
 from fitbit_web_api.api_response import ApiResponse
+from fitbit_web_api.models.get_subscription_list_response import (
+    GetSubscriptionListResponse,
+)
+from fitbit_web_api.models.subscription import Subscription
 from fitbit_web_api.rest import RESTResponseType
 
 
@@ -58,7 +62,7 @@ class SubscriptionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> Subscription:
         """
         Add a Subscription
 
@@ -99,8 +103,8 @@ class SubscriptionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
-            "201": None,
+            "200": "Subscription",
+            "201": "Subscription",
             "409": None,
         }
         response_data = await self.api_client.call_api(
@@ -138,7 +142,7 @@ class SubscriptionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[Subscription]:
         """
         Add a Subscription
 
@@ -179,8 +183,8 @@ class SubscriptionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
-            "201": None,
+            "200": "Subscription",
+            "201": "Subscription",
             "409": None,
         }
         response_data = await self.api_client.call_api(
@@ -259,8 +263,8 @@ class SubscriptionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
-            "201": None,
+            "200": "Subscription",
+            "201": "Subscription",
             "409": None,
         }
         response_data = await self.api_client.call_api(
@@ -299,6 +303,12 @@ class SubscriptionsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
 
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
@@ -624,7 +634,7 @@ class SubscriptionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> GetSubscriptionListResponse:
         """
         Get a List of Subscriptions
 
@@ -662,7 +672,7 @@ class SubscriptionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetSubscriptionListResponse",
             "201": None,
             "409": None,
         }
@@ -695,7 +705,7 @@ class SubscriptionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[GetSubscriptionListResponse]:
         """
         Get a List of Subscriptions
 
@@ -733,7 +743,7 @@ class SubscriptionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetSubscriptionListResponse",
             "201": None,
             "409": None,
         }
@@ -804,7 +814,7 @@ class SubscriptionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetSubscriptionListResponse",
             "201": None,
             "409": None,
         }
@@ -841,6 +851,12 @@ class SubscriptionsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
 
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]

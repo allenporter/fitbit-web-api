@@ -17,6 +17,9 @@ from typing_extensions import Annotated
 
 from fitbit_web_api.api_client import ApiClient, RequestSerialized
 from fitbit_web_api.api_response import ApiResponse
+from fitbit_web_api.models.get_heart_rate_time_series_response import (
+    GetHeartRateTimeSeriesResponse,
+)
 from fitbit_web_api.rest import RESTResponseType
 
 
@@ -59,7 +62,7 @@ class HeartRateTimeSeriesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> GetHeartRateTimeSeriesResponse:
         """
         Get Heart Rate Time Series
 
@@ -100,7 +103,7 @@ class HeartRateTimeSeriesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetHeartRateTimeSeriesResponse",
             "401": None,
             "403": None,
         }
@@ -139,7 +142,7 @@ class HeartRateTimeSeriesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[GetHeartRateTimeSeriesResponse]:
         """
         Get Heart Rate Time Series
 
@@ -180,7 +183,7 @@ class HeartRateTimeSeriesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetHeartRateTimeSeriesResponse",
             "401": None,
             "403": None,
         }
@@ -260,7 +263,7 @@ class HeartRateTimeSeriesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetHeartRateTimeSeriesResponse",
             "401": None,
             "403": None,
         }
@@ -301,6 +304,12 @@ class HeartRateTimeSeriesApi:
         # process the form parameters
         # process the body parameter
 
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
+
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
 
@@ -340,7 +349,7 @@ class HeartRateTimeSeriesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> GetHeartRateTimeSeriesResponse:
         """
         Get Heart Rate Time Series
 
@@ -381,7 +390,7 @@ class HeartRateTimeSeriesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetHeartRateTimeSeriesResponse",
             "401": None,
             "403": None,
         }
@@ -415,7 +424,7 @@ class HeartRateTimeSeriesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[GetHeartRateTimeSeriesResponse]:
         """
         Get Heart Rate Time Series
 
@@ -456,7 +465,7 @@ class HeartRateTimeSeriesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetHeartRateTimeSeriesResponse",
             "401": None,
             "403": None,
         }
@@ -531,7 +540,7 @@ class HeartRateTimeSeriesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetHeartRateTimeSeriesResponse",
             "401": None,
             "403": None,
         }
@@ -571,6 +580,12 @@ class HeartRateTimeSeriesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
 
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]

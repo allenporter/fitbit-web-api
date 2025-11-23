@@ -55,33 +55,111 @@ __all__ = [
     "ApiAttributeError",
     "ApiException",
     "ActivityGoals",
+    "ActivityIntradayDatapoint",
+    "ActivityIntradayDataset",
     "ActivityLog",
     "ActivitySummary",
     "ActivitySummaryDistancesInner",
     "ActivityTimeSeriesDatapoint",
     "Alarm",
     "AlarmResponse",
+    "AzmIntradayDatapoint",
+    "AzmIntradayDataset",
     "AzmTimeSeriesDatapoint",
     "AzmTimeSeriesDatapointValue",
+    "AzmValue",
     "Badge",
+    "BodyFatLog",
+    "BodyGoal",
+    "BodyTimeSeriesDatapoint",
+    "BreathingRateIntradaySummary",
+    "BreathingRateIntradayValue",
+    "BreathingRateSummary",
+    "BreathingRateValue",
+    "CardioScoreSummary",
     "CreateSleepGoalResponse",
     "CreateSleepLogResponse",
     "Device",
+    "EcgReading",
+    "Food",
+    "FoodGoals",
     "FoodItem",
+    "FoodLocale",
+    "FoodLogEntry",
+    "FoodServing",
+    "FoodUnit",
+    "Friend",
+    "FriendAttributes",
     "GetActivityGoalsResponse",
+    "GetActivityIntradayResponse",
     "GetActivityLogListResponse",
     "GetActivityLogListResponsePagination",
     "GetActivityTimeSeriesResponse",
     "GetAlarmsResponse",
+    "GetAzmIntradayResponse",
+    "GetAzmIntradayResponseActivitiesActiveZoneMinutesInner",
     "GetAzmTimeSeriesResponse",
     "GetBadgesResponse",
+    "GetBodyFatLogResponse",
+    "GetBodyGoalsResponse",
+    "GetBodyTimeSeriesResponse",
+    "GetBreathingRateIntradayResponse",
+    "GetBreathingRateIntradayResponseBrInner",
+    "GetBreathingRateSummaryResponse",
     "GetDailyActivitySummaryResponse",
+    "GetEcgLogListResponse",
+    "GetEcgLogListResponsePagination",
+    "GetFoodGoalsResponse",
+    "GetFoodLogResponse",
+    "GetFoodResponse",
+    "GetFrequentFoodsResponse",
+    "GetFriendsLeaderboardResponse",
+    "GetFriendsResponse",
+    "GetHeartRateIntradayResponse",
+    "GetHeartRateTimeSeriesResponse",
+    "GetHrvIntradayResponse",
+    "GetHrvIntradayResponseHrvInner",
+    "GetHrvSummaryResponse",
+    "GetIrnAlertsListResponse",
+    "GetIrnProfileResponse",
+    "GetMealResponse",
+    "GetMealsResponse",
+    "GetNutritionTimeSeriesResponse",
     "GetProfileResponse",
+    "GetRecentFoodsResponse",
     "GetSleepGoalResponse",
     "GetSleepLogByDateRangeResponse",
     "GetSleepLogByDateResponse",
     "GetSleepLogListResponse",
     "GetSleepLogListResponsePagination",
+    "GetSpO2IntradayResponse",
+    "GetSpO2IntradayResponseSpo2Inner",
+    "GetSpO2SummaryResponse",
+    "GetSubscriptionListResponse",
+    "GetTemperatureCoreSummaryResponse",
+    "GetTemperatureSkinSummaryResponse",
+    "GetVo2MaxSummaryResponse",
+    "GetWaterGoalResponse",
+    "GetWaterLogResponse",
+    "GetWaterLogResponseSummary",
+    "GetWeightLogResponse",
+    "HeartRateIntradayDatapoint",
+    "HeartRateIntradayDataset",
+    "HeartRateTimeSeriesDatapoint",
+    "HeartRateTimeSeriesValue",
+    "HeartRateZone",
+    "HrvIntradayMinute",
+    "HrvIntradayValue",
+    "HrvSummary",
+    "HrvValue",
+    "IrnAlert",
+    "IrnBpmData",
+    "IrnWindow",
+    "LeaderboardFriend",
+    "LeaderboardFriendAttributes",
+    "LeaderboardFriendRelationships",
+    "LeaderboardFriendRelationshipsUser",
+    "LeaderboardFriendRelationshipsUserData",
     "LifetimeStats",
     "LifetimeStatsBest",
     "LifetimeStatsBestTotal",
@@ -92,7 +170,15 @@ __all__ = [
     "LifetimeStatsLifetime",
     "LifetimeStatsLifetimeTotal",
     "LifetimeStatsLifetimeTracker",
+    "LoggedFood",
+    "LoggedFoodUnit",
     "Meal",
+    "MealFood",
+    "NutritionTimeSeriesDatapoint",
+    "NutritionalValues",
+    "Oauth2Introspect",
+    "Oauth2Token",
+    "SearchFoodsResponse",
     "SleepGoal",
     "SleepLog",
     "SleepLogLevels",
@@ -100,8 +186,19 @@ __all__ = [
     "SleepLogLevelsSummaryValue",
     "SleepMeta",
     "SleepSummary",
+    "SpO2IntradayMinute",
+    "SpO2Summary",
+    "SpO2SummaryValue",
+    "Subscription",
+    "TemperatureCoreLog",
+    "TemperatureSkinLog",
+    "TemperatureSkinLogValue",
     "User",
     "UserFeatures",
+    "Vo2MaxValue",
+    "WaterGoal",
+    "WaterLog",
+    "WeightLog",
 ]
 
 # import apis into sdk package
@@ -175,6 +272,12 @@ from fitbit_web_api.exceptions import ApiException as ApiException
 
 # import models into sdk package
 from fitbit_web_api.models.activity_goals import ActivityGoals as ActivityGoals
+from fitbit_web_api.models.activity_intraday_datapoint import (
+    ActivityIntradayDatapoint as ActivityIntradayDatapoint,
+)
+from fitbit_web_api.models.activity_intraday_dataset import (
+    ActivityIntradayDataset as ActivityIntradayDataset,
+)
 from fitbit_web_api.models.activity_log import ActivityLog as ActivityLog
 from fitbit_web_api.models.activity_summary import ActivitySummary as ActivitySummary
 from fitbit_web_api.models.activity_summary_distances_inner import (
@@ -185,13 +288,40 @@ from fitbit_web_api.models.activity_time_series_datapoint import (
 )
 from fitbit_web_api.models.alarm import Alarm as Alarm
 from fitbit_web_api.models.alarm_response import AlarmResponse as AlarmResponse
+from fitbit_web_api.models.azm_intraday_datapoint import (
+    AzmIntradayDatapoint as AzmIntradayDatapoint,
+)
+from fitbit_web_api.models.azm_intraday_dataset import (
+    AzmIntradayDataset as AzmIntradayDataset,
+)
 from fitbit_web_api.models.azm_time_series_datapoint import (
     AzmTimeSeriesDatapoint as AzmTimeSeriesDatapoint,
 )
 from fitbit_web_api.models.azm_time_series_datapoint_value import (
     AzmTimeSeriesDatapointValue as AzmTimeSeriesDatapointValue,
 )
+from fitbit_web_api.models.azm_value import AzmValue as AzmValue
 from fitbit_web_api.models.badge import Badge as Badge
+from fitbit_web_api.models.body_fat_log import BodyFatLog as BodyFatLog
+from fitbit_web_api.models.body_goal import BodyGoal as BodyGoal
+from fitbit_web_api.models.body_time_series_datapoint import (
+    BodyTimeSeriesDatapoint as BodyTimeSeriesDatapoint,
+)
+from fitbit_web_api.models.breathing_rate_intraday_summary import (
+    BreathingRateIntradaySummary as BreathingRateIntradaySummary,
+)
+from fitbit_web_api.models.breathing_rate_intraday_value import (
+    BreathingRateIntradayValue as BreathingRateIntradayValue,
+)
+from fitbit_web_api.models.breathing_rate_summary import (
+    BreathingRateSummary as BreathingRateSummary,
+)
+from fitbit_web_api.models.breathing_rate_value import (
+    BreathingRateValue as BreathingRateValue,
+)
+from fitbit_web_api.models.cardio_score_summary import (
+    CardioScoreSummary as CardioScoreSummary,
+)
 from fitbit_web_api.models.create_sleep_goal_response import (
     CreateSleepGoalResponse as CreateSleepGoalResponse,
 )
@@ -199,9 +329,21 @@ from fitbit_web_api.models.create_sleep_log_response import (
     CreateSleepLogResponse as CreateSleepLogResponse,
 )
 from fitbit_web_api.models.device import Device as Device
+from fitbit_web_api.models.ecg_reading import EcgReading as EcgReading
+from fitbit_web_api.models.food import Food as Food
+from fitbit_web_api.models.food_goals import FoodGoals as FoodGoals
 from fitbit_web_api.models.food_item import FoodItem as FoodItem
+from fitbit_web_api.models.food_locale import FoodLocale as FoodLocale
+from fitbit_web_api.models.food_log_entry import FoodLogEntry as FoodLogEntry
+from fitbit_web_api.models.food_serving import FoodServing as FoodServing
+from fitbit_web_api.models.food_unit import FoodUnit as FoodUnit
+from fitbit_web_api.models.friend import Friend as Friend
+from fitbit_web_api.models.friend_attributes import FriendAttributes as FriendAttributes
 from fitbit_web_api.models.get_activity_goals_response import (
     GetActivityGoalsResponse as GetActivityGoalsResponse,
+)
+from fitbit_web_api.models.get_activity_intraday_response import (
+    GetActivityIntradayResponse as GetActivityIntradayResponse,
 )
 from fitbit_web_api.models.get_activity_log_list_response import (
     GetActivityLogListResponse as GetActivityLogListResponse,
@@ -215,17 +357,94 @@ from fitbit_web_api.models.get_activity_time_series_response import (
 from fitbit_web_api.models.get_alarms_response import (
     GetAlarmsResponse as GetAlarmsResponse,
 )
+from fitbit_web_api.models.get_azm_intraday_response import (
+    GetAzmIntradayResponse as GetAzmIntradayResponse,
+)
+from fitbit_web_api.models.get_azm_intraday_response_activities_active_zone_minutes_inner import (
+    GetAzmIntradayResponseActivitiesActiveZoneMinutesInner as GetAzmIntradayResponseActivitiesActiveZoneMinutesInner,
+)
 from fitbit_web_api.models.get_azm_time_series_response import (
     GetAzmTimeSeriesResponse as GetAzmTimeSeriesResponse,
 )
 from fitbit_web_api.models.get_badges_response import (
     GetBadgesResponse as GetBadgesResponse,
 )
+from fitbit_web_api.models.get_body_fat_log_response import (
+    GetBodyFatLogResponse as GetBodyFatLogResponse,
+)
+from fitbit_web_api.models.get_body_goals_response import (
+    GetBodyGoalsResponse as GetBodyGoalsResponse,
+)
+from fitbit_web_api.models.get_body_time_series_response import (
+    GetBodyTimeSeriesResponse as GetBodyTimeSeriesResponse,
+)
+from fitbit_web_api.models.get_breathing_rate_intraday_response import (
+    GetBreathingRateIntradayResponse as GetBreathingRateIntradayResponse,
+)
+from fitbit_web_api.models.get_breathing_rate_intraday_response_br_inner import (
+    GetBreathingRateIntradayResponseBrInner as GetBreathingRateIntradayResponseBrInner,
+)
+from fitbit_web_api.models.get_breathing_rate_summary_response import (
+    GetBreathingRateSummaryResponse as GetBreathingRateSummaryResponse,
+)
 from fitbit_web_api.models.get_daily_activity_summary_response import (
     GetDailyActivitySummaryResponse as GetDailyActivitySummaryResponse,
 )
+from fitbit_web_api.models.get_ecg_log_list_response import (
+    GetEcgLogListResponse as GetEcgLogListResponse,
+)
+from fitbit_web_api.models.get_ecg_log_list_response_pagination import (
+    GetEcgLogListResponsePagination as GetEcgLogListResponsePagination,
+)
+from fitbit_web_api.models.get_food_goals_response import (
+    GetFoodGoalsResponse as GetFoodGoalsResponse,
+)
+from fitbit_web_api.models.get_food_log_response import (
+    GetFoodLogResponse as GetFoodLogResponse,
+)
+from fitbit_web_api.models.get_food_response import GetFoodResponse as GetFoodResponse
+from fitbit_web_api.models.get_frequent_foods_response import (
+    GetFrequentFoodsResponse as GetFrequentFoodsResponse,
+)
+from fitbit_web_api.models.get_friends_leaderboard_response import (
+    GetFriendsLeaderboardResponse as GetFriendsLeaderboardResponse,
+)
+from fitbit_web_api.models.get_friends_response import (
+    GetFriendsResponse as GetFriendsResponse,
+)
+from fitbit_web_api.models.get_heart_rate_intraday_response import (
+    GetHeartRateIntradayResponse as GetHeartRateIntradayResponse,
+)
+from fitbit_web_api.models.get_heart_rate_time_series_response import (
+    GetHeartRateTimeSeriesResponse as GetHeartRateTimeSeriesResponse,
+)
+from fitbit_web_api.models.get_hrv_intraday_response import (
+    GetHrvIntradayResponse as GetHrvIntradayResponse,
+)
+from fitbit_web_api.models.get_hrv_intraday_response_hrv_inner import (
+    GetHrvIntradayResponseHrvInner as GetHrvIntradayResponseHrvInner,
+)
+from fitbit_web_api.models.get_hrv_summary_response import (
+    GetHrvSummaryResponse as GetHrvSummaryResponse,
+)
+from fitbit_web_api.models.get_irn_alerts_list_response import (
+    GetIrnAlertsListResponse as GetIrnAlertsListResponse,
+)
+from fitbit_web_api.models.get_irn_profile_response import (
+    GetIrnProfileResponse as GetIrnProfileResponse,
+)
+from fitbit_web_api.models.get_meal_response import GetMealResponse as GetMealResponse
+from fitbit_web_api.models.get_meals_response import (
+    GetMealsResponse as GetMealsResponse,
+)
+from fitbit_web_api.models.get_nutrition_time_series_response import (
+    GetNutritionTimeSeriesResponse as GetNutritionTimeSeriesResponse,
+)
 from fitbit_web_api.models.get_profile_response import (
     GetProfileResponse as GetProfileResponse,
+)
+from fitbit_web_api.models.get_recent_foods_response import (
+    GetRecentFoodsResponse as GetRecentFoodsResponse,
 )
 from fitbit_web_api.models.get_sleep_goal_response import (
     GetSleepGoalResponse as GetSleepGoalResponse,
@@ -241,6 +460,78 @@ from fitbit_web_api.models.get_sleep_log_list_response import (
 )
 from fitbit_web_api.models.get_sleep_log_list_response_pagination import (
     GetSleepLogListResponsePagination as GetSleepLogListResponsePagination,
+)
+from fitbit_web_api.models.get_sp_o2_intraday_response import (
+    GetSpO2IntradayResponse as GetSpO2IntradayResponse,
+)
+from fitbit_web_api.models.get_sp_o2_intraday_response_spo2_inner import (
+    GetSpO2IntradayResponseSpo2Inner as GetSpO2IntradayResponseSpo2Inner,
+)
+from fitbit_web_api.models.get_sp_o2_summary_response import (
+    GetSpO2SummaryResponse as GetSpO2SummaryResponse,
+)
+from fitbit_web_api.models.get_subscription_list_response import (
+    GetSubscriptionListResponse as GetSubscriptionListResponse,
+)
+from fitbit_web_api.models.get_temperature_core_summary_response import (
+    GetTemperatureCoreSummaryResponse as GetTemperatureCoreSummaryResponse,
+)
+from fitbit_web_api.models.get_temperature_skin_summary_response import (
+    GetTemperatureSkinSummaryResponse as GetTemperatureSkinSummaryResponse,
+)
+from fitbit_web_api.models.get_vo2_max_summary_response import (
+    GetVo2MaxSummaryResponse as GetVo2MaxSummaryResponse,
+)
+from fitbit_web_api.models.get_water_goal_response import (
+    GetWaterGoalResponse as GetWaterGoalResponse,
+)
+from fitbit_web_api.models.get_water_log_response import (
+    GetWaterLogResponse as GetWaterLogResponse,
+)
+from fitbit_web_api.models.get_water_log_response_summary import (
+    GetWaterLogResponseSummary as GetWaterLogResponseSummary,
+)
+from fitbit_web_api.models.get_weight_log_response import (
+    GetWeightLogResponse as GetWeightLogResponse,
+)
+from fitbit_web_api.models.heart_rate_intraday_datapoint import (
+    HeartRateIntradayDatapoint as HeartRateIntradayDatapoint,
+)
+from fitbit_web_api.models.heart_rate_intraday_dataset import (
+    HeartRateIntradayDataset as HeartRateIntradayDataset,
+)
+from fitbit_web_api.models.heart_rate_time_series_datapoint import (
+    HeartRateTimeSeriesDatapoint as HeartRateTimeSeriesDatapoint,
+)
+from fitbit_web_api.models.heart_rate_time_series_value import (
+    HeartRateTimeSeriesValue as HeartRateTimeSeriesValue,
+)
+from fitbit_web_api.models.heart_rate_zone import HeartRateZone as HeartRateZone
+from fitbit_web_api.models.hrv_intraday_minute import (
+    HrvIntradayMinute as HrvIntradayMinute,
+)
+from fitbit_web_api.models.hrv_intraday_value import (
+    HrvIntradayValue as HrvIntradayValue,
+)
+from fitbit_web_api.models.hrv_summary import HrvSummary as HrvSummary
+from fitbit_web_api.models.hrv_value import HrvValue as HrvValue
+from fitbit_web_api.models.irn_alert import IrnAlert as IrnAlert
+from fitbit_web_api.models.irn_bpm_data import IrnBpmData as IrnBpmData
+from fitbit_web_api.models.irn_window import IrnWindow as IrnWindow
+from fitbit_web_api.models.leaderboard_friend import (
+    LeaderboardFriend as LeaderboardFriend,
+)
+from fitbit_web_api.models.leaderboard_friend_attributes import (
+    LeaderboardFriendAttributes as LeaderboardFriendAttributes,
+)
+from fitbit_web_api.models.leaderboard_friend_relationships import (
+    LeaderboardFriendRelationships as LeaderboardFriendRelationships,
+)
+from fitbit_web_api.models.leaderboard_friend_relationships_user import (
+    LeaderboardFriendRelationshipsUser as LeaderboardFriendRelationshipsUser,
+)
+from fitbit_web_api.models.leaderboard_friend_relationships_user_data import (
+    LeaderboardFriendRelationshipsUserData as LeaderboardFriendRelationshipsUserData,
 )
 from fitbit_web_api.models.lifetime_stats import LifetimeStats as LifetimeStats
 from fitbit_web_api.models.lifetime_stats_best import (
@@ -270,7 +561,21 @@ from fitbit_web_api.models.lifetime_stats_lifetime_total import (
 from fitbit_web_api.models.lifetime_stats_lifetime_tracker import (
     LifetimeStatsLifetimeTracker as LifetimeStatsLifetimeTracker,
 )
+from fitbit_web_api.models.logged_food import LoggedFood as LoggedFood
+from fitbit_web_api.models.logged_food_unit import LoggedFoodUnit as LoggedFoodUnit
 from fitbit_web_api.models.meal import Meal as Meal
+from fitbit_web_api.models.meal_food import MealFood as MealFood
+from fitbit_web_api.models.nutrition_time_series_datapoint import (
+    NutritionTimeSeriesDatapoint as NutritionTimeSeriesDatapoint,
+)
+from fitbit_web_api.models.nutritional_values import (
+    NutritionalValues as NutritionalValues,
+)
+from fitbit_web_api.models.oauth2_introspect import Oauth2Introspect as Oauth2Introspect
+from fitbit_web_api.models.oauth2_token import Oauth2Token as Oauth2Token
+from fitbit_web_api.models.search_foods_response import (
+    SearchFoodsResponse as SearchFoodsResponse,
+)
 from fitbit_web_api.models.sleep_goal import SleepGoal as SleepGoal
 from fitbit_web_api.models.sleep_log import SleepLog as SleepLog
 from fitbit_web_api.models.sleep_log_levels import SleepLogLevels as SleepLogLevels
@@ -282,5 +587,26 @@ from fitbit_web_api.models.sleep_log_levels_summary_value import (
 )
 from fitbit_web_api.models.sleep_meta import SleepMeta as SleepMeta
 from fitbit_web_api.models.sleep_summary import SleepSummary as SleepSummary
+from fitbit_web_api.models.sp_o2_intraday_minute import (
+    SpO2IntradayMinute as SpO2IntradayMinute,
+)
+from fitbit_web_api.models.sp_o2_summary import SpO2Summary as SpO2Summary
+from fitbit_web_api.models.sp_o2_summary_value import (
+    SpO2SummaryValue as SpO2SummaryValue,
+)
+from fitbit_web_api.models.subscription import Subscription as Subscription
+from fitbit_web_api.models.temperature_core_log import (
+    TemperatureCoreLog as TemperatureCoreLog,
+)
+from fitbit_web_api.models.temperature_skin_log import (
+    TemperatureSkinLog as TemperatureSkinLog,
+)
+from fitbit_web_api.models.temperature_skin_log_value import (
+    TemperatureSkinLogValue as TemperatureSkinLogValue,
+)
 from fitbit_web_api.models.user import User as User
 from fitbit_web_api.models.user_features import UserFeatures as UserFeatures
+from fitbit_web_api.models.vo2_max_value import Vo2MaxValue as Vo2MaxValue
+from fitbit_web_api.models.water_goal import WaterGoal as WaterGoal
+from fitbit_web_api.models.water_log import WaterLog as WaterLog
+from fitbit_web_api.models.weight_log import WeightLog as WeightLog

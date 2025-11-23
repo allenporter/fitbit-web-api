@@ -2,11 +2,12 @@
 
 ## Properties
 
-| Name            | Type                              | Description | Notes      |
-| --------------- | --------------------------------- | ----------- | ---------- |
-| **name**        | **str**                           |             | [optional] |
-| **description** | **str**                           |             | [optional] |
-| **meal_foods**  | [**List[FoodItem]**](FoodItem.md) |             | [optional] |
+| Name            | Type                              | Description                  | Notes      |
+| --------------- | --------------------------------- | ---------------------------- | ---------- |
+| **description** | **str**                           | The description of the meal. | [optional] |
+| **id**          | **int**                           | The ID of the meal.          | [optional] |
+| **meal_foods**  | [**List[MealFood]**](MealFood.md) |                              | [optional] |
+| **name**        | **str**                           | The name of the meal.        | [optional] |
 
 ## Example
 

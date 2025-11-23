@@ -7,6 +7,7 @@ All URIs are relative to *https://api.fitbit.com*
 | [**add_favorite_food**](NutritionApi.md#add_favorite_food)         | **POST** /1/user/-/foods/log/favorite/{food-id}.json     | Add Favorite Food    |
 | [**add_foods**](NutritionApi.md#add_foods)                         | **POST** /1/user/-/foods.json                            | Create Food          |
 | [**add_foods_log**](NutritionApi.md#add_foods_log)                 | **POST** /1/user/-/foods/log.json                        | Log Food             |
+| [**add_meal**](NutritionApi.md#add_meal)                           | **POST** /1/user/-/meals.json                            | Create Meal          |
 | [**add_update_foods_goal**](NutritionApi.md#add_update_foods_goal) | **POST** /1/user/-/foods/log/goal.json                   | Update Food Goal     |
 | [**add_update_water_goal**](NutritionApi.md#add_update_water_goal) | **POST** /1/user/-/foods/log/water/goal.json             | Update Water Goal    |
 | [**add_water_log**](NutritionApi.md#add_water_log)                 | **POST** /1/user/-/foods/log/water.json                  | Log Water            |
@@ -24,6 +25,8 @@ All URIs are relative to *https://api.fitbit.com*
 | [**get_foods_locales**](NutritionApi.md#get_foods_locales)         | **GET** /1/foods/locales.json                            | Get Food Locales     |
 | [**get_foods_units**](NutritionApi.md#get_foods_units)             | **GET** /1/foods/units.json                              | Get Food Units       |
 | [**get_frequent_foods**](NutritionApi.md#get_frequent_foods)       | **GET** /1/user/-/foods/log/frequent.json                | Get Frequent Foods   |
+| [**get_meal**](NutritionApi.md#get_meal)                           | **GET** /1/user/-/meals/{meal-id}.json                   | Get Meal             |
+| [**get_meals**](NutritionApi.md#get_meals)                         | **GET** /1/user/-/meals.json                             | Get Meals            |
 | [**get_recent_foods**](NutritionApi.md#get_recent_foods)           | **GET** /1/user/-/foods/log/recent.json                  | Get Recent Foods     |
 | [**get_water_by_date**](NutritionApi.md#get_water_by_date)         | **GET** /1/user/-/foods/log/water/date/{date}.json       | Get Water Logs       |
 | [**get_water_goal**](NutritionApi.md#get_water_goal)               | **GET** /1/user/-/foods/log/water/goal.json              | Get Water Goal       |
@@ -272,6 +275,80 @@ void (empty response body)
 | **400**     | The request had bad syntax or was inherently impossible to be satified.      | -                |
 | **401**     | The request requires user authentication.                                    | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it.            | -                |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **add_meal**
+
+> add_meal(meal)
+
+Create Meal
+
+Creates a meal with the given food contained in the post body.
+
+### Example
+
+- OAuth Authentication (oauth2):
+
+```python
+import fitbit_web_api
+from fitbit_web_api.models.meal import Meal
+from fitbit_web_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.fitbit.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = fitbit_web_api.Configuration(
+    host = "https://api.fitbit.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Enter a context with an instance of the API client
+async with fitbit_web_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = fitbit_web_api.NutritionApi(api_client)
+    meal = fitbit_web_api.Meal() # Meal | Meal to create
+
+    try:
+        # Create Meal
+        await api_instance.add_meal(meal)
+    except Exception as e:
+        print("Exception when calling NutritionApi->add_meal: %s\n" % e)
+```
+
+### Parameters
+
+| Name     | Type                | Description    | Notes |
+| -------- | ------------------- | -------------- | ----- |
+| **meal** | [**Meal**](Meal.md) | Meal to create |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description                                                             | Response headers |
+| ----------- | ----------------------------------------------------------------------- | ---------------- |
+| **200**     | Successful request.                                                     | -                |
+| **400**     | The request had bad syntax or was inherently impossible to be satified. | -                |
+| **401**     | The request requires user authentication.                               | -                |
+| **403**     | The server understood the request, but is refusing to fulfill it.       | -                |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -945,7 +1022,7 @@ void (empty response body)
 
 # **get_favorite_foods**
 
-> get_favorite_foods()
+> List[Food] get_favorite_foods()
 
 Get Favorite Foods
 
@@ -957,6 +1034,7 @@ Returns a list of a user's favorite foods in the format requested. A favorite fo
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.food import Food
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -980,7 +1058,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Favorite Foods
-        await api_instance.get_favorite_foods()
+        api_response = await api_instance.get_favorite_foods()
+        print("The response of NutritionApi->get_favorite_foods:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling NutritionApi->get_favorite_foods: %s\n" % e)
 ```
@@ -991,7 +1071,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**List[Food]**](Food.md)
 
 ### Authorization
 
@@ -1000,13 +1080,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                             | Response headers |
 | ----------- | ----------------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                                     | -                |
+| **200**     | A successful request.                                                   | -                |
 | **400**     | The request had bad syntax or was inherently impossible to be satified. | -                |
 | **401**     | The request requires user authentication.                               | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it.       | -                |
@@ -1015,7 +1095,7 @@ void (empty response body)
 
 # **get_foods_by_date**
 
-> get_foods_by_date(var_date)
+> GetFoodLogResponse get_foods_by_date(var_date)
 
 Get Food Logs
 
@@ -1027,6 +1107,7 @@ Retreives a summary and list of a user's food log entries for a given day in the
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_food_log_response import GetFoodLogResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -1051,7 +1132,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Food Logs
-        await api_instance.get_foods_by_date(var_date)
+        api_response = await api_instance.get_foods_by_date(var_date)
+        print("The response of NutritionApi->get_foods_by_date:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling NutritionApi->get_foods_by_date: %s\n" % e)
 ```
@@ -1064,7 +1147,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetFoodLogResponse**](GetFoodLogResponse.md)
 
 ### Authorization
 
@@ -1073,7 +1156,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1088,7 +1171,7 @@ void (empty response body)
 
 # **get_foods_goal**
 
-> get_foods_goal()
+> GetFoodGoalsResponse get_foods_goal()
 
 Get Food Goals
 
@@ -1100,6 +1183,7 @@ Returns a user's current daily calorie consumption goal and/or foodPlan value in
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_food_goals_response import GetFoodGoalsResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -1123,7 +1207,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Food Goals
-        await api_instance.get_foods_goal()
+        api_response = await api_instance.get_foods_goal()
+        print("The response of NutritionApi->get_foods_goal:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling NutritionApi->get_foods_goal: %s\n" % e)
 ```
@@ -1134,7 +1220,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**GetFoodGoalsResponse**](GetFoodGoalsResponse.md)
 
 ### Authorization
 
@@ -1143,7 +1229,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1158,7 +1244,7 @@ void (empty response body)
 
 # **get_foods_info**
 
-> get_foods_info(food_id)
+> GetFoodResponse get_foods_info(food_id)
 
 Get Food
 
@@ -1170,6 +1256,7 @@ Returns the details of a specific food in the Fitbit food databases or a private
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_food_response import GetFoodResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -1194,7 +1281,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Food
-        await api_instance.get_foods_info(food_id)
+        api_response = await api_instance.get_foods_info(food_id)
+        print("The response of NutritionApi->get_foods_info:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling NutritionApi->get_foods_info: %s\n" % e)
 ```
@@ -1207,7 +1296,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetFoodResponse**](GetFoodResponse.md)
 
 ### Authorization
 
@@ -1216,13 +1305,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                             | Response headers |
 | ----------- | ----------------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                                     | -                |
+| **200**     | A successful request.                                                   | -                |
 | **400**     | The request had bad syntax or was inherently impossible to be satified. | -                |
 | **401**     | The request requires user authentication.                               | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it.       | -                |
@@ -1231,7 +1320,7 @@ void (empty response body)
 
 # **get_foods_list**
 
-> get_foods_list(query)
+> SearchFoodsResponse get_foods_list(query)
 
 Search Foods
 
@@ -1243,6 +1332,7 @@ Returns a list of public foods from the Fitbit food database and private food th
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.search_foods_response import SearchFoodsResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -1267,7 +1357,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Search Foods
-        await api_instance.get_foods_list(query)
+        api_response = await api_instance.get_foods_list(query)
+        print("The response of NutritionApi->get_foods_list:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling NutritionApi->get_foods_list: %s\n" % e)
 ```
@@ -1280,7 +1372,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**SearchFoodsResponse**](SearchFoodsResponse.md)
 
 ### Authorization
 
@@ -1289,7 +1381,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1304,7 +1396,7 @@ void (empty response body)
 
 # **get_foods_locales**
 
-> get_foods_locales()
+> List[FoodLocale] get_foods_locales()
 
 Get Food Locales
 
@@ -1316,6 +1408,7 @@ Returns the food locales that the user may choose to search, log, and create foo
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.food_locale import FoodLocale
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -1339,7 +1432,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Food Locales
-        await api_instance.get_foods_locales()
+        api_response = await api_instance.get_foods_locales()
+        print("The response of NutritionApi->get_foods_locales:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling NutritionApi->get_foods_locales: %s\n" % e)
 ```
@@ -1350,7 +1445,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**List[FoodLocale]**](FoodLocale.md)
 
 ### Authorization
 
@@ -1359,13 +1454,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                             | Response headers |
 | ----------- | ----------------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                                     | -                |
+| **200**     | A successful request.                                                   | -                |
 | **400**     | The request had bad syntax or was inherently impossible to be satified. | -                |
 | **401**     | The request requires user authentication.                               | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it.       | -                |
@@ -1374,7 +1469,7 @@ void (empty response body)
 
 # **get_foods_units**
 
-> get_foods_units()
+> List[FoodUnit] get_foods_units()
 
 Get Food Units
 
@@ -1386,6 +1481,7 @@ Returns a list of all valid Fitbit food units in the format requested.
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.food_unit import FoodUnit
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -1409,7 +1505,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Food Units
-        await api_instance.get_foods_units()
+        api_response = await api_instance.get_foods_units()
+        print("The response of NutritionApi->get_foods_units:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling NutritionApi->get_foods_units: %s\n" % e)
 ```
@@ -1420,7 +1518,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**List[FoodUnit]**](FoodUnit.md)
 
 ### Authorization
 
@@ -1429,13 +1527,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                             | Response headers |
 | ----------- | ----------------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                                     | -                |
+| **200**     | A successful request.                                                   | -                |
 | **400**     | The request had bad syntax or was inherently impossible to be satified. | -                |
 | **401**     | The request requires user authentication.                               | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it.       | -                |
@@ -1444,7 +1542,7 @@ void (empty response body)
 
 # **get_frequent_foods**
 
-> get_frequent_foods()
+> GetFrequentFoodsResponse get_frequent_foods()
 
 Get Frequent Foods
 
@@ -1456,6 +1554,7 @@ Returns a list of a user's frequent foods in the format requested. A frequent fo
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_frequent_foods_response import GetFrequentFoodsResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -1479,7 +1578,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Frequent Foods
-        await api_instance.get_frequent_foods()
+        api_response = await api_instance.get_frequent_foods()
+        print("The response of NutritionApi->get_frequent_foods:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling NutritionApi->get_frequent_foods: %s\n" % e)
 ```
@@ -1490,7 +1591,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**GetFrequentFoodsResponse**](GetFrequentFoodsResponse.md)
 
 ### Authorization
 
@@ -1499,13 +1600,153 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                             | Response headers |
 | ----------- | ----------------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                                     | -                |
+| **200**     | A successful request.                                                   | -                |
+| **400**     | The request had bad syntax or was inherently impossible to be satified. | -                |
+| **401**     | The request requires user authentication.                               | -                |
+| **403**     | The server understood the request, but is refusing to fulfill it.       | -                |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_meal**
+
+> GetMealResponse get_meal(user_id, meal_id)
+
+Get Meal
+
+Retrieves a single meal created by the user from their food log given the meal id.
+
+### Example
+
+```python
+import fitbit_web_api
+from fitbit_web_api.models.get_meal_response import GetMealResponse
+from fitbit_web_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.fitbit.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = fitbit_web_api.Configuration(
+    host = "https://api.fitbit.com"
+)
+
+
+# Enter a context with an instance of the API client
+async with fitbit_web_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = fitbit_web_api.NutritionApi(api_client)
+    user_id = '-' # str | The encoded ID of the user. Use '-' (dash) for current logged-in user. (default to '-')
+    meal_id = 'meal_id_example' # str | The ID of the meal.
+
+    try:
+        # Get Meal
+        api_response = await api_instance.get_meal(user_id, meal_id)
+        print("The response of NutritionApi->get_meal:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling NutritionApi->get_meal: %s\n" % e)
+```
+
+### Parameters
+
+| Name        | Type    | Description                                                                    | Notes                    |
+| ----------- | ------- | ------------------------------------------------------------------------------ | ------------------------ |
+| **user_id** | **str** | The encoded ID of the user. Use &#39;-&#39; (dash) for current logged-in user. | [default to &#39;-&#39;] |
+| **meal_id** | **str** | The ID of the meal.                                                            |
+
+### Return type
+
+[**GetMealResponse**](GetMealResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description           | Response headers |
+| ----------- | --------------------- | ---------------- |
+| **200**     | A successful request. | -                |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_meals**
+
+> GetMealsResponse get_meals()
+
+Get Meals
+
+Returns a list of meals created by user in the user's food log in the format requested. User creates and manages meals on the Food Log tab on the website.
+
+### Example
+
+- OAuth Authentication (oauth2):
+
+```python
+import fitbit_web_api
+from fitbit_web_api.models.get_meals_response import GetMealsResponse
+from fitbit_web_api.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.fitbit.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = fitbit_web_api.Configuration(
+    host = "https://api.fitbit.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Enter a context with an instance of the API client
+async with fitbit_web_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = fitbit_web_api.NutritionApi(api_client)
+
+    try:
+        # Get Meals
+        api_response = await api_instance.get_meals()
+        print("The response of NutritionApi->get_meals:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling NutritionApi->get_meals: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetMealsResponse**](GetMealsResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description                                                             | Response headers |
+| ----------- | ----------------------------------------------------------------------- | ---------------- |
+| **200**     | A successful request.                                                   | -                |
 | **400**     | The request had bad syntax or was inherently impossible to be satified. | -                |
 | **401**     | The request requires user authentication.                               | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it.       | -                |
@@ -1514,7 +1755,7 @@ void (empty response body)
 
 # **get_recent_foods**
 
-> get_recent_foods()
+> GetRecentFoodsResponse get_recent_foods()
 
 Get Recent Foods
 
@@ -1526,6 +1767,7 @@ Returns a list of a user's frequent foods in the format requested. A frequent fo
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_recent_foods_response import GetRecentFoodsResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -1549,7 +1791,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Recent Foods
-        await api_instance.get_recent_foods()
+        api_response = await api_instance.get_recent_foods()
+        print("The response of NutritionApi->get_recent_foods:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling NutritionApi->get_recent_foods: %s\n" % e)
 ```
@@ -1560,7 +1804,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**GetRecentFoodsResponse**](GetRecentFoodsResponse.md)
 
 ### Authorization
 
@@ -1569,13 +1813,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                             | Response headers |
 | ----------- | ----------------------------------------------------------------------- | ---------------- |
-| **200**     | Successful request.                                                     | -                |
+| **200**     | A successful request.                                                   | -                |
 | **400**     | The request had bad syntax or was inherently impossible to be satified. | -                |
 | **401**     | The request requires user authentication.                               | -                |
 | **403**     | The server understood the request, but is refusing to fulfill it.       | -                |
@@ -1584,7 +1828,7 @@ void (empty response body)
 
 # **get_water_by_date**
 
-> get_water_by_date(var_date)
+> GetWaterLogResponse get_water_by_date(var_date)
 
 Get Water Logs
 
@@ -1596,6 +1840,7 @@ Retreives a summary and list of a user's water log entries for a given day in th
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_water_log_response import GetWaterLogResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -1620,7 +1865,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Water Logs
-        await api_instance.get_water_by_date(var_date)
+        api_response = await api_instance.get_water_by_date(var_date)
+        print("The response of NutritionApi->get_water_by_date:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling NutritionApi->get_water_by_date: %s\n" % e)
 ```
@@ -1633,7 +1880,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetWaterLogResponse**](GetWaterLogResponse.md)
 
 ### Authorization
 
@@ -1642,7 +1889,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -1657,7 +1904,7 @@ void (empty response body)
 
 # **get_water_goal**
 
-> get_water_goal()
+> GetWaterGoalResponse get_water_goal()
 
 Get Water Goal
 
@@ -1669,6 +1916,7 @@ Retreives a summary and list of a user's water goal entries for a given day in t
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_water_goal_response import GetWaterGoalResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -1692,7 +1940,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Water Goal
-        await api_instance.get_water_goal()
+        api_response = await api_instance.get_water_goal()
+        print("The response of NutritionApi->get_water_goal:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling NutritionApi->get_water_goal: %s\n" % e)
 ```
@@ -1703,7 +1953,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**GetWaterGoalResponse**](GetWaterGoalResponse.md)
 
 ### Authorization
 
@@ -1712,7 +1962,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 

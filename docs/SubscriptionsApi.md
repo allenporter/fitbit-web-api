@@ -10,7 +10,7 @@ All URIs are relative to *https://api.fitbit.com*
 
 # **add_subscriptions**
 
-> add_subscriptions(collection_path, subscription_id)
+> Subscription add_subscriptions(collection_path, subscription_id)
 
 Add a Subscription
 
@@ -22,6 +22,7 @@ Adds a subscription in your application so that users can get notifications and 
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.subscription import Subscription
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -47,7 +48,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Add a Subscription
-        await api_instance.add_subscriptions(collection_path, subscription_id)
+        api_response = await api_instance.add_subscriptions(collection_path, subscription_id)
+        print("The response of SubscriptionsApi->add_subscriptions:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling SubscriptionsApi->add_subscriptions: %s\n" % e)
 ```
@@ -61,7 +64,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**Subscription**](Subscription.md)
 
 ### Authorization
 
@@ -70,14 +73,14 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                                                                                                                                                          | Response headers |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| **200**     | Returned if the given user is already subscribed to the stream.                                                                                                                                      | -                |
-| **201**     | Returned if a new subscription was created in response to your request.                                                                                                                              | -                |
+| **200**     | A successful request.                                                                                                                                                                                | -                |
+| **201**     | A successful request.                                                                                                                                                                                | -                |
 | **409**     | Returned if the given user is already subscribed to this stream using a different subscription ID, OR if the given subscription ID is already used to identify a subscription to a different stream. | -                |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -158,7 +161,7 @@ void (empty response body)
 
 # **get_subscriptions_list**
 
-> get_subscriptions_list(collection_path)
+> GetSubscriptionListResponse get_subscriptions_list(collection_path)
 
 Get a List of Subscriptions
 
@@ -170,6 +173,7 @@ Retreives a list of a user's subscriptions for your application in the format re
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_subscription_list_response import GetSubscriptionListResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -194,7 +198,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get a List of Subscriptions
-        await api_instance.get_subscriptions_list(collection_path)
+        api_response = await api_instance.get_subscriptions_list(collection_path)
+        print("The response of SubscriptionsApi->get_subscriptions_list:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling SubscriptionsApi->get_subscriptions_list: %s\n" % e)
 ```
@@ -207,7 +213,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetSubscriptionListResponse**](GetSubscriptionListResponse.md)
 
 ### Authorization
 
@@ -216,13 +222,13 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description                                                                                                                                                                                          | Response headers |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| **200**     | Returned if the given user is already subscribed to the stream.                                                                                                                                      | -                |
+| **200**     | A successful request.                                                                                                                                                                                | -                |
 | **201**     | Returned if a new subscription was created in response to your request.                                                                                                                              | -                |
 | **409**     | Returned if the given user is already subscribed to this stream using a different subscription ID, OR if the given subscription ID is already used to identify a subscription to a different stream. | -                |
 

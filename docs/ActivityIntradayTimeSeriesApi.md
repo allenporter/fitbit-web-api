@@ -11,7 +11,7 @@ All URIs are relative to *https://api.fitbit.com*
 
 # **get_activities_resource_by_date_intraday**
 
-> get_activities_resource_by_date_intraday(var_resource_path, var_date, detail_level)
+> GetActivityIntradayResponse get_activities_resource_by_date_intraday(var_resource_path, var_date, detail_level)
 
 Get Intraday Time Series
 
@@ -23,6 +23,7 @@ Returns the Intraday Time Series for a given resource in the format requested.
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_activity_intraday_response import GetActivityIntradayResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -49,7 +50,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Intraday Time Series
-        await api_instance.get_activities_resource_by_date_intraday(var_resource_path, var_date, detail_level)
+        api_response = await api_instance.get_activities_resource_by_date_intraday(var_resource_path, var_date, detail_level)
+        print("The response of ActivityIntradayTimeSeriesApi->get_activities_resource_by_date_intraday:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActivityIntradayTimeSeriesApi->get_activities_resource_by_date_intraday: %s\n" % e)
 ```
@@ -64,7 +67,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetActivityIntradayResponse**](GetActivityIntradayResponse.md)
 
 ### Authorization
 
@@ -73,7 +76,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -88,7 +91,7 @@ void (empty response body)
 
 # **get_activities_resource_by_date_range_intraday**
 
-> get_activities_resource_by_date_range_intraday(var_resource_path, base_date, end_date, detail_level)
+> GetActivityIntradayResponse get_activities_resource_by_date_range_intraday(var_resource_path, base_date, end_date, detail_level)
 
 Get Activity Intraday Time Series
 
@@ -100,6 +103,7 @@ Returns the Activity Intraday Time Series for a given resource in the format req
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_activity_intraday_response import GetActivityIntradayResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -127,7 +131,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Activity Intraday Time Series
-        await api_instance.get_activities_resource_by_date_range_intraday(var_resource_path, base_date, end_date, detail_level)
+        api_response = await api_instance.get_activities_resource_by_date_range_intraday(var_resource_path, base_date, end_date, detail_level)
+        print("The response of ActivityIntradayTimeSeriesApi->get_activities_resource_by_date_range_intraday:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActivityIntradayTimeSeriesApi->get_activities_resource_by_date_range_intraday: %s\n" % e)
 ```
@@ -143,7 +149,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetActivityIntradayResponse**](GetActivityIntradayResponse.md)
 
 ### Authorization
 
@@ -152,7 +158,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -167,7 +173,7 @@ void (empty response body)
 
 # **get_activities_resource_by_date_range_time_series_intraday**
 
-> get_activities_resource_by_date_range_time_series_intraday(var_resource_path, var_date, end_date, detail_level, start_time, end_time)
+> GetActivityIntradayResponse get_activities_resource_by_date_range_time_series_intraday(var_resource_path, var_date, end_date, detail_level, start_time, end_time)
 
 Get Activity Intraday Time Series
 
@@ -179,6 +185,7 @@ Returns the Intraday Time Series for a given resource in the format requested.
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_activity_intraday_response import GetActivityIntradayResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -208,7 +215,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Activity Intraday Time Series
-        await api_instance.get_activities_resource_by_date_range_time_series_intraday(var_resource_path, var_date, end_date, detail_level, start_time, end_time)
+        api_response = await api_instance.get_activities_resource_by_date_range_time_series_intraday(var_resource_path, var_date, end_date, detail_level, start_time, end_time)
+        print("The response of ActivityIntradayTimeSeriesApi->get_activities_resource_by_date_range_time_series_intraday:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActivityIntradayTimeSeriesApi->get_activities_resource_by_date_range_time_series_intraday: %s\n" % e)
 ```
@@ -226,7 +235,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetActivityIntradayResponse**](GetActivityIntradayResponse.md)
 
 ### Authorization
 
@@ -235,7 +244,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -250,7 +259,7 @@ void (empty response body)
 
 # **get_activities_resource_by_date_time_series_intraday**
 
-> get_activities_resource_by_date_time_series_intraday(var_resource_path, var_date, detail_level, start_time, end_time)
+> GetActivityIntradayResponse get_activities_resource_by_date_time_series_intraday(var_resource_path, var_date, detail_level, start_time, end_time)
 
 Get Intraday Time Series
 
@@ -262,6 +271,7 @@ Returns the Intraday Time Series for a given resource in the format requested.
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_activity_intraday_response import GetActivityIntradayResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -290,7 +300,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Intraday Time Series
-        await api_instance.get_activities_resource_by_date_time_series_intraday(var_resource_path, var_date, detail_level, start_time, end_time)
+        api_response = await api_instance.get_activities_resource_by_date_time_series_intraday(var_resource_path, var_date, detail_level, start_time, end_time)
+        print("The response of ActivityIntradayTimeSeriesApi->get_activities_resource_by_date_time_series_intraday:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActivityIntradayTimeSeriesApi->get_activities_resource_by_date_time_series_intraday: %s\n" % e)
 ```
@@ -307,7 +319,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetActivityIntradayResponse**](GetActivityIntradayResponse.md)
 
 ### Authorization
 
@@ -316,7 +328,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 

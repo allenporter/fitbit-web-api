@@ -17,6 +17,8 @@ from typing_extensions import Annotated
 
 from fitbit_web_api.api_client import ApiClient, RequestSerialized
 from fitbit_web_api.api_response import ApiResponse
+from fitbit_web_api.models.get_irn_alerts_list_response import GetIrnAlertsListResponse
+from fitbit_web_api.models.get_irn_profile_response import GetIrnProfileResponse
 from fitbit_web_api.rest import RESTResponseType
 
 
@@ -72,7 +74,7 @@ class IrregularRhythmNotificationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> GetIrnAlertsListResponse:
         """
         Get IRN Alerts List
 
@@ -122,7 +124,7 @@ class IrregularRhythmNotificationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetIrnAlertsListResponse",
             "400": None,
             "401": None,
         }
@@ -174,7 +176,7 @@ class IrregularRhythmNotificationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[GetIrnAlertsListResponse]:
         """
         Get IRN Alerts List
 
@@ -224,7 +226,7 @@ class IrregularRhythmNotificationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetIrnAlertsListResponse",
             "400": None,
             "401": None,
         }
@@ -326,7 +328,7 @@ class IrregularRhythmNotificationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetIrnAlertsListResponse",
             "400": None,
             "401": None,
         }
@@ -397,6 +399,12 @@ class IrregularRhythmNotificationsApi:
         # process the form parameters
         # process the body parameter
 
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
+
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
 
@@ -429,7 +437,7 @@ class IrregularRhythmNotificationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> GetIrnProfileResponse:
         """
         Get IRN Profile
 
@@ -464,7 +472,7 @@ class IrregularRhythmNotificationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetIrnProfileResponse",
             "401": None,
         }
         response_data = await self.api_client.call_api(
@@ -490,7 +498,7 @@ class IrregularRhythmNotificationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[GetIrnProfileResponse]:
         """
         Get IRN Profile
 
@@ -525,7 +533,7 @@ class IrregularRhythmNotificationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetIrnProfileResponse",
             "401": None,
         }
         response_data = await self.api_client.call_api(
@@ -586,7 +594,7 @@ class IrregularRhythmNotificationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetIrnProfileResponse",
             "401": None,
         }
         response_data = await self.api_client.call_api(
@@ -619,6 +627,12 @@ class IrregularRhythmNotificationsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
 
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
