@@ -1,11 +1,10 @@
 # Changelog
 
-## v2.0.3-rc.1 (2025-11-23)
+## v2.0.3 (2025-11-23)
 
 ### Bug fixes
 
-- Update generated code ([`74eb742`](https://github.com/allenporter/fitbit-web-api/commit/74eb742a950213a94af8f8cd1bb2e32a73a70a78))
-- Extend fitbit openapi response schema ([`3e7306f`](https://github.com/allenporter/fitbit-web-api/commit/3e7306f15725a6fd6ad43a771bf9dcbd920e77e5))
+- Update generated code and add schema tests ([`033d796`](https://github.com/allenporter/fitbit-web-api/commit/033d796c334338038f96d7a783a2add3b915ddc5))
 
 
 ## v2.0.2 (2025-11-23)
