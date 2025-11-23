@@ -46,16 +46,18 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v5
-      - name: Set up Python
-        uses: actions/setup-python@v6
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
         with:
           python-version: ${{ matrix.python-version }}
-      - uses: snok/install-poetry@v1.4.1
+          enable-cache: true
+          cache-dependency-glob: "pyproject.toml"
+          activate-environment: true
       - name: Install Dependencies
-        run: poetry install
+        run: uv sync
         shell: bash
       - name: Test with Pytest
-        run: poetry run pytest --cov-report=xml
+        run: pytest --cov-report=xml
         shell: bash
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5

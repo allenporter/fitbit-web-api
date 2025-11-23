@@ -46,10 +46,12 @@ Ready to contribute? Here's how to set yourself up for local development.
    $ git clone git@github.com:your_name_here/fitbit-web-api.git
    ```
 
-3. Install the project dependencies with [Poetry](https://python-poetry.org):
+3. Install the project dependencies
 
    ```shell
-   $ poetry install
+   $ uv venv --python=3.13
+   $ source .venv/bin/activate
+   $ uv sync
    ```
 
 4. Create a branch for local development:
@@ -63,7 +65,7 @@ Ready to contribute? Here's how to set yourself up for local development.
 5. When you're done making changes, check that your changes pass our tests:
 
    ```shell
-   $ poetry run pytest
+   $ pytest
    ```
 
 6. Linting is done through [pre-commit](https://pre-commit.com). Provided you have the tool installed globally, you can run them all as one-off:
