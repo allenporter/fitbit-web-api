@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "barcode": {
+      "type": "boolean",
+      "description": "Whether barcode is supported."
+    },
+    "imageUpload": {
+      "type": "boolean",
+      "description": "Whether image upload is supported."
+    },
+    "label": {
+      "type": "string",
+      "description": "Name of the locale."
+    },
+    "value": {
+      "type": "string",
+      "description": "The locale value."
+    }
+  }
+}

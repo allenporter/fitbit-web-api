@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "isFavorite": {
+      "type": "boolean",
+      "description": "Whether the food is a favorite."
+    },
+    "logDate": {
+      "type": "string",
+      "format": "date",
+      "description": "The date of the log entry."
+    },
+    "logId": {
+      "type": "integer",
+      "description": "The ID of the log entry."
+    },
+    "loggedFood": {
+      "$ref": "#/components/schemas/LoggedFood"
+    },
+    "nutritionalValues": {
+      "$ref": "#/components/schemas/NutritionalValues"
+    }
+  }
+}

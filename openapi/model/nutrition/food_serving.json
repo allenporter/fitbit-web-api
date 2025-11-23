@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "multiplier": {
+      "type": "number",
+      "description": "The multiplier for the serving size."
+    },
+    "servingSize": {
+      "type": "number",
+      "description": "The serving size."
+    },
+    "unit": {
+      "$ref": "#/components/schemas/FoodUnit"
+    },
+    "unitId": {
+      "type": "integer",
+      "description": "The ID of the unit."
+    }
+  }
+}

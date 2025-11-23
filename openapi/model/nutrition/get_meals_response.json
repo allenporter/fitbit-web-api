@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "meals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Meal"
+      }
+    }
+  }
+}

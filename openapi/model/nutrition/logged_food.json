@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "properties": {
+    "accessLevel": {
+      "type": "string",
+      "enum": ["PUBLIC", "PRIVATE"],
+      "description": "The access level of the food."
+    },
+    "amount": {
+      "type": "number",
+      "description": "The amount of food consumed."
+    },
+    "brand": {
+      "type": "string",
+      "description": "The brand of the food."
+    },
+    "calories": {
+      "type": "integer",
+      "description": "The calories in the food."
+    },
+    "foodId": {
+      "type": "integer",
+      "description": "The ID of the food."
+    },
+    "locale": {
+      "type": "string",
+      "description": "The locale of the food."
+    },
+    "mealTypeId": {
+      "type": "integer",
+      "description": "The meal type ID."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the food."
+    },
+    "unit": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "The ID of the unit."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the unit."
+        },
+        "plural": {
+          "type": "string",
+          "description": "The plural name of the unit."
+        }
+      }
+    },
+    "units": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "List of unit IDs."
+    }
+  }
+}

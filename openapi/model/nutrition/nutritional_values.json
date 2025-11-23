@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "calories": {
+      "type": "integer",
+      "description": "Calories."
+    },
+    "carbs": {
+      "type": "number",
+      "description": "Carbohydrates."
+    },
+    "fat": {
+      "type": "number",
+      "description": "Fat."
+    },
+    "fiber": {
+      "type": "number",
+      "description": "Fiber."
+    },
+    "protein": {
+      "type": "number",
+      "description": "Protein."
+    },
+    "sodium": {
+      "type": "number",
+      "description": "Sodium."
+    }
+  }
+}

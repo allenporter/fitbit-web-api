@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "goal": {
+      "type": "integer",
+      "description": "Amount of water to consume daily."
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Water goal's start date."
+    }
+  }
+}

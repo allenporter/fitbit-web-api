@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "calories": {
+      "type": "integer",
+      "description": "The daily calorie consumption goal."
+    }
+  }
+}

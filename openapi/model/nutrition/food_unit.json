@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "The ID of the unit."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the unit."
+    },
+    "plural": {
+      "type": "string",
+      "description": "The plural name of the unit."
+    }
+  }
+}

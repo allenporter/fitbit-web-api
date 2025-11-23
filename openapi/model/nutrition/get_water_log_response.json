@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "summary": {
+      "type": "object",
+      "properties": {
+        "water": {
+          "type": "integer",
+          "description": "Total amount of water consumed for the day."
+        }
+      }
+    },
+    "water": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WaterLog"
+      },
+      "description": "List of water log entries."
+    }
+  }
+}

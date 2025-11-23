@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {
+    "meal": {
+      "$ref": "#/components/schemas/Meal"
+    }
+  }
+}

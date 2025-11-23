@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "accessLevel": {
+      "type": "string",
+      "description": "The access level of the food (PUBLIC or PRIVATE)."
+    },
+    "amount": {
+      "type": "number",
+      "format": "float",
+      "description": "The amount of the food."
+    },
+    "brand": {
+      "type": "string",
+      "description": "The brand of the food."
+    },
+    "calories": {
+      "type": "integer",
+      "description": "The number of calories in the food."
+    },
+    "foodId": {
+      "type": "integer",
+      "format": "int64",
+      "description": "The ID of the food."
+    },
+    "locale": {
+      "type": "string",
+      "description": "The locale of the food."
+    },
+    "mealTypeId": {
+      "type": "integer",
+      "description": "The meal type ID."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the food."
+    },
+    "unit": {
+      "$ref": "#/components/schemas/FoodUnit"
+    },
+    "units": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "List of unit IDs available for this food."
+    }
+  }
+}

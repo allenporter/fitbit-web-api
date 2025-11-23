@@ -1,0 +1,67 @@
+{
+  "/1/user/-/foods/log/date/{date}.json": {
+    "get": {
+      "200": "GetFoodLogResponse"
+    }
+  },
+  "/1/user/-/foods/log/water/date/{date}.json": {
+    "get": {
+      "200": "GetWaterLogResponse"
+    }
+  },
+  "/1/user/-/foods/log/goal.json": {
+    "get": {
+      "200": "GetFoodGoalsResponse"
+    }
+  },
+  "/1/user/-/foods/log/water/goal.json": {
+    "get": {
+      "200": "GetWaterGoalResponse"
+    }
+  },
+  "/1/user/-/foods/log/favorite.json": {
+    "get": {
+      "200": "GetFavoriteFoodsResponse"
+    }
+  },
+  "/1/foods/{food-id}.json": {
+    "get": {
+      "200": "GetFoodResponse"
+    }
+  },
+  "/1/foods/locales.json": {
+    "get": {
+      "200": "GetFoodLocalesResponse"
+    }
+  },
+  "/1/foods/units.json": {
+    "get": {
+      "200": "GetFoodUnitsResponse"
+    }
+  },
+  "/1/user/-/foods/log/frequent.json": {
+    "get": {
+      "200": "GetFrequentFoodsResponse"
+    }
+  },
+  "/1/user/-/meals/{meal-id}.json": {
+    "get": {
+      "200": "GetMealResponse"
+    }
+  },
+  "/1/user/-/meals.json": {
+    "get": {
+      "200": "GetMealsResponse"
+    }
+  },
+  "/1/user/-/foods/log/recent.json": {
+    "get": {
+      "200": "GetRecentFoodsResponse"
+    }
+  },
+  "/1/foods/search.json": {
+    "get": {
+      "200": "SearchFoodsResponse"
+    }
+  }
+}

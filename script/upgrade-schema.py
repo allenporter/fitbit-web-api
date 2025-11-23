@@ -24,6 +24,24 @@ MEAL_ID_PARAM = {
     },
 }
 
+GET_MEAL_OPERATION = {
+    "summary": "Get Meal",
+    "description": "Retrieves a single meal created by the user from their food log given the meal id.",
+    "operationId": "getMeal",
+    "tags": ["Nutrition"],
+    "parameters": [
+        {
+            "name": "user-id",
+            "in": "path",
+            "required": True,
+            "schema": {"type": "string", "default": "-"},
+            "description": "The encoded ID of the user. Use '-' (dash) for current logged-in user.",
+        },
+        MEAL_ID_PARAM,
+    ],
+    "responses": {},
+}
+
 
 def snake_to_pascal(name: str) -> str:
     """Converts a snake_case string to PascalCase."""
@@ -41,14 +59,20 @@ def load_path_config() -> dict[str, Any]:
 
 def fix_schema_bugs(schema: dict[str, Any]) -> None:
     """Fix known bugs in the OpenAPI schema."""
-    # This path is defined twice, once with a meal-id and once without.
-    # The one without is not in the documentation, so we remove it.
-    del schema["paths"]["/1/user/-/meals.json"]
     # This path is missing the meal-id parameter.
     post_op = schema["paths"]["/1/user/-/meals/{meal-id}.json"]["post"]
     if "parameters" not in post_op:
         post_op["parameters"] = []
     post_op["parameters"].append(MEAL_ID_PARAM)
+
+    # This path is missing the get operation
+    if "get" not in schema["paths"]["/1/user/-/meals/{meal-id}.json"]:
+        schema["paths"]["/1/user/-/meals/{meal-id}.json"]["get"] = GET_MEAL_OPERATION
+
+    # This path is malformed, missing the 'get' key
+    if "summary" in schema["paths"]["/1/user/-/meals.json"]:
+        content = schema["paths"]["/1/user/-/meals.json"]
+        schema["paths"]["/1/user/-/meals.json"] = {"get": content}
     # This path is missing the post operation, and there is a stray 'post' key
     if "post" in schema["paths"]:
         schema["paths"]["/1/user/-/profile.json"]["post"] = schema["paths"]["post"]
@@ -77,6 +101,14 @@ def update_schemas(schema: dict[str, Any]) -> None:
                 if not response_name:
                     continue
                 print(f"  - Updating {method.upper()} {path} with {response_name}")
+                if path not in schema["paths"]:
+                    raise KeyError(
+                        f"Path {path} not found in schema, please verify you have the correct path."
+                    )
+                if method not in schema["paths"][path]:
+                    raise KeyError(
+                        f"Method {method} not found in path {path}, please verify you have the correct method. If the method is right, this this may need a schema bug fix in this script in `fix_schema_bugs` due to the original schema missing a protocol."
+                    )
                 schema["paths"][path][method]["responses"][status_code] = {
                     "description": "A successful request.",
                     "content": {
