@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.5.0 (2025-11-23)
+
+### Features
+
+- Add ecg and irn response schemas and update readme ([`eb8084d`](https://github.com/allenporter/fitbit-web-api/commit/eb8084d9188716209258580c84c6a13f4bf8c172))
+
+
 ## v2.4.0 (2025-11-23)
 
 ### Features
