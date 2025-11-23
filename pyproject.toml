@@ -25,9 +25,9 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/chemelli74/fitbit-web-api"
-"Bug Tracker" = "https://github.com/chemelli74/fitbit-web-api/issues"
-Changelog = "https://github.com/chemelli74/fitbit-web-api/blob/main/CHANGELOG.md"
+Repository = "https://github.com/allenporter/fitbit-web-api"
+"Bug Tracker" = "https://github.com/allenporter/fitbit-web-api/issues"
+Changelog = "https://github.com/allenporter/fitbit-web-api/blob/main/CHANGELOG.md"
 
 [dependency-groups]
 dev = [

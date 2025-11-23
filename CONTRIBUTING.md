@@ -116,4 +116,4 @@ $ pytest tests
 
 The deployment should be automated and can be triggered from the Semantic Release workflow in GitHub. The next version will be based on [the commit logs](https://python-semantic-release.readthedocs.io/en/latest/commit-log-parsing.html#commit-log-parsing). This is done by [python-semantic-release](https://python-semantic-release.readthedocs.io/en/latest/index.html) via a GitHub action.
 
-[gh-issues]: https://github.com/chemelli74/fitbit-web-api/issues
+[gh-issues]: https://github.com/allenporter/fitbit-web-api/issues

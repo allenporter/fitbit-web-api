@@ -35,7 +35,7 @@ setup(
     description="Fitbit Web API Explorer",
     author="Web API Support",
     author_email="team@openapitools.org",
-    url="https://github.com/chemelli74/fitbit-web-api",
+    url="https://github.com/allenporter/fitbit-web-api",
     keywords=["OpenAPI", "OpenAPI-Generator", "Fitbit Web API Explorer"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
