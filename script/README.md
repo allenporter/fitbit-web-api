@@ -137,6 +137,7 @@ Example from `openapi/paths/sleep_paths.json`:
 - Active Zone Minutes Time Series
 - Activity
 - Activity Time Series
+- Authorization
 - Body
 - Body Time Series
 - Breathing Rate

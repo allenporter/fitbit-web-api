@@ -1,0 +1,12 @@
+{
+  "/oauth2/token": {
+    "post": {
+      "200": "Oauth2Token"
+    }
+  },
+  "/1.1/oauth2/introspect": {
+    "post": {
+      "200": "Oauth2Introspect"
+    }
+  }
+}
