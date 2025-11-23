@@ -87,6 +87,26 @@ Test data is stored in `test/testdata/` as JSON files.
 - Use `load_test_data("filename.json")` to load this data in your tests.
 - Keep data realistic by using examples from the official documentation.
 
+## Tracking Missing Test Coverage
+
+For API methods that are not yet tested (especially mutable methods like POST/PUT/DELETE operations), add stub tests marked with `@pytest.mark.skip` to track what still needs coverage.
+
+**Example:**
+
+```python
+@pytest.mark.skip(reason="TODO: Implement test for add_water_log")
+async def test_add_water_log(nutrition_api: NutritionApi) -> None:
+    """Test case for add_water_log - Log Water."""
+    pass
+```
+
+**Benefits:**
+
+- Provides visibility into missing test coverage
+- Makes it easy to find and implement tests later
+- Shows up in test reports as skipped tests
+- Documents the API surface that needs testing
+
 ## Finding Example Requests/Responses
 
 To write accurate tests, we need real-world example responses. We use the [Fitbit Web API Reference](https://dev.fitbit.com/build/reference/web-api/) for this.

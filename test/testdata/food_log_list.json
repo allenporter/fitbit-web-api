@@ -1,0 +1,45 @@
+{
+  "foods": [
+    {
+      "isFavorite": true,
+      "logDate": "2023-01-01",
+      "logId": 12345,
+      "loggedFood": {
+        "accessLevel": "PUBLIC",
+        "amount": 1.5,
+        "brand": "Brand A",
+        "calories": 150,
+        "foodId": 555,
+        "locale": "en_US",
+        "mealTypeId": 1,
+        "name": "Apple",
+        "unit": {
+          "id": 1,
+          "name": "cup",
+          "plural": "cups"
+        },
+        "units": [1, 2]
+      },
+      "nutritionalValues": {
+        "calories": 150,
+        "carbs": 20.5,
+        "fat": 0.5,
+        "fiber": 3.0,
+        "protein": 1.0,
+        "sodium": 5.0
+      }
+    }
+  ],
+  "goals": {
+    "calories": 2000
+  },
+  "summary": {
+    "calories": 150,
+    "carbs": 20.5,
+    "fat": 0.5,
+    "fiber": 3.0,
+    "protein": 1.0,
+    "sodium": 5.0,
+    "water": 0
+  }
+}
