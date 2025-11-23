@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.1.0 (2025-11-23)
+
+### Features
+
+- Add time series datapoint schema ([`f127b9e`](https://github.com/allenporter/fitbit-web-api/commit/f127b9e2704fbc22b86e82a9f996a2b3a62b1a4a))
+
+
 ## v2.0.3 (2025-11-23)
 
 ### Bug fixes
