@@ -1,5 +1,22 @@
 # Changelog
 
+## v2.11.0 (2025-11-23)
+
+### Features
+
+- Implement pytest for api and model tests, adding activity as a test. ([`2cef892`](https://github.com/allenporter/fitbit-web-api/commit/2cef892b448b138c59e23b750c153781cc08fff4))
+
+
+### Documentation
+
+- Add a comprehensive testing guide for the project. ([`81315b3`](https://github.com/allenporter/fitbit-web-api/commit/81315b310e9da34f49738cebedc86629b36cc527))
+
+
+### Refactoring
+
+- Migrate user and device model and api tests to pytest with dedicated json test data. ([`66f74eb`](https://github.com/allenporter/fitbit-web-api/commit/66f74eb8fa69587dd1879707898c624a34f59f95))
+
+
 ## v2.10.0 (2025-11-23)
 
 ### Features
