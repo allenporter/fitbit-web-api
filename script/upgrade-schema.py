@@ -87,13 +87,19 @@ def update_schemas(schema: dict[str, Any]) -> None:
                 }
 
 
-def main() -> None:
-    """Load the OpenAPI schema, fix bugs, and write the updated schema."""
+def generate_fixed_schema() -> dict[str, Any]:
+    """Generates the fixed OpenAPI schema."""
     with OPENAPI_SCHEMA.open() as f:
         schema = json.load(f)
 
     fix_schema_bugs(schema)
     update_schemas(schema)
+    return schema
+
+
+def main() -> None:
+    """Load the OpenAPI schema, fix bugs, and write the updated schema."""
+    schema = generate_fixed_schema()
 
     with FIXED_SCHEMA.open("w") as f:
         json.dump(schema, f, indent=2, ensure_ascii=False)
