@@ -1,0 +1,12 @@
+{
+  "/1/user/-/irn/alerts/list.json": {
+    "get": {
+      "200": "GetIrnAlertsListResponse"
+    }
+  },
+  "/1/user/-/irn/profile.json": {
+    "get": {
+      "200": "GetIrnProfileResponse"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "ecgReadings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EcgReading"
+      },
+      "description": "List of ECG readings."
+    },
+    "pagination": {
+      "type": "object",
+      "properties": {
+        "afterDate": {
+          "type": "string",
+          "format": "date",
+          "description": "The afterDate parameter of the request."
+        },
+        "beforeDate": {
+          "type": "string",
+          "format": "date",
+          "description": "The beforeDate parameter of the request."
+        },
+        "limit": {
+          "type": "integer",
+          "description": "The limit parameter of the request."
+        },
+        "next": {
+          "type": "string",
+          "description": "The URL of the request that will fetch the next page of results."
+        },
+        "offset": {
+          "type": "integer",
+          "description": "The offset parameter of the request."
+        },
+        "previous": {
+          "type": "string",
+          "description": "The URL of the request that will fetch the previous page of results."
+        },
+        "sort": {
+          "type": "string",
+          "description": "The sort parameter of the request."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "onboarded": {
+      "type": "boolean",
+      "description": "Whether or not the user has onboarded onto the IRN feature."
+    },
+    "enrolled": {
+      "type": "boolean",
+      "description": "Whether or not the user is currently enrolled in having their data processed for IRN alerts."
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The timestamp of the last piece of analyzable data synced by the user (displayed as local time)."
+    }
+  }
+}

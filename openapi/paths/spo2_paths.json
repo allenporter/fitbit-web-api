@@ -1,0 +1,12 @@
+{
+  "/1/user/-/spo2/date/{date}.json": {
+    "get": {
+      "200": "GetSpO2SummaryResponse"
+    }
+  },
+  "/1/user/-/spo2/date/{startDate}/{endDate}.json": {
+    "get": {
+      "200": "GetSpO2SummaryResponse"
+    }
+  }
+}
