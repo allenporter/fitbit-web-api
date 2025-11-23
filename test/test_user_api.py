@@ -14,7 +14,7 @@ from typing import Any, Dict
 from collections.abc import AsyncGenerator
 import fitbit_web_api
 
-PROFILE_PATH = '/1/user/-/profile.json'
+PROFILE_PATH = "/1/user/-/profile.json"
 PROFILE_DATA = {
     "user": {
         "encodedId": "some-profile-id",
@@ -27,12 +27,17 @@ PROFILE_DATA = {
     }
 }
 
+
 @pytest.fixture
-async def user_api(api_client: fitbit_web_api.ApiClient) -> AsyncGenerator[fitbit_web_api.UserApi, None]:
+async def user_api(
+    api_client: fitbit_web_api.ApiClient,
+) -> AsyncGenerator[fitbit_web_api.UserApi, None]:
     yield fitbit_web_api.UserApi(api_client)
 
 
-async def test_get_profile_async(user_api: fitbit_web_api.UserApi, responses: Dict[str, Any]) -> None:
+async def test_get_profile_async(
+    user_api: fitbit_web_api.UserApi, responses: Dict[str, Any]
+) -> None:
     """Test case for get_profile as an async request."""
     responses[PROFILE_PATH] = PROFILE_DATA
 
