@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Describes the user based on the frequency they sync their steps. Supported: ranked-user | inactive-user"
+    },
+    "id": {
+      "type": "string",
+      "description": "Fitbit user id."
+    },
+    "attributes": {
+      "$ref": "#/components/schemas/LeaderboardFriendAttributes"
+    },
+    "relationships": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Fitbit user id."
+                },
+                "type": {
+                  "type": "string",
+                  "description": "Supported: person"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

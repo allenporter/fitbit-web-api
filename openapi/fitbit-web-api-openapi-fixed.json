@@ -4056,8 +4056,14 @@
         "operationId": "getFriends",
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetFriendsResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -4083,8 +4089,14 @@
         "operationId": "getFriendsLeaderboard",
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetFriendsLeaderboardResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -8821,6 +8833,133 @@
           "restingHeartRate": {
             "type": "integer",
             "description": "The user’s calculated resting heart rate."
+          }
+        }
+      },
+      "GetFriendsResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Friend"
+            }
+          }
+        }
+      },
+      "Friend": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Supported: person"
+          },
+          "id": {
+            "type": "string",
+            "description": "Fitbit user id."
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/FriendAttributes"
+          }
+        }
+      },
+      "FriendAttributes": {
+        "type": "object",
+        "properties": {
+          "avatar": {
+            "type": "string",
+            "description": "Link to user's avatar picture."
+          },
+          "child": {
+            "type": "boolean",
+            "description": "Boolean value describing friend as a child account."
+          },
+          "friend": {
+            "type": "boolean",
+            "description": "Boolean value describing user as a friend."
+          },
+          "name": {
+            "type": "string",
+            "description": "Person's display name."
+          }
+        }
+      },
+      "GetFriendsLeaderboardResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LeaderboardFriend"
+            }
+          }
+        }
+      },
+      "LeaderboardFriendAttributes": {
+        "type": "object",
+        "properties": {
+          "avatar": {
+            "type": "string",
+            "description": "Link to user's avatar picture."
+          },
+          "child": {
+            "type": "boolean",
+            "description": "Boolean value describing friend as a child account."
+          },
+          "friend": {
+            "type": "boolean",
+            "description": "Supported: true"
+          },
+          "name": {
+            "type": "string",
+            "description": "Person's display name."
+          },
+          "step-rank": {
+            "type": "integer",
+            "description": "Ranking among the user's friends."
+          },
+          "step-summary": {
+            "type": "integer",
+            "description": "Weekly step count."
+          }
+        }
+      },
+      "LeaderboardFriend": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Describes the user based on the frequency they sync their steps. Supported: ranked-user | inactive-user"
+          },
+          "id": {
+            "type": "string",
+            "description": "Fitbit user id."
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/LeaderboardFriendAttributes"
+          },
+          "relationships": {
+            "type": "object",
+            "properties": {
+              "user": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "Fitbit user id."
+                      },
+                      "type": {
+                        "type": "string",
+                        "description": "Supported: person"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       },
