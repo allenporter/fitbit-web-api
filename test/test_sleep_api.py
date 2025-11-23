@@ -12,6 +12,7 @@ import fitbit_web_api
 from fitbit_web_api.api.sleep_api import SleepApi
 
 SLEEP_LIST_PATH = "/1.2/user/-/sleep/list.json"
+SLEEP_BY_DATE_PATH = "/1.2/user/-/sleep/date/{date}.json"
 
 
 @pytest.fixture
@@ -47,3 +48,22 @@ async def test_get_sleep_list(
     assert response.pagination.limit == 1
     assert response.summary is not None
     assert response.summary.total_minutes_asleep == 480
+
+
+async def test_get_sleep_by_date(
+    sleep_api: SleepApi,
+    responses: Dict[str, Any],
+    load_test_data: Callable[[str], Any],
+) -> None:
+    """Test case for get_sleep_by_date."""
+    sleep_data = load_test_data("sleep_log_list.json")
+    responses["/1.2/user/-/sleep/date/2023-01-01.json"] = sleep_data
+
+    response = await sleep_api.get_sleep_by_date(var_date=date(2023, 1, 1))
+
+    assert response.sleep is not None
+    assert len(response.sleep) == 1
+    sleep_log = response.sleep[0]
+    assert sleep_log.log_id == 9876543210
+    assert sleep_log.efficiency == 95
+    assert sleep_log.duration == 28800000

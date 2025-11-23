@@ -1,0 +1,32 @@
+{
+  "foods-log-caloriesIn": [
+    {
+      "dateTime": "2019-03-15",
+      "value": "2100"
+    },
+    {
+      "dateTime": "2019-03-16",
+      "value": "1850"
+    },
+    {
+      "dateTime": "2019-03-17",
+      "value": "2250"
+    },
+    {
+      "dateTime": "2019-03-18",
+      "value": "1950"
+    },
+    {
+      "dateTime": "2019-03-19",
+      "value": "2300"
+    },
+    {
+      "dateTime": "2019-03-20",
+      "value": "2050"
+    },
+    {
+      "dateTime": "2019-03-21",
+      "value": "2150"
+    }
+  ]
+}
