@@ -1,0 +1,29 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:recommended',
+  ],
+  assignees: [
+    'allenporter',
+  ],
+  packageRules: [
+    {
+      description: 'Minor updates are automatic',
+      automerge: true,
+      automergeType: 'branch',
+      matchUpdateTypes: [
+        'minor',
+        'patch',
+      ],
+    },
+  ],
+  pip_requirements: {
+    managerFilePatterns: [
+      '/requirements.txt/',
+      '/test-requirements.txt',
+    ],
+  },
+  'pre-commit': {
+    enabled: true,
+  },
+}
