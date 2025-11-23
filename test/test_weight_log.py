@@ -3,6 +3,7 @@ Unit tests for WeightLog model.
 """
 
 from collections.abc import Callable
+from datetime import date
 from typing import Any
 
 from fitbit_web_api.models.weight_log import WeightLog
@@ -47,4 +48,5 @@ def test_weight_log_model_to_dict(load_test_data: Callable[[str], Any]) -> None:
     assert weight_dict["logId"] == 1234567890
     assert weight_dict["weight"] == 72.5
     assert weight_dict["bmi"] == 23.57
+    assert weight_dict["date"] == date(2023, 1, 1)
     assert weight_dict["source"] == "API"
