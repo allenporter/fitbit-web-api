@@ -42,9 +42,8 @@ missing information. To add a new response schema, one would typically:
 
 This section tracks the progress of enhancing the OpenAPI schema with response
 objects. The Fitbit Web API schema includes all of the request objects, but it is
-missing the response objects. Therefore we have a process of reviewing the FitBit
-developer documentation examples and building a schema out of this. Once the schema
-is created, we use the above tooling to re-generate the code.
+missing the response objects. We have completed the process of reviewing the FitBit
+developer documentation examples and building a schema out of this.
 
 ### Adding new response schemas:
 
@@ -155,10 +154,6 @@ Example from `openapi/paths/sleep_paths.json`:
 - Subscriptions
 - Temperature
 - User
-
-### Remaining API Categories
-
-The following API categories still need to be updated with response schemas:
 
 - Active Zone Minutes Intraday Time Series
 - Activity Intraday Time Series
