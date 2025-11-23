@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "activities-heart": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/HeartRateTimeSeriesDatapoint"
+      }
+    }
+  }
+}

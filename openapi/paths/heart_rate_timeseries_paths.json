@@ -1,0 +1,12 @@
+{
+  "/1/user/-/activities/heart/date/{date}/{period}.json": {
+    "get": {
+      "200": "GetHeartRateTimeSeriesResponse"
+    }
+  },
+  "/1/user/-/activities/heart/date/{base-date}/{end-date}.json": {
+    "get": {
+      "200": "GetHeartRateTimeSeriesResponse"
+    }
+  }
+}

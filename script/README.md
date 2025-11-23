@@ -140,6 +140,8 @@ Example from `openapi/paths/sleep_paths.json`:
 - Body
 - Body Time Series
 - Devices
+- Heart Rate Time Series
+- Heart Rate Variability
 - Sleep
 - User
 
@@ -156,8 +158,6 @@ The following API categories still need to be updated with response schemas:
 - Electrocardiogram
 - Friends
 - Heart Rate Intraday Time Series
-- Heart Rate Time Series
-- Heart Rate Variability
 - Heart Rate Variability Intraday
 - Irregular Rhythm Notifications
 - Nutrition

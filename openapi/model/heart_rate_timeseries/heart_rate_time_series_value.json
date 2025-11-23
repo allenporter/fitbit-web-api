@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "customHeartRateZones": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/HeartRateZone"
+      }
+    },
+    "heartRateZones": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/HeartRateZone"
+      }
+    },
+    "restingHeartRate": {
+      "type": "integer",
+      "description": "The user’s calculated resting heart rate."
+    }
+  }
+}
