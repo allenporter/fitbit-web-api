@@ -21,10 +21,11 @@ dependencies = [
     "python-dateutil>=2.8.2,<3",
     "setuptools>=69.0.2,<81.0.0",
     "urllib3>=2.1.0,<3",
-    "aiohttp>=3.9, <3.10",
+    "aiohttp>=3.13.2",
     "pydantic>=2",
     "typing-extensions>=4.7.1",
     "aiohttp-retry>=2.9.1,<3",
+    "pytest-aiohttp>=1.1.0",
 ]
 
 [project.urls]
@@ -78,8 +79,13 @@ match = "(?!main$)"
 prerelease = true
 
 [tool.pytest.ini_options]
-addopts = "-v -Wdefault --cov=fitbit_web_api --cov-report=term-missing:skip-covered"
+# These flags can be used for test coverage report:
+#   --cov=fitbit_web_api --cov-report=term-missing:skip-covered"
+# However, coverage is so low at the moment with the generated code and
+# it is visually distracting.
+addopts = "-v -Wdefault"
 pythonpath = ["."]
+asyncio_mode = "auto"
 
 [tool.coverage.run]
 branch = true
