@@ -33,5 +33,5 @@ echo "Running ruff to fix code style..."
 ruff check --fix . || true
 
 echo "---"
-echo "Running black to format code..."
-black . || true
+echo "Running ruff to format code..."
+ruff format .

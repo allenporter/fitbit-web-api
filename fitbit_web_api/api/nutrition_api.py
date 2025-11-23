@@ -248,7 +248,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -606,7 +605,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -623,29 +621,23 @@ class NutritionApi:
         # process the path parameters
         # process the query parameters
         if name is not None:
-
             _query_params.append(("name", name))
 
         if default_food_measurement_unit_id is not None:
-
             _query_params.append(
                 ("defaultFoodMeasurementUnitId", default_food_measurement_unit_id)
             )
 
         if default_serving_size is not None:
-
             _query_params.append(("defaultServingSize", default_serving_size))
 
         if calories is not None:
-
             _query_params.append(("calories", calories))
 
         if form_type is not None:
-
             _query_params.append(("formType", form_type))
 
         if description is not None:
-
             _query_params.append(("description", description))
 
         # process the header parameters
@@ -1105,7 +1097,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1122,23 +1113,18 @@ class NutritionApi:
         # process the path parameters
         # process the query parameters
         if food_id is not None:
-
             _query_params.append(("foodId", food_id))
 
         if food_name is not None:
-
             _query_params.append(("foodName", food_name))
 
         if meal_type_id is not None:
-
             _query_params.append(("mealTypeId", meal_type_id))
 
         if unit_id is not None:
-
             _query_params.append(("unitId", unit_id))
 
         if amount is not None:
-
             _query_params.append(("amount", amount))
 
         if var_date is not None:
@@ -1153,15 +1139,12 @@ class NutritionApi:
                 _query_params.append(("date", var_date))
 
         if favorite is not None:
-
             _query_params.append(("favorite", favorite))
 
         if brand_name is not None:
-
             _query_params.append(("brandName", brand_name))
 
         if calories is not None:
-
             _query_params.append(("calories", calories))
 
         # process the header parameters
@@ -1453,7 +1436,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1470,15 +1452,12 @@ class NutritionApi:
         # process the path parameters
         # process the query parameters
         if calories is not None:
-
             _query_params.append(("calories", calories))
 
         if intensity is not None:
-
             _query_params.append(("intensity", intensity))
 
         if personalized is not None:
-
             _query_params.append(("personalized", personalized))
 
         # process the header parameters
@@ -1723,7 +1702,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1740,7 +1718,6 @@ class NutritionApi:
         # process the path parameters
         # process the query parameters
         if target is not None:
-
             _query_params.append(("target", target))
 
         # process the header parameters
@@ -2035,7 +2012,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2063,11 +2039,9 @@ class NutritionApi:
                 _query_params.append(("date", var_date))
 
         if amount is not None:
-
             _query_params.append(("amount", amount))
 
         if unit is not None:
-
             _query_params.append(("unit", unit))
 
         # process the header parameters
@@ -2309,7 +2283,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2557,7 +2530,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2805,7 +2777,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -3047,7 +3018,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -3298,7 +3268,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -3661,7 +3630,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -3680,19 +3648,15 @@ class NutritionApi:
             _path_params["food-log-id"] = food_log_id
         # process the query parameters
         if meal_type_id is not None:
-
             _query_params.append(("mealTypeId", meal_type_id))
 
         if unit_id is not None:
-
             _query_params.append(("unitId", unit_id))
 
         if amount is not None:
-
             _query_params.append(("amount", amount))
 
         if calories is not None:
-
             _query_params.append(("calories", calories))
 
         # process the header parameters
@@ -3909,7 +3873,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -4167,7 +4130,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -4399,7 +4361,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -4642,7 +4603,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -4887,7 +4847,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -4904,7 +4863,6 @@ class NutritionApi:
         # process the path parameters
         # process the query parameters
         if query is not None:
-
             _query_params.append(("query", query))
 
         # process the header parameters
@@ -5121,7 +5079,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -5351,7 +5308,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -5581,7 +5537,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -5811,7 +5766,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -6069,7 +6023,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -6292,7 +6245,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -6548,7 +6500,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -6864,7 +6815,6 @@ class NutritionApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -6883,11 +6833,9 @@ class NutritionApi:
             _path_params["water-log-id"] = water_log_id
         # process the query parameters
         if amount is not None:
-
             _query_params.append(("amount", amount))
 
         if unit is not None:
-
             _query_params.append(("unit", unit))
 
         # process the header parameters

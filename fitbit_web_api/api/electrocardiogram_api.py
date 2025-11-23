@@ -341,7 +341,6 @@ class ElectrocardiogramApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
-
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -380,15 +379,12 @@ class ElectrocardiogramApi:
                 _query_params.append(("afterDate", after_date))
 
         if sort is not None:
-
             _query_params.append(("sort", sort))
 
         if offset is not None:
-
             _query_params.append(("offset", offset))
 
         if limit is not None:
-
             _query_params.append(("limit", limit))
 
         # process the header parameters
