@@ -1,0 +1,32 @@
+{
+  "activities-calories": [
+    {
+      "dateTime": "2018-12-26",
+      "value": "2143"
+    },
+    {
+      "dateTime": "2018-12-27",
+      "value": "2567"
+    },
+    {
+      "dateTime": "2018-12-28",
+      "value": "3012"
+    },
+    {
+      "dateTime": "2018-12-29",
+      "value": "2891"
+    },
+    {
+      "dateTime": "2018-12-30",
+      "value": "1876"
+    },
+    {
+      "dateTime": "2018-12-31",
+      "value": "2345"
+    },
+    {
+      "dateTime": "2019-01-01",
+      "value": "2098"
+    }
+  ]
+}
