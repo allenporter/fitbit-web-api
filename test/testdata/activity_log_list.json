@@ -1,0 +1,30 @@
+{
+    "activities": [
+        {
+            "activityId": 51007,
+            "activityParentId": 90013,
+            "activityParentName": "Walking",
+            "calories": 545,
+            "description": "Walking 5.0 mph",
+            "distance": 12.5,
+            "duration": 3600000,
+            "hasActiveZoneMinutes": true,
+            "hasStartTime": true,
+            "isFavorite": true,
+            "lastModified": "2023-01-01T12:00:00.000",
+            "logId": 1234567890,
+            "name": "Walking",
+            "startDate": "2023-01-01",
+            "startTime": "12:00:00",
+            "steps": 10000
+        }
+    ],
+    "pagination": {
+        "afterDate": "2023-01-01",
+        "limit": 1,
+        "next": "https://api.fitbit.com/1/user/-/activities/list.json?offset=1&limit=1&sort=desc&afterDate=2023-01-01",
+        "offset": 0,
+        "previous": "",
+        "sort": "desc"
+    }
+}
