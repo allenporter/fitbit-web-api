@@ -79,6 +79,10 @@ match = "(?!main$)"
 prerelease = true
 
 [tool.pytest.ini_options]
+# These flags can be used for test coverage report:
+#   --cov=fitbit_web_api --cov-report=term-missing:skip-covered"
+# However, coverage is so low at the moment with the generated code and
+# it is visually distracting.
 addopts = "-v -Wdefault"
 pythonpath = ["."]
 asyncio_mode = "auto"
