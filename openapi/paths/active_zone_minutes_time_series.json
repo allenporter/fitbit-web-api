@@ -1,0 +1,12 @@
+{
+  "/1/user/-/activities/active-zone-minutes/date/{date}/{period}.json": {
+    "get": {
+      "200": "GetAzmTimeSeriesResponse"
+    }
+  },
+  "/1/user/-/activities/active-zone-minutes/date/{start-date}/{end-date}.json": {
+    "get": {
+      "200": "GetAzmTimeSeriesResponse"
+    }
+  }
+}

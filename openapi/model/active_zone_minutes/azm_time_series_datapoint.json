@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "dateTime": {
+      "type": "string",
+      "format": "date",
+      "description": "The date specified in the format YYYY-MM-DD or today."
+    },
+    "value": {
+      "type": "object",
+      "properties": {
+        "activeZoneMinutes": {
+          "type": "integer",
+          "description": "Total count of active zone minutes."
+        },
+        "fatBurnActiveZoneMinutes": {
+          "type": "integer",
+          "description": "The number of active zone minutes in the fat burn heart rate zone."
+        },
+        "cardioActiveZoneMinutes": {
+          "type": "integer",
+          "description": "The number of active zone minutes in the cardio heart rate zone."
+        },
+        "peakActiveZoneMinutes": {
+          "type": "integer",
+          "description": "The number of active zone minutes in the peak heart rate zone."
+        }
+      }
+    }
+  }
+}

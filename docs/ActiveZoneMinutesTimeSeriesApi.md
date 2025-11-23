@@ -9,7 +9,7 @@ All URIs are relative to *https://api.fitbit.com*
 
 # **get_azm_time_series_by_date**
 
-> get_azm_time_series_by_date(var_date, period)
+> GetAzmTimeSeriesResponse get_azm_time_series_by_date(var_date, period)
 
 Get AZM Time Series by Date
 
@@ -21,6 +21,7 @@ Returns the daily summary values over a period of time by specifying a date and 
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_azm_time_series_response import GetAzmTimeSeriesResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -46,7 +47,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get AZM Time Series by Date
-        await api_instance.get_azm_time_series_by_date(var_date, period)
+        api_response = await api_instance.get_azm_time_series_by_date(var_date, period)
+        print("The response of ActiveZoneMinutesTimeSeriesApi->get_azm_time_series_by_date:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActiveZoneMinutesTimeSeriesApi->get_azm_time_series_by_date: %s\n" % e)
 ```
@@ -60,7 +63,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetAzmTimeSeriesResponse**](GetAzmTimeSeriesResponse.md)
 
 ### Authorization
 
@@ -69,7 +72,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -84,7 +87,7 @@ void (empty response body)
 
 # **get_azm_time_series_by_interval**
 
-> get_azm_time_series_by_interval(start_date, end_date)
+> GetAzmTimeSeriesResponse get_azm_time_series_by_interval(start_date, end_date)
 
 Get AZM Time Series by Interval
 
@@ -96,6 +99,7 @@ Returns the daily summary values over an interval by specifying a date range.
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_azm_time_series_response import GetAzmTimeSeriesResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -121,7 +125,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get AZM Time Series by Interval
-        await api_instance.get_azm_time_series_by_interval(start_date, end_date)
+        api_response = await api_instance.get_azm_time_series_by_interval(start_date, end_date)
+        print("The response of ActiveZoneMinutesTimeSeriesApi->get_azm_time_series_by_interval:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActiveZoneMinutesTimeSeriesApi->get_azm_time_series_by_interval: %s\n" % e)
 ```
@@ -135,7 +141,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetAzmTimeSeriesResponse**](GetAzmTimeSeriesResponse.md)
 
 ### Authorization
 
@@ -144,7 +150,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 

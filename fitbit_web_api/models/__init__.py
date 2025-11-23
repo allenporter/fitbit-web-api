@@ -24,6 +24,10 @@ from fitbit_web_api.models.activity_time_series_datapoint import (
 )
 from fitbit_web_api.models.alarm import Alarm
 from fitbit_web_api.models.alarm_response import AlarmResponse
+from fitbit_web_api.models.azm_time_series_datapoint import AzmTimeSeriesDatapoint
+from fitbit_web_api.models.azm_time_series_datapoint_value import (
+    AzmTimeSeriesDatapointValue,
+)
 from fitbit_web_api.models.badge import Badge
 from fitbit_web_api.models.create_sleep_goal_response import CreateSleepGoalResponse
 from fitbit_web_api.models.create_sleep_log_response import CreateSleepLogResponse
@@ -40,6 +44,7 @@ from fitbit_web_api.models.get_activity_time_series_response import (
     GetActivityTimeSeriesResponse,
 )
 from fitbit_web_api.models.get_alarms_response import GetAlarmsResponse
+from fitbit_web_api.models.get_azm_time_series_response import GetAzmTimeSeriesResponse
 from fitbit_web_api.models.get_badges_response import GetBadgesResponse
 from fitbit_web_api.models.get_daily_activity_summary_response import (
     GetDailyActivitySummaryResponse,

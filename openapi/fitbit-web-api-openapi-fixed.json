@@ -719,7 +719,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAzmTimeSeriesResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -772,7 +778,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAzmTimeSeriesResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -8170,6 +8182,48 @@
           "value": {
             "type": "string",
             "description": "The specified resource's daily total."
+          }
+        }
+      },
+      "GetAzmTimeSeriesResponse": {
+        "type": "object",
+        "properties": {
+          "activities-active-zone-minutes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AzmTimeSeriesDatapoint"
+            }
+          }
+        }
+      },
+      "AzmTimeSeriesDatapoint": {
+        "type": "object",
+        "properties": {
+          "dateTime": {
+            "type": "string",
+            "format": "date",
+            "description": "The date specified in the format YYYY-MM-DD or today."
+          },
+          "value": {
+            "type": "object",
+            "properties": {
+              "activeZoneMinutes": {
+                "type": "integer",
+                "description": "Total count of active zone minutes."
+              },
+              "fatBurnActiveZoneMinutes": {
+                "type": "integer",
+                "description": "The number of active zone minutes in the fat burn heart rate zone."
+              },
+              "cardioActiveZoneMinutes": {
+                "type": "integer",
+                "description": "The number of active zone minutes in the cardio heart rate zone."
+              },
+              "peakActiveZoneMinutes": {
+                "type": "integer",
+                "description": "The number of active zone minutes in the peak heart rate zone."
+              }
+            }
           }
         }
       },

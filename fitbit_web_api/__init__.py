@@ -61,6 +61,8 @@ __all__ = [
     "ActivityTimeSeriesDatapoint",
     "Alarm",
     "AlarmResponse",
+    "AzmTimeSeriesDatapoint",
+    "AzmTimeSeriesDatapointValue",
     "Badge",
     "CreateSleepGoalResponse",
     "CreateSleepLogResponse",
@@ -71,6 +73,7 @@ __all__ = [
     "GetActivityLogListResponsePagination",
     "GetActivityTimeSeriesResponse",
     "GetAlarmsResponse",
+    "GetAzmTimeSeriesResponse",
     "GetBadgesResponse",
     "GetDailyActivitySummaryResponse",
     "GetProfileResponse",
@@ -182,6 +185,12 @@ from fitbit_web_api.models.activity_time_series_datapoint import (
 )
 from fitbit_web_api.models.alarm import Alarm as Alarm
 from fitbit_web_api.models.alarm_response import AlarmResponse as AlarmResponse
+from fitbit_web_api.models.azm_time_series_datapoint import (
+    AzmTimeSeriesDatapoint as AzmTimeSeriesDatapoint,
+)
+from fitbit_web_api.models.azm_time_series_datapoint_value import (
+    AzmTimeSeriesDatapointValue as AzmTimeSeriesDatapointValue,
+)
 from fitbit_web_api.models.badge import Badge as Badge
 from fitbit_web_api.models.create_sleep_goal_response import (
     CreateSleepGoalResponse as CreateSleepGoalResponse,
@@ -205,6 +214,9 @@ from fitbit_web_api.models.get_activity_time_series_response import (
 )
 from fitbit_web_api.models.get_alarms_response import (
     GetAlarmsResponse as GetAlarmsResponse,
+)
+from fitbit_web_api.models.get_azm_time_series_response import (
+    GetAzmTimeSeriesResponse as GetAzmTimeSeriesResponse,
 )
 from fitbit_web_api.models.get_badges_response import (
     GetBadgesResponse as GetBadgesResponse,
