@@ -1,0 +1,22 @@
+{
+  "/1/user/-/temp/core/date/{date}.json": {
+    "get": {
+      "200": "GetTemperatureCoreSummaryResponse"
+    }
+  },
+  "/1/user/-/temp/core/date/{startDate}/{endDate}.json": {
+    "get": {
+      "200": "GetTemperatureCoreSummaryResponse"
+    }
+  },
+  "/1/user/-/temp/skin/date/{date}.json": {
+    "get": {
+      "200": "GetTemperatureSkinSummaryResponse"
+    }
+  },
+  "/1/user/-/temp/skin/date/{startDate}/{endDate}.json": {
+    "get": {
+      "200": "GetTemperatureSkinSummaryResponse"
+    }
+  }
+}

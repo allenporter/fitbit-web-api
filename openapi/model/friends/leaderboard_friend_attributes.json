@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "avatar": {
+      "type": "string",
+      "description": "Link to user's avatar picture."
+    },
+    "child": {
+      "type": "boolean",
+      "description": "Boolean value describing friend as a child account."
+    },
+    "friend": {
+      "type": "boolean",
+      "description": "Supported: true"
+    },
+    "name": {
+      "type": "string",
+      "description": "Person's display name."
+    },
+    "step-rank": {
+      "type": "integer",
+      "description": "Ranking among the user's friends."
+    },
+    "step-summary": {
+      "type": "integer",
+      "description": "Weekly step count."
+    }
+  }
+}

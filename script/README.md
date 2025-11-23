@@ -143,11 +143,15 @@ Example from `openapi/paths/sleep_paths.json`:
 - Cardio Fitness Score (VO2 Max)
 - Devices
 - Electrocardiogram
+- Friends
 - Heart Rate Time Series
 - Heart Rate Variability
 - Irregular Rhythm Notifications
+- Nutrition
+- Nutrition Time Series
 - Sleep
 - SpO2
+- Temperature
 - User
 
 ### Remaining API Categories
@@ -157,14 +161,10 @@ The following API categories still need to be updated with response schemas:
 - Active Zone Minutes Intraday Time Series
 - Activity Intraday Time Series
 - Breathing Rate Intraday
-- Friends
 - Heart Rate Intraday Time Series
 - Heart Rate Variability Intraday
-- Nutrition
-- Nutrition Time Series
 - SpO2 Intraday
 - Subscriptions
-- Temperature
 
 ## API Generation
 

@@ -4056,8 +4056,14 @@
         "operationId": "getFriends",
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetFriendsResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -4083,8 +4089,14 @@
         "operationId": "getFriendsLeaderboard",
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetFriendsLeaderboardResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -5151,7 +5163,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetNutritionTimeSeriesResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -5214,7 +5232,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetNutritionTimeSeriesResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -7070,8 +7094,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetTemperatureCoreSummaryResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -7119,8 +7149,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetTemperatureCoreSummaryResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -7158,8 +7194,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetTemperatureSkinSummaryResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -7207,8 +7249,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetTemperatureSkinSummaryResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "The request requires user authentication.",
@@ -8687,6 +8735,37 @@
           }
         }
       },
+      "NutritionTimeSeriesDatapoint": {
+        "type": "object",
+        "properties": {
+          "dateTime": {
+            "type": "string",
+            "format": "date",
+            "description": "The date of the recorded resource."
+          },
+          "value": {
+            "type": "string",
+            "description": "The specified resource's daily total."
+          }
+        }
+      },
+      "GetNutritionTimeSeriesResponse": {
+        "type": "object",
+        "properties": {
+          "foods-log-caloriesIn": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NutritionTimeSeriesDatapoint"
+            }
+          },
+          "foods-log-water": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NutritionTimeSeriesDatapoint"
+            }
+          }
+        }
+      },
       "GetHeartRateTimeSeriesResponse": {
         "type": "object",
         "properties": {
@@ -8754,6 +8833,133 @@
           "restingHeartRate": {
             "type": "integer",
             "description": "The user’s calculated resting heart rate."
+          }
+        }
+      },
+      "GetFriendsResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Friend"
+            }
+          }
+        }
+      },
+      "Friend": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Supported: person"
+          },
+          "id": {
+            "type": "string",
+            "description": "Fitbit user id."
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/FriendAttributes"
+          }
+        }
+      },
+      "FriendAttributes": {
+        "type": "object",
+        "properties": {
+          "avatar": {
+            "type": "string",
+            "description": "Link to user's avatar picture."
+          },
+          "child": {
+            "type": "boolean",
+            "description": "Boolean value describing friend as a child account."
+          },
+          "friend": {
+            "type": "boolean",
+            "description": "Boolean value describing user as a friend."
+          },
+          "name": {
+            "type": "string",
+            "description": "Person's display name."
+          }
+        }
+      },
+      "GetFriendsLeaderboardResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LeaderboardFriend"
+            }
+          }
+        }
+      },
+      "LeaderboardFriendAttributes": {
+        "type": "object",
+        "properties": {
+          "avatar": {
+            "type": "string",
+            "description": "Link to user's avatar picture."
+          },
+          "child": {
+            "type": "boolean",
+            "description": "Boolean value describing friend as a child account."
+          },
+          "friend": {
+            "type": "boolean",
+            "description": "Supported: true"
+          },
+          "name": {
+            "type": "string",
+            "description": "Person's display name."
+          },
+          "step-rank": {
+            "type": "integer",
+            "description": "Ranking among the user's friends."
+          },
+          "step-summary": {
+            "type": "integer",
+            "description": "Weekly step count."
+          }
+        }
+      },
+      "LeaderboardFriend": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Describes the user based on the frequency they sync their steps. Supported: ranked-user | inactive-user"
+          },
+          "id": {
+            "type": "string",
+            "description": "Fitbit user id."
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/LeaderboardFriendAttributes"
+          },
+          "relationships": {
+            "type": "object",
+            "properties": {
+              "user": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "Fitbit user id."
+                      },
+                      "type": {
+                        "type": "string",
+                        "description": "Supported: person"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -9514,6 +9720,67 @@
         "properties": {
           "food": {
             "$ref": "#/components/schemas/Food"
+          }
+        }
+      },
+      "TemperatureCoreLog": {
+        "type": "object",
+        "properties": {
+          "dateTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The log timestamp."
+          },
+          "value": {
+            "type": "number",
+            "format": "float",
+            "description": "The temperature value."
+          }
+        }
+      },
+      "TemperatureSkinLog": {
+        "type": "object",
+        "properties": {
+          "dateTime": {
+            "type": "string",
+            "format": "date",
+            "description": "The log date."
+          },
+          "logType": {
+            "type": "string",
+            "description": "The type of skin temperature log created."
+          },
+          "value": {
+            "type": "object",
+            "properties": {
+              "nightlyRelative": {
+                "type": "number",
+                "format": "float",
+                "description": "The user's average temperature during a period of sleep."
+              }
+            }
+          }
+        }
+      },
+      "GetTemperatureSkinSummaryResponse": {
+        "type": "object",
+        "properties": {
+          "tempSkin": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TemperatureSkinLog"
+            }
+          }
+        }
+      },
+      "GetTemperatureCoreSummaryResponse": {
+        "type": "object",
+        "properties": {
+          "tempCore": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TemperatureCoreLog"
+            }
           }
         }
       },

@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "dateTime": {
+      "type": "string",
+      "format": "date",
+      "description": "The log date."
+    },
+    "logType": {
+      "type": "string",
+      "description": "The type of skin temperature log created."
+    },
+    "value": {
+      "type": "object",
+      "properties": {
+        "nightlyRelative": {
+          "type": "number",
+          "format": "float",
+          "description": "The user's average temperature during a period of sleep."
+        }
+      }
+    }
+  }
+}

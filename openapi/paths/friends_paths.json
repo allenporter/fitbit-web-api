@@ -1,0 +1,12 @@
+{
+  "/1.1/user/-/friends.json": {
+    "get": {
+      "200": "GetFriendsResponse"
+    }
+  },
+  "/1.1/user/-/leaderboard/friends.json": {
+    "get": {
+      "200": "GetFriendsLeaderboardResponse"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "tempSkin": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TemperatureSkinLog"
+      }
+    }
+  }
+}
