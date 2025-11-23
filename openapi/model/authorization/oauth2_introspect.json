@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "active": {
+      "type": "boolean",
+      "description": "True if the token is active, false otherwise."
+    },
+    "scope": {
+      "type": "string",
+      "description": "The scopes that the token has access to."
+    },
+    "client_id": {
+      "type": "string",
+      "description": "The client ID."
+    },
+    "user_id": {
+      "type": "string",
+      "description": "The user ID."
+    },
+    "token_type": {
+      "type": "string",
+      "description": "The type of token."
+    },
+    "exp": {
+      "type": "integer",
+      "description": "The timestamp when the token expires."
+    },
+    "iat": {
+      "type": "integer",
+      "description": "The timestamp when the token was issued."
+    }
+  }
+}

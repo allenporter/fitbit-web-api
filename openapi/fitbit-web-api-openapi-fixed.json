@@ -315,7 +315,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Oauth2Token"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satisfied.",
@@ -358,7 +364,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Oauth2Introspect"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satisfied.",
@@ -9777,6 +9789,68 @@
         "properties": {
           "food": {
             "$ref": "#/components/schemas/Food"
+          }
+        }
+      },
+      "Oauth2Token": {
+        "type": "object",
+        "properties": {
+          "access_token": {
+            "type": "string",
+            "description": "The access token."
+          },
+          "expires_in": {
+            "type": "integer",
+            "description": "The number of seconds until the access token expires."
+          },
+          "refresh_token": {
+            "type": "string",
+            "description": "The refresh token."
+          },
+          "scope": {
+            "type": "string",
+            "description": "The scopes that the token has access to."
+          },
+          "token_type": {
+            "type": "string",
+            "description": "The type of token."
+          },
+          "user_id": {
+            "type": "string",
+            "description": "The user ID."
+          }
+        }
+      },
+      "Oauth2Introspect": {
+        "type": "object",
+        "properties": {
+          "active": {
+            "type": "boolean",
+            "description": "True if the token is active, false otherwise."
+          },
+          "scope": {
+            "type": "string",
+            "description": "The scopes that the token has access to."
+          },
+          "client_id": {
+            "type": "string",
+            "description": "The client ID."
+          },
+          "user_id": {
+            "type": "string",
+            "description": "The user ID."
+          },
+          "token_type": {
+            "type": "string",
+            "description": "The type of token."
+          },
+          "exp": {
+            "type": "integer",
+            "description": "The timestamp when the token expires."
+          },
+          "iat": {
+            "type": "integer",
+            "description": "The timestamp when the token was issued."
           }
         }
       },
