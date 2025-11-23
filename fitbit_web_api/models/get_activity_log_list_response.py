@@ -97,16 +97,16 @@ class GetActivityLogListResponse(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "activities": (
-                    [ActivityLog.from_dict(_item) for _item in obj["activities"]]
-                    if obj.get("activities") is not None
-                    else None
-                ),
-                "pagination": (
-                    GetActivityLogListResponsePagination.from_dict(obj["pagination"])
-                    if obj.get("pagination") is not None
-                    else None
-                ),
+                "activities": [
+                    ActivityLog.from_dict(_item) for _item in obj["activities"]
+                ]
+                if obj.get("activities") is not None
+                else None,
+                "pagination": GetActivityLogListResponsePagination.from_dict(
+                    obj["pagination"]
+                )
+                if obj.get("pagination") is not None
+                else None,
             }
         )
         return _obj

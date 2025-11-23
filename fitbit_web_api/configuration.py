@@ -186,7 +186,9 @@ class Configuration:
         *,
         debug: Optional[bool] = None,
     ) -> None:
-        """Constructor"""
+        """
+        Constructor
+        """
         self._base_path = "https://api.fitbit.com" if host is None else host
         """Default Base url
         """

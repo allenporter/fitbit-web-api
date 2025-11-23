@@ -93,16 +93,12 @@ class LifetimeStatsLifetime(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "total": (
-                    LifetimeStatsLifetimeTotal.from_dict(obj["total"])
-                    if obj.get("total") is not None
-                    else None
-                ),
-                "tracker": (
-                    LifetimeStatsLifetimeTracker.from_dict(obj["tracker"])
-                    if obj.get("tracker") is not None
-                    else None
-                ),
+                "total": LifetimeStatsLifetimeTotal.from_dict(obj["total"])
+                if obj.get("total") is not None
+                else None,
+                "tracker": LifetimeStatsLifetimeTracker.from_dict(obj["tracker"])
+                if obj.get("tracker") is not None
+                else None,
             }
         )
         return _obj

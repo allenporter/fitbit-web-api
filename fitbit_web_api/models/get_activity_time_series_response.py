@@ -347,182 +347,138 @@ class GetActivityTimeSeriesResponse(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "activities-activityCalories": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-activityCalories"]
-                    ]
-                    if obj.get("activities-activityCalories") is not None
-                    else None
-                ),
-                "activities-calories": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-calories"]
-                    ]
-                    if obj.get("activities-calories") is not None
-                    else None
-                ),
-                "activities-caloriesBMR": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-caloriesBMR"]
-                    ]
-                    if obj.get("activities-caloriesBMR") is not None
-                    else None
-                ),
-                "activities-distance": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-distance"]
-                    ]
-                    if obj.get("activities-distance") is not None
-                    else None
-                ),
-                "activities-elevation": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-elevation"]
-                    ]
-                    if obj.get("activities-elevation") is not None
-                    else None
-                ),
-                "activities-floors": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-floors"]
-                    ]
-                    if obj.get("activities-floors") is not None
-                    else None
-                ),
-                "activities-minutesSedentary": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-minutesSedentary"]
-                    ]
-                    if obj.get("activities-minutesSedentary") is not None
-                    else None
-                ),
-                "activities-minutesLightlyActive": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-minutesLightlyActive"]
-                    ]
-                    if obj.get("activities-minutesLightlyActive") is not None
-                    else None
-                ),
-                "activities-minutesFairlyActive": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-minutesFairlyActive"]
-                    ]
-                    if obj.get("activities-minutesFairlyActive") is not None
-                    else None
-                ),
-                "activities-minutesVeryActive": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-minutesVeryActive"]
-                    ]
-                    if obj.get("activities-minutesVeryActive") is not None
-                    else None
-                ),
-                "activities-steps": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-steps"]
-                    ]
-                    if obj.get("activities-steps") is not None
-                    else None
-                ),
-                "activities-swimming-strokes": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-swimming-strokes"]
-                    ]
-                    if obj.get("activities-swimming-strokes") is not None
-                    else None
-                ),
-                "activities-tracker-activityCalories": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-tracker-activityCalories"]
-                    ]
-                    if obj.get("activities-tracker-activityCalories") is not None
-                    else None
-                ),
-                "activities-tracker-calories": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-tracker-calories"]
-                    ]
-                    if obj.get("activities-tracker-calories") is not None
-                    else None
-                ),
-                "activities-tracker-distance": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-tracker-distance"]
-                    ]
-                    if obj.get("activities-tracker-distance") is not None
-                    else None
-                ),
-                "activities-tracker-elevation": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-tracker-elevation"]
-                    ]
-                    if obj.get("activities-tracker-elevation") is not None
-                    else None
-                ),
-                "activities-tracker-floors": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-tracker-floors"]
-                    ]
-                    if obj.get("activities-tracker-floors") is not None
-                    else None
-                ),
-                "activities-tracker-minutesSedentary": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-tracker-minutesSedentary"]
-                    ]
-                    if obj.get("activities-tracker-minutesSedentary") is not None
-                    else None
-                ),
-                "activities-tracker-minutesLightlyActive": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-tracker-minutesLightlyActive"]
-                    ]
-                    if obj.get("activities-tracker-minutesLightlyActive") is not None
-                    else None
-                ),
-                "activities-tracker-minutesFairlyActive": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-tracker-minutesFairlyActive"]
-                    ]
-                    if obj.get("activities-tracker-minutesFairlyActive") is not None
-                    else None
-                ),
-                "activities-tracker-minutesVeryActive": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-tracker-minutesVeryActive"]
-                    ]
-                    if obj.get("activities-tracker-minutesVeryActive") is not None
-                    else None
-                ),
-                "activities-tracker-steps": (
-                    [
-                        ActivityTimeSeriesDatapoint.from_dict(_item)
-                        for _item in obj["activities-tracker-steps"]
-                    ]
-                    if obj.get("activities-tracker-steps") is not None
-                    else None
-                ),
+                "activities-activityCalories": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-activityCalories"]
+                ]
+                if obj.get("activities-activityCalories") is not None
+                else None,
+                "activities-calories": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-calories"]
+                ]
+                if obj.get("activities-calories") is not None
+                else None,
+                "activities-caloriesBMR": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-caloriesBMR"]
+                ]
+                if obj.get("activities-caloriesBMR") is not None
+                else None,
+                "activities-distance": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-distance"]
+                ]
+                if obj.get("activities-distance") is not None
+                else None,
+                "activities-elevation": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-elevation"]
+                ]
+                if obj.get("activities-elevation") is not None
+                else None,
+                "activities-floors": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-floors"]
+                ]
+                if obj.get("activities-floors") is not None
+                else None,
+                "activities-minutesSedentary": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-minutesSedentary"]
+                ]
+                if obj.get("activities-minutesSedentary") is not None
+                else None,
+                "activities-minutesLightlyActive": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-minutesLightlyActive"]
+                ]
+                if obj.get("activities-minutesLightlyActive") is not None
+                else None,
+                "activities-minutesFairlyActive": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-minutesFairlyActive"]
+                ]
+                if obj.get("activities-minutesFairlyActive") is not None
+                else None,
+                "activities-minutesVeryActive": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-minutesVeryActive"]
+                ]
+                if obj.get("activities-minutesVeryActive") is not None
+                else None,
+                "activities-steps": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-steps"]
+                ]
+                if obj.get("activities-steps") is not None
+                else None,
+                "activities-swimming-strokes": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-swimming-strokes"]
+                ]
+                if obj.get("activities-swimming-strokes") is not None
+                else None,
+                "activities-tracker-activityCalories": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-tracker-activityCalories"]
+                ]
+                if obj.get("activities-tracker-activityCalories") is not None
+                else None,
+                "activities-tracker-calories": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-tracker-calories"]
+                ]
+                if obj.get("activities-tracker-calories") is not None
+                else None,
+                "activities-tracker-distance": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-tracker-distance"]
+                ]
+                if obj.get("activities-tracker-distance") is not None
+                else None,
+                "activities-tracker-elevation": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-tracker-elevation"]
+                ]
+                if obj.get("activities-tracker-elevation") is not None
+                else None,
+                "activities-tracker-floors": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-tracker-floors"]
+                ]
+                if obj.get("activities-tracker-floors") is not None
+                else None,
+                "activities-tracker-minutesSedentary": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-tracker-minutesSedentary"]
+                ]
+                if obj.get("activities-tracker-minutesSedentary") is not None
+                else None,
+                "activities-tracker-minutesLightlyActive": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-tracker-minutesLightlyActive"]
+                ]
+                if obj.get("activities-tracker-minutesLightlyActive") is not None
+                else None,
+                "activities-tracker-minutesFairlyActive": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-tracker-minutesFairlyActive"]
+                ]
+                if obj.get("activities-tracker-minutesFairlyActive") is not None
+                else None,
+                "activities-tracker-minutesVeryActive": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-tracker-minutesVeryActive"]
+                ]
+                if obj.get("activities-tracker-minutesVeryActive") is not None
+                else None,
+                "activities-tracker-steps": [
+                    ActivityTimeSeriesDatapoint.from_dict(_item)
+                    for _item in obj["activities-tracker-steps"]
+                ]
+                if obj.get("activities-tracker-steps") is not None
+                else None,
             }
         )
         return _obj

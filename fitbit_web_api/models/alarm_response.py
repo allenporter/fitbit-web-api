@@ -84,11 +84,9 @@ class AlarmResponse(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "trackerAlarm": (
-                    Alarm.from_dict(obj["trackerAlarm"])
-                    if obj.get("trackerAlarm") is not None
-                    else None
-                )
+                "trackerAlarm": Alarm.from_dict(obj["trackerAlarm"])
+                if obj.get("trackerAlarm") is not None
+                else None
             }
         )
         return _obj

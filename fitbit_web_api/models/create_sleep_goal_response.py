@@ -84,11 +84,9 @@ class CreateSleepGoalResponse(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "goal": (
-                    SleepGoal.from_dict(obj["goal"])
-                    if obj.get("goal") is not None
-                    else None
-                )
+                "goal": SleepGoal.from_dict(obj["goal"])
+                if obj.get("goal") is not None
+                else None
             }
         )
         return _obj

@@ -238,11 +238,9 @@ class User(BaseModel):
                 "displayNameSetting": obj.get("displayNameSetting"),
                 "distanceUnit": obj.get("distanceUnit"),
                 "encodedId": obj.get("encodedId"),
-                "features": (
-                    UserFeatures.from_dict(obj["features"])
-                    if obj.get("features") is not None
-                    else None
-                ),
+                "features": UserFeatures.from_dict(obj["features"])
+                if obj.get("features") is not None
+                else None,
                 "firstName": obj.get("firstName"),
                 "foodsLocale": obj.get("foodsLocale"),
                 "fullName": obj.get("fullName"),
@@ -269,11 +267,9 @@ class User(BaseModel):
                 "strideLengthWalkingType": obj.get("strideLengthWalkingType"),
                 "swimUnit": obj.get("swimUnit"),
                 "timezone": obj.get("timezone"),
-                "topBadges": (
-                    [Badge.from_dict(_item) for _item in obj["topBadges"]]
-                    if obj.get("topBadges") is not None
-                    else None
-                ),
+                "topBadges": [Badge.from_dict(_item) for _item in obj["topBadges"]]
+                if obj.get("topBadges") is not None
+                else None,
                 "waterUnit": obj.get("waterUnit"),
                 "waterUnitName": obj.get("waterUnitName"),
                 "weight": obj.get("weight"),

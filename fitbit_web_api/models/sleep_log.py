@@ -198,11 +198,9 @@ class SleepLog(BaseModel):
                 "endTime": obj.get("endTime"),
                 "infoCode": obj.get("infoCode"),
                 "isMainSleep": obj.get("isMainSleep"),
-                "levels": (
-                    SleepLogLevels.from_dict(obj["levels"])
-                    if obj.get("levels") is not None
-                    else None
-                ),
+                "levels": SleepLogLevels.from_dict(obj["levels"])
+                if obj.get("levels") is not None
+                else None,
                 "logId": obj.get("logId"),
                 "minutesAfterWakeup": obj.get("minutesAfterWakeup"),
                 "minutesAsleep": obj.get("minutesAsleep"),

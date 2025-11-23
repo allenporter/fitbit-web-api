@@ -92,11 +92,9 @@ class Meal(BaseModel):
             {
                 "name": obj.get("name"),
                 "description": obj.get("description"),
-                "mealFoods": (
-                    [FoodItem.from_dict(_item) for _item in obj["mealFoods"]]
-                    if obj.get("mealFoods") is not None
-                    else None
-                ),
+                "mealFoods": [FoodItem.from_dict(_item) for _item in obj["mealFoods"]]
+                if obj.get("mealFoods") is not None
+                else None,
             }
         )
         return _obj

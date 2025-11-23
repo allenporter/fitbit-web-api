@@ -84,11 +84,9 @@ class GetActivityGoalsResponse(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "goals": (
-                    ActivityGoals.from_dict(obj["goals"])
-                    if obj.get("goals") is not None
-                    else None
-                )
+                "goals": ActivityGoals.from_dict(obj["goals"])
+                if obj.get("goals") is not None
+                else None
             }
         )
         return _obj

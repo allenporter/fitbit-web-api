@@ -170,14 +170,12 @@ class ActivitySummary(BaseModel):
                 "activityCalories": obj.get("activityCalories"),
                 "caloriesBMR": obj.get("caloriesBMR"),
                 "caloriesOut": obj.get("caloriesOut"),
-                "distances": (
-                    [
-                        ActivitySummaryDistancesInner.from_dict(_item)
-                        for _item in obj["distances"]
-                    ]
-                    if obj.get("distances") is not None
-                    else None
-                ),
+                "distances": [
+                    ActivitySummaryDistancesInner.from_dict(_item)
+                    for _item in obj["distances"]
+                ]
+                if obj.get("distances") is not None
+                else None,
                 "elevation": obj.get("elevation"),
                 "fairlyActiveMinutes": obj.get("fairlyActiveMinutes"),
                 "floors": obj.get("floors"),

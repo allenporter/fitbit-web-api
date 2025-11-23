@@ -89,16 +89,12 @@ class LifetimeStatsBest(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "total": (
-                    LifetimeStatsBestTotal.from_dict(obj["total"])
-                    if obj.get("total") is not None
-                    else None
-                ),
-                "tracker": (
-                    LifetimeStatsBestTracker.from_dict(obj["tracker"])
-                    if obj.get("tracker") is not None
-                    else None
-                ),
+                "total": LifetimeStatsBestTotal.from_dict(obj["total"])
+                if obj.get("total") is not None
+                else None,
+                "tracker": LifetimeStatsBestTracker.from_dict(obj["tracker"])
+                if obj.get("tracker") is not None
+                else None,
             }
         )
         return _obj

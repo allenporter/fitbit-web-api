@@ -84,9 +84,9 @@ class GetProfileResponse(BaseModel):
 
         _obj = cls.model_validate(
             {
-                "user": (
-                    User.from_dict(obj["user"]) if obj.get("user") is not None else None
-                )
+                "user": User.from_dict(obj["user"])
+                if obj.get("user") is not None
+                else None
             }
         )
         return _obj
