@@ -14,11 +14,37 @@ Do not edit the class manually.
 
 
 # import models into model package
+from fitbit_web_api.models.activity_goals import ActivityGoals
+from fitbit_web_api.models.activity_log import ActivityLog
+from fitbit_web_api.models.activity_summary import ActivitySummary
+from fitbit_web_api.models.activity_summary_distances_inner import (
+    ActivitySummaryDistancesInner,
+)
+from fitbit_web_api.models.activity_time_series_datapoint import (
+    ActivityTimeSeriesDatapoint,
+)
+from fitbit_web_api.models.alarm import Alarm
+from fitbit_web_api.models.alarm_response import AlarmResponse
 from fitbit_web_api.models.badge import Badge
 from fitbit_web_api.models.create_sleep_goal_response import CreateSleepGoalResponse
 from fitbit_web_api.models.create_sleep_log_response import CreateSleepLogResponse
+from fitbit_web_api.models.device import Device
 from fitbit_web_api.models.food_item import FoodItem
+from fitbit_web_api.models.get_activity_goals_response import GetActivityGoalsResponse
+from fitbit_web_api.models.get_activity_log_list_response import (
+    GetActivityLogListResponse,
+)
+from fitbit_web_api.models.get_activity_log_list_response_pagination import (
+    GetActivityLogListResponsePagination,
+)
+from fitbit_web_api.models.get_activity_time_series_response import (
+    GetActivityTimeSeriesResponse,
+)
+from fitbit_web_api.models.get_alarms_response import GetAlarmsResponse
 from fitbit_web_api.models.get_badges_response import GetBadgesResponse
+from fitbit_web_api.models.get_daily_activity_summary_response import (
+    GetDailyActivitySummaryResponse,
+)
 from fitbit_web_api.models.get_profile_response import GetProfileResponse
 from fitbit_web_api.models.get_sleep_goal_response import GetSleepGoalResponse
 from fitbit_web_api.models.get_sleep_log_by_date_range_response import (
@@ -30,6 +56,26 @@ from fitbit_web_api.models.get_sleep_log_by_date_response import (
 from fitbit_web_api.models.get_sleep_log_list_response import GetSleepLogListResponse
 from fitbit_web_api.models.get_sleep_log_list_response_pagination import (
     GetSleepLogListResponsePagination,
+)
+from fitbit_web_api.models.lifetime_stats import LifetimeStats
+from fitbit_web_api.models.lifetime_stats_best import LifetimeStatsBest
+from fitbit_web_api.models.lifetime_stats_best_total import LifetimeStatsBestTotal
+from fitbit_web_api.models.lifetime_stats_best_total_distance import (
+    LifetimeStatsBestTotalDistance,
+)
+from fitbit_web_api.models.lifetime_stats_best_total_floors import (
+    LifetimeStatsBestTotalFloors,
+)
+from fitbit_web_api.models.lifetime_stats_best_total_steps import (
+    LifetimeStatsBestTotalSteps,
+)
+from fitbit_web_api.models.lifetime_stats_best_tracker import LifetimeStatsBestTracker
+from fitbit_web_api.models.lifetime_stats_lifetime import LifetimeStatsLifetime
+from fitbit_web_api.models.lifetime_stats_lifetime_total import (
+    LifetimeStatsLifetimeTotal,
+)
+from fitbit_web_api.models.lifetime_stats_lifetime_tracker import (
+    LifetimeStatsLifetimeTracker,
 )
 from fitbit_web_api.models.meal import Meal
 from fitbit_web_api.models.sleep_goal import SleepGoal

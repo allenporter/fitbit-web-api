@@ -1,6 +1,6 @@
 import asyncio
-from typing import Any, Dict
 from collections.abc import AsyncGenerator
+from typing import Any, Dict
 
 import pytest
 from aiohttp import web

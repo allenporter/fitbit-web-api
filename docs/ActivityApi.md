@@ -404,7 +404,7 @@ void (empty response body)
 
 # **get_activities_by_date**
 
-> get_activities_by_date(var_date)
+> GetDailyActivitySummaryResponse get_activities_by_date(var_date)
 
 Get Activity Summary by Date
 
@@ -416,6 +416,7 @@ Retrieves a summary and list of a user's activities and activity log entries for
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_daily_activity_summary_response import GetDailyActivitySummaryResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -440,7 +441,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Activity Summary by Date
-        await api_instance.get_activities_by_date(var_date)
+        api_response = await api_instance.get_activities_by_date(var_date)
+        print("The response of ActivityApi->get_activities_by_date:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActivityApi->get_activities_by_date: %s\n" % e)
 ```
@@ -453,7 +456,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetDailyActivitySummaryResponse**](GetDailyActivitySummaryResponse.md)
 
 ### Authorization
 
@@ -462,7 +465,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -477,7 +480,7 @@ void (empty response body)
 
 # **get_activities_goals**
 
-> get_activities_goals(period)
+> GetActivityGoalsResponse get_activities_goals(period)
 
 Get Activity Goals
 
@@ -489,6 +492,7 @@ Retreives a user's current daily or weekly activity goals using measurement unit
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_activity_goals_response import GetActivityGoalsResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -513,7 +517,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Activity Goals
-        await api_instance.get_activities_goals(period)
+        api_response = await api_instance.get_activities_goals(period)
+        print("The response of ActivityApi->get_activities_goals:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActivityApi->get_activities_goals: %s\n" % e)
 ```
@@ -526,7 +532,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetActivityGoalsResponse**](GetActivityGoalsResponse.md)
 
 ### Authorization
 
@@ -535,7 +541,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -550,7 +556,7 @@ void (empty response body)
 
 # **get_activities_log**
 
-> get_activities_log()
+> LifetimeStats get_activities_log()
 
 Get Lifetime Stats
 
@@ -562,6 +568,7 @@ Updates a user's daily activity goals and returns a response using units in the 
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.lifetime_stats import LifetimeStats
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -585,7 +592,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Lifetime Stats
-        await api_instance.get_activities_log()
+        api_response = await api_instance.get_activities_log()
+        print("The response of ActivityApi->get_activities_log:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActivityApi->get_activities_log: %s\n" % e)
 ```
@@ -596,7 +605,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**LifetimeStats**](LifetimeStats.md)
 
 ### Authorization
 
@@ -605,7 +614,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 
@@ -620,7 +629,7 @@ void (empty response body)
 
 # **get_activities_log_list**
 
-> get_activities_log_list(sort, offset, limit, before_date=before_date, after_date=after_date)
+> GetActivityLogListResponse get_activities_log_list(sort, offset, limit, before_date=before_date, after_date=after_date)
 
 Get Activity Log List
 
@@ -632,6 +641,7 @@ Retreives a list of user's activity log entries before or after a given day with
 
 ```python
 import fitbit_web_api
+from fitbit_web_api.models.get_activity_log_list_response import GetActivityLogListResponse
 from fitbit_web_api.rest import ApiException
 from pprint import pprint
 
@@ -660,7 +670,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
     try:
         # Get Activity Log List
-        await api_instance.get_activities_log_list(sort, offset, limit, before_date=before_date, after_date=after_date)
+        api_response = await api_instance.get_activities_log_list(sort, offset, limit, before_date=before_date, after_date=after_date)
+        print("The response of ActivityApi->get_activities_log_list:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ActivityApi->get_activities_log_list: %s\n" % e)
 ```
@@ -677,7 +689,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Return type
 
-void (empty response body)
+[**GetActivityLogListResponse**](GetActivityLogListResponse.md)
 
 ### Authorization
 
@@ -686,7 +698,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 ### HTTP response details
 

@@ -17,6 +17,14 @@ from typing_extensions import Annotated
 
 from fitbit_web_api.api_client import ApiClient, RequestSerialized
 from fitbit_web_api.api_response import ApiResponse
+from fitbit_web_api.models.get_activity_goals_response import GetActivityGoalsResponse
+from fitbit_web_api.models.get_activity_log_list_response import (
+    GetActivityLogListResponse,
+)
+from fitbit_web_api.models.get_daily_activity_summary_response import (
+    GetDailyActivitySummaryResponse,
+)
+from fitbit_web_api.models.lifetime_stats import LifetimeStats
 from fitbit_web_api.rest import RESTResponseType
 
 
@@ -1554,7 +1562,7 @@ class ActivityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> GetDailyActivitySummaryResponse:
         """
         Get Activity Summary by Date
 
@@ -1592,7 +1600,7 @@ class ActivityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetDailyActivitySummaryResponse",
             "400": None,
             "401": None,
             "409": None,
@@ -1623,7 +1631,7 @@ class ActivityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[GetDailyActivitySummaryResponse]:
         """
         Get Activity Summary by Date
 
@@ -1661,7 +1669,7 @@ class ActivityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetDailyActivitySummaryResponse",
             "400": None,
             "401": None,
             "409": None,
@@ -1730,7 +1738,7 @@ class ActivityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetDailyActivitySummaryResponse",
             "400": None,
             "401": None,
             "409": None,
@@ -1770,6 +1778,12 @@ class ActivityApi:
         # process the form parameters
         # process the body parameter
 
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
+
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
 
@@ -1803,7 +1817,7 @@ class ActivityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> GetActivityGoalsResponse:
         """
         Get Activity Goals
 
@@ -1841,7 +1855,7 @@ class ActivityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetActivityGoalsResponse",
             "400": None,
             "401": None,
             "409": None,
@@ -1870,7 +1884,7 @@ class ActivityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[GetActivityGoalsResponse]:
         """
         Get Activity Goals
 
@@ -1908,7 +1922,7 @@ class ActivityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetActivityGoalsResponse",
             "400": None,
             "401": None,
             "409": None,
@@ -1975,7 +1989,7 @@ class ActivityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetActivityGoalsResponse",
             "400": None,
             "401": None,
             "409": None,
@@ -2015,6 +2029,12 @@ class ActivityApi:
         # process the form parameters
         # process the body parameter
 
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
+
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
 
@@ -2047,7 +2067,7 @@ class ActivityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> LifetimeStats:
         """
         Get Lifetime Stats
 
@@ -2082,7 +2102,7 @@ class ActivityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "LifetimeStats",
             "400": None,
             "401": None,
             "409": None,
@@ -2110,7 +2130,7 @@ class ActivityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[LifetimeStats]:
         """
         Get Lifetime Stats
 
@@ -2145,7 +2165,7 @@ class ActivityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "LifetimeStats",
             "400": None,
             "401": None,
             "409": None,
@@ -2208,7 +2228,7 @@ class ActivityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "LifetimeStats",
             "400": None,
             "401": None,
             "409": None,
@@ -2244,6 +2264,12 @@ class ActivityApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
 
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]
@@ -2300,7 +2326,7 @@ class ActivityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> GetActivityLogListResponse:
         """
         Get Activity Log List
 
@@ -2350,7 +2376,7 @@ class ActivityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetActivityLogListResponse",
             "400": None,
             "401": None,
             "409": None,
@@ -2401,7 +2427,7 @@ class ActivityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[GetActivityLogListResponse]:
         """
         Get Activity Log List
 
@@ -2451,7 +2477,7 @@ class ActivityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetActivityLogListResponse",
             "400": None,
             "401": None,
             "409": None,
@@ -2552,7 +2578,7 @@ class ActivityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": None,
+            "200": "GetActivityLogListResponse",
             "400": None,
             "401": None,
             "409": None,
@@ -2627,6 +2653,12 @@ class ActivityApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+
+        # set the HTTP header `Accept`
+        if "Accept" not in _header_params:
+            _header_params["Accept"] = self.api_client.select_header_accept(
+                ["application/json"]
+            )
 
         # authentication setting
         _auth_settings: List[str] = ["oauth2"]

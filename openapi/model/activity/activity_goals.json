@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "activeMinutes": {
+      "type": "integer",
+      "description": "Daily active minutes goal."
+    },
+    "activeZoneMinutes": {
+      "type": "integer",
+      "description": "Daily or weekly active zone minutes goal."
+    },
+    "caloriesOut": {
+      "type": "integer",
+      "description": "Daily calories burned goal."
+    },
+    "distance": {
+      "type": "number",
+      "description": "Daily or weekly distance goal."
+    },
+    "floors": {
+      "type": "integer",
+      "description": "Daily or weekly floors climbed goal."
+    },
+    "steps": {
+      "type": "integer",
+      "description": "Daily or weekly steps taken goal."
+    }
+  }
+}

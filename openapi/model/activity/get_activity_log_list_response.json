@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "activities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityLog"
+      },
+      "description": "List of activity log entries."
+    },
+    "pagination": {
+      "type": "object",
+      "properties": {
+        "afterDate": {
+          "type": "string",
+          "format": "date",
+          "description": "The specified afterDate parameter."
+        },
+        "limit": {
+          "type": "integer",
+          "description": "The specified limit."
+        },
+        "next": {
+          "type": "string",
+          "description": "URL for the next page of results."
+        },
+        "offset": {
+          "type": "integer",
+          "description": "The specified offset."
+        },
+        "previous": {
+          "type": "string",
+          "description": "URL for the previous page of results."
+        },
+        "sort": {
+          "type": "string",
+          "enum": ["asc", "desc"],
+          "description": "The specified sort order."
+        }
+      }
+    }
+  }
+}

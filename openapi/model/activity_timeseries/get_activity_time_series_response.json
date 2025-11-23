@@ -1,0 +1,137 @@
+{
+  "type": "object",
+  "properties": {
+    "activities-activityCalories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-calories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-caloriesBMR": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-distance": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-elevation": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-floors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-minutesSedentary": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-minutesLightlyActive": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-minutesFairlyActive": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-minutesVeryActive": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-steps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-swimming-strokes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-tracker-activityCalories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-tracker-calories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-tracker-distance": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-tracker-elevation": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-tracker-floors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-tracker-minutesSedentary": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-tracker-minutesLightlyActive": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-tracker-minutesFairlyActive": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-tracker-minutesVeryActive": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    },
+    "activities-tracker-steps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+      }
+    }
+  }
+}

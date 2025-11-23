@@ -1,0 +1,22 @@
+{
+  "/1/user/-/activities/{resource-path}/date/{base-date}/{end-date}.json": {
+    "get": {
+      "200": "GetActivityTimeSeriesResponse"
+    }
+  },
+  "/1/user/-/activities/tracker/{resource-path}/date/{base-date}/{end-date}.json": {
+    "get": {
+      "200": "GetActivityTimeSeriesResponse"
+    }
+  },
+  "/1/user/-/activities/{resource-path}/date/{date}/{period}.json": {
+    "get": {
+      "200": "GetActivityTimeSeriesResponse"
+    }
+  },
+  "/1/user/-/activities/tracker/{resource-path}/date/{date}/{period}.json": {
+    "get": {
+      "200": "GetActivityTimeSeriesResponse"
+    }
+  }
+}

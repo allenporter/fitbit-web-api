@@ -1,0 +1,22 @@
+{
+  "/1/user/-/activities/date/{date}.json": {
+    "get": {
+      "200": "GetDailyActivitySummaryResponse"
+    }
+  },
+  "/1/user/-/activities/goals/{period}.json": {
+    "get": {
+      "200": "GetActivityGoalsResponse"
+    }
+  },
+  "/1/user/-/activities.json": {
+    "get": {
+      "200": "GetLifetimeStatsResponse"
+    }
+  },
+  "/1/user/-/activities/list.json": {
+    "get": {
+      "200": "GetActivityLogListResponse"
+    }
+  }
+}

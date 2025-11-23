@@ -14,7 +14,7 @@ Do not edit the class manually.
 """  # noqa: E501
 
 
-__version__ = "2.0.2"
+__version__ = "2.0.3-rc.1"
 
 # Define package exports
 __all__ = [
@@ -55,17 +55,41 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
+    "ActivityGoals",
+    "ActivityLog",
+    "ActivitySummary",
+    "ActivitySummaryDistancesInner",
+    "ActivityTimeSeriesDatapoint",
+    "Alarm",
+    "AlarmResponse",
     "Badge",
     "CreateSleepGoalResponse",
     "CreateSleepLogResponse",
+    "Device",
     "FoodItem",
+    "GetActivityGoalsResponse",
+    "GetActivityLogListResponse",
+    "GetActivityLogListResponsePagination",
+    "GetActivityTimeSeriesResponse",
+    "GetAlarmsResponse",
     "GetBadgesResponse",
+    "GetDailyActivitySummaryResponse",
     "GetProfileResponse",
     "GetSleepGoalResponse",
     "GetSleepLogByDateRangeResponse",
     "GetSleepLogByDateResponse",
     "GetSleepLogListResponse",
     "GetSleepLogListResponsePagination",
+    "LifetimeStats",
+    "LifetimeStatsBest",
+    "LifetimeStatsBestTotal",
+    "LifetimeStatsBestTotalDistance",
+    "LifetimeStatsBestTotalFloors",
+    "LifetimeStatsBestTotalSteps",
+    "LifetimeStatsBestTracker",
+    "LifetimeStatsLifetime",
+    "LifetimeStatsLifetimeTotal",
+    "LifetimeStatsLifetimeTracker",
     "Meal",
     "SleepGoal",
     "SleepLog",
@@ -148,6 +172,17 @@ from fitbit_web_api.exceptions import ApiAttributeError as ApiAttributeError
 from fitbit_web_api.exceptions import ApiException as ApiException
 
 # import models into sdk package
+from fitbit_web_api.models.activity_goals import ActivityGoals as ActivityGoals
+from fitbit_web_api.models.activity_log import ActivityLog as ActivityLog
+from fitbit_web_api.models.activity_summary import ActivitySummary as ActivitySummary
+from fitbit_web_api.models.activity_summary_distances_inner import (
+    ActivitySummaryDistancesInner as ActivitySummaryDistancesInner,
+)
+from fitbit_web_api.models.activity_time_series_datapoint import (
+    ActivityTimeSeriesDatapoint as ActivityTimeSeriesDatapoint,
+)
+from fitbit_web_api.models.alarm import Alarm as Alarm
+from fitbit_web_api.models.alarm_response import AlarmResponse as AlarmResponse
 from fitbit_web_api.models.badge import Badge as Badge
 from fitbit_web_api.models.create_sleep_goal_response import (
     CreateSleepGoalResponse as CreateSleepGoalResponse,
@@ -155,9 +190,28 @@ from fitbit_web_api.models.create_sleep_goal_response import (
 from fitbit_web_api.models.create_sleep_log_response import (
     CreateSleepLogResponse as CreateSleepLogResponse,
 )
+from fitbit_web_api.models.device import Device as Device
 from fitbit_web_api.models.food_item import FoodItem as FoodItem
+from fitbit_web_api.models.get_activity_goals_response import (
+    GetActivityGoalsResponse as GetActivityGoalsResponse,
+)
+from fitbit_web_api.models.get_activity_log_list_response import (
+    GetActivityLogListResponse as GetActivityLogListResponse,
+)
+from fitbit_web_api.models.get_activity_log_list_response_pagination import (
+    GetActivityLogListResponsePagination as GetActivityLogListResponsePagination,
+)
+from fitbit_web_api.models.get_activity_time_series_response import (
+    GetActivityTimeSeriesResponse as GetActivityTimeSeriesResponse,
+)
+from fitbit_web_api.models.get_alarms_response import (
+    GetAlarmsResponse as GetAlarmsResponse,
+)
 from fitbit_web_api.models.get_badges_response import (
     GetBadgesResponse as GetBadgesResponse,
+)
+from fitbit_web_api.models.get_daily_activity_summary_response import (
+    GetDailyActivitySummaryResponse as GetDailyActivitySummaryResponse,
 )
 from fitbit_web_api.models.get_profile_response import (
     GetProfileResponse as GetProfileResponse,
@@ -176,6 +230,34 @@ from fitbit_web_api.models.get_sleep_log_list_response import (
 )
 from fitbit_web_api.models.get_sleep_log_list_response_pagination import (
     GetSleepLogListResponsePagination as GetSleepLogListResponsePagination,
+)
+from fitbit_web_api.models.lifetime_stats import LifetimeStats as LifetimeStats
+from fitbit_web_api.models.lifetime_stats_best import (
+    LifetimeStatsBest as LifetimeStatsBest,
+)
+from fitbit_web_api.models.lifetime_stats_best_total import (
+    LifetimeStatsBestTotal as LifetimeStatsBestTotal,
+)
+from fitbit_web_api.models.lifetime_stats_best_total_distance import (
+    LifetimeStatsBestTotalDistance as LifetimeStatsBestTotalDistance,
+)
+from fitbit_web_api.models.lifetime_stats_best_total_floors import (
+    LifetimeStatsBestTotalFloors as LifetimeStatsBestTotalFloors,
+)
+from fitbit_web_api.models.lifetime_stats_best_total_steps import (
+    LifetimeStatsBestTotalSteps as LifetimeStatsBestTotalSteps,
+)
+from fitbit_web_api.models.lifetime_stats_best_tracker import (
+    LifetimeStatsBestTracker as LifetimeStatsBestTracker,
+)
+from fitbit_web_api.models.lifetime_stats_lifetime import (
+    LifetimeStatsLifetime as LifetimeStatsLifetime,
+)
+from fitbit_web_api.models.lifetime_stats_lifetime_total import (
+    LifetimeStatsLifetimeTotal as LifetimeStatsLifetimeTotal,
+)
+from fitbit_web_api.models.lifetime_stats_lifetime_tracker import (
+    LifetimeStatsLifetimeTracker as LifetimeStatsLifetimeTracker,
 )
 from fitbit_web_api.models.meal import Meal as Meal
 from fitbit_web_api.models.sleep_goal import SleepGoal as SleepGoal
