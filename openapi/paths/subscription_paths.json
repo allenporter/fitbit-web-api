@@ -1,0 +1,13 @@
+{
+  "/1/user/-/{collection-path}/apiSubscriptions/{subscription-id}.json": {
+    "post": {
+      "200": "AddSubscriptionResponse",
+      "201": "AddSubscriptionResponse"
+    }
+  },
+  "/1/user/-/{collection-path}/apiSubscriptions.json": {
+    "get": {
+      "200": "GetSubscriptionListResponse"
+    }
+  }
+}

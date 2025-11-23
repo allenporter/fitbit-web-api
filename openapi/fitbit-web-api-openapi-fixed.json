@@ -6933,8 +6933,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Returned if the given user is already subscribed to the stream.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSubscriptionListResponse"
+                }
+              }
+            }
           },
           "201": {
             "description": "Returned if a new subscription was created in response to your request.",
@@ -6990,12 +6996,24 @@
         ],
         "responses": {
           "200": {
-            "description": "Returned if the given user is already subscribed to the stream.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddSubscriptionResponse"
+                }
+              }
+            }
           },
           "201": {
-            "description": "Returned if a new subscription was created in response to your request.",
-            "content": {}
+            "description": "A successful request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddSubscriptionResponse"
+                }
+              }
+            }
           },
           "409": {
             "description": "Returned if the given user is already subscribed to this stream using a different subscription ID, OR if the given subscription ID is already used to identify a subscription to a different stream.",
@@ -8627,6 +8645,45 @@
             "description": "List of SpO2 summaries."
           }
         }
+      },
+      "Subscription": {
+        "type": "object",
+        "properties": {
+          "collectionType": {
+            "type": "string",
+            "description": "The collection type of the subscription."
+          },
+          "ownerId": {
+            "type": "string",
+            "description": "The owner ID of the subscription."
+          },
+          "ownerType": {
+            "type": "string",
+            "description": "The owner type of the subscription."
+          },
+          "subscriberId": {
+            "type": "string",
+            "description": "The subscriber ID of the subscription."
+          },
+          "subscriptionId": {
+            "type": "string",
+            "description": "The subscription ID."
+          }
+        }
+      },
+      "GetSubscriptionListResponse": {
+        "type": "object",
+        "properties": {
+          "apiSubscriptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Subscription"
+            }
+          }
+        }
+      },
+      "AddSubscriptionResponse": {
+        "$ref": "#/components/schemas/Subscription"
       },
       "GetEcgLogListResponse": {
         "type": "object",
