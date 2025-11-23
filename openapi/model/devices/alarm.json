@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "properties": {
+    "alarmId": {
+      "type": "integer",
+      "description": "Numerical value representing the alarm ID."
+    },
+    "deleted": {
+      "type": "boolean",
+      "description": "Indicates if an alarm has been deleted."
+    },
+    "enabled": {
+      "type": "boolean",
+      "description": "Indicates if an alarm is enabled."
+    },
+    "recurring": {
+      "type": "boolean",
+      "description": "Indicates if an alarm is recurring."
+    },
+    "snoozeCount": {
+      "type": "integer",
+      "description": "Indicates the number of times the alarm will snooze."
+    },
+    "snoozeLength": {
+      "type": "integer",
+      "description": "Indicates the time in minutes between snooze periods."
+    },
+    "syncedToDevice": {
+      "type": "boolean",
+      "description": "Indicates if the alarm is synced to the device."
+    },
+    "time": {
+      "type": "string",
+      "description": "The time and UTC offset for the specified alarm."
+    },
+    "vibe": {
+      "type": "string",
+      "description": "Returns the type of vibration configured.",
+      "enum": ["DEFAULT"]
+    },
+    "weekDays": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "MONDAY",
+          "TUESDAY",
+          "WEDNESDAY",
+          "THURSDAY",
+          "FRIDAY",
+          "SATURDAY",
+          "SUNDAY"
+        ]
+      },
+      "description": "Returns the recurring days of the week which the alarm is set."
+    },
+    "label": {
+      "type": "string",
+      "description": "Label or name for the alarm."
+    }
+  }
+}

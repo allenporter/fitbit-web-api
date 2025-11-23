@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "trackerAlarm": {
+      "$ref": "#/components/schemas/Alarm",
+      "description": "The alarm object."
+    }
+  }
+}

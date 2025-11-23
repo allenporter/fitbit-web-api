@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "battery": {
+      "type": "string",
+      "description": "Returns the battery level of the device.",
+      "enum": ["High", "Medium", "Low", "Empty"]
+    },
+    "batteryLevel": {
+      "type": "integer",
+      "description": "Returns the battery level percentage of the device."
+    },
+    "deviceVersion": {
+      "type": "string",
+      "description": "The product name of the device."
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Lists any unique features supported by the device."
+    },
+    "id": {
+      "type": "string",
+      "description": "The device ID."
+    },
+    "lastSyncTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp representing the last time the device was sync'd with the Fitbit mobile application."
+    },
+    "mac": {
+      "type": "string",
+      "description": "Mac ID number"
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of device.",
+      "enum": ["TRACKER", "SCALE"]
+    }
+  }
+}
