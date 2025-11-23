@@ -1,5 +1,7 @@
 import asyncio
-from collections.abc import AsyncGenerator
+import json
+import os
+from collections.abc import AsyncGenerator, Callable
 from typing import Any, Dict
 
 import pytest
@@ -10,9 +12,9 @@ import fitbit_web_api
 
 
 @pytest.fixture
-async def loop():
+async def loop() -> AsyncGenerator[asyncio.AbstractEventLoop, None]:
     """Event loop fixture for pytest-aiohttp."""
-    return asyncio.get_running_loop()
+    yield asyncio.get_running_loop()
 
 
 @pytest.fixture
@@ -33,7 +35,7 @@ async def fitbit_app(responses: Dict[str, Any]) -> web.Application:
 
 
 @pytest.fixture
-async def fitbit_server(aiohttp_server, fitbit_app: web.Application) -> TestServer:
+async def fitbit_server(aiohttp_server: Any, fitbit_app: web.Application) -> TestServer:
     return await aiohttp_server(fitbit_app)
 
 
@@ -46,3 +48,16 @@ async def api_client(
     )
     async with fitbit_web_api.ApiClient(configuration) as api_client:
         yield api_client
+
+
+@pytest.fixture
+def load_test_data() -> Callable[[str], Any]:
+    """Fixture to load test data from JSON files."""
+
+    def _load(filename: str) -> Any:
+        base_path = os.path.dirname(__file__)
+        file_path = os.path.join(base_path, "testdata", filename)
+        with open(file_path, "r") as f:
+            return json.load(f)
+
+    return _load
