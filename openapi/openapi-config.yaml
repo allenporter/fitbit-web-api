@@ -2,4 +2,4 @@
 projectName: fitbit-web-api
 packageName: fitbit_web_api
 library: asyncio
-packageUrl: https://github.com/chemelli74/fitbit-web-api
+packageUrl: https://github.com/allenporter/fitbit-web-api

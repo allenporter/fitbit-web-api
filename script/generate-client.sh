@@ -3,7 +3,7 @@
 OUTPUT_DIR="."
 CONFIG_FILE="openapi/openapi-config.yaml"
 OPENAPI_SPEC="openapi/fitbit-web-api-openapi-fixed.json"
-PACKAGE_URL="https://github.com/chemelli74/fitbit-web-api"
+PACKAGE_URL="https://github.com/allenporter/fitbit-web-api"
 
 # Preserve the package version from `pyproject.toml`
 CURRENT_VERSION=$(grep -m 1 "version" pyproject.toml | sed -n 's/.*version *= *"\([^"]*\)".*/\1/p')
