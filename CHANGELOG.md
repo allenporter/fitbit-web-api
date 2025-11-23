@@ -1,5 +1,17 @@
 # Changelog
 
+## v2.12.0 (2025-11-23)
+
+### Features
+
+- Add comprehensive pytest-based tests and test data for activity… ([`7122109`](https://github.com/allenporter/fitbit-web-api/commit/7122109204bd034af165df9a2db4b0ea36458b98))
+
+
+### Testing
+
+- Refactor nutrition and weight log tests to pytest, add concrete… ([`a337efe`](https://github.com/allenporter/fitbit-web-api/commit/a337efe9165edd57d245efae2049873df4960f50))
+
+
 ## v2.11.0 (2025-11-23)
 
 ### Features
