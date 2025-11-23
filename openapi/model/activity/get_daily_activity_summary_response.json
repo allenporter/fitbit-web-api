@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "activities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ActivityLog"
+      },
+      "description": "List of activity log entries."
+    },
+    "goals": {
+      "$ref": "#/components/schemas/ActivityGoals",
+      "description": "The user's daily activity goals."
+    },
+    "summary": {
+      "$ref": "#/components/schemas/ActivitySummary",
+      "description": "The user's daily activity summary."
+    }
+  }
+}

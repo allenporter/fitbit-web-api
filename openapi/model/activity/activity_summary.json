@@ -1,0 +1,74 @@
+{
+  "type": "object",
+  "properties": {
+    "activeScore": {
+      "type": "integer",
+      "description": "Functionality removed. A response is returned for backward compatibility."
+    },
+    "activityCalories": {
+      "type": "integer",
+      "description": "The number of calories burned for the day during periods the user was active above sedentary level."
+    },
+    "caloriesBMR": {
+      "type": "integer",
+      "description": "Total BMR calories burned for the day."
+    },
+    "caloriesOut": {
+      "type": "integer",
+      "description": "Total calories burned for the day."
+    },
+    "distances": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "activity": {
+            "type": "string",
+            "description": "The activity name."
+          },
+          "distance": {
+            "type": "number",
+            "description": "The distance traveled for the day."
+          }
+        }
+      },
+      "description": "List of distances traveled for the day."
+    },
+    "elevation": {
+      "type": "number",
+      "description": "The elevation traveled for the day."
+    },
+    "fairlyActiveMinutes": {
+      "type": "integer",
+      "description": "Total minutes the user was fairly/moderately active."
+    },
+    "floors": {
+      "type": "integer",
+      "description": "The equivalent floors climbed for the day."
+    },
+    "lightlyActiveMinutes": {
+      "type": "integer",
+      "description": "Total minutes the user was lightly active."
+    },
+    "marginalCalories": {
+      "type": "integer",
+      "description": "Total marginal estimated calories burned for the day."
+    },
+    "restingHeartRate": {
+      "type": "integer",
+      "description": "The user's calculated resting heart rate."
+    },
+    "sedentaryMinutes": {
+      "type": "integer",
+      "description": "Total minutes the user was sedentary."
+    },
+    "steps": {
+      "type": "integer",
+      "description": "Total steps taken for the day."
+    },
+    "veryActiveMinutes": {
+      "type": "integer",
+      "description": "Total minutes the user was very active."
+    }
+  }
+}

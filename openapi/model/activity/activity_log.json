@@ -1,0 +1,71 @@
+{
+  "type": "object",
+  "properties": {
+    "activityId": {
+      "type": "integer",
+      "description": "The ID of the activity."
+    },
+    "activityParentId": {
+      "type": "integer",
+      "description": "The ID of the top level ('parent') activity."
+    },
+    "activityParentName": {
+      "type": "string",
+      "description": "The name of the top level ('parent') activity."
+    },
+    "calories": {
+      "type": "integer",
+      "description": "Number of calories burned during the exercise."
+    },
+    "description": {
+      "type": "string",
+      "description": "The description of the recorded exercise."
+    },
+    "distance": {
+      "type": "number",
+      "description": "Distance traveled during the on-device recorded exercise."
+    },
+    "duration": {
+      "type": "integer",
+      "description": "The activeDuration (milliseconds) + any pauses that occurred during the activity recording."
+    },
+    "hasActiveZoneMinutes": {
+      "type": "boolean",
+      "description": "Indicates if the activity has active zone minutes."
+    },
+    "hasStartTime": {
+      "type": "boolean",
+      "description": "Indicates if the activity has a start time."
+    },
+    "isFavorite": {
+      "type": "boolean",
+      "description": "Indicates if the activity is a favorite."
+    },
+    "lastModified": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp the exercise was last modified."
+    },
+    "logId": {
+      "type": "integer",
+      "description": "The activity log identifier for the exercise."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the recorded exercise."
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date",
+      "description": "The start date of the recorded exercise."
+    },
+    "startTime": {
+      "type": "string",
+      "description": "The start time of the recorded exercise."
+    },
+    "steps": {
+      "type": "integer",
+      "description": "Number of steps recorded during the exercise."
+    }
+  }
+}

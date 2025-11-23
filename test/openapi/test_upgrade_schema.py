@@ -3,7 +3,6 @@ import pathlib
 import sys
 from importlib.util import module_from_spec, spec_from_file_location
 
-
 # Define paths
 PROJECT_ROOT = pathlib.Path(__file__).parents[2]
 SCRIPT_PATH = PROJECT_ROOT / "script" / "upgrade-schema.py"

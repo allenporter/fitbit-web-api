@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "goals": {
+      "$ref": "#/components/schemas/ActivityGoals",
+      "description": "The user's activity goals."
+    }
+  }
+}

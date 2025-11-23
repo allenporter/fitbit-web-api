@@ -815,7 +815,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetDailyActivitySummaryResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -901,7 +907,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetActivityTimeSeriesResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -987,7 +999,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetActivityTimeSeriesResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -1072,7 +1090,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetActivityTimeSeriesResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -1157,7 +1181,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetActivityTimeSeriesResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -1550,7 +1580,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetLifetimeStatsResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -1799,7 +1835,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetActivityLogListResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -2233,7 +2275,13 @@
         "responses": {
           "200": {
             "description": "A successful request.",
-            "content": {}
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetActivityGoalsResponse"
+                }
+              }
+            }
           },
           "400": {
             "description": "The request had bad syntax or was inherently impossible to be satified.",
@@ -7289,6 +7337,420 @@
           }
         }
       },
+      "LifetimeStats": {
+        "type": "object",
+        "properties": {
+          "best": {
+            "type": "object",
+            "properties": {
+              "total": {
+                "type": "object",
+                "properties": {
+                  "distance": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The date the user's best distance was achieved."
+                      },
+                      "value": {
+                        "type": "number",
+                        "description": "The user's best distance achieved."
+                      }
+                    }
+                  },
+                  "floors": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The date the user's best floors was achieved."
+                      },
+                      "value": {
+                        "type": "number",
+                        "description": "The user's best floors achieved."
+                      }
+                    }
+                  },
+                  "steps": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The date the user's best step count was achieved."
+                      },
+                      "value": {
+                        "type": "integer",
+                        "description": "The user's best step count achieved."
+                      }
+                    }
+                  }
+                },
+                "description": "The user's best achievements including tracker and manual activity log entries."
+              },
+              "tracker": {
+                "type": "object",
+                "properties": {
+                  "distance": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The date the user's best distance was achieved."
+                      },
+                      "value": {
+                        "type": "number",
+                        "description": "The user's best distance achieved."
+                      }
+                    }
+                  },
+                  "floors": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The date the user's best floors was achieved."
+                      },
+                      "value": {
+                        "type": "number",
+                        "description": "The user's best floors achieved."
+                      }
+                    }
+                  },
+                  "steps": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The date the user's best step count was achieved."
+                      },
+                      "value": {
+                        "type": "integer",
+                        "description": "The user's best step count achieved."
+                      }
+                    }
+                  }
+                },
+                "description": "The user's best achievements including tracker data only."
+              }
+            },
+            "description": "The user's best achievements."
+          },
+          "lifetime": {
+            "type": "object",
+            "properties": {
+              "total": {
+                "type": "object",
+                "properties": {
+                  "activeScore": {
+                    "type": "integer",
+                    "description": "Functionality removed. A response is returned for backward compatibility."
+                  },
+                  "caloriesOut": {
+                    "type": "integer",
+                    "description": "Functionality removed. A response is returned for backward compatibility."
+                  },
+                  "distance": {
+                    "type": "number",
+                    "description": "The total distance recorded over the lifetime of the user's account."
+                  },
+                  "floors": {
+                    "type": "integer",
+                    "description": "The total floors recorded over the lifetime of the user's account."
+                  },
+                  "steps": {
+                    "type": "integer",
+                    "description": "The total steps recorded over the lifetime of the user's account."
+                  }
+                },
+                "description": "The total lifetime stats including tracker and manual activity log entries."
+              },
+              "tracker": {
+                "type": "object",
+                "properties": {
+                  "activeScore": {
+                    "type": "integer",
+                    "description": "Functionality removed. A response is returned for backward compatibility."
+                  },
+                  "caloriesOut": {
+                    "type": "integer",
+                    "description": "Functionality removed. A response is returned for backward compatibility."
+                  },
+                  "distance": {
+                    "type": "number",
+                    "description": "The total distance recorded by the tracker over the lifetime of the user's account."
+                  },
+                  "floors": {
+                    "type": "integer",
+                    "description": "The total floors recorded by the tracker over the lifetime of the user's account."
+                  },
+                  "steps": {
+                    "type": "integer",
+                    "description": "The total steps recorded by the tracker over the lifetime of the user's account."
+                  }
+                },
+                "description": "The total lifetime stats including tracker data only."
+              }
+            },
+            "description": "The user's lifetime stats."
+          }
+        }
+      },
+      "GetDailyActivitySummaryResponse": {
+        "type": "object",
+        "properties": {
+          "activities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityLog"
+            },
+            "description": "List of activity log entries."
+          },
+          "goals": {
+            "$ref": "#/components/schemas/ActivityGoals",
+            "description": "The user's daily activity goals."
+          },
+          "summary": {
+            "$ref": "#/components/schemas/ActivitySummary",
+            "description": "The user's daily activity summary."
+          }
+        }
+      },
+      "ActivitySummary": {
+        "type": "object",
+        "properties": {
+          "activeScore": {
+            "type": "integer",
+            "description": "Functionality removed. A response is returned for backward compatibility."
+          },
+          "activityCalories": {
+            "type": "integer",
+            "description": "The number of calories burned for the day during periods the user was active above sedentary level."
+          },
+          "caloriesBMR": {
+            "type": "integer",
+            "description": "Total BMR calories burned for the day."
+          },
+          "caloriesOut": {
+            "type": "integer",
+            "description": "Total calories burned for the day."
+          },
+          "distances": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "activity": {
+                  "type": "string",
+                  "description": "The activity name."
+                },
+                "distance": {
+                  "type": "number",
+                  "description": "The distance traveled for the day."
+                }
+              }
+            },
+            "description": "List of distances traveled for the day."
+          },
+          "elevation": {
+            "type": "number",
+            "description": "The elevation traveled for the day."
+          },
+          "fairlyActiveMinutes": {
+            "type": "integer",
+            "description": "Total minutes the user was fairly/moderately active."
+          },
+          "floors": {
+            "type": "integer",
+            "description": "The equivalent floors climbed for the day."
+          },
+          "lightlyActiveMinutes": {
+            "type": "integer",
+            "description": "Total minutes the user was lightly active."
+          },
+          "marginalCalories": {
+            "type": "integer",
+            "description": "Total marginal estimated calories burned for the day."
+          },
+          "restingHeartRate": {
+            "type": "integer",
+            "description": "The user's calculated resting heart rate."
+          },
+          "sedentaryMinutes": {
+            "type": "integer",
+            "description": "Total minutes the user was sedentary."
+          },
+          "steps": {
+            "type": "integer",
+            "description": "Total steps taken for the day."
+          },
+          "veryActiveMinutes": {
+            "type": "integer",
+            "description": "Total minutes the user was very active."
+          }
+        }
+      },
+      "GetLifetimeStatsResponse": {
+        "$ref": "#/components/schemas/LifetimeStats"
+      },
+      "GetActivityGoalsResponse": {
+        "type": "object",
+        "properties": {
+          "goals": {
+            "$ref": "#/components/schemas/ActivityGoals",
+            "description": "The user's activity goals."
+          }
+        }
+      },
+      "ActivityLog": {
+        "type": "object",
+        "properties": {
+          "activityId": {
+            "type": "integer",
+            "description": "The ID of the activity."
+          },
+          "activityParentId": {
+            "type": "integer",
+            "description": "The ID of the top level ('parent') activity."
+          },
+          "activityParentName": {
+            "type": "string",
+            "description": "The name of the top level ('parent') activity."
+          },
+          "calories": {
+            "type": "integer",
+            "description": "Number of calories burned during the exercise."
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the recorded exercise."
+          },
+          "distance": {
+            "type": "number",
+            "description": "Distance traveled during the on-device recorded exercise."
+          },
+          "duration": {
+            "type": "integer",
+            "description": "The activeDuration (milliseconds) + any pauses that occurred during the activity recording."
+          },
+          "hasActiveZoneMinutes": {
+            "type": "boolean",
+            "description": "Indicates if the activity has active zone minutes."
+          },
+          "hasStartTime": {
+            "type": "boolean",
+            "description": "Indicates if the activity has a start time."
+          },
+          "isFavorite": {
+            "type": "boolean",
+            "description": "Indicates if the activity is a favorite."
+          },
+          "lastModified": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp the exercise was last modified."
+          },
+          "logId": {
+            "type": "integer",
+            "description": "The activity log identifier for the exercise."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the recorded exercise."
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The start date of the recorded exercise."
+          },
+          "startTime": {
+            "type": "string",
+            "description": "The start time of the recorded exercise."
+          },
+          "steps": {
+            "type": "integer",
+            "description": "Number of steps recorded during the exercise."
+          }
+        }
+      },
+      "ActivityGoals": {
+        "type": "object",
+        "properties": {
+          "activeMinutes": {
+            "type": "integer",
+            "description": "Daily active minutes goal."
+          },
+          "activeZoneMinutes": {
+            "type": "integer",
+            "description": "Daily or weekly active zone minutes goal."
+          },
+          "caloriesOut": {
+            "type": "integer",
+            "description": "Daily calories burned goal."
+          },
+          "distance": {
+            "type": "number",
+            "description": "Daily or weekly distance goal."
+          },
+          "floors": {
+            "type": "integer",
+            "description": "Daily or weekly floors climbed goal."
+          },
+          "steps": {
+            "type": "integer",
+            "description": "Daily or weekly steps taken goal."
+          }
+        }
+      },
+      "GetActivityLogListResponse": {
+        "type": "object",
+        "properties": {
+          "activities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityLog"
+            },
+            "description": "List of activity log entries."
+          },
+          "pagination": {
+            "type": "object",
+            "properties": {
+              "afterDate": {
+                "type": "string",
+                "format": "date",
+                "description": "The specified afterDate parameter."
+              },
+              "limit": {
+                "type": "integer",
+                "description": "The specified limit."
+              },
+              "next": {
+                "type": "string",
+                "description": "URL for the next page of results."
+              },
+              "offset": {
+                "type": "integer",
+                "description": "The specified offset."
+              },
+              "previous": {
+                "type": "string",
+                "description": "URL for the previous page of results."
+              },
+              "sort": {
+                "type": "string",
+                "enum": ["asc", "desc"],
+                "description": "The specified sort order."
+              }
+            }
+          }
+        }
+      },
       "GetBadgesResponse": {
         "type": "object",
         "properties": {
@@ -7557,6 +8019,157 @@
         "properties": {
           "user": {
             "$ref": "#/components/schemas/User"
+          }
+        }
+      },
+      "GetActivityTimeSeriesResponse": {
+        "type": "object",
+        "properties": {
+          "activities-activityCalories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-calories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-caloriesBMR": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-distance": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-elevation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-floors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-minutesSedentary": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-minutesLightlyActive": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-minutesFairlyActive": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-minutesVeryActive": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-steps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-swimming-strokes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-tracker-activityCalories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-tracker-calories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-tracker-distance": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-tracker-elevation": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-tracker-floors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-tracker-minutesSedentary": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-tracker-minutesLightlyActive": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-tracker-minutesFairlyActive": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-tracker-minutesVeryActive": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          },
+          "activities-tracker-steps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityTimeSeriesDatapoint"
+            }
+          }
+        }
+      },
+      "ActivityTimeSeriesDatapoint": {
+        "type": "object",
+        "properties": {
+          "dateTime": {
+            "type": "string",
+            "format": "date",
+            "description": "The date of the recorded resource."
+          },
+          "value": {
+            "type": "string",
+            "description": "The specified resource's daily total."
           }
         }
       },

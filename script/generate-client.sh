@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 OUTPUT_DIR="."
 CONFIG_FILE="openapi/openapi-config.yaml"
 OPENAPI_SPEC="openapi/fitbit-web-api-openapi-fixed.json"
@@ -7,14 +9,15 @@ PACKAGE_URL="https://github.com/allenporter/fitbit-web-api"
 
 # Preserve the package version from `pyproject.toml`
 CURRENT_VERSION=$(grep -m 1 "version" pyproject.toml | sed -n 's/.*version *= *"\([^"]*\)".*/\1/p')
+OPENAPI_GENERATOR_VERSION=$(cat .openapi-generator/VERSION)
 
-docker run --rm -v "${PWD}:/data" openapitools/openapi-generator-cli generate \
+docker run --rm -v "${PWD}:/data" openapitools/openapi-generator-cli:v${OPENAPI_GENERATOR_VERSION} generate \
    --input-spec /data/${OPENAPI_SPEC} \
    --generator-name python \
    --output /data/${OUTPUT_DIR} \
    --config /data/${CONFIG_FILE} \
    --package-name fitbit_web_api \
-   --package-version "${CURRENT_VERSION}"
+   --parameter-name-mappings "packageVersion=${CURRENT_VERSION}"
 
 # The generate code changes `pyproject.yaml` in a way that is not
 # compatible with the existing project setup. Additionally it changes
@@ -23,12 +26,12 @@ docker run --rm -v "${PWD}:/data" openapitools/openapi-generator-cli generate \
 echo "---"
 echo "Reverting changes to python project setup"
 rm setup.cfg
-git checkout -- pyproject.toml test-requirements.txt
+git checkout -- pyproject.toml test-requirements.txt .gignore
 
 echo "---"
 echo "Running ruff to fix code style..."
-ruff check --fix .
+ruff check --fix . || true
 
 echo "---"
 echo "Running black to format code..."
-black .
+black . || true

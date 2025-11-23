@@ -1,0 +1,165 @@
+{
+  "type": "object",
+  "properties": {
+    "best": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "object",
+          "properties": {
+            "distance": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string",
+                  "format": "date",
+                  "description": "The date the user's best distance was achieved."
+                },
+                "value": {
+                  "type": "number",
+                  "description": "The user's best distance achieved."
+                }
+              }
+            },
+            "floors": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string",
+                  "format": "date",
+                  "description": "The date the user's best floors was achieved."
+                },
+                "value": {
+                  "type": "number",
+                  "description": "The user's best floors achieved."
+                }
+              }
+            },
+            "steps": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string",
+                  "format": "date",
+                  "description": "The date the user's best step count was achieved."
+                },
+                "value": {
+                  "type": "integer",
+                  "description": "The user's best step count achieved."
+                }
+              }
+            }
+          },
+          "description": "The user's best achievements including tracker and manual activity log entries."
+        },
+        "tracker": {
+          "type": "object",
+          "properties": {
+            "distance": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string",
+                  "format": "date",
+                  "description": "The date the user's best distance was achieved."
+                },
+                "value": {
+                  "type": "number",
+                  "description": "The user's best distance achieved."
+                }
+              }
+            },
+            "floors": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string",
+                  "format": "date",
+                  "description": "The date the user's best floors was achieved."
+                },
+                "value": {
+                  "type": "number",
+                  "description": "The user's best floors achieved."
+                }
+              }
+            },
+            "steps": {
+              "type": "object",
+              "properties": {
+                "date": {
+                  "type": "string",
+                  "format": "date",
+                  "description": "The date the user's best step count was achieved."
+                },
+                "value": {
+                  "type": "integer",
+                  "description": "The user's best step count achieved."
+                }
+              }
+            }
+          },
+          "description": "The user's best achievements including tracker data only."
+        }
+      },
+      "description": "The user's best achievements."
+    },
+    "lifetime": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "object",
+          "properties": {
+            "activeScore": {
+              "type": "integer",
+              "description": "Functionality removed. A response is returned for backward compatibility."
+            },
+            "caloriesOut": {
+              "type": "integer",
+              "description": "Functionality removed. A response is returned for backward compatibility."
+            },
+            "distance": {
+              "type": "number",
+              "description": "The total distance recorded over the lifetime of the user's account."
+            },
+            "floors": {
+              "type": "integer",
+              "description": "The total floors recorded over the lifetime of the user's account."
+            },
+            "steps": {
+              "type": "integer",
+              "description": "The total steps recorded over the lifetime of the user's account."
+            }
+          },
+          "description": "The total lifetime stats including tracker and manual activity log entries."
+        },
+        "tracker": {
+          "type": "object",
+          "properties": {
+            "activeScore": {
+              "type": "integer",
+              "description": "Functionality removed. A response is returned for backward compatibility."
+            },
+            "caloriesOut": {
+              "type": "integer",
+              "description": "Functionality removed. A response is returned for backward compatibility."
+            },
+            "distance": {
+              "type": "number",
+              "description": "The total distance recorded by the tracker over the lifetime of the user's account."
+            },
+            "floors": {
+              "type": "integer",
+              "description": "The total floors recorded by the tracker over the lifetime of the user's account."
+            },
+            "steps": {
+              "type": "integer",
+              "description": "The total steps recorded by the tracker over the lifetime of the user's account."
+            }
+          },
+          "description": "The total lifetime stats including tracker data only."
+        }
+      },
+      "description": "The user's lifetime stats."
+    }
+  }
+}
