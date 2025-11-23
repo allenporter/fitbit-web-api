@@ -35,9 +35,9 @@ uv run pytest test/test_user_api.py
 
 Model tests are located in `test/test_<model_name>.py`. They should cover:
 
-*   **Instantiation**: Verify the model can be created with required fields.
-*   **From Dict**: Verify the model can be created from a dictionary (deserialization).
-*   **To Dict**: Verify the model can be converted back to a dictionary (serialization).
+- **Instantiation**: Verify the model can be created with required fields.
+- **From Dict**: Verify the model can be created from a dictionary (deserialization).
+- **To Dict**: Verify the model can be converted back to a dictionary (serialization).
 
 **Example (`test/test_device.py`):**
 
@@ -54,9 +54,9 @@ API tests are located in `test/test_<api_name>_api.py`. They use `pytest-asyncio
 
 **Key Components:**
 
-*   **`api_client` fixture**: Provides a configured `ApiClient`.
-*   **`responses` fixture**: Used to mock API responses.
-*   **`load_test_data` fixture**: Helper to load JSON data from `test/data/`.
+- **`api_client` fixture**: Provides a configured `ApiClient`.
+- **`responses` fixture**: Used to mock API responses.
+- **`load_test_data` fixture**: Helper to load JSON data from `test/data/`.
 
 **Pattern:**
 
@@ -83,8 +83,9 @@ async def test_get_devices(devices_api, responses, load_test_data):
 ## Test Data
 
 Test data is stored in `test/data/` as JSON files.
-*   Use `load_test_data("filename.json")` to load this data in your tests.
-*   Keep data realistic by using examples from the official documentation.
+
+- Use `load_test_data("filename.json")` to load this data in your tests.
+- Keep data realistic by using examples from the official documentation.
 
 ## Finding Example Requests/Responses
 
