@@ -36,7 +36,7 @@ async def test_get_breathing_rate_summary_by_date(
     )
 
     result = await breathing_rate_api.get_breathing_rate_summary_by_date(
-        var_date=date(2021, 10, 25)
+        var_date="2021-10-25",
     )
 
     assert result.br is not None
@@ -56,8 +56,8 @@ async def test_get_breathing_rate_summary_by_interval(
     )
 
     result = await breathing_rate_api.get_breathing_rate_summary_by_interval(
-        start_date=date(2021, 10, 25),
-        end_date=date(2021, 10, 25),
+        start_date="2021-10-25",
+        end_date="2021-10-25",
     )
 
     assert result.br is not None

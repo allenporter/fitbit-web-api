@@ -37,8 +37,8 @@ async def test_get_foods_by_date_range_water(
 
     result = await nutrition_time_series_api.get_foods_by_date_range(
         var_resource_path="water",
-        base_date=date(2019, 3, 15),
-        end_date=date(2019, 3, 21),
+        base_date="2019-03-15",
+        end_date="2019-03-21",
     )
 
     assert result.foods_log_water is not None
@@ -61,8 +61,8 @@ async def test_get_foods_by_date_range_calories(
 
     result = await nutrition_time_series_api.get_foods_by_date_range(
         var_resource_path="caloriesIn",
-        base_date=date(2019, 3, 15),
-        end_date=date(2019, 3, 21),
+        base_date="2019-03-15",
+        end_date="2019-03-21",
     )
 
     assert result.foods_log_calories_in is not None
@@ -85,7 +85,7 @@ async def test_get_foods_resource_by_date_period_water(
 
     result = await nutrition_time_series_api.get_foods_resource_by_date_period(
         var_resource_path="water",
-        var_date=date(2019, 3, 21),
+        var_date="2019-03-21",
         period="7d",
     )
 
@@ -109,7 +109,7 @@ async def test_get_foods_resource_by_date_period_calories(
 
     result = await nutrition_time_series_api.get_foods_resource_by_date_period(
         var_resource_path="caloriesIn",
-        var_date=date(2019, 3, 21),
+        var_date="2019-03-21",
         period="7d",
     )
 
