@@ -36,7 +36,10 @@ git checkout -- pyproject.toml test-requirements.txt .gitignore
 # Apply patches to fix issues or add features in the generated code
 echo "---"
 echo "Applying patches to generated code..."
-patch -p1 < script/patches/pool-manager.patch
+for patch in script/patches/*.patch; do
+    echo "Applying patch: $patch"
+    patch -p1 < "script/patches/$patch"
+done
 find . -name \*.orig -delete
 
 echo "---"
