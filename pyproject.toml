@@ -1,6 +1,6 @@
 [project]
 name = "fitbit-web-api"
-version = "2.12.1"
+version = "2.12.2-rc.1"
 description = "Fitbit Web API"
 authors = [
     { name = "Simone Chemelli", email = "simone.chemelli@gmail.com" },
