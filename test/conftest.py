@@ -46,10 +46,12 @@ def delete_responses_fixture() -> Dict[str, Any]:
     """Fixture that holds mock DELETE responses for the server."""
     return {}
 
+
 @pytest.fixture(name="delete_requests")
 def delete_requests_fixture() -> list[tuple[str, dict[str, Any]]]:
     """Fixture that records DELETE requests made to the mock server."""
     return []
+
 
 def _query_string_dict(query_string: str) -> Dict[str, str]:
     params = {}
