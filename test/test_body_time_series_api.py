@@ -37,8 +37,8 @@ async def test_get_body_resource_by_date_range_weight(
 
     result = await body_time_series_api.get_body_resource_by_date_range(
         var_resource_path="weight",
-        base_date=date(2015, 3, 5),
-        end_date=date(2015, 3, 12),
+        base_date="2015-03-05",
+        end_date="2015-03-12",
     )
 
     assert result.body_weight is not None
@@ -61,8 +61,8 @@ async def test_get_body_resource_by_date_range_fat(
 
     result = await body_time_series_api.get_body_resource_by_date_range(
         var_resource_path="fat",
-        base_date=date(2015, 3, 5),
-        end_date=date(2015, 3, 12),
+        base_date="2015-03-05",
+        end_date="2015-03-12",
     )
 
     assert result.body_fat is not None
@@ -85,7 +85,7 @@ async def test_get_body_resource_by_date_period_weight(
 
     result = await body_time_series_api.get_body_resource_by_date_period(
         var_resource_path="weight",
-        var_date=date(2015, 3, 12),
+        var_date="2015-03-12",
         period="7d",
     )
 
@@ -109,7 +109,7 @@ async def test_get_body_resource_by_date_period_fat(
 
     result = await body_time_series_api.get_body_resource_by_date_period(
         var_resource_path="fat",
-        var_date=date(2015, 3, 12),
+        var_date="2015-03-12",
         period="7d",
     )
 

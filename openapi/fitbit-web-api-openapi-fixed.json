@@ -445,8 +445,7 @@
             "description": "The date in the format yyyy-MM-dd or today",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -504,8 +503,7 @@
             "description": "The date in the format yyyy-MM-dd or today",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -581,8 +579,7 @@
             "description": "The date in the format yyyy-MM-dd or today",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -591,8 +588,7 @@
             "description": "The date in the format yyyy-MM-dd or today",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -650,8 +646,7 @@
             "description": "The date in the format yyyy-MM-dd or today",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -660,8 +655,7 @@
             "description": "The date in the format yyyy-MM-dd or today",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -737,8 +731,7 @@
             "description": "The date in the format yyyy-MM-dd or today",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -796,8 +789,7 @@
             "description": "The date in the format yyyy-MM-dd or today",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -806,8 +798,7 @@
             "description": "The date in the format yyyy-MM-dd or today",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -937,8 +928,7 @@
             "description": "The range start date in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -1029,8 +1019,7 @@
             "description": "The range start date in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -1121,8 +1110,7 @@
             "description": "The end date of the period specified in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -1212,8 +1200,7 @@
             "description": "The end date of the period specified in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -1291,8 +1278,7 @@
             "description": "The date in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -1301,8 +1287,7 @@
             "description": "The date in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -1381,8 +1366,7 @@
             "description": "The date in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -1461,8 +1445,7 @@
             "description": "The date in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -1471,8 +1454,7 @@
             "description": "The date in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -1569,8 +1551,7 @@
             "description": "The date in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -2585,8 +2566,7 @@
             "description": "The range start date in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -3053,8 +3033,7 @@
             "description": "The range start date in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -3247,8 +3226,7 @@
             "description": "The range start date in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -3322,8 +3300,7 @@
             "description": "The range start date in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -3387,8 +3364,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -3432,8 +3408,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -3442,8 +3417,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -3487,8 +3461,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -3532,8 +3505,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -3542,8 +3514,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -3587,8 +3558,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -3632,8 +3602,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -3642,8 +3611,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -4195,8 +4163,7 @@
             "description": "The end date of the period specified in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -4323,8 +4290,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -4333,8 +4299,7 @@
             "description": "The end date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -4398,8 +4363,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -4408,8 +4372,7 @@
             "description": "The end date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -4491,8 +4454,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -4556,8 +4518,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -4639,8 +4600,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -4684,8 +4644,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -4694,8 +4653,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -4739,8 +4697,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -4784,8 +4741,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -4794,8 +4750,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -5253,8 +5208,7 @@
             "description": "The range start date in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -5323,8 +5277,7 @@
             "description": "The end date of the period specified in the format yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -6847,8 +6800,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -6892,8 +6844,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -6902,8 +6853,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -6947,8 +6897,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -6992,8 +6941,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -7002,8 +6950,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -7225,8 +7172,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -7270,8 +7216,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -7280,8 +7225,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -7325,8 +7269,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],
@@ -7370,8 +7313,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           },
           {
@@ -7380,8 +7322,7 @@
             "description": "The date in the format of yyyy-MM-dd or today.",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "date"
+              "type": "string"
             }
           }
         ],

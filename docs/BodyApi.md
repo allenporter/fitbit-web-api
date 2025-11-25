@@ -503,7 +503,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.BodyApi(api_client)
-    base_date = '2013-10-20' # date | The range start date in the format yyyy-MM-dd or today.
+    base_date = 'base_date_example' # str | The range start date in the format yyyy-MM-dd or today.
     end_date = '2013-10-20' # date | The end date of the range.
 
     try:
@@ -519,7 +519,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 | Name          | Type     | Description                                             | Notes |
 | ------------- | -------- | ------------------------------------------------------- | ----- |
-| **base_date** | **date** | The range start date in the format yyyy-MM-dd or today. |
+| **base_date** | **str**  | The range start date in the format yyyy-MM-dd or today. |
 | **end_date**  | **date** | The end date of the range.                              |
 
 ### Return type
@@ -807,7 +807,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.BodyApi(api_client)
-    base_date = '2013-10-20' # date | The range start date in the format yyyy-MM-dd or today.
+    base_date = 'base_date_example' # str | The range start date in the format yyyy-MM-dd or today.
     end_date = '2013-10-20' # date | The end date of the range.
 
     try:
@@ -823,7 +823,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 | Name          | Type     | Description                                             | Notes |
 | ------------- | -------- | ------------------------------------------------------- | ----- |
-| **base_date** | **date** | The range start date in the format yyyy-MM-dd or today. |
+| **base_date** | **str**  | The range start date in the format yyyy-MM-dd or today. |
 | **end_date**  | **date** | The end date of the range.                              |
 
 ### Return type

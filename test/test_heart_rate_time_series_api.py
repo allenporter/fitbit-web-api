@@ -37,7 +37,7 @@ async def test_get_heart_by_date_range(
 
     result = await heart_rate_time_series_api.get_heart_by_date_range(
         base_date="2019-01-01",
-        end_date=date(2019, 1, 1),
+        end_date="2019-01-01",
     )
 
     assert result.activities_heart is not None
@@ -58,7 +58,7 @@ async def test_get_heart_by_date_period(
     )
 
     result = await heart_rate_time_series_api.get_heart_by_date_period(
-        var_date=date(2019, 1, 1),
+        var_date="2019-01-01",
         period="1d",
     )
 

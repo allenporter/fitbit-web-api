@@ -46,7 +46,7 @@ class NutritionTimeSeriesApi:
             ),
         ],
         base_date: Annotated[
-            date,
+            StrictStr,
             Field(
                 description="The range start date in the format yyyy-MM-dd or today."
             ),
@@ -72,7 +72,7 @@ class NutritionTimeSeriesApi:
         :param var_resource_path: The resouce path. See options in the Resouce Path Options section in the full documentation. (required)
         :type var_resource_path: str
         :param base_date: The range start date in the format yyyy-MM-dd or today. (required)
-        :type base_date: date
+        :type base_date: str
         :param end_date: The end date of the range. (required)
         :type end_date: date
         :param _request_timeout: timeout setting for this request. If one
@@ -131,7 +131,7 @@ class NutritionTimeSeriesApi:
             ),
         ],
         base_date: Annotated[
-            date,
+            StrictStr,
             Field(
                 description="The range start date in the format yyyy-MM-dd or today."
             ),
@@ -157,7 +157,7 @@ class NutritionTimeSeriesApi:
         :param var_resource_path: The resouce path. See options in the Resouce Path Options section in the full documentation. (required)
         :type var_resource_path: str
         :param base_date: The range start date in the format yyyy-MM-dd or today. (required)
-        :type base_date: date
+        :type base_date: str
         :param end_date: The end date of the range. (required)
         :type end_date: date
         :param _request_timeout: timeout setting for this request. If one
@@ -216,7 +216,7 @@ class NutritionTimeSeriesApi:
             ),
         ],
         base_date: Annotated[
-            date,
+            StrictStr,
             Field(
                 description="The range start date in the format yyyy-MM-dd or today."
             ),
@@ -242,7 +242,7 @@ class NutritionTimeSeriesApi:
         :param var_resource_path: The resouce path. See options in the Resouce Path Options section in the full documentation. (required)
         :type var_resource_path: str
         :param base_date: The range start date in the format yyyy-MM-dd or today. (required)
-        :type base_date: date
+        :type base_date: str
         :param end_date: The end date of the range. (required)
         :type end_date: date
         :param _request_timeout: timeout setting for this request. If one
@@ -356,7 +356,7 @@ class NutritionTimeSeriesApi:
             ),
         ],
         var_date: Annotated[
-            date,
+            StrictStr,
             Field(
                 description="The end date of the period specified in the format yyyy-MM-dd or today."
             ),
@@ -387,7 +387,7 @@ class NutritionTimeSeriesApi:
         :param var_resource_path: The resouce path. See options in the Resouce Path Options section in the full documentation. (required)
         :type var_resource_path: str
         :param var_date: The end date of the period specified in the format yyyy-MM-dd or today. (required)
-        :type var_date: date
+        :type var_date: str
         :param period: The range for which data will be returned. Options are 1d, 7d, 30d, 1w, 3m, 6m, 1y, or max. (required)
         :type period: str
         :param _request_timeout: timeout setting for this request. If one
@@ -446,7 +446,7 @@ class NutritionTimeSeriesApi:
             ),
         ],
         var_date: Annotated[
-            date,
+            StrictStr,
             Field(
                 description="The end date of the period specified in the format yyyy-MM-dd or today."
             ),
@@ -477,7 +477,7 @@ class NutritionTimeSeriesApi:
         :param var_resource_path: The resouce path. See options in the Resouce Path Options section in the full documentation. (required)
         :type var_resource_path: str
         :param var_date: The end date of the period specified in the format yyyy-MM-dd or today. (required)
-        :type var_date: date
+        :type var_date: str
         :param period: The range for which data will be returned. Options are 1d, 7d, 30d, 1w, 3m, 6m, 1y, or max. (required)
         :type period: str
         :param _request_timeout: timeout setting for this request. If one
@@ -536,7 +536,7 @@ class NutritionTimeSeriesApi:
             ),
         ],
         var_date: Annotated[
-            date,
+            StrictStr,
             Field(
                 description="The end date of the period specified in the format yyyy-MM-dd or today."
             ),
@@ -567,7 +567,7 @@ class NutritionTimeSeriesApi:
         :param var_resource_path: The resouce path. See options in the Resouce Path Options section in the full documentation. (required)
         :type var_resource_path: str
         :param var_date: The end date of the period specified in the format yyyy-MM-dd or today. (required)
-        :type var_date: date
+        :type var_date: str
         :param period: The range for which data will be returned. Options are 1d, 7d, 30d, 1w, 3m, 6m, 1y, or max. (required)
         :type period: str
         :param _request_timeout: timeout setting for this request. If one

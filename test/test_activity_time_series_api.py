@@ -37,8 +37,8 @@ async def test_get_activities_resource_by_date_range_steps(
 
     result = await activity_time_series_api.get_activities_resource_by_date_range(
         var_resource_path="steps",
-        base_date=date(2018, 12, 26),
-        end_date=date(2019, 1, 1),
+        base_date="2018-12-26",
+        end_date="2019-01-01",
     )
 
     assert result.activities_steps is not None
@@ -61,8 +61,8 @@ async def test_get_activities_resource_by_date_range_calories(
 
     result = await activity_time_series_api.get_activities_resource_by_date_range(
         var_resource_path="calories",
-        base_date=date(2018, 12, 26),
-        end_date=date(2019, 1, 1),
+        base_date="2018-12-26",
+        end_date="2019-01-01",
     )
 
     assert result.activities_calories is not None
@@ -85,7 +85,7 @@ async def test_get_activities_resource_by_date_period_steps(
 
     result = await activity_time_series_api.get_activities_resource_by_date_period(
         var_resource_path="steps",
-        var_date=date(2019, 1, 1),
+        var_date="2019-01-01",
         period="7d",
     )
 
@@ -109,7 +109,7 @@ async def test_get_activities_resource_by_date_period_calories(
 
     result = await activity_time_series_api.get_activities_resource_by_date_period(
         var_resource_path="calories",
-        var_date=date(2019, 1, 1),
+        var_date="2019-01-01",
         period="7d",
     )
 
