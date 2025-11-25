@@ -45,7 +45,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.ActivityIntradayTimeSeriesApi(api_client)
     var_resource_path = steps # str | The resource-path; see options in the Resource Path Options section in the full documentation. (default to steps)
-    var_date = '2013-10-20' # date | The date in the format yyyy-MM-dd or today.
+    var_date = 'var_date_example' # str | The date in the format yyyy-MM-dd or today.
     detail_level = '1min' # str | Number of data points to include. Either 1min or 15min. Optional. (default to '1min')
 
     try:
@@ -59,11 +59,11 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name                  | Type     | Description                                                                                    | Notes                       |
-| --------------------- | -------- | ---------------------------------------------------------------------------------------------- | --------------------------- |
-| **var_resource_path** | **str**  | The resource-path; see options in the Resource Path Options section in the full documentation. | [default to steps]          |
-| **var_date**          | **date** | The date in the format yyyy-MM-dd or today.                                                    |
-| **detail_level**      | **str**  | Number of data points to include. Either 1min or 15min. Optional.                              | [default to &#39;1min&#39;] |
+| Name                  | Type    | Description                                                                                    | Notes                       |
+| --------------------- | ------- | ---------------------------------------------------------------------------------------------- | --------------------------- |
+| **var_resource_path** | **str** | The resource-path; see options in the Resource Path Options section in the full documentation. | [default to steps]          |
+| **var_date**          | **str** | The date in the format yyyy-MM-dd or today.                                                    |
+| **detail_level**      | **str** | Number of data points to include. Either 1min or 15min. Optional.                              | [default to &#39;1min&#39;] |
 
 ### Return type
 
@@ -125,8 +125,8 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.ActivityIntradayTimeSeriesApi(api_client)
     var_resource_path = steps # str | The resource-path; see options in the Resource Path Options section in the full documentation. (default to steps)
-    base_date = '2013-10-20' # date | The date in the format yyyy-MM-dd or today.
-    end_date = '2013-10-20' # date | The date in the format yyyy-MM-dd or today.
+    base_date = 'base_date_example' # str | The date in the format yyyy-MM-dd or today.
+    end_date = 'end_date_example' # str | The date in the format yyyy-MM-dd or today.
     detail_level = '1min' # str | Number of data points to include. Either 1min or 15min. Optional. (default to '1min')
 
     try:
@@ -140,12 +140,12 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name                  | Type     | Description                                                                                    | Notes                       |
-| --------------------- | -------- | ---------------------------------------------------------------------------------------------- | --------------------------- |
-| **var_resource_path** | **str**  | The resource-path; see options in the Resource Path Options section in the full documentation. | [default to steps]          |
-| **base_date**         | **date** | The date in the format yyyy-MM-dd or today.                                                    |
-| **end_date**          | **date** | The date in the format yyyy-MM-dd or today.                                                    |
-| **detail_level**      | **str**  | Number of data points to include. Either 1min or 15min. Optional.                              | [default to &#39;1min&#39;] |
+| Name                  | Type    | Description                                                                                    | Notes                       |
+| --------------------- | ------- | ---------------------------------------------------------------------------------------------- | --------------------------- |
+| **var_resource_path** | **str** | The resource-path; see options in the Resource Path Options section in the full documentation. | [default to steps]          |
+| **base_date**         | **str** | The date in the format yyyy-MM-dd or today.                                                    |
+| **end_date**          | **str** | The date in the format yyyy-MM-dd or today.                                                    |
+| **detail_level**      | **str** | Number of data points to include. Either 1min or 15min. Optional.                              | [default to &#39;1min&#39;] |
 
 ### Return type
 
@@ -207,8 +207,8 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.ActivityIntradayTimeSeriesApi(api_client)
     var_resource_path = steps # str | The resource-path; see options in the Resource Path Options section in the full documentation. (default to steps)
-    var_date = '2013-10-20' # date | The date in the format yyyy-MM-dd or today.
-    end_date = '2013-10-20' # date | The date in the format yyyy-MM-dd or today.
+    var_date = 'var_date_example' # str | The date in the format yyyy-MM-dd or today.
+    end_date = 'end_date_example' # str | The date in the format yyyy-MM-dd or today.
     detail_level = '1min' # str | Number of data points to include. Either 1min or 15min. (default to '1min')
     start_time = 'start_time_example' # str | The start of the period in the format HH:mm.
     end_time = 'end_time_example' # str | The end of the period in the format HH:mm.
@@ -224,14 +224,14 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name                  | Type     | Description                                                                                    | Notes                       |
-| --------------------- | -------- | ---------------------------------------------------------------------------------------------- | --------------------------- |
-| **var_resource_path** | **str**  | The resource-path; see options in the Resource Path Options section in the full documentation. | [default to steps]          |
-| **var_date**          | **date** | The date in the format yyyy-MM-dd or today.                                                    |
-| **end_date**          | **date** | The date in the format yyyy-MM-dd or today.                                                    |
-| **detail_level**      | **str**  | Number of data points to include. Either 1min or 15min.                                        | [default to &#39;1min&#39;] |
-| **start_time**        | **str**  | The start of the period in the format HH:mm.                                                   |
-| **end_time**          | **str**  | The end of the period in the format HH:mm.                                                     |
+| Name                  | Type    | Description                                                                                    | Notes                       |
+| --------------------- | ------- | ---------------------------------------------------------------------------------------------- | --------------------------- |
+| **var_resource_path** | **str** | The resource-path; see options in the Resource Path Options section in the full documentation. | [default to steps]          |
+| **var_date**          | **str** | The date in the format yyyy-MM-dd or today.                                                    |
+| **end_date**          | **str** | The date in the format yyyy-MM-dd or today.                                                    |
+| **detail_level**      | **str** | Number of data points to include. Either 1min or 15min.                                        | [default to &#39;1min&#39;] |
+| **start_time**        | **str** | The start of the period in the format HH:mm.                                                   |
+| **end_time**          | **str** | The end of the period in the format HH:mm.                                                     |
 
 ### Return type
 
@@ -293,7 +293,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.ActivityIntradayTimeSeriesApi(api_client)
     var_resource_path = steps # str | The resource-path; see options in the Resource Path Options section in the full documentation. (default to steps)
-    var_date = '2013-10-20' # date | The date in the format yyyy-MM-dd or today.
+    var_date = 'var_date_example' # str | The date in the format yyyy-MM-dd or today.
     detail_level = '1min' # str | Number of data points to include. Either 1min or 15min. (default to '1min')
     start_time = 'start_time_example' # str | The start of the period in the format HH:mm.
     end_time = 'end_time_example' # str | The end of the period in the format HH:mm.
@@ -309,13 +309,13 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name                  | Type     | Description                                                                                    | Notes                       |
-| --------------------- | -------- | ---------------------------------------------------------------------------------------------- | --------------------------- |
-| **var_resource_path** | **str**  | The resource-path; see options in the Resource Path Options section in the full documentation. | [default to steps]          |
-| **var_date**          | **date** | The date in the format yyyy-MM-dd or today.                                                    |
-| **detail_level**      | **str**  | Number of data points to include. Either 1min or 15min.                                        | [default to &#39;1min&#39;] |
-| **start_time**        | **str**  | The start of the period in the format HH:mm.                                                   |
-| **end_time**          | **str**  | The end of the period in the format HH:mm.                                                     |
+| Name                  | Type    | Description                                                                                    | Notes                       |
+| --------------------- | ------- | ---------------------------------------------------------------------------------------------- | --------------------------- |
+| **var_resource_path** | **str** | The resource-path; see options in the Resource Path Options section in the full documentation. | [default to steps]          |
+| **var_date**          | **str** | The date in the format yyyy-MM-dd or today.                                                    |
+| **detail_level**      | **str** | Number of data points to include. Either 1min or 15min.                                        | [default to &#39;1min&#39;] |
+| **start_time**        | **str** | The start of the period in the format HH:mm.                                                   |
+| **end_time**          | **str** | The end of the period in the format HH:mm.                                                     |
 
 ### Return type
 

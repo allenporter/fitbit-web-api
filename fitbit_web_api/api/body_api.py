@@ -1703,7 +1703,7 @@ class BodyApi:
     async def get_body_fat_by_date_range(
         self,
         base_date: Annotated[
-            date,
+            StrictStr,
             Field(
                 description="The range start date in the format yyyy-MM-dd or today."
             ),
@@ -1727,7 +1727,7 @@ class BodyApi:
         Retreives a list of all user's body fat log entries for a given day in the format requested.
 
         :param base_date: The range start date in the format yyyy-MM-dd or today. (required)
-        :type base_date: date
+        :type base_date: str
         :param end_date: The end date of the range. (required)
         :type end_date: date
         :param _request_timeout: timeout setting for this request. If one
@@ -1778,7 +1778,7 @@ class BodyApi:
     async def get_body_fat_by_date_range_with_http_info(
         self,
         base_date: Annotated[
-            date,
+            StrictStr,
             Field(
                 description="The range start date in the format yyyy-MM-dd or today."
             ),
@@ -1802,7 +1802,7 @@ class BodyApi:
         Retreives a list of all user's body fat log entries for a given day in the format requested.
 
         :param base_date: The range start date in the format yyyy-MM-dd or today. (required)
-        :type base_date: date
+        :type base_date: str
         :param end_date: The end date of the range. (required)
         :type end_date: date
         :param _request_timeout: timeout setting for this request. If one
@@ -1853,7 +1853,7 @@ class BodyApi:
     async def get_body_fat_by_date_range_without_preload_content(
         self,
         base_date: Annotated[
-            date,
+            StrictStr,
             Field(
                 description="The range start date in the format yyyy-MM-dd or today."
             ),
@@ -1877,7 +1877,7 @@ class BodyApi:
         Retreives a list of all user's body fat log entries for a given day in the format requested.
 
         :param base_date: The range start date in the format yyyy-MM-dd or today. (required)
-        :type base_date: date
+        :type base_date: str
         :param end_date: The end date of the range. (required)
         :type end_date: date
         :param _request_timeout: timeout setting for this request. If one
@@ -2763,7 +2763,7 @@ class BodyApi:
     async def get_weight_by_date_range(
         self,
         base_date: Annotated[
-            date,
+            StrictStr,
             Field(
                 description="The range start date in the format yyyy-MM-dd or today."
             ),
@@ -2787,7 +2787,7 @@ class BodyApi:
         Retreives a list of all user's body fat log entries for a given day in the format requested.
 
         :param base_date: The range start date in the format yyyy-MM-dd or today. (required)
-        :type base_date: date
+        :type base_date: str
         :param end_date: The end date of the range. (required)
         :type end_date: date
         :param _request_timeout: timeout setting for this request. If one
@@ -2838,7 +2838,7 @@ class BodyApi:
     async def get_weight_by_date_range_with_http_info(
         self,
         base_date: Annotated[
-            date,
+            StrictStr,
             Field(
                 description="The range start date in the format yyyy-MM-dd or today."
             ),
@@ -2862,7 +2862,7 @@ class BodyApi:
         Retreives a list of all user's body fat log entries for a given day in the format requested.
 
         :param base_date: The range start date in the format yyyy-MM-dd or today. (required)
-        :type base_date: date
+        :type base_date: str
         :param end_date: The end date of the range. (required)
         :type end_date: date
         :param _request_timeout: timeout setting for this request. If one
@@ -2913,7 +2913,7 @@ class BodyApi:
     async def get_weight_by_date_range_without_preload_content(
         self,
         base_date: Annotated[
-            date,
+            StrictStr,
             Field(
                 description="The range start date in the format yyyy-MM-dd or today."
             ),
@@ -2937,7 +2937,7 @@ class BodyApi:
         Retreives a list of all user's body fat log entries for a given day in the format requested.
 
         :param base_date: The range start date in the format yyyy-MM-dd or today. (required)
-        :type base_date: date
+        :type base_date: str
         :param end_date: The end date of the range. (required)
         :type end_date: date
         :param _request_timeout: timeout setting for this request. If one

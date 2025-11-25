@@ -45,7 +45,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.ActivityTimeSeriesApi(api_client)
     var_resource_path = steps # str | The resource-path; see options in the Resource Path Options section in the full documentation. (default to steps)
-    var_date = '2013-10-20' # date | The end date of the period specified in the format yyyy-MM-dd or today.
+    var_date = 'var_date_example' # str | The end date of the period specified in the format yyyy-MM-dd or today.
     period = 'period_example' # str | The range for which data will be returned. Options are 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max.
 
     try:
@@ -59,11 +59,11 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name                  | Type     | Description                                                                                     | Notes              |
-| --------------------- | -------- | ----------------------------------------------------------------------------------------------- | ------------------ |
-| **var_resource_path** | **str**  | The resource-path; see options in the Resource Path Options section in the full documentation.  | [default to steps] |
-| **var_date**          | **date** | The end date of the period specified in the format yyyy-MM-dd or today.                         |
-| **period**            | **str**  | The range for which data will be returned. Options are 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max. |
+| Name                  | Type    | Description                                                                                     | Notes              |
+| --------------------- | ------- | ----------------------------------------------------------------------------------------------- | ------------------ |
+| **var_resource_path** | **str** | The resource-path; see options in the Resource Path Options section in the full documentation.  | [default to steps] |
+| **var_date**          | **str** | The end date of the period specified in the format yyyy-MM-dd or today.                         |
+| **period**            | **str** | The range for which data will be returned. Options are 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max. |
 
 ### Return type
 
@@ -125,7 +125,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.ActivityTimeSeriesApi(api_client)
     var_resource_path = steps # str | The resource-path; see options in the Resource Path Options section in the full documentation. (default to steps)
-    base_date = '2013-10-20' # date | The range start date in the format yyyy-MM-dd or today.
+    base_date = 'base_date_example' # str | The range start date in the format yyyy-MM-dd or today.
     end_date = '2013-10-20' # date | The end date of the range.
 
     try:
@@ -142,7 +142,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 | Name                  | Type     | Description                                                                                    | Notes              |
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------- | ------------------ |
 | **var_resource_path** | **str**  | The resource-path; see options in the Resource Path Options section in the full documentation. | [default to steps] |
-| **base_date**         | **date** | The range start date in the format yyyy-MM-dd or today.                                        |
+| **base_date**         | **str**  | The range start date in the format yyyy-MM-dd or today.                                        |
 | **end_date**          | **date** | The end date of the range.                                                                     |
 
 ### Return type
@@ -205,7 +205,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.ActivityTimeSeriesApi(api_client)
     var_resource_path = steps # str | The resource-path; see options in the Resource Path Options section in the full documentation. (default to steps)
-    var_date = '2013-10-20' # date | The end date of the period specified in the format yyyy-MM-dd or today.
+    var_date = 'var_date_example' # str | The end date of the period specified in the format yyyy-MM-dd or today.
     period = 'period_example' # str | The range for which data will be returned. Options are 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max.
 
     try:
@@ -219,11 +219,11 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name                  | Type     | Description                                                                                     | Notes              |
-| --------------------- | -------- | ----------------------------------------------------------------------------------------------- | ------------------ |
-| **var_resource_path** | **str**  | The resource-path; see options in the Resource Path Options section in the full documentation.  | [default to steps] |
-| **var_date**          | **date** | The end date of the period specified in the format yyyy-MM-dd or today.                         |
-| **period**            | **str**  | The range for which data will be returned. Options are 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max. |
+| Name                  | Type    | Description                                                                                     | Notes              |
+| --------------------- | ------- | ----------------------------------------------------------------------------------------------- | ------------------ |
+| **var_resource_path** | **str** | The resource-path; see options in the Resource Path Options section in the full documentation.  | [default to steps] |
+| **var_date**          | **str** | The end date of the period specified in the format yyyy-MM-dd or today.                         |
+| **period**            | **str** | The range for which data will be returned. Options are 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, or max. |
 
 ### Return type
 
@@ -285,7 +285,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.ActivityTimeSeriesApi(api_client)
     var_resource_path = steps # str | The resource-path; see options in the Resource Path Options section in the full documentation. (default to steps)
-    base_date = '2013-10-20' # date | The range start date in the format yyyy-MM-dd or today.
+    base_date = 'base_date_example' # str | The range start date in the format yyyy-MM-dd or today.
     end_date = '2013-10-20' # date | The end date of the range.
 
     try:
@@ -302,7 +302,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 | Name                  | Type     | Description                                                                                    | Notes              |
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------- | ------------------ |
 | **var_resource_path** | **str**  | The resource-path; see options in the Resource Path Options section in the full documentation. | [default to steps] |
-| **base_date**         | **date** | The range start date in the format yyyy-MM-dd or today.                                        |
+| **base_date**         | **str**  | The range start date in the format yyyy-MM-dd or today.                                        |
 | **end_date**          | **date** | The end date of the range.                                                                     |
 
 ### Return type

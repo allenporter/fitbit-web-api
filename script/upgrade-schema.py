@@ -81,6 +81,24 @@ def fix_schema_bugs(schema: dict[str, Any]) -> None:
     if "responses" not in schema["paths"]["/1/user/-/profile.json"]["post"]:
         schema["paths"]["/1/user/-/profile.json"]["post"]["responses"] = {}
 
+    # Fix all date parameters that mention "today" to be string types. They
+    # get typed as `datetime.date` incorrectly since they also support "today"
+    # as a string.
+    paths = schema["paths"]
+    for path, handlers in paths.items():
+        if not (get := handlers.get("get")):
+            continue
+        if not (parameters := get.get("parameters")):
+            continue
+        for param_obj in parameters:
+            if " or today" not in param_obj.get("description", ""):
+                continue
+            param_schema = param_obj.setdefault("schema", {})
+            if param_schema.get("type") != "string":
+                continue
+            if param_schema.get("format") == "date":
+                param_schema.pop("format")
+
 
 def update_schemas(schema: dict[str, Any]) -> None:
     """Update the OpenAPI schema with response objects."""

@@ -42,7 +42,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.CardioFitnessScoreVO2MaxApi(api_client)
-    var_date = '2013-10-20' # date | The date in the format of yyyy-MM-dd or today.
+    var_date = 'var_date_example' # str | The date in the format of yyyy-MM-dd or today.
 
     try:
         # Get VO2 Max Summary by Date
@@ -55,9 +55,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name         | Type     | Description                                    | Notes |
-| ------------ | -------- | ---------------------------------------------- | ----- |
-| **var_date** | **date** | The date in the format of yyyy-MM-dd or today. |
+| Name         | Type    | Description                                    | Notes |
+| ------------ | ------- | ---------------------------------------------- | ----- |
+| **var_date** | **str** | The date in the format of yyyy-MM-dd or today. |
 
 ### Return type
 
@@ -117,8 +117,8 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.CardioFitnessScoreVO2MaxApi(api_client)
-    start_date = '2013-10-20' # date | The date in the format of yyyy-MM-dd or today.
-    end_date = '2013-10-20' # date | The date in the format of yyyy-MM-dd or today.
+    start_date = 'start_date_example' # str | The date in the format of yyyy-MM-dd or today.
+    end_date = 'end_date_example' # str | The date in the format of yyyy-MM-dd or today.
 
     try:
         # Get VO2 Max Summary by Interval
@@ -131,10 +131,10 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name           | Type     | Description                                    | Notes |
-| -------------- | -------- | ---------------------------------------------- | ----- |
-| **start_date** | **date** | The date in the format of yyyy-MM-dd or today. |
-| **end_date**   | **date** | The date in the format of yyyy-MM-dd or today. |
+| Name           | Type    | Description                                    | Notes |
+| -------------- | ------- | ---------------------------------------------- | ----- |
+| **start_date** | **str** | The date in the format of yyyy-MM-dd or today. |
+| **end_date**   | **str** | The date in the format of yyyy-MM-dd or today. |
 
 ### Return type
 

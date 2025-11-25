@@ -80,7 +80,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.ActiveZoneMinutesIntradayTimeSeriesApi(api_client)
-    var_date = '2013-10-20' # date | The date in the format yyyy-MM-dd or today
+    var_date = 'var_date_example' # str | The date in the format yyyy-MM-dd or today
     detail_level = 'detail_level_example' # str | The detail for which data will be returned. **Supported:** 1min | 5min | 15min
 
     try:

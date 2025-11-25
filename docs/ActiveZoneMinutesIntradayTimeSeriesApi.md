@@ -44,7 +44,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.ActiveZoneMinutesIntradayTimeSeriesApi(api_client)
-    var_date = '2013-10-20' # date | The date in the format yyyy-MM-dd or today
+    var_date = 'var_date_example' # str | The date in the format yyyy-MM-dd or today
     detail_level = 'detail_level_example' # str | The detail for which data will be returned. **Supported:** 1min | 5min | 15min
 
     try:
@@ -58,10 +58,10 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name             | Type     | Description                                                     | Notes |
-| ---------------- | -------- | --------------------------------------------------------------- | ----- | ----- |
-| **var_date**     | **date** | The date in the format yyyy-MM-dd or today                      |
-| **detail_level** | **str**  | The detail for which data will be returned. **Supported:** 1min | 5min  | 15min |
+| Name             | Type    | Description                                                     | Notes |
+| ---------------- | ------- | --------------------------------------------------------------- | ----- | ----- |
+| **var_date**     | **str** | The date in the format yyyy-MM-dd or today                      |
+| **detail_level** | **str** | The detail for which data will be returned. **Supported:** 1min | 5min  | 15min |
 
 ### Return type
 
@@ -122,7 +122,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.ActiveZoneMinutesIntradayTimeSeriesApi(api_client)
-    var_date = '2013-10-20' # date | The date in the format yyyy-MM-dd or today
+    var_date = 'var_date_example' # str | The date in the format yyyy-MM-dd or today
     detail_level = 'detail_level_example' # str | The detail for which data will be returned. **Supported:** 1min | 5min | 15min
     start_time = 'start_time_example' # str | The start of the period in the format HH:mm.
     end_time = 'end_time_example' # str | The end of the period in the format HH:mm.
@@ -138,12 +138,12 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name             | Type     | Description                                                     | Notes |
-| ---------------- | -------- | --------------------------------------------------------------- | ----- | ----- |
-| **var_date**     | **date** | The date in the format yyyy-MM-dd or today                      |
-| **detail_level** | **str**  | The detail for which data will be returned. **Supported:** 1min | 5min  | 15min |
-| **start_time**   | **str**  | The start of the period in the format HH:mm.                    |
-| **end_time**     | **str**  | The end of the period in the format HH:mm.                      |
+| Name             | Type    | Description                                                     | Notes |
+| ---------------- | ------- | --------------------------------------------------------------- | ----- | ----- |
+| **var_date**     | **str** | The date in the format yyyy-MM-dd or today                      |
+| **detail_level** | **str** | The detail for which data will be returned. **Supported:** 1min | 5min  | 15min |
+| **start_time**   | **str** | The start of the period in the format HH:mm.                    |
+| **end_time**     | **str** | The end of the period in the format HH:mm.                      |
 
 ### Return type
 
@@ -204,8 +204,8 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.ActiveZoneMinutesIntradayTimeSeriesApi(api_client)
-    start_date = '2013-10-20' # date | The date in the format yyyy-MM-dd or today
-    end_date = '2013-10-20' # date | The date in the format yyyy-MM-dd or today
+    start_date = 'start_date_example' # str | The date in the format yyyy-MM-dd or today
+    end_date = 'end_date_example' # str | The date in the format yyyy-MM-dd or today
     detail_level = 'detail_level_example' # str | The detail for which data will be returned. **Support:** 1min | 5min | 15min
 
     try:
@@ -219,11 +219,11 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name             | Type     | Description                                                   | Notes |
-| ---------------- | -------- | ------------------------------------------------------------- | ----- | ----- |
-| **start_date**   | **date** | The date in the format yyyy-MM-dd or today                    |
-| **end_date**     | **date** | The date in the format yyyy-MM-dd or today                    |
-| **detail_level** | **str**  | The detail for which data will be returned. **Support:** 1min | 5min  | 15min |
+| Name             | Type    | Description                                                   | Notes |
+| ---------------- | ------- | ------------------------------------------------------------- | ----- | ----- |
+| **start_date**   | **str** | The date in the format yyyy-MM-dd or today                    |
+| **end_date**     | **str** | The date in the format yyyy-MM-dd or today                    |
+| **detail_level** | **str** | The detail for which data will be returned. **Support:** 1min | 5min  | 15min |
 
 ### Return type
 
@@ -284,8 +284,8 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.ActiveZoneMinutesIntradayTimeSeriesApi(api_client)
-    start_date = '2013-10-20' # date | The date in the format yyyy-MM-dd or today
-    end_date = '2013-10-20' # date | The date in the format yyyy-MM-dd or today
+    start_date = 'start_date_example' # str | The date in the format yyyy-MM-dd or today
+    end_date = 'end_date_example' # str | The date in the format yyyy-MM-dd or today
     detail_level = 'detail_level_example' # str | The detail for which data will be returned. **Support:** 1min | 5min | 15min
     start_time = 'start_time_example' # str | The start of the period in the format HH:mm.
     end_time = 'end_time_example' # str | The end of the period in the format HH:mm.
@@ -301,13 +301,13 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name             | Type     | Description                                                   | Notes |
-| ---------------- | -------- | ------------------------------------------------------------- | ----- | ----- |
-| **start_date**   | **date** | The date in the format yyyy-MM-dd or today                    |
-| **end_date**     | **date** | The date in the format yyyy-MM-dd or today                    |
-| **detail_level** | **str**  | The detail for which data will be returned. **Support:** 1min | 5min  | 15min |
-| **start_time**   | **str**  | The start of the period in the format HH:mm.                  |
-| **end_time**     | **str**  | The end of the period in the format HH:mm.                    |
+| Name             | Type    | Description                                                   | Notes |
+| ---------------- | ------- | ------------------------------------------------------------- | ----- | ----- |
+| **start_date**   | **str** | The date in the format yyyy-MM-dd or today                    |
+| **end_date**     | **str** | The date in the format yyyy-MM-dd or today                    |
+| **detail_level** | **str** | The detail for which data will be returned. **Support:** 1min | 5min  | 15min |
+| **start_time**   | **str** | The start of the period in the format HH:mm.                  |
+| **end_time**     | **str** | The end of the period in the format HH:mm.                    |
 
 ### Return type
 

@@ -43,7 +43,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.NutritionTimeSeriesApi(api_client)
     var_resource_path = caloriesIn # str | The resouce path. See options in the Resouce Path Options section in the full documentation. (default to caloriesIn)
-    base_date = '2013-10-20' # date | The range start date in the format yyyy-MM-dd or today.
+    base_date = 'base_date_example' # str | The range start date in the format yyyy-MM-dd or today.
     end_date = '2013-10-20' # date | The end date of the range.
 
     try:
@@ -60,7 +60,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 | Name                  | Type     | Description                                                                                  | Notes                   |
 | --------------------- | -------- | -------------------------------------------------------------------------------------------- | ----------------------- |
 | **var_resource_path** | **str**  | The resouce path. See options in the Resouce Path Options section in the full documentation. | [default to caloriesIn] |
-| **base_date**         | **date** | The range start date in the format yyyy-MM-dd or today.                                      |
+| **base_date**         | **str**  | The range start date in the format yyyy-MM-dd or today.                                      |
 | **end_date**          | **date** | The end date of the range.                                                                   |
 
 ### Return type
@@ -123,7 +123,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.NutritionTimeSeriesApi(api_client)
     var_resource_path = caloriesIn # str | The resouce path. See options in the Resouce Path Options section in the full documentation. (default to caloriesIn)
-    var_date = '2013-10-20' # date | The end date of the period specified in the format yyyy-MM-dd or today.
+    var_date = 'var_date_example' # str | The end date of the period specified in the format yyyy-MM-dd or today.
     period = 'period_example' # str | The range for which data will be returned. Options are 1d, 7d, 30d, 1w, 3m, 6m, 1y, or max.
 
     try:
@@ -137,11 +137,11 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name                  | Type     | Description                                                                                  | Notes                   |
-| --------------------- | -------- | -------------------------------------------------------------------------------------------- | ----------------------- |
-| **var_resource_path** | **str**  | The resouce path. See options in the Resouce Path Options section in the full documentation. | [default to caloriesIn] |
-| **var_date**          | **date** | The end date of the period specified in the format yyyy-MM-dd or today.                      |
-| **period**            | **str**  | The range for which data will be returned. Options are 1d, 7d, 30d, 1w, 3m, 6m, 1y, or max.  |
+| Name                  | Type    | Description                                                                                  | Notes                   |
+| --------------------- | ------- | -------------------------------------------------------------------------------------------- | ----------------------- |
+| **var_resource_path** | **str** | The resouce path. See options in the Resouce Path Options section in the full documentation. | [default to caloriesIn] |
+| **var_date**          | **str** | The end date of the period specified in the format yyyy-MM-dd or today.                      |
+| **period**            | **str** | The range for which data will be returned. Options are 1d, 7d, 30d, 1w, 3m, 6m, 1y, or max.  |
 
 ### Return type
 

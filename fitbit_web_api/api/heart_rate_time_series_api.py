@@ -40,7 +40,7 @@ class HeartRateTimeSeriesApi:
     async def get_heart_by_date_period(
         self,
         var_date: Annotated[
-            date,
+            StrictStr,
             Field(
                 description="The end date of the period specified in the format yyyy-MM-dd or today."
             ),
@@ -69,7 +69,7 @@ class HeartRateTimeSeriesApi:
         Returns the time series data in the specified range for a given resource in the format requested using units in the unit systems that corresponds to the Accept-Language header provided.
 
         :param var_date: The end date of the period specified in the format yyyy-MM-dd or today. (required)
-        :type var_date: date
+        :type var_date: str
         :param period: The range of which data will be returned. Options are 1d, 7d, 30d, 1w, and 1m. (required)
         :type period: str
         :param _request_timeout: timeout setting for this request. If one
@@ -120,7 +120,7 @@ class HeartRateTimeSeriesApi:
     async def get_heart_by_date_period_with_http_info(
         self,
         var_date: Annotated[
-            date,
+            StrictStr,
             Field(
                 description="The end date of the period specified in the format yyyy-MM-dd or today."
             ),
@@ -149,7 +149,7 @@ class HeartRateTimeSeriesApi:
         Returns the time series data in the specified range for a given resource in the format requested using units in the unit systems that corresponds to the Accept-Language header provided.
 
         :param var_date: The end date of the period specified in the format yyyy-MM-dd or today. (required)
-        :type var_date: date
+        :type var_date: str
         :param period: The range of which data will be returned. Options are 1d, 7d, 30d, 1w, and 1m. (required)
         :type period: str
         :param _request_timeout: timeout setting for this request. If one
@@ -200,7 +200,7 @@ class HeartRateTimeSeriesApi:
     async def get_heart_by_date_period_without_preload_content(
         self,
         var_date: Annotated[
-            date,
+            StrictStr,
             Field(
                 description="The end date of the period specified in the format yyyy-MM-dd or today."
             ),
@@ -229,7 +229,7 @@ class HeartRateTimeSeriesApi:
         Returns the time series data in the specified range for a given resource in the format requested using units in the unit systems that corresponds to the Accept-Language header provided.
 
         :param var_date: The end date of the period specified in the format yyyy-MM-dd or today. (required)
-        :type var_date: date
+        :type var_date: str
         :param period: The range of which data will be returned. Options are 1d, 7d, 30d, 1w, and 1m. (required)
         :type period: str
         :param _request_timeout: timeout setting for this request. If one

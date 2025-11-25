@@ -44,7 +44,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.HeartRateIntradayTimeSeriesApi(api_client)
-    var_date = '2013-10-20' # date | The date in the format of yyyy-MM-dd or today.
+    var_date = 'var_date_example' # str | The date in the format of yyyy-MM-dd or today.
     detail_level = '1min' # str | The number of data points to include either 1sec, 1min, 5min or 15min. (default to '1min')
 
     try:
@@ -58,10 +58,10 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name             | Type     | Description                                                            | Notes                       |
-| ---------------- | -------- | ---------------------------------------------------------------------- | --------------------------- |
-| **var_date**     | **date** | The date in the format of yyyy-MM-dd or today.                         |
-| **detail_level** | **str**  | The number of data points to include either 1sec, 1min, 5min or 15min. | [default to &#39;1min&#39;] |
+| Name             | Type    | Description                                                            | Notes                       |
+| ---------------- | ------- | ---------------------------------------------------------------------- | --------------------------- |
+| **var_date**     | **str** | The date in the format of yyyy-MM-dd or today.                         |
+| **detail_level** | **str** | The number of data points to include either 1sec, 1min, 5min or 15min. | [default to &#39;1min&#39;] |
 
 ### Return type
 
@@ -121,8 +121,8 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.HeartRateIntradayTimeSeriesApi(api_client)
-    var_date = '2013-10-20' # date | The date in the format of yyyy-MM-dd or today.
-    end_date = '2013-10-20' # date | The end date in the format of yyyy-MM-dd or today.
+    var_date = 'var_date_example' # str | The date in the format of yyyy-MM-dd or today.
+    end_date = 'end_date_example' # str | The end date in the format of yyyy-MM-dd or today.
     detail_level = '1min' # str | The number of data points to include either 1sec, 1min, 5min or 15min. (default to '1min')
 
     try:
@@ -136,11 +136,11 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name             | Type     | Description                                                            | Notes                       |
-| ---------------- | -------- | ---------------------------------------------------------------------- | --------------------------- |
-| **var_date**     | **date** | The date in the format of yyyy-MM-dd or today.                         |
-| **end_date**     | **date** | The end date in the format of yyyy-MM-dd or today.                     |
-| **detail_level** | **str**  | The number of data points to include either 1sec, 1min, 5min or 15min. | [default to &#39;1min&#39;] |
+| Name             | Type    | Description                                                            | Notes                       |
+| ---------------- | ------- | ---------------------------------------------------------------------- | --------------------------- |
+| **var_date**     | **str** | The date in the format of yyyy-MM-dd or today.                         |
+| **end_date**     | **str** | The end date in the format of yyyy-MM-dd or today.                     |
+| **detail_level** | **str** | The number of data points to include either 1sec, 1min, 5min or 15min. | [default to &#39;1min&#39;] |
 
 ### Return type
 
@@ -200,8 +200,8 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.HeartRateIntradayTimeSeriesApi(api_client)
-    var_date = '2013-10-20' # date | The date in the format of yyyy-MM-dd or today.
-    end_date = '2013-10-20' # date | The end date in the format of yyyy-MM-dd or today.
+    var_date = 'var_date_example' # str | The date in the format of yyyy-MM-dd or today.
+    end_date = 'end_date_example' # str | The end date in the format of yyyy-MM-dd or today.
     detail_level = '1min' # str | The number of data points to include either 1sec, 1min, 5min or 15min. (default to '1min')
     start_time = 'start_time_example' # str | The start of the period in the format of HH:mm.
     end_time = 'end_time_example' # str | The end time of the period in the format of HH:mm.
@@ -217,13 +217,13 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name             | Type     | Description                                                            | Notes                       |
-| ---------------- | -------- | ---------------------------------------------------------------------- | --------------------------- |
-| **var_date**     | **date** | The date in the format of yyyy-MM-dd or today.                         |
-| **end_date**     | **date** | The end date in the format of yyyy-MM-dd or today.                     |
-| **detail_level** | **str**  | The number of data points to include either 1sec, 1min, 5min or 15min. | [default to &#39;1min&#39;] |
-| **start_time**   | **str**  | The start of the period in the format of HH:mm.                        |
-| **end_time**     | **str**  | The end time of the period in the format of HH:mm.                     |
+| Name             | Type    | Description                                                            | Notes                       |
+| ---------------- | ------- | ---------------------------------------------------------------------- | --------------------------- |
+| **var_date**     | **str** | The date in the format of yyyy-MM-dd or today.                         |
+| **end_date**     | **str** | The end date in the format of yyyy-MM-dd or today.                     |
+| **detail_level** | **str** | The number of data points to include either 1sec, 1min, 5min or 15min. | [default to &#39;1min&#39;] |
+| **start_time**   | **str** | The start of the period in the format of HH:mm.                        |
+| **end_time**     | **str** | The end time of the period in the format of HH:mm.                     |
 
 ### Return type
 
@@ -283,7 +283,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.HeartRateIntradayTimeSeriesApi(api_client)
-    var_date = '2013-10-20' # date | The date in the format of yyyy-MM-dd or today.
+    var_date = 'var_date_example' # str | The date in the format of yyyy-MM-dd or today.
     detail_level = '1min' # str | The number of data points to include either 1sec, 1min, 5min or 15min. (default to '1min')
     start_time = 'start_time_example' # str | The start of the period in the format of HH:mm.
     end_time = 'end_time_example' # str | The end time of the period in the format of HH:mm.
@@ -299,12 +299,12 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name             | Type     | Description                                                            | Notes                       |
-| ---------------- | -------- | ---------------------------------------------------------------------- | --------------------------- |
-| **var_date**     | **date** | The date in the format of yyyy-MM-dd or today.                         |
-| **detail_level** | **str**  | The number of data points to include either 1sec, 1min, 5min or 15min. | [default to &#39;1min&#39;] |
-| **start_time**   | **str**  | The start of the period in the format of HH:mm.                        |
-| **end_time**     | **str**  | The end time of the period in the format of HH:mm.                     |
+| Name             | Type    | Description                                                            | Notes                       |
+| ---------------- | ------- | ---------------------------------------------------------------------- | --------------------------- |
+| **var_date**     | **str** | The date in the format of yyyy-MM-dd or today.                         |
+| **detail_level** | **str** | The number of data points to include either 1sec, 1min, 5min or 15min. | [default to &#39;1min&#39;] |
+| **start_time**   | **str** | The start of the period in the format of HH:mm.                        |
+| **end_time**     | **str** | The end time of the period in the format of HH:mm.                     |
 
 ### Return type
 
