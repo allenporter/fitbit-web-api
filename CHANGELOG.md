@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.12.3 (2025-11-25)
+
+### Bug fixes
+
+- Add test coverage for delete activities log ([`6a6047f`](https://github.com/allenporter/fitbit-web-api/commit/6a6047f4a4cd8c7e2357970011c9105f636e16eb))
+
+
 ## v2.12.2 (2025-11-25)
 
 ### Bug fixes
