@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.13.2 (2025-11-25)
+
+### Bug fixes
+
+- Improve http remove reason patch ([`0a78b47`](https://github.com/allenporter/fitbit-web-api/commit/0a78b478819eec8f2568e902d23ced1cad1bceba))
+
+
 ## v2.13.1 (2025-11-25)
 
 ### Bug fixes
