@@ -59,7 +59,7 @@ version_toml = ["pyproject.toml:project.version"]
 version_variables = [
     "fitbit_web_api/__init__.py:__version__",
 ]
-build_command = "pip install uv && uv sync"
+build_command = "pip install uv && uv sync && uv build"
 
 [tool.semantic_release.changelog]
 exclude_commit_patterns = [
