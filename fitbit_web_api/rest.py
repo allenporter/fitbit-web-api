@@ -29,7 +29,7 @@ class RESTResponse(io.IOBase):
     def __init__(self, resp) -> None:
         self.response = resp
         self.status = resp.status
-        self.reason = resp.reason
+        self.reason = getattr(resp, "reason", None)
         self.data = None
 
     async def read(self):

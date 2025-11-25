@@ -1,12 +1,26 @@
+diff --git a/fitbit_web_api/exceptions.py b/fitbit_web_api/exceptions.py
+index 83832b4..8db15a1 100644
+--- a/fitbit_web_api/exceptions.py
++++ b/fitbit_web_api/exceptions.py
+@@ -126,7 +126,7 @@ class ApiException(OpenApiException):
+             if self.status is None:
+                 self.status = http_resp.status
+             if self.reason is None:
+-                self.reason = http_resp.reason
++                self.reason = getattr(http_resp, "reason", None)
+             if self.body is None:
+                 try:
+                     self.body = http_resp.data.decode("utf-8")
 diff --git a/fitbit_web_api/rest.py b/fitbit_web_api/rest.py
-index 2cd3236..4c45417 100644
+index 2cd3236..e6470d3 100644
 --- a/fitbit_web_api/rest.py
 +++ b/fitbit_web_api/rest.py
-@@ -29,7 +29,6 @@ class RESTResponse(io.IOBase):
+@@ -29,7 +29,7 @@ class RESTResponse(io.IOBase):
      def __init__(self, resp) -> None:
          self.response = resp
          self.status = resp.status
 -        self.reason = resp.reason
++        self.reason = getattr(resp, "reason", None)
          self.data = None
  
      async def read(self):

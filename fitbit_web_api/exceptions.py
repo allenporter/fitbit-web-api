@@ -126,7 +126,7 @@ class ApiException(OpenApiException):
             if self.status is None:
                 self.status = http_resp.status
             if self.reason is None:
-                self.reason = http_resp.reason
+                self.reason = getattr(http_resp, "reason", None)
             if self.body is None:
                 try:
                     self.body = http_resp.data.decode("utf-8")
