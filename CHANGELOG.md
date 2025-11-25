@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.13.3 (2025-11-25)
+
+### Bug fixes
+
+- Support date strings of "today" in all apis ([`45e397f`](https://github.com/allenporter/fitbit-web-api/commit/45e397f3ea898c51b190cdf5ad08f5408c7a5b21))
+
+
 ## v2.13.2 (2025-11-25)
 
 ### Bug fixes
