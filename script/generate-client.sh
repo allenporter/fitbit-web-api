@@ -38,7 +38,7 @@ echo "---"
 echo "Applying patches to generated code..."
 for patch in script/patches/*.patch; do
     echo "Applying patch: $patch"
-    patch -p1 < "script/patches/$patch"
+    patch -p1 < $patch
 done
 find . -name \*.orig -delete
 
