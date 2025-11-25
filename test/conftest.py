@@ -4,6 +4,7 @@ import logging
 import os
 from collections.abc import AsyncGenerator, Awaitable, Callable
 from typing import Any, Dict
+import logging
 
 import aiohttp
 import pytest
