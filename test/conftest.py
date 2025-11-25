@@ -41,6 +41,18 @@ def post_requests_fixture() -> list[tuple[str, dict[str, Any], dict[str, Any]]]:
     return []
 
 
+@pytest.fixture(name="delete_responses")
+def delete_responses_fixture() -> Dict[str, Any]:
+    """Fixture that holds mock DELETE responses for the server."""
+    return {}
+
+
+@pytest.fixture(name="delete_requests")
+def delete_requests_fixture() -> list[tuple[str, dict[str, Any]]]:
+    """Fixture that records DELETE requests made to the mock server."""
+    return []
+
+
 def _query_string_dict(query_string: str) -> Dict[str, str]:
     params = {}
     if query_string:
@@ -53,9 +65,11 @@ def _query_string_dict(query_string: str) -> Dict[str, str]:
 @pytest.fixture
 async def fitbit_app(
     requests: list[tuple[str, dict[str, Any]]],
-    responses: Dict[str, Any],
+    responses: dict[str, Any],
     post_requests: list[tuple[str, dict[str, Any], dict[str, Any]]],
-    post_responses: Dict[str, Any],
+    post_responses: dict[str, Any],
+    delete_requests: list[tuple[str, dict[str, Any]]],
+    delete_responses: dict[str, Any],
 ) -> web.Application:
     async def handler(request: web.Request) -> web.Response:
         requests.append((request.path, _query_string_dict(request.query_string)))
@@ -72,9 +86,16 @@ async def fitbit_app(
             return web.json_response(post_responses[request.path])
         return web.Response(status=404)
 
+    async def delete_handler(request: web.Request) -> web.Response:
+        delete_requests.append((request.path, _query_string_dict(request.query_string)))
+        if request.path in delete_responses:
+            return web.json_response(delete_responses[request.path])
+        return web.Response(status=404)
+
     app = web.Application()
     app.router.add_get("/{tail:.*}", handler)
     app.router.add_post("/{tail:.*}", post_handler)
+    app.router.add_delete("/{tail:.*}", delete_handler)
     return app
 
 
