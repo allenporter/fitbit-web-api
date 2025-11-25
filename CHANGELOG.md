@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.13.0 (2025-11-25)
+
+### Features
+
+- Add poolmanager configuration ([`47173e2`](https://github.com/allenporter/fitbit-web-api/commit/47173e261cf82933303b5605bfb0f339227873aa))
+
+
 ## v2.12.3 (2025-11-25)
 
 ### Bug fixes
