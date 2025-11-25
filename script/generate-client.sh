@@ -33,6 +33,11 @@ echo "Reverting changes to python project setup"
 rm setup.cfg
 git checkout -- pyproject.toml test-requirements.txt .gitignore
 
+# Apply patches to fix issues or add features in the generated code
+echo "---"
+echo "Applying patches to generated code..."
+patch -p1 < script/patches/pool-manager.patch
+find . -name \*.orig -delete
 
 echo "---"
 echo "Running ruff to fix code style..."
