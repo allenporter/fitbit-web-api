@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.13.1 (2025-11-25)
+
+### Bug fixes
+
+- Remove unnecessary reason from restresponse ([`38e98bd`](https://github.com/allenporter/fitbit-web-api/commit/38e98bd3fc07ef1cc7d013f32a5de3b5a1266106))
+
+
 ## v2.13.0 (2025-11-25)
 
 ### Features
