@@ -15,6 +15,7 @@ ACTIVITIES_PATH = "/1/user/-/activities.json"
 ACTIVITIES_LIST_PATH = "/1/user/-/activities/list.json"
 DELETE_ACTIVITY_PATH = "/1/user/-/activities/{activity-log-id}.json"
 
+
 @pytest.fixture
 async def activity_api(
     api_client: fitbit_web_api.ApiClient,
