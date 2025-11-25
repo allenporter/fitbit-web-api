@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.12.3-rc.1 (2025-11-25)
+
+### Bug fixes
+
+- Optionally run upload step ([`2da7f51`](https://github.com/allenporter/fitbit-web-api/commit/2da7f51d89558aa503792f92d4c254f0885598c4))
+
+
 ## v2.12.2 (2025-11-25)
 
 ### Bug fixes
