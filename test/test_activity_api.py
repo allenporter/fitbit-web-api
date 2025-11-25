@@ -13,7 +13,7 @@ from fitbit_web_api.api.activity_api import ActivityApi
 
 ACTIVITIES_PATH = "/1/user/-/activities.json"
 ACTIVITIES_LIST_PATH = "/1/user/-/activities/list.json"
-
+DELETE_ACTIVITY_PATH = "/1/user/-/activities/{activity-log-id}.json"
 
 @pytest.fixture
 async def activity_api(
@@ -80,3 +80,17 @@ async def test_add_activities_log(
             {},
         )
     ]
+
+
+async def test_delete_activities_log(
+    activity_api: ActivityApi,
+    delete_responses: dict[str, Any],
+    delete_requests: list[tuple[str, dict[str, Any]]],
+) -> None:
+    """Test case for delete_activities_log."""
+    log_id = 12345
+    delete_path = DELETE_ACTIVITY_PATH.format(**{"activity-log-id": log_id})
+    delete_responses[delete_path] = {}
+
+    await activity_api.delete_activities_log(activity_log_id=12345)
+    assert delete_requests == [(delete_path, {})]
