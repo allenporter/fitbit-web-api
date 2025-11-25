@@ -58,7 +58,7 @@ async def fitbit_app(
     post_responses: Dict[str, Any],
 ) -> web.Application:
     async def handler(request: web.Request) -> web.Response:
-        get_requests.append((request.path, _query_string_dict(request.query_string)))
+        requests.append((request.path, _query_string_dict(request.query_string)))
         if request.path in responses:
             return web.json_response(responses[request.path])
         return web.Response(status=404)
