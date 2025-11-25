@@ -32,7 +32,7 @@ echo "---"
 echo "Reverting changes to python project setup"
 rm setup.cfg
 git checkout -- pyproject.toml test-requirements.txt .gitignore
-
+patch -p1 < script/patches/pool-manager.patch
 
 echo "---"
 echo "Running ruff to fix code style..."

@@ -1,14 +1,20 @@
 import asyncio
 import json
 import os
-from collections.abc import AsyncGenerator, Callable
+from collections.abc import AsyncGenerator, Callable, Awaitable
 from typing import Any, Dict
+import logging
 
-import pytest
+import aiohttp
 from aiohttp import web
-from aiohttp.test_utils import TestServer
+from aiohttp.test_utils import TestServer, TestClient
+import pytest
 
 import fitbit_web_api
+
+_LOGGER = logging.getLogger(__name__)
+
+TEST_HOST = "https://api.fitbit.com"
 
 
 @pytest.fixture
@@ -72,12 +78,14 @@ async def fitbit_app(
     delete_responses: dict[str, Any],
 ) -> web.Application:
     async def handler(request: web.Request) -> web.Response:
+        _LOGGER.debug("Received request: %s %s", request.method, request.path)
         requests.append((request.path, _query_string_dict(request.query_string)))
         if request.path in responses:
             return web.json_response(responses[request.path])
         return web.Response(status=404)
 
     async def post_handler(request: web.Request) -> web.Response:
+        _LOGGER.debug("Received request: %s %s", request.method, request.path)
         body = await request.json() if request.can_read_body else {}
         post_requests.append(
             (request.path, _query_string_dict(request.query_string), body)
@@ -87,6 +95,7 @@ async def fitbit_app(
         return web.Response(status=404)
 
     async def delete_handler(request: web.Request) -> web.Response:
+        _LOGGER.debug("Received request: %s %s", request.method, request.path)
         delete_requests.append((request.path, _query_string_dict(request.query_string)))
         if request.path in delete_responses:
             return web.json_response(delete_responses[request.path])
@@ -104,12 +113,35 @@ async def fitbit_server(aiohttp_server: Any, fitbit_app: web.Application) -> Tes
     return await aiohttp_server(fitbit_app)
 
 
+@pytest.fixture(name="client_session")
+async def client_session_fixture(
+    fitbit_server: TestServer,
+    aiohttp_client: Callable[[TestServer], Awaitable[TestClient]],
+) -> fitbit_web_api.ApiClient:
+    """Fixture to provide an aiohttp ClientSession pointing to the test server."""
+    client = await aiohttp_client(fitbit_server)
+    orig_request = client.request
+
+    # The fitbit client uses kwags with a url parameter, which is correct. However
+    # the aiohttp test client uses a path parameter. So we need to adjust the
+    # request to convert the url to a path.
+    async def path_fix_client_request(
+        method: str, url: str, **kwargs: Any
+    ) -> Awaitable[web.Response]:
+        path = url[len(TEST_HOST) :]
+        return await orig_request(method, path=path, **kwargs)
+
+    client.request = path_fix_client_request
+    return client
+
+
 @pytest.fixture
 async def api_client(
     fitbit_server: TestServer,
+    client_session: aiohttp.ClientSession,
 ) -> AsyncGenerator[fitbit_web_api.ApiClient, None]:
     configuration = fitbit_web_api.Configuration(
-        host=f"http://{fitbit_server.host}:{fitbit_server.port}"
+        pool_manager=client_session,
     )
     async with fitbit_web_api.ApiClient(configuration) as api_client:
         yield api_client

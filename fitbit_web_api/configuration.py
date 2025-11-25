@@ -16,6 +16,7 @@ import sys
 from logging import FileHandler
 from typing import Any, ClassVar, Dict, List, Literal, Optional, TypedDict, Union
 
+import aiohttp
 import urllib3
 from typing_extensions import NotRequired, Self
 
@@ -183,6 +184,7 @@ class Configuration:
         ssl_ca_cert: Optional[str] = None,
         retries: Optional[int] = None,
         ca_cert_data: Optional[Union[str, bytes]] = None,
+        pool_manager: aiohttp.ClientSession = None,
         *,
         debug: Optional[bool] = None,
     ) -> None:
@@ -277,6 +279,9 @@ class Configuration:
         self.tls_server_name = None
         """SSL/TLS Server Name Indication (SNI)
            Set this to the SNI value expected by the server.
+        """
+        self.pool_manager: aiohttp.ClientSession = pool_manager
+        """Custom aiohttp PoolManager.
         """
 
         self.connection_pool_maxsize = 100

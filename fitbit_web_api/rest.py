@@ -69,7 +69,7 @@ class RESTClientObject:
 
         self.retries = configuration.retries
 
-        self.pool_manager: Optional[aiohttp.ClientSession] = None
+        self.pool_manager: Optional[aiohttp.ClientSession] = configuration.pool_manager
         self.retry_client: Optional[aiohttp_retry.RetryClient] = None
 
     async def close(self) -> None:
