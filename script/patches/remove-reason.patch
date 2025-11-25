@@ -1,0 +1,12 @@
+diff --git a/fitbit_web_api/rest.py b/fitbit_web_api/rest.py
+index 2cd3236..4c45417 100644
+--- a/fitbit_web_api/rest.py
++++ b/fitbit_web_api/rest.py
+@@ -29,7 +29,6 @@ class RESTResponse(io.IOBase):
+     def __init__(self, resp) -> None:
+         self.response = resp
+         self.status = resp.status
+-        self.reason = resp.reason
+         self.data = None
+ 
+     async def read(self):
