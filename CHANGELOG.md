@@ -1,10 +1,10 @@
 # Changelog
 
-## v2.12.1-rc.1 (2025-11-25)
+## v2.12.1 (2025-11-25)
 
 ### Bug fixes
 
-- Remove editorconfig ([`5199f31`](https://github.com/allenporter/fitbit-web-api/commit/5199f313486a53d975ff5da95d5ea10c5ee53a07))
+- Remove editorconfig ([`dff32da`](https://github.com/allenporter/fitbit-web-api/commit/dff32dafc76cb629e775e1687019980b04b8bec0))
 
 
 ### Refactoring
