@@ -1,10 +1,10 @@
 # Changelog
 
-## v2.12.2-rc.1 (2025-11-25)
+## v2.12.2 (2025-11-25)
 
 ### Bug fixes
 
-- Optionally run upload step ([`e56ff82`](https://github.com/allenporter/fitbit-web-api/commit/e56ff82c2db8960a0a822cc467c7732ff35e26e7))
+- Add tests for `add activity` ap ([`fb30dfd`](https://github.com/allenporter/fitbit-web-api/commit/fb30dfdc1a7f577765d4fc6e7b34a73d303ab9ca))
 
 
 ## v2.12.1 (2025-11-25)
