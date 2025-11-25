@@ -1,14 +1,14 @@
 import asyncio
 import json
-import os
-from collections.abc import AsyncGenerator, Callable, Awaitable
-from typing import Any, Dict
 import logging
+import os
+from collections.abc import AsyncGenerator, Awaitable, Callable
+from typing import Any, Dict
 
 import aiohttp
-from aiohttp import web
-from aiohttp.test_utils import TestServer, TestClient
 import pytest
+from aiohttp import web
+from aiohttp.test_utils import TestClient, TestServer
 
 import fitbit_web_api
 
@@ -154,7 +154,7 @@ def load_test_data() -> Callable[[str], Any]:
     def _load(filename: str) -> Any:
         base_path = os.path.dirname(__file__)
         file_path = os.path.join(base_path, "testdata", filename)
-        with open(file_path, "r") as f:
+        with open(file_path) as f:
             return json.load(f)
 
     return _load

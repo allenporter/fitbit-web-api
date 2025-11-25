@@ -4,7 +4,7 @@ Unit tests for the ActivityLog model.
 
 from collections.abc import Callable
 from datetime import date
-from typing import Any, Dict, List
+from typing import Any, Dict
 
 from fitbit_web_api.models.activity_log import ActivityLog
 
