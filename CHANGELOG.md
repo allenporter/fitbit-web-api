@@ -1,5 +1,17 @@
 # Changelog
 
+## v2.12.1-rc.1 (2025-11-25)
+
+### Bug fixes
+
+- Remove editorconfig ([`5199f31`](https://github.com/allenporter/fitbit-web-api/commit/5199f313486a53d975ff5da95d5ea10c5ee53a07))
+
+
+### Refactoring
+
+- Migrate api tests from unittest to pytest and add correspon… ([`0db4f14`](https://github.com/allenporter/fitbit-web-api/commit/0db4f148ea36bd6b5dca8502ed32607d5c698829))
+
+
 ## v2.12.0 (2025-11-23)
 
 ### Features
