@@ -11,6 +11,7 @@ import pytest
 import fitbit_web_api
 from fitbit_web_api.api.activity_api import ActivityApi
 
+ACTIVITIES_PATH = "/1/user/-/activities.json"
 ACTIVITIES_LIST_PATH = "/1/user/-/activities/list.json"
 
 
@@ -45,3 +46,37 @@ async def test_get_activities_log_list(
     assert activity.duration == 3600000
     assert response.pagination is not None
     assert response.pagination.limit == 1
+
+
+async def test_add_activities_log(
+    activity_api: ActivityApi,
+    post_responses: Dict[str, Any],
+    post_requests: list[tuple[str, dict[str, Any]]],
+) -> None:
+    """Test case for get_activities_log_list."""
+    post_responses[ACTIVITIES_PATH] = {}
+
+    await activity_api.add_activities_log(
+        activity_id=90013,
+        manual_calories=300,
+        start_time="12:00",
+        duration_millis=1800000,
+        var_date=date(2023, 1, 2),
+        distance=2,
+        activity_name="Walking",
+    )
+    assert post_requests == [
+        (
+            ACTIVITIES_PATH,
+            {
+                "activityId": "90013",
+                "manualCalories": "300",
+                "startTime": "12:00",
+                "durationMillis": "1800000",
+                "date": "2023-01-02",
+                "distance": "2",
+                "activityName": "Walking",
+            },
+            {},
+        )
+    ]
