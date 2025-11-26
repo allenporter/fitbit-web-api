@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.13.4 (2025-11-26)
+
+### Bug fixes
+
+- Remove incorrect runtime dependencies ([`a1aca49`](https://github.com/allenporter/fitbit-web-api/commit/a1aca496b41155a6ac8c84026e7f061073f1676b))
+
+
 ## v2.13.3 (2025-11-25)
 
 ### Bug fixes
