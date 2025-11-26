@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.13.5 (2025-11-26)
+
+### Bug fixes
+
+- Encode slashes in path parameters by default ([`3a6e3d7`](https://github.com/allenporter/fitbit-web-api/commit/3a6e3d7d45baa8cd059a15f3327829141493a573))
+
+
 ## v2.13.4 (2025-11-26)
 
 ### Bug fixes
