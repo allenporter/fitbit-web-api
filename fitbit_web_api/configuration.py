@@ -295,8 +295,10 @@ class Configuration:
         self.proxy_headers = None
         """Proxy headers
         """
-        self.safe_chars_for_path_param = ""
+        self.safe_chars_for_path_param = "/"
         """Safe chars for path_param
+
+        This is required so paths like `tracker/steps` are not encoded.
         """
         self.retries = retries
         """Adding retries to override urllib3 default value 3
