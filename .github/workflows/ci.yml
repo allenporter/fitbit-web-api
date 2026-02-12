@@ -104,7 +104,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload | Distribution Artifacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         if: steps.release.outputs.released == 'true'
         with:
           name: distribution-artifacts
@@ -126,7 +126,7 @@ jobs:
 
     steps:
       - name: Setup | Download Build Artifacts
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         id: artifact-download
         with:
           name: distribution-artifacts
