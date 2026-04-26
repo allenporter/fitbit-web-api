@@ -1736,7 +1736,7 @@
             "description": "Distance is required for logging directory activity in the format X.XX and in the selected distanceUnit.",
             "required": true,
             "schema": {
-              "type": "integer"
+              "type": "number"
             }
           },
           {
@@ -2803,7 +2803,7 @@
             "description": "Target body fat percentage; in the format X.XX.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
@@ -2864,7 +2864,7 @@
             "description": "Weight goal start weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           },
           {
@@ -2872,7 +2872,7 @@
             "in": "query",
             "description": "Weight goal target weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided; required if user doesn't have an existing weight goal.",
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           }
         ],
@@ -5369,7 +5369,7 @@
             "description": "The amount consumed in the format X.XX in the specified unitId.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           },
           {
@@ -5472,7 +5472,7 @@
             "description": "The amount consumed in the format X.XX in the specified unitId.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           },
           {
@@ -5568,7 +5568,7 @@
             "description": "The amount consumption in the format X.XX and in the specified waterUnit or in the unit system that corresponds to the Accept-Language header provided.",
             "required": true,
             "schema": {
-              "type": "integer"
+              "type": "number"
             }
           },
           {

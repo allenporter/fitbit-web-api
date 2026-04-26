@@ -69,7 +69,7 @@ class ActivityApi:
             date, Field(description="Log entry date in the format yyyy-MM-dd.")
         ],
         distance: Annotated[
-            StrictInt,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="Distance is required for logging directory activity in the format X.XX and in the selected distanceUnit."
             ),
@@ -114,7 +114,7 @@ class ActivityApi:
         :param var_date: Log entry date in the format yyyy-MM-dd. (required)
         :type var_date: date
         :param distance: Distance is required for logging directory activity in the format X.XX and in the selected distanceUnit. (required)
-        :type distance: int
+        :type distance: float
         :param activity_name: Custom activity name. Either activityId or activityName must be provided.
         :type activity_name: str
         :param distance_unit: Distance measurement unit. Steps units are available only for Walking (activityId=90013) and Running (activityId=90009) directory activities and their intensity levels.
@@ -198,7 +198,7 @@ class ActivityApi:
             date, Field(description="Log entry date in the format yyyy-MM-dd.")
         ],
         distance: Annotated[
-            StrictInt,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="Distance is required for logging directory activity in the format X.XX and in the selected distanceUnit."
             ),
@@ -243,7 +243,7 @@ class ActivityApi:
         :param var_date: Log entry date in the format yyyy-MM-dd. (required)
         :type var_date: date
         :param distance: Distance is required for logging directory activity in the format X.XX and in the selected distanceUnit. (required)
-        :type distance: int
+        :type distance: float
         :param activity_name: Custom activity name. Either activityId or activityName must be provided.
         :type activity_name: str
         :param distance_unit: Distance measurement unit. Steps units are available only for Walking (activityId=90013) and Running (activityId=90009) directory activities and their intensity levels.
@@ -327,7 +327,7 @@ class ActivityApi:
             date, Field(description="Log entry date in the format yyyy-MM-dd.")
         ],
         distance: Annotated[
-            StrictInt,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="Distance is required for logging directory activity in the format X.XX and in the selected distanceUnit."
             ),
@@ -372,7 +372,7 @@ class ActivityApi:
         :param var_date: Log entry date in the format yyyy-MM-dd. (required)
         :type var_date: date
         :param distance: Distance is required for logging directory activity in the format X.XX and in the selected distanceUnit. (required)
-        :type distance: int
+        :type distance: float
         :param activity_name: Custom activity name. Either activityId or activityName must be provided.
         :type activity_name: str
         :param distance_unit: Distance measurement unit. Steps units are available only for Walking (activityId=90013) and Running (activityId=90009) directory activities and their intensity levels.
