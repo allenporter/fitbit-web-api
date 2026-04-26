@@ -246,6 +246,7 @@ class BreathingRateIntradayApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
+
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -524,6 +525,7 @@ class BreathingRateIntradayApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
+
         _host = None
 
         _collection_formats: Dict[str, str] = {}

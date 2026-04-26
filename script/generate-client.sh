@@ -44,11 +44,11 @@ find . -name \*.orig -delete
 
 echo "---"
 echo "Running ruff to fix code style..."
-ruff check --fix . || true
+uv run ruff check --fix . || true
 
 echo "---"
 echo "Running ruff to format code..."
-ruff format .
+uv run ruff format .
 
 echo "---"
 echo "Please stage files and run `pre-commit` to run additional format fixes."

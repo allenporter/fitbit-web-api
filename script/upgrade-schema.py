@@ -84,20 +84,32 @@ def fix_schema_bugs(schema: dict[str, Any]) -> None:
     # Fix all date parameters that mention "today" to be string types. They
     # get typed as `datetime.date` incorrectly since they also support "today"
     # as a string.
+    # Additionally, fix `fat` and `weight` to be numbers instead of integers.
     paths = schema["paths"]
     for path, handlers in paths.items():
-        if not (get := handlers.get("get")):
-            continue
-        if not (parameters := get.get("parameters")):
-            continue
-        for param_obj in parameters:
-            if " or today" not in param_obj.get("description", ""):
+        for method, op in handlers.items():
+            if not isinstance(op, dict):
                 continue
-            param_schema = param_obj.setdefault("schema", {})
-            if param_schema.get("type") != "string":
+            if not (parameters := op.get("parameters")):
                 continue
-            if param_schema.get("format") == "date":
-                param_schema.pop("format")
+            for param_obj in parameters:
+                param_name = param_obj.get("name")
+                if param_name in ("fat", "weight"):
+                    param_schema = param_obj.setdefault("schema", {})
+                    if param_schema.get("type") == "integer":
+                        param_schema["type"] = "number"
+
+                if param_name == "time" and "if not provided" in param_obj.get(
+                    "description", ""
+                ):
+                    if param_obj.get("required"):
+                        param_obj["required"] = False
+
+                if " or today" in param_obj.get("description", ""):
+                    param_schema = param_obj.setdefault("schema", {})
+                    if param_schema.get("type") == "string":
+                        if param_schema.get("format") == "date":
+                            param_schema.pop("format")
 
 
 def update_schemas(schema: dict[str, Any]) -> None:

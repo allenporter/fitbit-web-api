@@ -20,7 +20,7 @@ All URIs are relative to *https://api.fitbit.com*
 
 # **add_body_fat_log**
 
-> add_body_fat_log(fat, var_date, time)
+> add_body_fat_log(fat, var_date, time=time)
 
 Log Body Fat
 
@@ -52,24 +52,24 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.BodyApi(api_client)
-    fat = 56 # int | Body fat in the format of X.XX in the unit system that corresponds to the Accept-Language header provided.
+    fat = 3.4 # float | Body fat in the format of X.XX in the unit system that corresponds to the Accept-Language header provided.
     var_date = '2013-10-20' # date | Log entry date in the format yyyy-MM-dd.
-    time = 'time_example' # str | Time of the measurement in hours and minutes in the format HH:mm:ss that is set to the last second of the day if not provided.
+    time = 'time_example' # str | Time of the measurement in hours and minutes in the format HH:mm:ss that is set to the last second of the day if not provided. (optional)
 
     try:
         # Log Body Fat
-        await api_instance.add_body_fat_log(fat, var_date, time)
+        await api_instance.add_body_fat_log(fat, var_date, time=time)
     except Exception as e:
         print("Exception when calling BodyApi->add_body_fat_log: %s\n" % e)
 ```
 
 ### Parameters
 
-| Name         | Type     | Description                                                                                                                    | Notes |
-| ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------ | ----- |
-| **fat**      | **int**  | Body fat in the format of X.XX in the unit system that corresponds to the Accept-Language header provided.                     |
-| **var_date** | **date** | Log entry date in the format yyyy-MM-dd.                                                                                       |
-| **time**     | **str**  | Time of the measurement in hours and minutes in the format HH:mm:ss that is set to the last second of the day if not provided. |
+| Name         | Type      | Description                                                                                                                    | Notes      |
+| ------------ | --------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------- |
+| **fat**      | **float** | Body fat in the format of X.XX in the unit system that corresponds to the Accept-Language header provided.                     |
+| **var_date** | **date**  | Log entry date in the format yyyy-MM-dd.                                                                                       |
+| **time**     | **str**   | Time of the measurement in hours and minutes in the format HH:mm:ss that is set to the last second of the day if not provided. | [optional] |
 
 ### Return type
 
@@ -129,7 +129,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.BodyApi(api_client)
-    weight = 56 # int | Weight in the format of X.XX.
+    weight = 3.4 # float | Weight in the format of X.XX.
     var_date = '2013-10-20' # date | Log entry date in the format yyyy-MM-dd.
     time = 'time_example' # str | Time of the measurement; hours and minutes in the format of HH:mm:ss, which is set to the last second of the day if not provided. (optional)
 
@@ -142,11 +142,11 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name         | Type     | Description                                                                                                                       | Notes      |
-| ------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| **weight**   | **int**  | Weight in the format of X.XX.                                                                                                     |
-| **var_date** | **date** | Log entry date in the format yyyy-MM-dd.                                                                                          |
-| **time**     | **str**  | Time of the measurement; hours and minutes in the format of HH:mm:ss, which is set to the last second of the day if not provided. | [optional] |
+| Name         | Type      | Description                                                                                                                       | Notes      |
+| ------------ | --------- | --------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **weight**   | **float** | Weight in the format of X.XX.                                                                                                     |
+| **var_date** | **date**  | Log entry date in the format yyyy-MM-dd.                                                                                          |
+| **time**     | **str**   | Time of the measurement; hours and minutes in the format of HH:mm:ss, which is set to the last second of the day if not provided. | [optional] |
 
 ### Return type
 
