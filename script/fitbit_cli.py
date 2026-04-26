@@ -23,9 +23,10 @@ import os
 import secrets
 import sys
 import urllib.parse
+from contextlib import asynccontextmanager
 from datetime import date as dt_date
 from pathlib import Path
-from typing import Any
+from typing import Any, AsyncGenerator
 
 import aiohttp
 from aiohttp import web
@@ -59,6 +60,19 @@ def save_token(token_file: Path, data: dict[str, Any]) -> None:
     token_file.parent.mkdir(parents=True, exist_ok=True)
     token_file.write_text(json.dumps(data, indent=2))
     print(f"Success! Token saved to {token_file}")
+
+
+@asynccontextmanager
+async def create_api_client(token_file_path: str) -> AsyncGenerator[ApiClient, None]:
+    token_file = Path(token_file_path).expanduser()
+    token_data = load_token(token_file)
+    access_token = token_data.get("access_token")
+
+    config = Configuration()
+    config.access_token = access_token
+
+    async with ApiClient(configuration=config) as api_client:
+        yield api_client
 
 
 async def do_login(client_id: str, client_secret: str, port: int, token_file: Path) -> None:
@@ -139,14 +153,7 @@ async def do_login(client_id: str, client_secret: str, port: int, token_file: Pa
 
 
 async def do_query(args: argparse.Namespace) -> None:
-    token_file = Path(args.token_file).expanduser()
-    token_data = load_token(token_file)
-    access_token = token_data.get("access_token")
-
-    config = Configuration()
-    config.access_token = access_token
-    
-    async with ApiClient(configuration=config) as api_client:
+    async with create_api_client(args.token_file) as api_client:
 
         date = args.date
         if date == "today":
@@ -186,14 +193,7 @@ async def do_query(args: argparse.Namespace) -> None:
             print(api_response.data)
 
 async def do_time_series_query(args: argparse.Namespace) -> None:
-    token_file = Path(args.token_file).expanduser()
-    token_data = load_token(token_file)
-    access_token = token_data.get("access_token")
-
-    config = Configuration()
-    config.access_token = access_token
-    
-    async with ApiClient(configuration=config) as api_client:
+    async with create_api_client(args.token_file) as api_client:
 
         date = args.date
         if date == "today":
