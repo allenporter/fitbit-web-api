@@ -40,7 +40,7 @@ class BodyApi:
     async def add_body_fat_log(
         self,
         fat: Annotated[
-            StrictInt,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="Body fat in the format of X.XX in the unit system that corresponds to the Accept-Language header provided."
             ),
@@ -49,11 +49,11 @@ class BodyApi:
             date, Field(description="Log entry date in the format yyyy-MM-dd.")
         ],
         time: Annotated[
-            StrictStr,
+            Optional[StrictStr],
             Field(
                 description="Time of the measurement in hours and minutes in the format HH:mm:ss that is set to the last second of the day if not provided."
             ),
-        ],
+        ] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -72,10 +72,10 @@ class BodyApi:
         Creates a log entry for body fat and returns a response in the format requested.
 
         :param fat: Body fat in the format of X.XX in the unit system that corresponds to the Accept-Language header provided. (required)
-        :type fat: int
+        :type fat: float
         :param var_date: Log entry date in the format yyyy-MM-dd. (required)
         :type var_date: date
-        :param time: Time of the measurement in hours and minutes in the format HH:mm:ss that is set to the last second of the day if not provided. (required)
+        :param time: Time of the measurement in hours and minutes in the format HH:mm:ss that is set to the last second of the day if not provided.
         :type time: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -127,7 +127,7 @@ class BodyApi:
     async def add_body_fat_log_with_http_info(
         self,
         fat: Annotated[
-            StrictInt,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="Body fat in the format of X.XX in the unit system that corresponds to the Accept-Language header provided."
             ),
@@ -136,11 +136,11 @@ class BodyApi:
             date, Field(description="Log entry date in the format yyyy-MM-dd.")
         ],
         time: Annotated[
-            StrictStr,
+            Optional[StrictStr],
             Field(
                 description="Time of the measurement in hours and minutes in the format HH:mm:ss that is set to the last second of the day if not provided."
             ),
-        ],
+        ] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -159,10 +159,10 @@ class BodyApi:
         Creates a log entry for body fat and returns a response in the format requested.
 
         :param fat: Body fat in the format of X.XX in the unit system that corresponds to the Accept-Language header provided. (required)
-        :type fat: int
+        :type fat: float
         :param var_date: Log entry date in the format yyyy-MM-dd. (required)
         :type var_date: date
-        :param time: Time of the measurement in hours and minutes in the format HH:mm:ss that is set to the last second of the day if not provided. (required)
+        :param time: Time of the measurement in hours and minutes in the format HH:mm:ss that is set to the last second of the day if not provided.
         :type time: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -214,7 +214,7 @@ class BodyApi:
     async def add_body_fat_log_without_preload_content(
         self,
         fat: Annotated[
-            StrictInt,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="Body fat in the format of X.XX in the unit system that corresponds to the Accept-Language header provided."
             ),
@@ -223,11 +223,11 @@ class BodyApi:
             date, Field(description="Log entry date in the format yyyy-MM-dd.")
         ],
         time: Annotated[
-            StrictStr,
+            Optional[StrictStr],
             Field(
                 description="Time of the measurement in hours and minutes in the format HH:mm:ss that is set to the last second of the day if not provided."
             ),
-        ],
+        ] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -246,10 +246,10 @@ class BodyApi:
         Creates a log entry for body fat and returns a response in the format requested.
 
         :param fat: Body fat in the format of X.XX in the unit system that corresponds to the Accept-Language header provided. (required)
-        :type fat: int
+        :type fat: float
         :param var_date: Log entry date in the format yyyy-MM-dd. (required)
         :type var_date: date
-        :param time: Time of the measurement in hours and minutes in the format HH:mm:ss that is set to the last second of the day if not provided. (required)
+        :param time: Time of the measurement in hours and minutes in the format HH:mm:ss that is set to the last second of the day if not provided.
         :type time: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -303,6 +303,7 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
+
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -361,7 +362,8 @@ class BodyApi:
     async def add_weight_log(
         self,
         weight: Annotated[
-            StrictInt, Field(description="Weight in the format of X.XX.")
+            Union[StrictFloat, StrictInt],
+            Field(description="Weight in the format of X.XX."),
         ],
         var_date: Annotated[
             date, Field(description="Log entry date in the format yyyy-MM-dd.")
@@ -390,7 +392,7 @@ class BodyApi:
         Creates log entry for a body weight using units in the unit systems that corresponds to the Accept-Language header provided and gets a response in the format requested.
 
         :param weight: Weight in the format of X.XX. (required)
-        :type weight: int
+        :type weight: float
         :param var_date: Log entry date in the format yyyy-MM-dd. (required)
         :type var_date: date
         :param time: Time of the measurement; hours and minutes in the format of HH:mm:ss, which is set to the last second of the day if not provided.
@@ -445,7 +447,8 @@ class BodyApi:
     async def add_weight_log_with_http_info(
         self,
         weight: Annotated[
-            StrictInt, Field(description="Weight in the format of X.XX.")
+            Union[StrictFloat, StrictInt],
+            Field(description="Weight in the format of X.XX."),
         ],
         var_date: Annotated[
             date, Field(description="Log entry date in the format yyyy-MM-dd.")
@@ -474,7 +477,7 @@ class BodyApi:
         Creates log entry for a body weight using units in the unit systems that corresponds to the Accept-Language header provided and gets a response in the format requested.
 
         :param weight: Weight in the format of X.XX. (required)
-        :type weight: int
+        :type weight: float
         :param var_date: Log entry date in the format yyyy-MM-dd. (required)
         :type var_date: date
         :param time: Time of the measurement; hours and minutes in the format of HH:mm:ss, which is set to the last second of the day if not provided.
@@ -529,7 +532,8 @@ class BodyApi:
     async def add_weight_log_without_preload_content(
         self,
         weight: Annotated[
-            StrictInt, Field(description="Weight in the format of X.XX.")
+            Union[StrictFloat, StrictInt],
+            Field(description="Weight in the format of X.XX."),
         ],
         var_date: Annotated[
             date, Field(description="Log entry date in the format yyyy-MM-dd.")
@@ -558,7 +562,7 @@ class BodyApi:
         Creates log entry for a body weight using units in the unit systems that corresponds to the Accept-Language header provided and gets a response in the format requested.
 
         :param weight: Weight in the format of X.XX. (required)
-        :type weight: int
+        :type weight: float
         :param var_date: Log entry date in the format yyyy-MM-dd. (required)
         :type var_date: date
         :param time: Time of the measurement; hours and minutes in the format of HH:mm:ss, which is set to the last second of the day if not provided.
@@ -615,6 +619,7 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
+
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -877,6 +882,7 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
+
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1124,6 +1130,7 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
+
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1371,6 +1378,7 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
+
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1652,6 +1660,7 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
+
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -1929,6 +1938,7 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
+
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2178,6 +2188,7 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
+
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2431,6 +2442,7 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
+
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2712,6 +2724,7 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
+
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -2989,6 +3002,7 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
+
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -3250,6 +3264,7 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
+
         _host = None
 
         _collection_formats: Dict[str, str] = {}
@@ -3560,6 +3575,7 @@ class BodyApi:
         _headers,
         _host_index,
     ) -> RequestSerialized:
+
         _host = None
 
         _collection_formats: Dict[str, str] = {}

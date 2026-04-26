@@ -101,7 +101,7 @@ async def do_login(
     }
     url = f"{FITBIT_AUTH_URL}?{urllib.parse.urlencode(auth_params)}"
 
-    print(f"Please open the following URL in your browser to authorize:")
+    print("Please open the following URL in your browser to authorize:")
     print(f"\n  {url}\n")
     print(f"Listening on {redirect_uri} for the callback...")
 
@@ -158,11 +158,10 @@ async def do_login(
             save_token(token_file, data)
 
 
-async def do_query(args: argparse.Namespace) -> None:
-    async with create_api_client(args.token_file) as api_client:
-        date = args.date
-        if date == "today":
-            date = dt_date.today().isoformat()
+async def do_query(api_client: ApiClient, args: argparse.Namespace) -> None:
+    date = args.date
+    if date == "today":
+        date = dt_date.today().isoformat()
 
         api_response = None
 
@@ -200,11 +199,10 @@ async def do_query(args: argparse.Namespace) -> None:
             print(api_response.data)
 
 
-async def do_time_series_query(args: argparse.Namespace) -> None:
-    async with create_api_client(args.token_file) as api_client:
-        date = args.date
-        if date == "today":
-            date = dt_date.today().isoformat()
+async def do_time_series_query(api_client: ApiClient, args: argparse.Namespace) -> None:
+    date = args.date
+    if date == "today":
+        date = dt_date.today().isoformat()
 
         api_response = None
 
@@ -252,6 +250,42 @@ async def do_time_series_query(args: argparse.Namespace) -> None:
         else:
             print("\n--- Parsed Model ---")
             print(api_response.data)
+
+
+async def do_add_weight(api_client: ApiClient, args: argparse.Namespace) -> None:
+    date = args.date
+    if date == "today":
+        date = dt_date.today().isoformat()
+
+    api = BodyApi(api_client)
+    print(f"Adding body weight: {args.weight} on {date} (time: {args.time})")
+    try:
+        kwargs = {"weight": args.weight, "var_date": date}
+        if args.time:
+            kwargs["time"] = args.time
+        api_response = await api.add_weight_log(**kwargs)
+        print("\n--- Parsed Model ---")
+        print(api_response)
+    except Exception as e:
+        print(f"Error adding weight: {e}", file=sys.stderr)
+
+
+async def do_add_fat(api_client: ApiClient, args: argparse.Namespace) -> None:
+    date = args.date
+    if date == "today":
+        date = dt_date.today().isoformat()
+
+    api = BodyApi(api_client)
+    print(f"Adding body fat: {args.fat} on {date} (time: {args.time})")
+    try:
+        kwargs = {"fat": args.fat, "var_date": date}
+        if args.time:
+            kwargs["time"] = args.time
+        api_response = await api.add_body_fat_log(**kwargs)
+        print("\n--- Parsed Model ---")
+        print(api_response)
+    except Exception as e:
+        print(f"Error adding fat: {e}", file=sys.stderr)
 
 
 def main() -> None:
@@ -313,6 +347,22 @@ def main() -> None:
         help="Range (e.g., 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, max)",
     )
 
+    # Add weight command
+    add_weight_parser = subparsers.add_parser("add-weight", help="Add body weight log")
+    add_weight_parser.add_argument("weight", type=float, help="Body weight value")
+    add_weight_parser.add_argument(
+        "--date", default="today", help="Date (YYYY-MM-DD or 'today')"
+    )
+    add_weight_parser.add_argument("--time", help="Time (HH:mm:ss)")
+
+    # Add fat command
+    add_fat_parser = subparsers.add_parser("add-fat", help="Add body fat log")
+    add_fat_parser.add_argument("fat", type=float, help="Body fat percentage")
+    add_fat_parser.add_argument(
+        "--date", default="today", help="Date (YYYY-MM-DD or 'today')"
+    )
+    add_fat_parser.add_argument("--time", help="Time (HH:mm:ss)")
+
     args = parser.parse_args()
 
     setup_logging(args.debug)
@@ -328,10 +378,20 @@ def main() -> None:
             sys.exit(1)
         token_file = Path(args.token_file).expanduser()
         asyncio.run(do_login(client_id, client_secret, args.port, token_file))
-    elif args.command == "query":
-        asyncio.run(do_query(args))
-    elif args.command == "time-series":
-        asyncio.run(do_time_series_query(args))
+    elif args.command in ("query", "time-series", "add-weight", "add-fat"):
+
+        async def run_cmd() -> None:
+            async with create_api_client(args.token_file) as api_client:
+                if args.command == "query":
+                    await do_query(api_client, args)
+                elif args.command == "time-series":
+                    await do_time_series_query(api_client, args)
+                elif args.command == "add-weight":
+                    await do_add_weight(api_client, args)
+                elif args.command == "add-fat":
+                    await do_add_fat(api_client, args)
+
+        asyncio.run(run_cmd())
 
 
 if __name__ == "__main__":

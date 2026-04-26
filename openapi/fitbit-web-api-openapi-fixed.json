@@ -2630,7 +2630,7 @@
             "description": "Body fat in the format of X.XX in the unit system that corresponds to the Accept-Language header provided.",
             "required": true,
             "schema": {
-              "type": "integer"
+              "type": "number"
             }
           },
           {
@@ -2647,7 +2647,7 @@
             "name": "time",
             "in": "query",
             "description": "Time of the measurement in hours and minutes in the format HH:mm:ss that is set to the last second of the day if not provided.",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
             }
@@ -3097,7 +3097,7 @@
             "description": "Weight in the format of X.XX.",
             "required": true,
             "schema": {
-              "type": "integer"
+              "type": "number"
             }
           },
           {
