@@ -13,6 +13,7 @@ Set your credentials in your environment before running the login command:
     export FITBIT_CLIENT_SECRET="your_client_secret"
     uv run script/fitbit_cli.py login
 """
+
 import argparse
 import asyncio
 import base64
@@ -51,7 +52,10 @@ def setup_logging(debug: bool) -> None:
 
 def load_token(token_file: Path) -> dict[str, Any]:
     if not token_file.exists():
-        print(f"No token found at {token_file}. Please run 'login' first.", file=sys.stderr)
+        print(
+            f"No token found at {token_file}. Please run 'login' first.",
+            file=sys.stderr,
+        )
         sys.exit(1)
     return json.loads(token_file.read_text())
 
@@ -75,7 +79,9 @@ async def create_api_client(token_file_path: str) -> AsyncGenerator[ApiClient, N
         yield api_client
 
 
-async def do_login(client_id: str, client_secret: str, port: int, token_file: Path) -> None:
+async def do_login(
+    client_id: str, client_secret: str, port: int, token_file: Path
+) -> None:
     redirect_uri = f"http://127.0.0.1:{port}"
     code_verifier = secrets.token_urlsafe(96)
 
@@ -128,7 +134,7 @@ async def do_login(client_id: str, client_secret: str, port: int, token_file: Pa
     print("Exchanging authorization code for access token...")
     auth_str = f"{client_id}:{client_secret}"
     b64_auth = base64.b64encode(auth_str.encode("utf-8")).decode("utf-8")
-    
+
     async with aiohttp.ClientSession() as session:
         async with session.post(
             FITBIT_TOKEN_URL,
@@ -154,17 +160,18 @@ async def do_login(client_id: str, client_secret: str, port: int, token_file: Pa
 
 async def do_query(args: argparse.Namespace) -> None:
     async with create_api_client(args.token_file) as api_client:
-
         date = args.date
         if date == "today":
             date = dt_date.today().isoformat()
-            
+
         api_response = None
 
         if args.type == "activity":
             api = ActivityApi(api_client)
             print(f"Querying activity for date: {date}")
-            api_response = await api.get_activities_by_date_with_http_info(var_date=date)
+            api_response = await api.get_activities_by_date_with_http_info(
+                var_date=date
+            )
         elif args.type == "sleep":
             api = SleepApi(api_client)
             print(f"Querying sleep for date: {date}")
@@ -192,30 +199,38 @@ async def do_query(args: argparse.Namespace) -> None:
             print("\n--- Parsed Model ---")
             print(api_response.data)
 
+
 async def do_time_series_query(args: argparse.Namespace) -> None:
     async with create_api_client(args.token_file) as api_client:
-
         date = args.date
         if date == "today":
             date = dt_date.today().isoformat()
-            
+
         api_response = None
 
         if args.type == "activity":
             api = ActivityTimeSeriesApi(api_client)
-            print(f"Querying activity time series '{args.resource}' for date: {date}, period: {args.period}")
-            api_response = await api.get_activities_resource_by_date_period_with_http_info(
-                var_resource_path=args.resource, var_date=date, period=args.period
+            print(
+                f"Querying activity time series '{args.resource}' for date: {date}, period: {args.period}"
+            )
+            api_response = (
+                await api.get_activities_resource_by_date_period_with_http_info(
+                    var_resource_path=args.resource, var_date=date, period=args.period
+                )
             )
         elif args.type == "body":
             api = BodyTimeSeriesApi(api_client)
-            print(f"Querying body time series '{args.resource}' for date: {date}, period: {args.period}")
+            print(
+                f"Querying body time series '{args.resource}' for date: {date}, period: {args.period}"
+            )
             api_response = await api.get_body_resource_by_date_period_with_http_info(
                 var_resource_path=args.resource, var_date=date, period=args.period
             )
         elif args.type == "heartrate":
             api = HeartRateTimeSeriesApi(api_client)
-            print(f"Querying heart rate time series for date: {date}, period: {args.period} (ignoring resource param)")
+            print(
+                f"Querying heart rate time series for date: {date}, period: {args.period} (ignoring resource param)"
+            )
             api_response = await api.get_heart_by_date_period_with_http_info(
                 var_date=date, period=args.period
             )
@@ -238,28 +253,65 @@ async def do_time_series_query(args: argparse.Namespace) -> None:
             print("\n--- Parsed Model ---")
             print(api_response.data)
 
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Fitbit CLI Tool")
-    parser.add_argument("--debug", action="store_true", help="Enable debug logging and print raw JSON payloads")
-    parser.add_argument("--token-file", default=os.environ.get("FITBIT_TOKEN_FILE", "~/.config/fitbit-token.json"), help="Path to save/load the OAuth token")
-    
+    parser.add_argument(
+        "--debug",
+        action="store_true",
+        help="Enable debug logging and print raw JSON payloads",
+    )
+    parser.add_argument(
+        "--token-file",
+        default=os.environ.get("FITBIT_TOKEN_FILE", "~/.config/fitbit-token.json"),
+        help="Path to save/load the OAuth token",
+    )
+
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     # Login command
-    login_parser = subparsers.add_parser("login", help="Authenticate with Fitbit and save token locally")
-    login_parser.add_argument("--port", type=int, default=8080, help="Local port for OAuth callback (default: 8080)")
+    login_parser = subparsers.add_parser(
+        "login", help="Authenticate with Fitbit and save token locally"
+    )
+    login_parser.add_argument(
+        "--port",
+        type=int,
+        default=8080,
+        help="Local port for OAuth callback (default: 8080)",
+    )
 
     # Query command
     query_parser = subparsers.add_parser("query", help="Query Fitbit API endpoints")
-    query_parser.add_argument("type", choices=["activity", "sleep", "body"], help="Type of data to query")
-    query_parser.add_argument("--date", default="today", help="Date to query (format YYYY-MM-DD or 'today')")
+    query_parser.add_argument(
+        "type", choices=["activity", "sleep", "body"], help="Type of data to query"
+    )
+    query_parser.add_argument(
+        "--date", default="today", help="Date to query (format YYYY-MM-DD or 'today')"
+    )
 
     # Time-series command
-    ts_parser = subparsers.add_parser("time-series", help="Query Fitbit Time Series API endpoints")
-    ts_parser.add_argument("type", choices=["activity", "body", "heartrate"], help="Type of time series data to query")
-    ts_parser.add_argument("resource", help="Resource path (e.g., 'steps', 'calories' for activity; 'weight', 'fat' for body; 'heart' for heartrate)")
-    ts_parser.add_argument("--date", default="today", help="End date to query (format YYYY-MM-DD or 'today')")
-    ts_parser.add_argument("--period", default="1m", help="Range (e.g., 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, max)")
+    ts_parser = subparsers.add_parser(
+        "time-series", help="Query Fitbit Time Series API endpoints"
+    )
+    ts_parser.add_argument(
+        "type",
+        choices=["activity", "body", "heartrate"],
+        help="Type of time series data to query",
+    )
+    ts_parser.add_argument(
+        "resource",
+        help="Resource path (e.g., 'steps', 'calories' for activity; 'weight', 'fat' for body; 'heart' for heartrate)",
+    )
+    ts_parser.add_argument(
+        "--date",
+        default="today",
+        help="End date to query (format YYYY-MM-DD or 'today')",
+    )
+    ts_parser.add_argument(
+        "--period",
+        default="1m",
+        help="Range (e.g., 1d, 7d, 30d, 1w, 1m, 3m, 6m, 1y, max)",
+    )
 
     args = parser.parse_args()
 
@@ -269,7 +321,10 @@ def main() -> None:
         client_id = os.environ.get("FITBIT_CLIENT_ID")
         client_secret = os.environ.get("FITBIT_CLIENT_SECRET")
         if not client_id or not client_secret:
-            print("Error: FITBIT_CLIENT_ID and FITBIT_CLIENT_SECRET environment variables are required for login.", file=sys.stderr)
+            print(
+                "Error: FITBIT_CLIENT_ID and FITBIT_CLIENT_SECRET environment variables are required for login.",
+                file=sys.stderr,
+            )
             sys.exit(1)
         token_file = Path(args.token_file).expanduser()
         asyncio.run(do_login(client_id, client_secret, args.port, token_file))
