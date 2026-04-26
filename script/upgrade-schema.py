@@ -94,10 +94,9 @@ def fix_schema_bugs(schema: dict[str, Any]) -> None:
                 continue
             for param_obj in parameters:
                 param_name = param_obj.get("name")
-                if param_name in ("fat", "weight"):
+                if "X.XX" in param_obj.get("description", ""):
                     param_schema = param_obj.setdefault("schema", {})
-                    if param_schema.get("type") == "integer":
-                        param_schema["type"] = "number"
+                    param_schema["type"] = "number"
 
                 if param_name == "time" and "if not provided" in param_obj.get(
                     "description", ""

@@ -3054,7 +3054,7 @@ class BodyApi:
     async def update_body_fat_goal(
         self,
         fat: Annotated[
-            StrictStr,
+            Union[StrictFloat, StrictInt],
             Field(description="Target body fat percentage; in the format X.XX."),
         ],
         _request_timeout: Union[
@@ -3075,7 +3075,7 @@ class BodyApi:
         Updates user's fat percentage goal.
 
         :param fat: Target body fat percentage; in the format X.XX. (required)
-        :type fat: str
+        :type fat: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3124,7 +3124,7 @@ class BodyApi:
     async def update_body_fat_goal_with_http_info(
         self,
         fat: Annotated[
-            StrictStr,
+            Union[StrictFloat, StrictInt],
             Field(description="Target body fat percentage; in the format X.XX."),
         ],
         _request_timeout: Union[
@@ -3145,7 +3145,7 @@ class BodyApi:
         Updates user's fat percentage goal.
 
         :param fat: Target body fat percentage; in the format X.XX. (required)
-        :type fat: str
+        :type fat: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3194,7 +3194,7 @@ class BodyApi:
     async def update_body_fat_goal_without_preload_content(
         self,
         fat: Annotated[
-            StrictStr,
+            Union[StrictFloat, StrictInt],
             Field(description="Target body fat percentage; in the format X.XX."),
         ],
         _request_timeout: Union[
@@ -3215,7 +3215,7 @@ class BodyApi:
         Updates user's fat percentage goal.
 
         :param fat: Target body fat percentage; in the format X.XX. (required)
-        :type fat: str
+        :type fat: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3313,13 +3313,13 @@ class BodyApi:
             Field(description="Weight goal start date; in the format yyyy-MM-dd."),
         ],
         start_weight: Annotated[
-            StrictStr,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="Weight goal start weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided."
             ),
         ],
         weight: Annotated[
-            Optional[StrictStr],
+            Optional[Union[StrictFloat, StrictInt]],
             Field(
                 description="Weight goal target weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided; required if user doesn't have an existing weight goal."
             ),
@@ -3344,9 +3344,9 @@ class BodyApi:
         :param start_date: Weight goal start date; in the format yyyy-MM-dd. (required)
         :type start_date: str
         :param start_weight: Weight goal start weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided. (required)
-        :type start_weight: str
+        :type start_weight: float
         :param weight: Weight goal target weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided; required if user doesn't have an existing weight goal.
-        :type weight: str
+        :type weight: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3401,13 +3401,13 @@ class BodyApi:
             Field(description="Weight goal start date; in the format yyyy-MM-dd."),
         ],
         start_weight: Annotated[
-            StrictStr,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="Weight goal start weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided."
             ),
         ],
         weight: Annotated[
-            Optional[StrictStr],
+            Optional[Union[StrictFloat, StrictInt]],
             Field(
                 description="Weight goal target weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided; required if user doesn't have an existing weight goal."
             ),
@@ -3432,9 +3432,9 @@ class BodyApi:
         :param start_date: Weight goal start date; in the format yyyy-MM-dd. (required)
         :type start_date: str
         :param start_weight: Weight goal start weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided. (required)
-        :type start_weight: str
+        :type start_weight: float
         :param weight: Weight goal target weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided; required if user doesn't have an existing weight goal.
-        :type weight: str
+        :type weight: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3489,13 +3489,13 @@ class BodyApi:
             Field(description="Weight goal start date; in the format yyyy-MM-dd."),
         ],
         start_weight: Annotated[
-            StrictStr,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="Weight goal start weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided."
             ),
         ],
         weight: Annotated[
-            Optional[StrictStr],
+            Optional[Union[StrictFloat, StrictInt]],
             Field(
                 description="Weight goal target weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided; required if user doesn't have an existing weight goal."
             ),
@@ -3520,9 +3520,9 @@ class BodyApi:
         :param start_date: Weight goal start date; in the format yyyy-MM-dd. (required)
         :type start_date: str
         :param start_weight: Weight goal start weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided. (required)
-        :type start_weight: str
+        :type start_weight: float
         :param weight: Weight goal target weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided; required if user doesn't have an existing weight goal.
-        :type weight: str
+        :type weight: float
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
