@@ -1,5 +1,17 @@
 # Changelog
 
+## v2.15.0 (2026-04-26)
+
+### Bug fixes
+
+- Convert all parameters with x.xx format description to float/number types ([`204e8cb`](https://github.com/allenporter/fitbit-web-api/commit/204e8cb6e841dfecc694b3f6541a1dcf4bc8f161))
+
+
+### Features
+
+- Cli refactoring, weight/fat commands, and schema fixes ([`3b03804`](https://github.com/allenporter/fitbit-web-api/commit/3b03804e2db3444fa759711473179f9a974a677f))
+
+
 ## v2.14.0 (2026-04-26)
 
 ### Features
