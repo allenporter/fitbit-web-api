@@ -59,7 +59,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
     start_time = 'start_time_example' # str | Activity start time. Hours and minutes in the format HH:mm:ss.
     duration_millis = 56 # int | Duration in milliseconds.
     var_date = '2013-10-20' # date | Log entry date in the format yyyy-MM-dd.
-    distance = 56 # int | Distance is required for logging directory activity in the format X.XX and in the selected distanceUnit.
+    distance = 3.4 # float | Distance is required for logging directory activity in the format X.XX and in the selected distanceUnit.
     activity_name = 'activity_name_example' # str | Custom activity name. Either activityId or activityName must be provided. (optional)
     distance_unit = 56 # int | Distance measurement unit. Steps units are available only for Walking (activityId=90013) and Running (activityId=90009) directory activities and their intensity levels. (optional)
 
@@ -72,16 +72,16 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name                | Type     | Description                                                                                                                                                                        | Notes      |
-| ------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| **activity_id**     | **int**  | The ID of the activity, directory activity or intensity level activity.                                                                                                            |
-| **manual_calories** | **int**  | Calories burned that are manaully specified. Required with activityName must be provided.                                                                                          |
-| **start_time**      | **str**  | Activity start time. Hours and minutes in the format HH:mm:ss.                                                                                                                     |
-| **duration_millis** | **int**  | Duration in milliseconds.                                                                                                                                                          |
-| **var_date**        | **date** | Log entry date in the format yyyy-MM-dd.                                                                                                                                           |
-| **distance**        | **int**  | Distance is required for logging directory activity in the format X.XX and in the selected distanceUnit.                                                                           |
-| **activity_name**   | **str**  | Custom activity name. Either activityId or activityName must be provided.                                                                                                          | [optional] |
-| **distance_unit**   | **int**  | Distance measurement unit. Steps units are available only for Walking (activityId&#x3D;90013) and Running (activityId&#x3D;90009) directory activities and their intensity levels. | [optional] |
+| Name                | Type      | Description                                                                                                                                                                        | Notes      |
+| ------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **activity_id**     | **int**   | The ID of the activity, directory activity or intensity level activity.                                                                                                            |
+| **manual_calories** | **int**   | Calories burned that are manaully specified. Required with activityName must be provided.                                                                                          |
+| **start_time**      | **str**   | Activity start time. Hours and minutes in the format HH:mm:ss.                                                                                                                     |
+| **duration_millis** | **int**   | Duration in milliseconds.                                                                                                                                                          |
+| **var_date**        | **date**  | Log entry date in the format yyyy-MM-dd.                                                                                                                                           |
+| **distance**        | **float** | Distance is required for logging directory activity in the format X.XX and in the selected distanceUnit.                                                                           |
+| **activity_name**   | **str**   | Custom activity name. Either activityId or activityName must be provided.                                                                                                          | [optional] |
+| **distance_unit**   | **int**   | Distance measurement unit. Steps units are available only for Walking (activityId&#x3D;90013) and Running (activityId&#x3D;90009) directory activities and their intensity levels. | [optional] |
 
 ### Return type
 

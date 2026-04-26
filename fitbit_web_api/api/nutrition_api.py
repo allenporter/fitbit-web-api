@@ -699,7 +699,7 @@ class NutritionApi:
             ),
         ],
         amount: Annotated[
-            StrictStr,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="The amount consumed in the format X.XX in the specified unitId."
             ),
@@ -755,7 +755,7 @@ class NutritionApi:
         :param unit_id: The ID of units used. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units. (required)
         :type unit_id: str
         :param amount: The amount consumed in the format X.XX in the specified unitId. (required)
-        :type amount: str
+        :type amount: float
         :param var_date: Log entry date in the format yyyy-MM-dd. (required)
         :type var_date: date
         :param food_name: Food entry name. Either foodId or foodName must be provided.
@@ -840,7 +840,7 @@ class NutritionApi:
             ),
         ],
         amount: Annotated[
-            StrictStr,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="The amount consumed in the format X.XX in the specified unitId."
             ),
@@ -896,7 +896,7 @@ class NutritionApi:
         :param unit_id: The ID of units used. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units. (required)
         :type unit_id: str
         :param amount: The amount consumed in the format X.XX in the specified unitId. (required)
-        :type amount: str
+        :type amount: float
         :param var_date: Log entry date in the format yyyy-MM-dd. (required)
         :type var_date: date
         :param food_name: Food entry name. Either foodId or foodName must be provided.
@@ -981,7 +981,7 @@ class NutritionApi:
             ),
         ],
         amount: Annotated[
-            StrictStr,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="The amount consumed in the format X.XX in the specified unitId."
             ),
@@ -1037,7 +1037,7 @@ class NutritionApi:
         :param unit_id: The ID of units used. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units. (required)
         :type unit_id: str
         :param amount: The amount consumed in the format X.XX in the specified unitId. (required)
-        :type amount: str
+        :type amount: float
         :param var_date: Log entry date in the format yyyy-MM-dd. (required)
         :type var_date: date
         :param food_name: Food entry name. Either foodId or foodName must be provided.
@@ -2025,7 +2025,7 @@ class NutritionApi:
             ),
         ],
         amount: Annotated[
-            StrictInt,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="The amount consumption in the format X.XX and in the specified waterUnit or in the unit system that corresponds to the Accept-Language header provided."
             ),
@@ -2054,7 +2054,7 @@ class NutritionApi:
         :param var_date: The date of records to be returned in the format yyyy-MM-dd. (required)
         :type var_date: date
         :param amount: The amount consumption in the format X.XX and in the specified waterUnit or in the unit system that corresponds to the Accept-Language header provided. (required)
-        :type amount: int
+        :type amount: float
         :param unit: Water measurement unit; `ml`, `fl oz`, or `cup`.
         :type unit: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2113,7 +2113,7 @@ class NutritionApi:
             ),
         ],
         amount: Annotated[
-            StrictInt,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="The amount consumption in the format X.XX and in the specified waterUnit or in the unit system that corresponds to the Accept-Language header provided."
             ),
@@ -2142,7 +2142,7 @@ class NutritionApi:
         :param var_date: The date of records to be returned in the format yyyy-MM-dd. (required)
         :type var_date: date
         :param amount: The amount consumption in the format X.XX and in the specified waterUnit or in the unit system that corresponds to the Accept-Language header provided. (required)
-        :type amount: int
+        :type amount: float
         :param unit: Water measurement unit; `ml`, `fl oz`, or `cup`.
         :type unit: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2201,7 +2201,7 @@ class NutritionApi:
             ),
         ],
         amount: Annotated[
-            StrictInt,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="The amount consumption in the format X.XX and in the specified waterUnit or in the unit system that corresponds to the Accept-Language header provided."
             ),
@@ -2230,7 +2230,7 @@ class NutritionApi:
         :param var_date: The date of records to be returned in the format yyyy-MM-dd. (required)
         :type var_date: date
         :param amount: The amount consumption in the format X.XX and in the specified waterUnit or in the unit system that corresponds to the Accept-Language header provided. (required)
-        :type amount: int
+        :type amount: float
         :param unit: Water measurement unit; `ml`, `fl oz`, or `cup`.
         :type unit: str
         :param _request_timeout: timeout setting for this request. If one
@@ -3605,7 +3605,7 @@ class NutritionApi:
             ),
         ],
         amount: Annotated[
-            StrictStr,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="The amount consumed in the format X.XX in the specified unitId."
             ),
@@ -3640,7 +3640,7 @@ class NutritionApi:
         :param unit_id: The ID of units used. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units. (required)
         :type unit_id: str
         :param amount: The amount consumed in the format X.XX in the specified unitId. (required)
-        :type amount: str
+        :type amount: float
         :param calories: Calories for this serving size. This is allowed with foodName parameter (default to zero); otherwise it is ignored.
         :type calories: int
         :param _request_timeout: timeout setting for this request. If one
@@ -3710,7 +3710,7 @@ class NutritionApi:
             ),
         ],
         amount: Annotated[
-            StrictStr,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="The amount consumed in the format X.XX in the specified unitId."
             ),
@@ -3745,7 +3745,7 @@ class NutritionApi:
         :param unit_id: The ID of units used. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units. (required)
         :type unit_id: str
         :param amount: The amount consumed in the format X.XX in the specified unitId. (required)
-        :type amount: str
+        :type amount: float
         :param calories: Calories for this serving size. This is allowed with foodName parameter (default to zero); otherwise it is ignored.
         :type calories: int
         :param _request_timeout: timeout setting for this request. If one
@@ -3815,7 +3815,7 @@ class NutritionApi:
             ),
         ],
         amount: Annotated[
-            StrictStr,
+            Union[StrictFloat, StrictInt],
             Field(
                 description="The amount consumed in the format X.XX in the specified unitId."
             ),
@@ -3850,7 +3850,7 @@ class NutritionApi:
         :param unit_id: The ID of units used. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units. (required)
         :type unit_id: str
         :param amount: The amount consumed in the format X.XX in the specified unitId. (required)
-        :type amount: str
+        :type amount: float
         :param calories: Calories for this serving size. This is allowed with foodName parameter (default to zero); otherwise it is ignored.
         :type calories: int
         :param _request_timeout: timeout setting for this request. If one

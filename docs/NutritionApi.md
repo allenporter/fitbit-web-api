@@ -226,7 +226,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
     food_id = 'food_id_example' # str | The ID of the food to be logged. Either foodId or foodName must be provided.
     meal_type_id = 'meal_type_id_example' # str | Meal types. 1=Breakfast; 2=Morning Snack; 3=Lunch; 4=Afternoon Snack; 5=Dinner; 7=Anytime.
     unit_id = 'unit_id_example' # str | The ID of units used. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units.
-    amount = 'amount_example' # str | The amount consumed in the format X.XX in the specified unitId.
+    amount = 3.4 # float | The amount consumed in the format X.XX in the specified unitId.
     var_date = '2013-10-20' # date | Log entry date in the format yyyy-MM-dd.
     food_name = 'food_name_example' # str | Food entry name. Either foodId or foodName must be provided. (optional)
     favorite = True # bool | The `true` value will add the food to the user's favorites after creating the log entry; while the `false` value will not. Valid only with foodId value. (optional)
@@ -242,17 +242,17 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name             | Type     | Description                                                                                                                                                                      | Notes      |
-| ---------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| **food_id**      | **str**  | The ID of the food to be logged. Either foodId or foodName must be provided.                                                                                                     |
-| **meal_type_id** | **str**  | Meal types. 1&#x3D;Breakfast; 2&#x3D;Morning Snack; 3&#x3D;Lunch; 4&#x3D;Afternoon Snack; 5&#x3D;Dinner; 7&#x3D;Anytime.                                                         |
-| **unit_id**      | **str**  | The ID of units used. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units.                                                                 |
-| **amount**       | **str**  | The amount consumed in the format X.XX in the specified unitId.                                                                                                                  |
-| **var_date**     | **date** | Log entry date in the format yyyy-MM-dd.                                                                                                                                         |
-| **food_name**    | **str**  | Food entry name. Either foodId or foodName must be provided.                                                                                                                     | [optional] |
-| **favorite**     | **bool** | The &#x60;true&#x60; value will add the food to the user&#39;s favorites after creating the log entry; while the &#x60;false&#x60; value will not. Valid only with foodId value. | [optional] |
-| **brand_name**   | **str**  | Brand name of food. Valid only with foodName parameters.                                                                                                                         | [optional] |
-| **calories**     | **int**  | Calories for this serving size. This is allowed with foodName parameter (default to zero); otherwise it is ignored.                                                              | [optional] |
+| Name             | Type      | Description                                                                                                                                                                      | Notes      |
+| ---------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **food_id**      | **str**   | The ID of the food to be logged. Either foodId or foodName must be provided.                                                                                                     |
+| **meal_type_id** | **str**   | Meal types. 1&#x3D;Breakfast; 2&#x3D;Morning Snack; 3&#x3D;Lunch; 4&#x3D;Afternoon Snack; 5&#x3D;Dinner; 7&#x3D;Anytime.                                                         |
+| **unit_id**      | **str**   | The ID of units used. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units.                                                                 |
+| **amount**       | **float** | The amount consumed in the format X.XX in the specified unitId.                                                                                                                  |
+| **var_date**     | **date**  | Log entry date in the format yyyy-MM-dd.                                                                                                                                         |
+| **food_name**    | **str**   | Food entry name. Either foodId or foodName must be provided.                                                                                                                     | [optional] |
+| **favorite**     | **bool**  | The &#x60;true&#x60; value will add the food to the user&#39;s favorites after creating the log entry; while the &#x60;false&#x60; value will not. Valid only with foodId value. | [optional] |
+| **brand_name**   | **str**   | Brand name of food. Valid only with foodName parameters.                                                                                                                         | [optional] |
+| **calories**     | **int**   | Calories for this serving size. This is allowed with foodName parameter (default to zero); otherwise it is ignored.                                                              | [optional] |
 
 ### Return type
 
@@ -537,7 +537,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.NutritionApi(api_client)
     var_date = '2013-10-20' # date | The date of records to be returned in the format yyyy-MM-dd.
-    amount = 56 # int | The amount consumption in the format X.XX and in the specified waterUnit or in the unit system that corresponds to the Accept-Language header provided.
+    amount = 3.4 # float | The amount consumption in the format X.XX and in the specified waterUnit or in the unit system that corresponds to the Accept-Language header provided.
     unit = 'unit_example' # str | Water measurement unit; `ml`, `fl oz`, or `cup`. (optional)
 
     try:
@@ -549,11 +549,11 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name         | Type     | Description                                                                                                                                             | Notes      |
-| ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| **var_date** | **date** | The date of records to be returned in the format yyyy-MM-dd.                                                                                            |
-| **amount**   | **int**  | The amount consumption in the format X.XX and in the specified waterUnit or in the unit system that corresponds to the Accept-Language header provided. |
-| **unit**     | **str**  | Water measurement unit; &#x60;ml&#x60;, &#x60;fl oz&#x60;, or &#x60;cup&#x60;.                                                                          | [optional] |
+| Name         | Type      | Description                                                                                                                                             | Notes      |
+| ------------ | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **var_date** | **date**  | The date of records to be returned in the format yyyy-MM-dd.                                                                                            |
+| **amount**   | **float** | The amount consumption in the format X.XX and in the specified waterUnit or in the unit system that corresponds to the Accept-Language header provided. |
+| **unit**     | **str**   | Water measurement unit; &#x60;ml&#x60;, &#x60;fl oz&#x60;, or &#x60;cup&#x60;.                                                                          | [optional] |
 
 ### Return type
 
@@ -976,7 +976,7 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
     food_log_id = 'food_log_id_example' # str | The ID of the food log entry to be edited.
     meal_type_id = 'meal_type_id_example' # str | Meal types. 1=Breakfast; 2=Morning Snack; 3=Lunch; 4=Afternoon Snack; 5=Dinner; 7=Anytime.
     unit_id = 'unit_id_example' # str | The ID of units used. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units.
-    amount = 'amount_example' # str | The amount consumed in the format X.XX in the specified unitId.
+    amount = 3.4 # float | The amount consumed in the format X.XX in the specified unitId.
     calories = 56 # int | Calories for this serving size. This is allowed with foodName parameter (default to zero); otherwise it is ignored. (optional)
 
     try:
@@ -988,13 +988,13 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name             | Type    | Description                                                                                                              | Notes      |
-| ---------------- | ------- | ------------------------------------------------------------------------------------------------------------------------ | ---------- |
-| **food_log_id**  | **str** | The ID of the food log entry to be edited.                                                                               |
-| **meal_type_id** | **str** | Meal types. 1&#x3D;Breakfast; 2&#x3D;Morning Snack; 3&#x3D;Lunch; 4&#x3D;Afternoon Snack; 5&#x3D;Dinner; 7&#x3D;Anytime. |
-| **unit_id**      | **str** | The ID of units used. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units.         |
-| **amount**       | **str** | The amount consumed in the format X.XX in the specified unitId.                                                          |
-| **calories**     | **int** | Calories for this serving size. This is allowed with foodName parameter (default to zero); otherwise it is ignored.      | [optional] |
+| Name             | Type      | Description                                                                                                              | Notes      |
+| ---------------- | --------- | ------------------------------------------------------------------------------------------------------------------------ | ---------- |
+| **food_log_id**  | **str**   | The ID of the food log entry to be edited.                                                                               |
+| **meal_type_id** | **str**   | Meal types. 1&#x3D;Breakfast; 2&#x3D;Morning Snack; 3&#x3D;Lunch; 4&#x3D;Afternoon Snack; 5&#x3D;Dinner; 7&#x3D;Anytime. |
+| **unit_id**      | **str**   | The ID of units used. Typically retrieved via a previous call to Get Food Logs, Search Foods, or Get Food Units.         |
+| **amount**       | **float** | The amount consumed in the format X.XX in the specified unitId.                                                          |
+| **calories**     | **int**   | Calories for this serving size. This is allowed with foodName parameter (default to zero); otherwise it is ignored.      | [optional] |
 
 ### Return type
 

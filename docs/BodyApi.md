@@ -883,7 +883,7 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.BodyApi(api_client)
-    fat = 'fat_example' # str | Target body fat percentage; in the format X.XX.
+    fat = 3.4 # float | Target body fat percentage; in the format X.XX.
 
     try:
         # Update Body Fat Goal
@@ -894,9 +894,9 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name    | Type    | Description                                     | Notes |
-| ------- | ------- | ----------------------------------------------- | ----- |
-| **fat** | **str** | Target body fat percentage; in the format X.XX. |
+| Name    | Type      | Description                                     | Notes |
+| ------- | --------- | ----------------------------------------------- | ----- |
+| **fat** | **float** | Target body fat percentage; in the format X.XX. |
 
 ### Return type
 
@@ -957,8 +957,8 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = fitbit_web_api.BodyApi(api_client)
     start_date = 'start_date_example' # str | Weight goal start date; in the format yyyy-MM-dd.
-    start_weight = 'start_weight_example' # str | Weight goal start weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided.
-    weight = 'weight_example' # str | Weight goal target weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided; required if user doesn't have an existing weight goal. (optional)
+    start_weight = 3.4 # float | Weight goal start weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided.
+    weight = 3.4 # float | Weight goal target weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided; required if user doesn't have an existing weight goal. (optional)
 
     try:
         # Update Weight Goal
@@ -969,11 +969,11 @@ async with fitbit_web_api.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-| Name             | Type    | Description                                                                                                                                                                            | Notes      |
-| ---------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| **start_date**   | **str** | Weight goal start date; in the format yyyy-MM-dd.                                                                                                                                      |
-| **start_weight** | **str** | Weight goal start weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided.                                                             |
-| **weight**       | **str** | Weight goal target weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided; required if user doesn&#39;t have an existing weight goal. | [optional] |
+| Name             | Type      | Description                                                                                                                                                                            | Notes      |
+| ---------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **start_date**   | **str**   | Weight goal start date; in the format yyyy-MM-dd.                                                                                                                                      |
+| **start_weight** | **float** | Weight goal start weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided.                                                             |
+| **weight**       | **float** | Weight goal target weight; in the format X.XX, in the unit systems that corresponds to the Accept-Language header provided; required if user doesn&#39;t have an existing weight goal. | [optional] |
 
 ### Return type
 
