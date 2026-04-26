@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.14.0 (2026-04-26)
+
+### Features
+
+- Add cli tool for oauth2 and api querying ([`c543aa7`](https://github.com/allenporter/fitbit-web-api/commit/c543aa77e316442b13a76da5b01600b02bb88d6e))
+
+
 ## v2.13.5 (2025-11-26)
 
 ### Bug fixes
