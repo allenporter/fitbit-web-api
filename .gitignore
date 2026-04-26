@@ -63,6 +63,3 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
-
-# Credentials / Tokens
-.fitbit-token.json
